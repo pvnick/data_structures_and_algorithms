@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1411686222 source:/var/host/media/removable/3525381962/cop3530/code/ch4/notation/main.cpp
+	<iostream>
+	<string>
+	<sstream>
+

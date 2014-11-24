@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1411706652 source:/var/host/media/removable/3525381962/cop3530/code/ch4/equivalence_relations/main.cpp
+	<iostream>
+	<cstdlib>
+

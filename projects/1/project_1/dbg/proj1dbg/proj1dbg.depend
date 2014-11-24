@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1411446308 source:/var/host/media/removable/3525381962/cop3530/projects/1/dbg/proj1dbg/main.cpp
+	<iostream>
+	<stdexcept>
+	<cassert>
+	<memory>
+	<string>
+	<cmath>
+

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1411777185 source:/var/host/media/removable/3525381962/cop3530/code/ch4/queue_simulation/main.cpp
+	<iostream>
+	"queue.h"
+	<string>
+	<stdlib.h>
+
+1411771643 /var/host/media/removable/3525381962/cop3530/code/ch4/queue_simulation/queue.h
+	<stdexcept>
+
+1411770787 source:/var/host/media/removable/3525381962/cop3530/code/ch4/queue_simulation/queue.cpp
+	"queue.h"
+	<stdexcept>
+

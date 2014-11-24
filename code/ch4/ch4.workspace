@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/misc/misc.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/notation/notation.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/equivalence_relations/equivalence_relations.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/fifo_queue/fifo_queue.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/complex_numbers/complex_numbers.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/queue_simulation/queue_simulation.cbp" />
+		<Project filename="../../../../../../var/host/media/removable/3525381962/cop3530/code/ch4/polynomials/polynomials.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

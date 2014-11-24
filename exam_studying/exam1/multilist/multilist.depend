@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1412010329 source:/var/host/media/removable/3525381962/cop3530/exam_studying/exam1/multilist/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

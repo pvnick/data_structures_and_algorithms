@@ -1,0 +1,208 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+unit_tester is a Catch v1.0 b53 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:7: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.h:10: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.h:12: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+      Then: The size increases by 1
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:17: 
+PASSED:
+  REQUIRE( l.size() == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:7: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.h:10: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.h:12: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+       And: Printing the contents reflects the single inserted item
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:22: 
+PASSED:
+  REQUIRE( new_contents.str() == "[0]" )
+with expansion:
+  "[0]" == "[0]"
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:7: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.h:10: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.h:12: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+       And: The list's internal integrity is validated
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:24: 
+PASSED:
+  REQUIRE( l.validate_internal_integrity() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:7: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.h:10: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.h:12: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: 1000 items are inserted
+      Then: The size increases by 1000
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:36: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:7: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.h:10: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.h:12: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: 1000 items are inserted
+       And: The list's internal integrity is validated
+-------------------------------------------------------------------------------
+insert.h:3
+...............................................................................
+
+insert.h:38: 
+PASSED:
+  REQUIRE( l.validate_internal_integrity() )
+with expansion:
+  true
+
+===============================================================================
+All tests passed (20 assertions in 1 test case)
+

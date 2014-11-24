@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="proj1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/proj1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option='-I&quot;/home/pvnick/data_structures_and_algorithms/projects/1/&quot;' />
+					<Add directory="/home/pvnick/data_structures_and_algorithms/projects/1/" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/proj1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add directory="/home/pvnick/data_structures_and_algorithms/projects/1/" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="/home/pvnick/data_structures_and_algorithms/projects/1/" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/CDAL.h" />
+		<Unit filename="src/PSLL.h" />
+		<Unit filename="src/SDAL.h" />
+		<Unit filename="src/SSLL.h" />
+		<Unit filename="test/ListTester.h" />
+		<Unit filename="test/all_tests.h" />
+		<Unit filename="test/catch.hpp" />
+		<Unit filename="test/fuzzer.h" />
+		<Unit filename="test/unit_tests.h" />
+		<Unit filename="test/unittests/Insert.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

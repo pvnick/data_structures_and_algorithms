@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1411950713 source:/var/host/media/removable/3525381962/cop3530/exam_studying/exam1/binomialsearch/main.cpp
+	<iostream>
+	<vector>
+	<iterator>
+	<stdlib.h>
+	<algorithm>
+

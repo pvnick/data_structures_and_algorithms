@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1416538534 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+	<iostream>
+	<cmath>
+	<iomanip>
+	<cstdlib>
+	"common.h"
+
+1416536089 /home/pvnick/data_structures_and_algorithms/projects/2/common.h
+

@@ -1,0 +1,213 @@
+Instructions:
+* replace all text enclosed in angle-brackets with the infomation requested
+* delete these instructions [i.e., the first four lines of this file]
+
+<List variety: e.g., Simple, Singly Linked List> written by <Lastname>, <Firstname>
+COP 3530, 2014F <section#>
+======================================================================
+Part I:
+======================================================================
+My LIST implementation uses the data structure described in the part I
+instructions and conforms to the technique required for this list
+variety: <yes/no>
+
+My LIST implementation 100% correctly supports the following methods
+as described in part I:
+
+* replace: <yes/no>
+* insert: <yes/no>
+* push_back: <yes/no>
+* push_front: <yes/no>
+* remove: <yes/no>
+* pop_back: <yes/no>
+* pop_front: <yes/no>
+* item_at: <yes/no>
+* is_empty: <yes/no>
+* clear: <yes/no>
+* contains: <yes/no>
+* print: <yes/no>
+
+======================================================================
+Part II:
+======================================================================
+My LIST implementation 100% correctly supports the following methods
+as described in part II:
+
+* size: <yes/no>
+* begin (returning an iterator): <yes/no>
+* end (returning an iterator): <yes/no>
+* begin (returning a const iterator): <yes/no>
+* end (returning an const iterator): <yes/no>
+
+My LIST implementation 100% correctly supports the following data
+members as described in part II:
+
+* size_t
+* value_type
+* iterator
+* const_iterator
+
+My ITERATOR implementation 100% correctly supports the following
+methods as described in part II:
+
+* constructor: <yes/no>
+* explicit constructor: <yes/no>
+* operator*: <yes/no>
+* operator->: <yes/no>
+* operator=: <yes/no>
+* operator++ (pre): <yes/no>
+* operator++ (post): <yes/no>
+* operator==: <yes/no>
+* operator!=: <yes/no>
+
+My ITERATOR implementation 100% correctly supports the following
+data members as described in part II:
+
+* value_type: <yes/no>
+* difference_type: <yes/no>
+* reference: <yes/no>
+* pointer: <yes/no>
+* iterator_category: <yes/no>
+* self_type: <yes/no>
+* self_reference: <yes/no>
+
+My CONST ITERATOR implementation 100% correctly supports the following
+methods as described in part II:
+
+* constructor: <yes/no>
+* explicit constructor: <yes/no>
+* operator*: <yes/no>
+* operator->: <yes/no>
+* operator=: <yes/no>
+* operator++ (pre): <yes/no>
+* operator++ (post): <yes/no>
+* operator==: <yes/no>
+* operator!=: <yes/no>
+
+My CONST ITERATOR implementation 100% correctly supports the following
+data members as described in part II:
+
+* value_type: <yes/no>
+* difference_type: <yes/no>
+* reference: <yes/no>
+* pointer: <yes/no>
+* iterator_category: <yes/no>
+* self_type: <yes/no>
+* self_reference: <yes/no>
+
+======================================================================
+Part III:
+======================================================================
+My LIST implementation 100% correctly supports the following
+methods as described in part III:
+
+* operator[]: <yes/no>
+* operator[] const: <yes/no>
+
+For my LIST's methods 
+
+- I wrote documentation identifying the complete behavior (both normal
+  and exceptional) of the method, *AND*
+
+- when something unexpected occurs, the method throws appropriately
+  typed exceptions, *AND*
+
+- my implementation behaves 100% precisely as documented, *AND*
+
+- I have proven this by creating a suite of CATCH unit tests for
+  the method to verify that the method behaves as documented, *AND*
+
+- the method passes all of those unit tests.
+
+* replace: <yes/no>
+* insert: <yes/no>
+* push_back: <yes/no>
+* push_front: <yes/no>
+* remove: <yes/no>
+* pop_back: <yes/no>
+* pop_front: <yes/no>
+* item_at: <yes/no>
+* is_empty: <yes/no>
+* clear: <yes/no>
+* contains: <yes/no>
+* print: <yes/no>
+* size: <yes/no>
+* begin (returning an iterator): <yes/no>
+* end (returning an iterator): <yes/no>
+* begin (returning a const iterator): <yes/no>
+* end (returning an const iterator): <yes/no>
+* operator[]: <yes/no>
+* operator[] const: <yes/no>
+
+For my ITERATOR's methods 
+
+- I wrote documentation identifying the complete behavior (both normal
+  and exceptional) of the method, *AND*
+
+- when something unexpected occurs, the method throws appropriately
+  typed exceptions, *AND*
+
+- my implementation behaves 100% precisely as documented, *AND*
+
+- I have proven this by creating a suite of CATCH unit tests for
+  the method to verify that the method behaves as documented, *AND*
+
+- the method passes all of those unit tests.
+
+* constructor: <yes/no>
+* explicit constructor: <yes/no>
+* operator*: <yes/no>
+* operator->: <yes/no>
+* operator=: <yes/no>
+* operator++ (pre): <yes/no>
+* operator++ (post): <yes/no>
+* operator==: <yes/no>
+* operator!=: <yes/no>
+
+For my CONST ITERATOR's methods 
+
+- I wrote documentation identifying the complete behavior (both normal
+  and exceptional) of the method, *AND*
+
+- when something unexpected occurs, the method throws appropriately
+  typed exceptions, *AND*
+
+- my implementation behaves 100% precisely as documented, *AND*
+
+- I have proven this by creating a suite of CATCH unit tests for
+  the method to verify that the method behaves as documented, *AND*
+
+- the method passes all of those unit tests.
+
+* constructor: <yes/no>
+* explicit constructor: <yes/no>
+* operator*: <yes/no>
+* operator->: <yes/no>
+* operator=: <yes/no>
+* operator++ (pre): <yes/no>
+* operator++ (post): <yes/no>
+* operator==: <yes/no>
+* operator!=: <yes/no>
+
+My LIST implementation compiles correctly using g++ v4.8.2 on the
+OpenBSD VM: <yes/no>
+
+My UNIT TESTS compiles correctly using g++ v4.8.2 on the 
+OpenBSD VM: <yes/no>
+
+My UNIT TESTS run correctly on the OpenBSD VM: <yes/no>
+
+I affirm that all the responsess I have provided above are 100% true.
+Should it be determined that any are not 100% true, I agree to take a 0
+(zero) on the assignment: <yes/no>
+
+I affirm that I am the sole author of this <List variety: e.g., Simple, Singly Linked List>
+and the associated unit tests.  
+<Firstname> <Lastname>, <Date> in COP3520 section <section#>
+
+======================================================================
+<any comments you want the grader to read>
+======================================================================
+
+How to compile and run my unit tests on the OpenBSD VM
+<the *exact* commandline commands needed>

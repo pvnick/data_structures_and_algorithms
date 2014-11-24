@@ -1,0 +1,1 @@
+../../../ssll/source/old_tests/compile.sh
