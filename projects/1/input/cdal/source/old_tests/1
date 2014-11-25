@@ -1,0 +1,89 @@
+In file included from fuzzer.h:4:0,
+                 from fuzzer.cpp:1:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:283:24: error: ‘cop3530::CDAL<T>::const_iterator cop3530::CDAL<T>::begin()’ cannot be overloaded
+         const_iterator begin() {
+                        ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:272:18: error: with ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::begin()’
+         iterator begin() {
+                  ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:289:24: error: ‘cop3530::CDAL<T>::const_iterator cop3530::CDAL<T>::end()’ cannot be overloaded
+         const_iterator end() {
+                        ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:278:18: error: with ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::end()’
+         iterator end() {
+                  ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In member function ‘cop3530::CDAL<T>::CDAL_Iter& cop3530::CDAL<T>::CDAL_Iter::operator=(const self_type&)’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:167:29: error: ‘src’ was not declared in this scope
+                 curr_node = src.curr_node;
+                             ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In member function ‘cop3530::CDAL<T>::CDAL_Iter& cop3530::CDAL<T>::CDAL_Iter::operator++()’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:177:21: error: ‘here_index’ was not declared in this scope
+                 if (here_index == 0) here_container = here_container->next;
+                     ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:177:38: error: ‘here_container’ was not declared in this scope
+                 if (here_index == 0) here_container = here_container->next;
+                                      ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In member function ‘cop3530::CDAL<T>::CDAL_Const_Iter& cop3530::CDAL<T>::CDAL_Const_Iter::operator=(const self_type&)’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:231:29: error: ‘src’ was not declared in this scope
+                 curr_node = src.curr_node;
+                             ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In member function ‘cop3530::CDAL<T>::CDAL_Const_Iter& cop3530::CDAL<T>::CDAL_Const_Iter::operator++()’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:241:21: error: ‘here_index’ was not declared in this scope
+                 if (here_index == 0) here_container = here_container->next;
+                     ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:241:38: error: ‘here_container’ was not declared in this scope
+                 if (here_index == 0) here_container = here_container->next;
+                                      ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In instantiation of ‘bool cop3530::CDAL<T>::contains(const T&, bool (*)(const T&, const T&)) const [with T = std::basic_string<char>]’:
+fuzzer.h:94:98:   required from ‘cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda2’
+fuzzer.h:92:13:   required from ‘struct cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda2’
+fuzzer.h:92:13:   required from ‘cop3530::ListFuzzer<T>::OpResult cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]’
+fuzzer.h:240:57:   required from ‘void cop3530::ListFuzzer<T>::test_lists() [with T = std::basic_string<char>]’
+fuzzer.cpp:31:27:   required from here
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:503:38: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::end() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+             const_iterator fin = end();
+                                      ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:503:38: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:504:46: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::begin() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+             for (const_iterator iter = begin(); iter != fin; ++iter) {
+                                              ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:504:46: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In instantiation of ‘void cop3530::CDAL<T>::copy_constructor(const cop3530::CDAL<T>&) [with T = std::basic_string<char>]’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:320:33:   required from ‘cop3530::CDAL<T>::CDAL(const cop3530::CDAL<T>&) [with T = std::basic_string<char>]’
+fuzzer.h:83:32:   required from ‘cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda0’
+fuzzer.h:81:13:   required from ‘struct cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda0’
+fuzzer.h:81:13:   required from ‘cop3530::ListFuzzer<T>::OpResult cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]’
+fuzzer.h:240:57:   required from ‘void cop3530::ListFuzzer<T>::test_lists() [with T = std::basic_string<char>]’
+fuzzer.cpp:31:27:   required from here
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:124:42: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::end() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+             const_iterator fin = src.end();
+                                          ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:124:42: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:125:50: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::begin() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
+                                                  ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:125:50: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In instantiation of ‘std::ostream& cop3530::CDAL<T>::print(std::ostream&) const [with T = std::basic_string<char>; std::ostream = std::basic_ostream<char>]’:
+fuzzer.h:184:13:   required from ‘std::string cop3530::ListFuzzer<T>::get_list_contents(L&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]’
+fuzzer.h:174:66:   required from ‘cop3530::ListFuzzer<T>::OpResult cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]’
+fuzzer.h:240:57:   required from ‘void cop3530::ListFuzzer<T>::test_lists() [with T = std::basic_string<char>]’
+fuzzer.cpp:31:27:   required from here
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:524:46: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::begin() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+                 const_iterator start = begin();
+                                              ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:524:46: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:525:42: error: passing ‘const cop3530::CDAL<std::basic_string<char> >’ as ‘this’ argument of ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::end() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’ discards qualifiers [-fpermissive]
+                 const_iterator fin = end();
+                                          ^
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:525:42: error: conversion from ‘cop3530::CDAL<std::basic_string<char> >::iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Iter}’ to non-scalar type ‘cop3530::CDAL<std::basic_string<char> >::const_iterator {aka cop3530::CDAL<std::basic_string<char> >::CDAL_Const_Iter}’ requested
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h: In instantiation of ‘cop3530::CDAL<T>::CDAL_Iter::CDAL_Iter(const cop3530::CDAL<T>::ItemLoc&, const cop3530::CDAL<T>::ItemLoc&) [with T = std::basic_string<char>]’:
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:280:45:   required from ‘cop3530::CDAL<T>::iterator cop3530::CDAL<T>::end() [with T = std::basic_string<char>; cop3530::CDAL<T>::iterator = cop3530::CDAL<std::basic_string<char> >::CDAL_Iter]’
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:503:38:   required from ‘bool cop3530::CDAL<T>::contains(const T&, bool (*)(const T&, const T&)) const [with T = std::basic_string<char>]’
+fuzzer.h:94:98:   required from ‘cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda2’
+fuzzer.h:92:13:   required from ‘struct cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]::__lambda2’
+fuzzer.h:92:13:   required from ‘cop3530::ListFuzzer<T>::OpResult cop3530::ListFuzzer<T>::do_operation(L&, int, const string&) [with L = cop3530::CDAL<std::basic_string<char> >; T = std::basic_string<char>; std::string = std::basic_string<char>]’
+fuzzer.h:240:57:   required from ‘void cop3530::ListFuzzer<T>::test_lists() [with T = std::basic_string<char>]’
+fuzzer.cpp:31:27:   required from here
+/home/pvnick/data_structures_and_algorithms/projects/1/input/cdal/source/old_tests/../../../cdal/source/CDAL.h:156:48: error: invalid conversion from ‘size_t {aka long unsigned int}’ to ‘cop3530::CDAL<std::basic_string<char> >::Node*’ [-fpermissive]
+                 fin_array_index(fin.array_index)
+                                                ^

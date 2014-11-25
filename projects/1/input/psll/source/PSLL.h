@@ -60,9 +60,6 @@ namespace cop3530 {
                     Node* n = remove_node_after(free_list_head, num_free_list_items);
                     delete n;
                 }
-                if (size() != old_size / 2) {
-                    throw std::runtime_error("shrink_pool_if_necessary: incorrect resulting pool size");
-                }
             }
         }
 
@@ -93,7 +90,7 @@ namespace cop3530 {
             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
                 push_back(*iter);
             }
-            if ( ! src.size() == size()) 
+            if ( ! src.size() == size())
                 throw std::runtime_error("copy_constructor: Copying failed - sizes don't match up");
         }
         Node* remove_node_after(Node* preceeding_node, size_t& list_size_counter) {
@@ -446,7 +443,7 @@ namespace cop3530 {
             T item;
             if (position >= size()) {
                 throw std::out_of_range(std::string("remove: No element at position ") + std::to_string(position));
-            } 
+            }
             if (head->next == tail) {
                 throw std::runtime_error("remove: head->next == tail, but list says it's not empty (corrupt state)");
             }

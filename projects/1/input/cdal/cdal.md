@@ -1,4 +1,4 @@
-% SSLL Informal Documentation
+% SDAL Informal Documentation
 % Paul Nickerson
 
 #List Methods
@@ -6,7 +6,8 @@
 iterator begin()
 ------------
 
-* Creates an iterator which, when dereferenced, returns a mutable reference to the first stored item.
+* Creates an iterator which, when dereferenced, returns a mutable reference to the first stored item. 
+* Passes a pointer to the end slot so that the iterator can do bounds checking
 
 iterator end()
 ------------
@@ -21,6 +22,7 @@ const_iterator begin() const
 ------------
 
 * Creates an iterator which, when dereferenced, returns an immutable reference to the first stored item.
+* Passes a pointer to the end slot so that the iterator can do bounds checking
 
 const_iterator end() const
 ------------
@@ -43,18 +45,33 @@ const T& operator[](size_t i) const
 * Returns an immutable reference to the item at position i, so that the reference cannot be used to change the list's copy of the item
 * Providing a position greater than *or equal to* the current list size should throw an out-of-range error 
 
-SSLL(const SSLL& src)
+SDAL(const SDAL& src)
 ------------
 
-* Copy constructor - starting from uninitialized state, initialize the class, then use an iterator to push_bash() each source item into the current list
-* Afterwards, this->size() should equal src.size()
+* Copy constructor - starting from uninitialized state, initialize the class by allocating a number of nodes equal to the source instance's array size, then use an iterator to push_bash() each source item into the current list
+* If we fail to allocate nodes, throw a bad_alloc exception
+* Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
 
-SSLL& operator=(const SSLL& src)
+SDAL& operator=(const SDAL& src)
 ------------
 
-* Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state, 2) initialize the class, and 3) use an iterator to push_bash() each source item into the current list
+* Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state by freeing the item array, 2) initialize the class by allocating a number of nodes equal to the source instance's array size, and 3) use an iterator to push_bash() each source item into the current list
+* If we fail to allocate nodes, throw a bad_alloc exception
 * Returns a reference to *this, the copied-to instance
-* Afterwards, this->size() should equal src.size()
+* Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+
+
+void embiggen_if_necessary()
+------------
+* Called whenever we attempt to increase the list size
+* Checks if backing array is full, and if so, allocate a new array 150% the size of the original, copy the items over to the new array, and deallocate the original one.
+* If we fail to allocate nodes, throw a bad_alloc exception
+
+void shrink_if_necessary()
+------------
+* Called whenever we attempt to decrease the list size
+* Because we don't want the list to waste too much memory, whenever the array's size is >= 100 slots and fewer than half the slots are used, allocate a new array 50% the size of the original, copy the items over to the new array, and deallocate the original one.
+* If we fail to allocate nodes, throw a bad_alloc exception
 
 T replace(const T& element, size_t position)
 ------------
@@ -68,12 +85,10 @@ void insert(const T& element, size_t position)
 ------------
 
 * Inserts a copy of the specified element to the list at the specified position, shifting the element originally at that and those in subsequent positions one position to the "right."
+* Calls embiggen_if_necessary() to ensure we have space to insert the new item
 * List size gets incremented by 1
 * May be called with a position one past the last stored item, in which case the new item becomes the last
-	* In this case we pass the element to push_back(), which can do O(1) insert
-	* For position < size(), we do a O(N) traversal to the specified position
 * Providing a position greater than the current list size should throw an out-of-range error
-* If a new node cannot be procured due to memory constraints, an error message is outputted to stderr and std::bad_alloc is thrown
 
 void push_front(const T& element)
 ------------
@@ -84,35 +99,31 @@ void push_front(const T& element)
 void push_back(const T& element)
 ------------
 
-* Inserts a new item to the back of the list by converting the current tail to a non-dummy node containing the item and adds a new tail
-* Decrements size by one
-* If a new node cannot be procured due to memory constraints, an error message is outputted to stderr and std::bad_alloc is thrown
+* Inserts a new item to the back of the list calling insert() with the position defined as one past the last stored item
 * It would be an error if, after pushing, size() returned anything besides one plus the old value returned from size() 
 
 T pop_front()
 ------------
 
-* Removes the node at head->next and returns its stored item
-* Points head->next to the node which the removed node pointed to
-* Decrements the list size
+* Wrapper for remove(0)
+* Removes the node at item_array[0] and returns its stored item
 * If the list is empty then throw an out-of-range error
-* It would be a runtime_error if, after checking that the list is non-empty and prior to popping, head->next == tail. This would indicate internal list state corruption.
+* It would be an error if, after popping, size() returned anything besides the old value returned from size() minus one
 
 T pop_back()
 ------------
 
-* Removes the node at position (size() - 1), returning its stored item
-* Points preceding_node->next to the tail
-* Decrements the list size
+* Wrapper for remove(size() - 1)
+* Removes last stored node, returning its item
 * If the list is empty then throw an out-of-range error
-* It would be a runtime_error if, after checking that the list is non-empty and prior to popping, head->next == tail. This would indicate internal list state corruption.
+* It would be an error if, after popping, size() returned anything besides the old value returned from size() minus one
 
 T remove(size_t position)
 ------------
 
-* Removes and returns the the element at the specified position, shifting the subsequent elements one position to the "left."
-* May only be caled with positions *less than* the current list size
-* It would be a runtime_error if, after checking that the list is non-empty and prior to removing, head->next == tail. This would indicate internal list state corruption. 
+* Removes and returns the the element at the specified position, shifting the subsequent elements one position to the "left" by traversing from the specified slot to the end of the array and moving each item to its preceding slot
+* May only be called with positions *less than* the current list size
+* It would be an error if, after removing, size() returned anything besides the old value returned from size() minus one
 
 T item_at(size_t position) const
 ------------
@@ -129,13 +140,11 @@ size_t size() const
 ------------
 
 * Returns value of the counter which tracks the number of items stored in the array
-* If the item quantity counter is zero, then head->next should == tail. If not, an error should be thrown indicating corrupt internal state
-* If the item quantity counter is nonzero, then head->next should != tail. If not, an error should be thrown indicating corrupt internal state
 
 void clear()
 ------------
 
-* Removes all elements in the list by calling pop_front() until is_empty() returns true
+* Removes all elements in the list by setting the counter holding the list size to zero. No further action is taken as it is assumed that the embiggen/shrink methods will handle it
 
 bool contains(const T& element, bool equals(const T& a, const T& b)) const
 ------------
@@ -156,20 +165,20 @@ std::ostream& print(std::ostream& out) const
 
 #Iterator Methods
 
-explicit SSLL_Iter(Node* start)
+explicit SDAL_Iter(T* item_array, T* end_ptr)
 ------------
 
-* Explicit constructor for an iterator which, when dereferenced, will return a mutable reference to the item held at start
-* start can be tail, which signals that the iterator points to the end of the list
-* start *cannot* be null, otherwise throw a runtime_error because, since only the current class can call this constructor (Node is private), start==nullptr indicates internal state corruption
+* Explicit constructor for an iterator which, when dereferenced, will return a mutable reference to the first item held in the item_array parameter
+* Neither item_array nor end_ptr may be null
+* end_ptr must be greater than or equal to item_array
 
-SSLL_Iter(const SSLL_Iter& src)
+SDAL_Iter(const SDAL_Iter& src)
 ------------
 
-* Copy constructor - sets the iterator's current position to that of src
+* Copy constructor - sets the current iterator position in the item array and the end position to that of src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
-reference operator$\star$() const
+\detokenize{reference operator*() const}
 ------------
 
 * Returns a mutable reference to the item held at the current iterator position
@@ -184,7 +193,7 @@ pointer operator->() const
 self_reference operator=(const self_type& src)
 ------------
 
-* Changes the current iterator position to that of src
+* Changes the current and end iterator position to that of src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 * Returns a reference to current instance
 
@@ -192,7 +201,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie current_node->next==nullptr
+* Should throw an out-of-range error if we're at the end of the list, ie iter==iter_end
 
 self_type operator++(int)
 ------------
@@ -202,7 +211,7 @@ self_type operator++(int)
 bool operator==(const self_type& rhs) const
 ------------
 
-* Returns true IIF the currently-held node pointer is the same as rhs's, otherwise returns false
+* Returns true IIF the current and end iter pointers match between current instance and rhs, otherwise returns false
 
 bool operator!=(const self_type& rhs) const
 ------------
@@ -210,20 +219,20 @@ bool operator!=(const self_type& rhs) const
 * Returns true IIF operator==() returns false, otherwise returns trus
 
 #Const Iterator Methods
-explicit SSLL_Const_Iter(Node* start)
+explicit SDAL_Const_Iter(Node* start)
 ------------
 
-* Explicit constructor for an iterator which, when dereferenced, will return an immutable reference to the item held at start
-* start can be tail, which signals that the iterator points to the end of the list
-* start *cannot* be null, otherwise throw a runtime_error because, since only the current class can call this constructor (Node is private), start==nullptr indicates internal state corruption
+* Explicit constructor for an iterator which returns an immutable reference to the first item held in the item_array parameter
+* Neither item_array nor end_ptr may be null
+* end_ptr must be greater than or equal to item_array
 
-SSLL_Const_Iter(const SSLL_Const_Iter& src)
+SDAL_Const_Iter(const SDAL_Const_Iter& src)
 ------------
 
 * Copy constructor - sets the iterator's current position to that of src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
-reference operator$\star$() const
+\detokenize{reference operator*() const}
 ------------
 
 * Returns an immutable reference to the item held at the current iterator position
@@ -247,7 +256,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie current_node->next==nullptr
+* Should throw an out-of-range error if we're at the end of the list, ie iter==iter_end
 
 self_type operator++(int)
 ------------
@@ -257,7 +266,7 @@ self_type operator++(int)
 bool operator==(const self_type& rhs) const
 ------------
 
-* Returns true IIF the currently-held node pointer is the same as rhs's, otherwise returns false
+* Returns true IIF the current and end iter pointers match between current instance and rhs, otherwise returns false
 
 bool operator!=(const self_type& rhs) const
 ------------
