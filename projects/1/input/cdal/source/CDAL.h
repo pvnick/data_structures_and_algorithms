@@ -125,6 +125,8 @@ namespace cop3530 {
             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
                 push_back(*iter);
             }
+            if ( ! src.size() == size()) 
+                throw std::runtime_error("copy_constructor: Copying failed - sizes don't match up");
         }
 
     public:

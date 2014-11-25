@@ -26,6 +26,15 @@ namespace cop3530 {
         size_t num_items;
         size_t embiggen_counter = 0;
         size_t shrink_counter = 0;
+        T* allocate_nodes(size_t quantity) {
+            try {
+                T* new_item_array = new T[quantity];
+                return new_item_array;
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "allocate_nodes(): failed to allocate item array of size " << quantity << std::endl;
+                throw std::bad_alloc();
+            }
+        }
         void embiggen_if_necessary() {
             /*
                  Whenever an item is added and the backing array is full, allocate a new array 150% the size
@@ -34,7 +43,7 @@ namespace cop3530 {
             size_t filled_slots = size();
             if (filled_slots == array_size) {
                 size_t new_array_size = ceil(array_size * 1.5);
-                T* new_item_array = new T[new_array_size];
+                T* new_item_array = allocate_nodes(new_array_size);
                 for (size_t i = 0; i != filled_slots; ++i) {
                     new_item_array[i] = item_array[i];
                 }
@@ -53,7 +62,7 @@ namespace cop3530 {
             size_t filled_slots = size();
             if (array_size >= 100 && filled_slots < array_size / 2) {
                 size_t new_array_size = ceil(array_size * 0.5);
-                T* new_item_array = new T[new_array_size];
+                T* new_item_array = allocate_nodes(new_array_size);
                 for (size_t i = 0; i != filled_slots; ++i) {
                     new_item_array[i] = item_array[i];
                 }
@@ -66,13 +75,15 @@ namespace cop3530 {
         void init(size_t num_nodes_to_preallocate) {
             array_size = num_nodes_to_preallocate;
             num_items = 0;
-            item_array = new T[array_size];
+            item_array = allocate_nodes(array_size);
         }
         void copy_constructor(const SDAL& src) {
             const_iterator fin = src.end();
             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
                 push_back(*iter);
             }
+            if ( ! src.size() == size())
+                throw std::runtime_error("copy_constructor: Copying failed - sizes don't match up");
         }
     public:
 
@@ -98,11 +109,21 @@ namespace cop3530 {
 
         private:
             T* iter;
+            T* end_iter;
 
         public:
-            explicit SDAL_Iter(T* item_array) : iter(item_array) {}
-            SDAL_Iter(const SDAL_Iter& src) : iter(src.iter) {}
-
+            explicit SDAL_Iter(T* item_array, T* end_ptr): iter(item_array), end_iter(end_ptr) {
+                if (item_array == nullptr)
+                    throw std::runtime_error("SDAL_Iter: item_array cannot be null");
+                if (end_ptr == nullptr)
+                    throw std::runtime_error("SDAL_Iter: end_ptr cannot be null");
+                if (item_array > end_ptr)
+                    throw std::runtime_error("SDAL_Iter: item_array pointer cannot be past end_ptr");
+            }
+            SDAL_Iter(const SDAL_Iter& src): iter(src.iter), end_iter(src.end_iter) {
+                if (*this != src)
+                    throw std::runtime_error("SDAL_Iter: copy constructor failed");
+            }
             reference operator*() const {
                 return *iter;
             }
@@ -113,9 +134,14 @@ namespace cop3530 {
                 if (&src == this)
                     return *this;
                 iter = src.iter;
+                end_iter = src.end_iter;
+                if (*this != src)
+                    throw std::runtime_error("SDAL_Iter: copy assignment failed");
                 return *this;
             }
             self_reference operator++() { // preincrement
+                if (iter == end_iter)
+                    throw std::out_of_range("SDAL_Iter: Can't traverse past the end of the list");
                 ++iter;
                 return *this;
             }
@@ -125,7 +151,7 @@ namespace cop3530 {
                 return t; //return state held before increment
             }
             bool operator==(const self_type& rhs) const {
-                return rhs.iter == iter;
+                return rhs.iter == iter && rhs.end_iter == end_iter;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
@@ -147,11 +173,21 @@ namespace cop3530 {
             typedef SDAL_Const_Iter self_type;
             typedef SDAL_Const_Iter& self_reference;
         private:
-            const T* iter;
+            T* iter;
+            T* end_iter;
         public:
-            explicit SDAL_Const_Iter(T* item_array) : iter(item_array) {}
-            SDAL_Const_Iter(const SDAL_Const_Iter& src) : iter(src.iter) {}
-
+            explicit SDAL_Const_Iter(T* item_array, T* end_ptr): iter(item_array), end_iter(end_ptr) {
+                if (item_array == nullptr)
+                    throw std::runtime_error("SDAL_Const_Iter: item_array cannot be null");
+                if (end_ptr == nullptr)
+                    throw std::runtime_error("SDAL_Const_Iter: end_ptr cannot be null");
+                if (item_array > end_ptr)
+                    throw std::runtime_error("SDAL_Const_Iter: item_array pointer cannot be past end_ptr");
+            }
+            SDAL_Const_Iter(const SDAL_Const_Iter& src): iter(src.iter), end_iter(src.end_iter) {
+                if (*this != src)
+                    throw std::runtime_error("SDAL_Const_Iter: copy constructor failed");
+            }
             reference operator*() const {
                 return *iter;
             }
@@ -162,9 +198,14 @@ namespace cop3530 {
                 if (&src == this)
                     return *this;
                 iter = src.iter;
+                end_iter = src.end_iter;
+                if (*this != src)
+                    throw std::runtime_error("SDAL_Const_Iter: copy assignment failed");
                 return *this;
             }
             self_reference operator++() { // preincrement
+                if (iter == end_iter)
+                    throw std::out_of_range("SDAL_Const_Iter: Can't traverse past the end of the list");
                 ++iter;
                 return *this;
             }
@@ -174,7 +215,7 @@ namespace cop3530 {
                 return t; //return state held before increment
             }
             bool operator==(const self_type& rhs) const {
-                return rhs.iter == iter;
+                return rhs.iter == iter && rhs.end_iter == end_iter;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
@@ -188,11 +229,11 @@ namespace cop3530 {
         typedef SDAL_Iter iterator;
         typedef SDAL_Const_Iter const_iterator;
 
-        iterator begin() { return SDAL_Iter(item_array); }
-        iterator end() { return SDAL_Iter(item_array + num_items); }
+        iterator begin() { return SDAL_Iter(item_array, item_array + num_items); }
+        iterator end() { return SDAL_Iter(item_array + num_items, item_array + num_items); }
 
-        const_iterator begin() const { return SDAL_Const_Iter(item_array); }
-        const_iterator end() const { return SDAL_Const_Iter(item_array + num_items); }
+        const_iterator begin() const { return SDAL_Const_Iter(item_array, item_array + num_items); }
+        const_iterator end() const { return SDAL_Const_Iter(item_array + num_items, item_array + num_items); }
 
         //--------------------------------------------------
         // operators

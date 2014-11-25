@@ -42,7 +42,12 @@ namespace cop3530 {
         Node* procure_free_node(bool force_allocation) {
             Node* n;
             if (force_allocation || free_list_size() == 0) {
-                n = new Node();
+                try {
+                    n = new Node();
+                } catch (std::bad_alloc& ba) {
+                    std::cerr << "procure_free_node(): failed to allocate new node" << std::endl;
+                    throw std::bad_alloc();
+                }
             } else {
                 n = remove_node_after(free_list_head, num_free_list_items);
             }
@@ -50,9 +55,13 @@ namespace cop3530 {
         }
         void shrink_pool_if_necessary() {
             if (size() >= 100) {
+                size_t old_size = size();
                 while (free_list_size() > size() / 2) { //while the pool contains more nodes than half the list size
                     Node* n = remove_node_after(free_list_head, num_free_list_items);
                     delete n;
+                }
+                if (size() != old_size / 2) {
+                    throw std::runtime_error("shrink_pool_if_necessary: incorrect resulting pool size");
                 }
             }
         }
@@ -84,11 +93,19 @@ namespace cop3530 {
             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
                 push_back(*iter);
             }
+            if ( ! src.size() == size()) 
+                throw std::runtime_error("copy_constructor: Copying failed - sizes don't match up");
         }
         Node* remove_node_after(Node* preceeding_node, size_t& list_size_counter) {
-            assert(preceeding_node->next != tail);
-            assert(preceeding_node != tail);
-            assert( ! (preceeding_node == free_list_head && free_list_size() == 0));
+            if (preceeding_node->next == tail) {
+                throw std::runtime_error("remove_node_after: preceeding_node->next==tail, and we cant remove the tail");
+            }
+            if (preceeding_node == tail) {
+                throw std::runtime_error("remove_node_after: preceeding_node==tail, and we cant remove after the tail");
+            }
+            if (preceeding_node == free_list_head && free_list_size() == 0) {
+                throw std::runtime_error("remove_node_after: attempt detected to remove a node from an empty pool");
+            }
             Node* removed_node = preceeding_node->next;
             preceeding_node->next = removed_node->next;
             removed_node->next = nullptr;
@@ -115,74 +132,93 @@ namespace cop3530 {
         //--------------------------------------------------
         // iterators
         //--------------------------------------------------
-        class PSLL_Iter: public std::iterator<std::forward_iterator_tag, T> {
-        private:
-            Node* here;
+        class PSLL_Iter: public std::iterator<std::forward_iterator_tag, T>
+        {
         public:
+            // inheriting from std::iterator<std::forward_iterator_tag, T>
+            // automagically sets up these typedefs...
             typedef T value_type;
             typedef std::ptrdiff_t difference_type;
-            typedef T* pointer;
             typedef T& reference;
+            typedef T* pointer;
             typedef std::forward_iterator_tag iterator_category;
 
+            // but not these typedefs...
             typedef PSLL_Iter self_type;
             typedef PSLL_Iter& self_reference;
 
-            explicit PSLL_Iter(Node* start): here(start) {
+        private:
+            Node* here;
+
+        public:
+            explicit PSLL_Iter(Node* start) : here(start) {
                 if (start == nullptr)
                     throw std::runtime_error("PSLL_Iter: start cannot be null");
             }
-            PSLL_Iter(const self_type& src): here(src.here) {}
-
+            PSLL_Iter(const PSLL_Iter& src) : here(src.here) {
+                if (*this != src)
+                    throw std::runtime_error("PSLL_Iter: copy constructor failed");
+            }
             reference operator*() const {
                 return here->item;
             }
             pointer operator->() const {
                 return & this->operator*();
             }
-            self_reference operator=(const self_type& src) {
-                //copy assigner
+            self_reference operator=( const self_type& src ) {
                 if (&src == this)
                     return *this;
                 here = src.here;
+                if (*this != src)
+                    throw std::runtime_error("PSLL_Iter: copy assignment failed");
                 return *this;
             }
-            self_reference operator++() {
-                //prefix
+            self_reference operator++() { // preincrement
+                if (here->next == nullptr)
+                    throw std::out_of_range("PSLL_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;
             }
-            self_type operator++(int) {
+            self_type operator++(int) { // postincrement
                 self_type t(*this); //save state
                 operator++(); //apply increment
                 return t; //return state held before increment
             }
             bool operator==(const self_type& rhs) const {
-                return here == rhs.here;
+                return rhs.here == here;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
             }
         };
 
-        class PSLL_Const_Iter: public std::iterator<std::forward_iterator_tag, T> {
-        private:
-            const Node* here;
+        class PSLL_Const_Iter: public std::iterator<std::forward_iterator_tag, T>
+        {
         public:
+            // inheriting from std::iterator<std::forward_iterator_tag, T>
+            // automagically sets up these typedefs...
             typedef T value_type;
             typedef std::ptrdiff_t difference_type;
-            typedef const T* pointer;
             typedef const T& reference;
+            typedef const T* pointer;
             typedef std::forward_iterator_tag iterator_category;
 
+            // but not these typedefs...
             typedef PSLL_Const_Iter self_type;
             typedef PSLL_Const_Iter& self_reference;
 
-            explicit PSLL_Const_Iter(Node* start): here(start) {
+        private:
+            const Node* here;
+
+        public:
+            explicit PSLL_Const_Iter(Node* start) : here(start) {
                 if (start == nullptr)
                     throw std::runtime_error("PSLL_Const_Iter: start cannot be null");
             }
-            PSLL_Const_Iter(const self_type& src): here(src.here) {}
+            PSLL_Const_Iter(const PSLL_Const_Iter& src) : here(src.here) {
+                if (*this != src)
+                    throw std::runtime_error("PSLL_Const_Iter: copy constructor failed");
+            }
 
             reference operator*() const {
                 return here->item;
@@ -190,25 +226,27 @@ namespace cop3530 {
             pointer operator->() const {
                 return & this->operator*();
             }
-            self_reference operator=(const self_type& src) {
-                //copy assigner
+            self_reference operator=( const self_type& src ) {
                 if (&src == this)
                     return *this;
                 here = src.here;
+                if (*this != src)
+                    throw std::runtime_error("PSLL_Const_Iter: copy assignment failed");
                 return *this;
             }
-            self_reference operator++() {
-                //prefix
+            self_reference operator++() { // preincrement
+                if (here->next == nullptr)
+                    throw std::out_of_range("PSLL_Const_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;
             }
-            self_type operator++(int) {
+            self_type operator++(int) { // postincrement
                 self_type t(*this); //save state
                 operator++(); //apply increment
                 return t; //return state held before increment
             }
             bool operator==(const self_type& rhs) const {
-                return here == rhs.here;
+                return rhs.here == here;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
@@ -283,8 +321,8 @@ namespace cop3530 {
             if (&src == this) // check for self-assignment
                 return *this;     // do nothing
             // safely dispose of this PSLL's contents
-            // populate this PSLL with copies of the other PSLL's contents
             clear();
+            // populate this PSLL with copies of the other PSLL's contents
             copy_constructor(src);
             return *this;
         }
@@ -318,11 +356,20 @@ namespace cop3530 {
         void insert(const T& element, size_t position) {
             if (position > size()) {
                 throw std::out_of_range(std::string("insert: Position is outside of the list: ") + std::to_string(position));
+            } else if (position == size()) {
+                //special O(1) case
+                push_back(element);
             } else {
                 //node_before_position is guaranteed to point to a valid node because we use a dummy head node
                 Node* node_before_position = node_before(position);
                 Node* node_at_position = node_before_position->next;
-                Node* new_node = design_new_node(element, node_at_position);
+                Node* new_node;
+                try {
+                    new_node = design_new_node(element, node_at_position);
+                } catch (std::bad_alloc& ba) {
+                    std::cerr << "insert(): failed to allocate memory for new node" << std::endl;
+                    throw std::bad_alloc();
+                }
                 insert_node_after(node_before_position, new_node, num_main_list_items);
             }
         }
@@ -342,7 +389,13 @@ namespace cop3530 {
             appends the specified element to the list.
         */
         void push_back(const T& element) {
-            Node* new_tail = design_new_node(nullptr, true);
+            Node* new_tail;
+            try {
+                new_tail = design_new_node(nullptr, true);
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "push_back(): failed to allocate memory for new tail" << std::endl;
+                throw std::bad_alloc();
+            }
             insert_node_after(tail, new_tail, num_main_list_items);
             //transform the current tail node from a dummy to a real node holding element
             tail->is_dummy = false;
@@ -361,6 +414,9 @@ namespace cop3530 {
             if (is_empty()) {
                 throw std::out_of_range("pop_front: Can't pop: list is empty");
             }
+            if (head->next == tail) {
+                throw std::runtime_error("pop_front: head->next == tail, but list says it's not empty (corrupt state)");
+            }
             return remove_item_after(head);
         }
 
@@ -371,6 +427,9 @@ namespace cop3530 {
         T pop_back() {
             if (is_empty()) {
                 throw std::out_of_range("pop_back: Can't pop: list is empty");
+            }
+            if (head->next == tail) {
+                throw std::runtime_error("pop_back: head->next == tail, but list says it's not empty (corrupt state)");
             }
             //XXX this is O(N), a disadvantage of this architecture
             Node* node_before_last = node_before(size() - 1);
@@ -387,14 +446,15 @@ namespace cop3530 {
             T item;
             if (position >= size()) {
                 throw std::out_of_range(std::string("remove: No element at position ") + std::to_string(position));
-            } else {
-                //using a dummy head node guarantees that there be a node immediately preceeding the specified position
-                Node *node_before_position = node_before(position);
-                item = remove_item_after(node_before_position);
+            } 
+            if (head->next == tail) {
+                throw std::runtime_error("remove: head->next == tail, but list says it's not empty (corrupt state)");
             }
+            //using a dummy head node guarantees that there be a node immediately preceeding the specified position
+            Node *node_before_position = node_before(position);
+            item = remove_item_after(node_before_position);
             return item;
         }
-
         //--------------------------------------------------
         /*
             returns (without removing from the list) the element at the specified position.
@@ -403,8 +463,9 @@ namespace cop3530 {
             if (position >= size()) {
                 throw std::out_of_range(std::string("item_at: No element at position ") + std::to_string(position));
             }
-            return node_at(position)->item;
+            return operator[](position);
         }
+
 
         //--------------------------------------------------
         /*
@@ -419,7 +480,11 @@ namespace cop3530 {
             returns the number of elements in the list.
         */
         size_t size() const {
-            assert( ! (num_main_list_items == 0 && head->next != tail));
+            if (num_main_list_items == 0 && head->next != tail) {
+                throw std::runtime_error("size: head->next != tail, but list says it's empty (corrupt state)");
+            } else if (num_main_list_items > 0 && head->next == tail) {
+                throw std::runtime_error("size: head->next == tail, but list says it's not empty (corrupt state)");
+            }
             return num_main_list_items;
         }
 
@@ -429,7 +494,7 @@ namespace cop3530 {
         */
         void clear() {
             while (size()) {
-                remove_item_after(head);
+                pop_front();
             }
         }
         //--------------------------------------------------

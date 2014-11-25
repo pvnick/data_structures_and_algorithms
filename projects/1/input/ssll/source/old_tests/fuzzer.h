@@ -228,8 +228,7 @@ namespace cop3530 {
 
     public:
         ListFuzzer() = delete;
-        ListFuzzer(unsigned int rand_seed, rv_func rand_val): 
-            sdal_inst(2),
+        ListFuzzer(unsigned int rand_seed, rv_func rand_val):
             rand_val_func(rand_val)
         {}
         void test_lists() {

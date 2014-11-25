@@ -91,6 +91,8 @@ namespace cop3530 {
             for (const_iterator iter = src.begin(); iter != fin; ++iter) {
                 push_back(*iter);
             }
+            if ( ! src.size() == size()) 
+                throw std::runtime_error("copy_constructor: Copying failed - sizes don't match up");
         }
     public:
 
@@ -276,8 +278,8 @@ namespace cop3530 {
             if (&src == this) // check for self-assignment
                 return *this;     // do nothing
             // safely dispose of this SSLL's contents
-            // populate this SSLL with copies of the other SSLL's contents
             clear();
+            // populate this SSLL with copies of the other SSLL's contents
             copy_constructor(src);
             return *this;
         }

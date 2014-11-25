@@ -6,7 +6,7 @@
 iterator begin()
 ------------
 
-* Creates an iterator which, when dereferenced, returns a mutable reference to the current item.
+* Creates an iterator which, when dereferenced, returns a mutable reference to the first stored item.
 
 iterator end()
 ------------
@@ -20,7 +20,7 @@ iterator end()
 const_iterator begin() const
 ------------
 
-* Creates an iterator which, when dereferenced, returns an immutable reference to the current item.
+* Creates an iterator which, when dereferenced, returns an immutable reference to the first stored item.
 
 const_iterator end() const
 ------------
@@ -141,7 +141,7 @@ bool contains(const T& element, bool equals(const T& a, const T& b)) const
 ------------
 
 * Returns true IFF one of the elements of the list matches the specified element.
-* Uses a non-const iterator (so we can use references to avoid copy constructors) to traverse the list
+* Uses an iterator to traverse the list
 * At each position, calls the equals callback function. If that returns true, stop iterating and return true
 * If the end position is reached before the item is found, return false
 * It would be a runtime_error if an item was inserted and calling contains() with that item returned false, which would indicate internal state corruption

@@ -6,7 +6,7 @@
 iterator begin()
 ------------
 
-* Creates an iterator which, when dereferenced, returns a mutable reference to the current item.
+* Creates an iterator which, when dereferenced, returns a mutable reference to the first stored item.
 
 iterator end()
 ------------
@@ -20,7 +20,7 @@ iterator end()
 const_iterator begin() const
 ------------
 
-* Creates an iterator which, when dereferenced, returns an immutable reference to the current item.
+* Creates an iterator which, when dereferenced, returns an immutable reference to the first stored item.
 
 const_iterator end() const
 ------------
@@ -47,14 +47,14 @@ SSLL(const SSLL& src)
 ------------
 
 * Copy constructor - starting from uninitialized state, initialize the class, then use an iterator to push_bash() each source item into the current list
-* Afterwards, this->size() should equal src.size()
+* Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
 
 SSLL& operator=(const SSLL& src)
 ------------
 
 * Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state, 2) initialize the class, and 3) use an iterator to push_bash() each source item into the current list
 * Returns a reference to *this, the copied-to instance
-* Afterwards, this->size() should equal src.size()
+* Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
 
 T replace(const T& element, size_t position)
 ------------
@@ -85,7 +85,6 @@ void push_back(const T& element)
 ------------
 
 * Inserts a new item to the back of the list by converting the current tail to a non-dummy node containing the item and adds a new tail
-* Decrements size by one
 * If a new node cannot be procured due to memory constraints, an error message is outputted to stderr and std::bad_alloc is thrown
 * It would be an error if, after pushing, size() returned anything besides one plus the old value returned from size() 
 
@@ -111,7 +110,7 @@ T remove(size_t position)
 ------------
 
 * Removes and returns the the element at the specified position, shifting the subsequent elements one position to the "left."
-* May only be caled with positions *less than* the current list size
+* May only be called with positions *less than* the current list size
 * It would be a runtime_error if, after checking that the list is non-empty and prior to removing, head->next == tail. This would indicate internal list state corruption. 
 
 T item_at(size_t position) const
@@ -141,7 +140,7 @@ bool contains(const T& element, bool equals(const T& a, const T& b)) const
 ------------
 
 * Returns true IFF one of the elements of the list matches the specified element.
-* Uses a non-const iterator (so we can use references to avoid copy constructors) to traverse the list
+* Uses an iterator to traverse the list
 * At each position, calls the equals callback function. If that returns true, stop iterating and return true
 * If the end position is reached before the item is found, return false
 * It would be a runtime_error if an item was inserted and calling contains() with that item returned false, which would indicate internal state corruption
@@ -169,7 +168,7 @@ SSLL_Iter(const SSLL_Iter& src)
 * Copy constructor - sets the iterator's current position to that of src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
-reference operator$\star$() const
+\detokenize{reference operator*() const}
 ------------
 
 * Returns a mutable reference to the item held at the current iterator position
@@ -223,7 +222,7 @@ SSLL_Const_Iter(const SSLL_Const_Iter& src)
 * Copy constructor - sets the iterator's current position to that of src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
-reference operator$\star$() const
+\detokenize{reference operator*() const}
 ------------
 
 * Returns an immutable reference to the item held at the current iterator position

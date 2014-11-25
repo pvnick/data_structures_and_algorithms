@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1416873946 source:/home/pvnick/data_structures_and_algorithms/projects/1/input/ssll/source/old_tests/fuzzer.cpp
+	"fuzzer.h"
+	<iostream>
+	<fstream>
+	<vector>
+
+1416873889 /home/pvnick/data_structures_and_algorithms/projects/1/input/ssll/source/old_tests/fuzzer.h
+	"cdal/source/CDAL.h"
+	"ssll/source/SSLL.h"
+	"sdal/source/SDAL.h"
+	"psll/source/PSLL.h"
+	"list_tester.h"
+	<random>
+	<functional>
+	<vector>
+	<sstream>
+	<fstream>
+	<cassert>
+	<math.h>
+
+1416827982 /home/pvnick/data_structures_and_algorithms/projects/1/input/ssll/source/old_tests/list_tester.h
+
