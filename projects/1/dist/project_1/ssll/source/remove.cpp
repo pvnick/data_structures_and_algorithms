@@ -4,8 +4,8 @@
 
 SCENARIO("List removal" ) {
     GIVEN( "An integer list with 1000 items" ) {
-        INSTANTIATE_LIST(int, l);
-        
+        LIST<int> l;
+
         REQUIRE_THROWS_AS( l.remove(0), std::out_of_range );
         REQUIRE_THROWS_AS( l.pop_front(), std::out_of_range );
         REQUIRE_THROWS_AS( l.pop_back(), std::out_of_range );

@@ -90,8 +90,10 @@ namespace cop3530 {
         //--------------------------------------------------
         // iterators
         //--------------------------------------------------
+        class SDAL_Const_Iter;
         class SDAL_Iter: public std::iterator<std::forward_iterator_tag, T>
         {
+            friend class SDAL_Const_Iter;
         public:
             // inheriting from std::iterator<std::forward_iterator_tag, T>
             // automagically sets up these typedefs...
@@ -120,11 +122,10 @@ namespace cop3530 {
                 if (item_array > end_ptr)
                     throw std::runtime_error("SDAL_Iter: item_array pointer cannot be past end_ptr");
             }
-            SDAL_Iter(const SDAL_Iter& src): iter(src.iter), end_iter(src.end_iter) {
-                if (*this != src)
-                    throw std::runtime_error("SDAL_Iter: copy constructor failed");
-            }
+            SDAL_Iter(const SDAL_Iter& src): iter(src.iter), end_iter(src.end_iter) {}
             reference operator*() const {
+                if (iter == end_iter)
+                    throw std::out_of_range("SDAL_Iter: can't dereference end position");
                 return *iter;
             }
             pointer operator->() const {
@@ -173,8 +174,8 @@ namespace cop3530 {
             typedef SDAL_Const_Iter self_type;
             typedef SDAL_Const_Iter& self_reference;
         private:
-            T* iter;
-            T* end_iter;
+            const T* iter;
+            const T* end_iter;
         public:
             explicit SDAL_Const_Iter(T* item_array, T* end_ptr): iter(item_array), end_iter(end_ptr) {
                 if (item_array == nullptr)
@@ -184,11 +185,11 @@ namespace cop3530 {
                 if (item_array > end_ptr)
                     throw std::runtime_error("SDAL_Const_Iter: item_array pointer cannot be past end_ptr");
             }
-            SDAL_Const_Iter(const SDAL_Const_Iter& src): iter(src.iter), end_iter(src.end_iter) {
-                if (*this != src)
-                    throw std::runtime_error("SDAL_Const_Iter: copy constructor failed");
-            }
+            SDAL_Const_Iter(const SDAL_Const_Iter& src): iter(src.iter), end_iter(src.end_iter) {}
+            SDAL_Const_Iter(const SDAL_Iter& src): iter(src.iter), end_iter(src.end_iter) {}
             reference operator*() const {
+                if (iter == end_iter)
+                    throw std::out_of_range("SDAL_Const_Iter: can't dereference end position");
                 return *iter;
             }
             pointer operator->() const {

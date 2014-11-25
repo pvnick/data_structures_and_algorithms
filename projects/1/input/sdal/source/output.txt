@@ -4,6 +4,192 @@ unit_tester is a Catch v1.0 b11 host application.
 Run with -? for options
 
 -------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:18: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:18: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:18: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is inserted
+      Then: The list contains the item
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:22: 
+PASSED:
+  REQUIRE( l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:18: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:18: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List item searching
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is inserted
+  And when: The list is cleared
+      Then: The list no longer contains the item
+-------------------------------------------------------------------------------
+contains.cpp:5
+...............................................................................
+
+contains.cpp:27: 
+PASSED:
+  REQUIRE( ! l.contains(-1, [](const int& a, const int& b) -> bool { return a == b; }) )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: List copying
+     Given: An integer list that has been grown and shrunk acutely
+      When: The list is copied via copy constructor
+      Then: The item has the expected value
+-------------------------------------------------------------------------------
+copying.cpp:5
+...............................................................................
+
+copying.cpp:22: 
+PASSED:
+  REQUIRE( item == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: List copying
+     Given: An integer list that has been grown and shrunk acutely
+      When: The list is copied via copy constructor
+  And when: We try to change the value of the item
+      Then: The value changes in the copy but not the original
+-------------------------------------------------------------------------------
+copying.cpp:5
+...............................................................................
+
+copying.cpp:27: 
+PASSED:
+  REQUIRE( l2[42] == 5 )
+with expansion:
+  5 == 5
+
+copying.cpp:28: 
+PASSED:
+  REQUIRE( l[42] == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: List copying
+     Given: An integer list that has been grown and shrunk acutely
+      When: A second list has been grown and shrunk acutely
+  And when: The second list's copy assigner is invoked with the original list
+            as the source
+      Then: The two items contain the same contents
+-------------------------------------------------------------------------------
+copying.cpp:5
+...............................................................................
+
+copying.cpp:50: 
+PASSED:
+  REQUIRE( l_contents.str() == l2_contents.str() )
+with expansion:
+  "[999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983,982,981
+  ,980,979,978,977,976,975,974,973,972,971,970,969,968,967,966,965,964,963,962
+  ,961,960,959,958,-1,957,956,955,954,953,952,951,950,949,948,947,946,945,944
+  ,943,942,941,940,939,938,937,936,935,934,933,932,931,930,929,928,927,926,925
+  ,924,923,922,921,920,919,918,917,916,915,914,913,912,911,910,909,908,907,906
+  ,905,904,903,902,901]"
+  ==
+  "[999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983,982,981
+  ,980,979,978,977,976,975,974,973,972,971,970,969,968,967,966,965,964,963,962
+  ,961,960,959,958,-1,957,956,955,954,953,952,951,950,949,948,947,946,945,944
+  ,943,942,941,940,939,938,937,936,935,934,933,932,931,930,929,928,927,926,925
+  ,924,923,922,921,920,919,918,917,916,915,914,913,912,911,910,909,908,907,906
+  ,905,904,903,902,901]"
+
+-------------------------------------------------------------------------------
+Scenario: List copying
+     Given: An integer list that has been grown and shrunk acutely
+      When: A second list has been grown and shrunk acutely
+  And when: The second list's copy assigner is invoked with the original list
+            as the source
+  And when: We change the value of an item in the list copy
+      Then: The value changes in the copy but not the original
+-------------------------------------------------------------------------------
+copying.cpp:5
+...............................................................................
+
+copying.cpp:55: 
+PASSED:
+  REQUIRE( l2[42] == 5 )
+with expansion:
+  5 == 5
+
+copying.cpp:56: 
+PASSED:
+  REQUIRE( l[42] == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
 Scenario: List insertion
      Given: An empty integer list
 -------------------------------------------------------------------------------
@@ -587,6 +773,439 @@ with expansion:
   1000 == 1000
 
 -------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: A regular and const iterator object are instantiated
+      Then: The fresh iterators are equivalent to the end iterator
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:16: 
+PASSED:
+  REQUIRE( const_iter == const_iter_end )
+with expansion:
+  {?} == {?}
+
+iterators.cpp:17: 
+PASSED:
+  REQUIRE( iter == iter_end )
+with expansion:
+  {?} == {?}
+
+iterators.cpp:18: 
+PASSED:
+  REQUIRE_THROWS_AS( *const_iter )
+
+iterators.cpp:19: 
+PASSED:
+  REQUIRE_THROWS_AS( *iter )
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+      Then: A regular or const iterator traversing the list should visit size()
+            slots
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:41: 
+PASSED:
+  REQUIRE( iter_counter == sz )
+with expansion:
+  10 == 10
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+      Then: Post-increment returns the unincremented iterator
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:56: 
+PASSED:
+  REQUIRE( i_copy == iter++ )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+      Then: Post-increment returns the unincremented iterator
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:56: 
+PASSED:
+  REQUIRE( i_copy == iter++ )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+      Then: Post-increment returns the unincremented iterator
+      Then: Post-increment incremented the original iterator
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:58: 
+PASSED:
+  REQUIRE( *iter == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+      Then: Pre-increment returns the incremented iterator
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:64: 
+PASSED:
+  REQUIRE( i_copy != incremented )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:66: 
+PASSED:
+  REQUIRE( i_copy == incremented )
+with expansion:
+  {?} == {?}
+
+iterators.cpp:67: 
+PASSED:
+  REQUIRE( i_copy == iter )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+       And: The reassigned iterator can re-read the list and verify its new
+            contents
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  0 == 0
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  1 == 1
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  2 == 2
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  3 == 3
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  4 == 4
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  5 == 5
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  6 == 6
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  7 == 7
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  8 == 8
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  9 == 9
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:52: 
+PASSED:
+  REQUIRE( iter != l.end() )
+with expansion:
+  {?} != {?}
+
+iterators.cpp:53: 
+PASSED:
+  REQUIRE( iter == iter2 )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+       And: The reassigned iterator can re-read the list and verify its new
+            contents
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  0 == 0
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  1 == 1
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  2 == 2
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  3 == 3
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  4 == 4
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  5 == 5
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  6 == 6
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  7 == 7
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  8 == 8
+
+iterators.cpp:72: 
+PASSED:
+  REQUIRE( *iter == slot++ )
+with expansion:
+  9 == 9
+
+-------------------------------------------------------------------------------
+Scenario: List iterators
+     Given: An empty integer list
+      When: The list is grown and shrunk acutely
+  And when: The client regular iterator shoud be able to change the contents of
+            the list
+      Then: The iterator can be reassigned
+       And: The reassigned iterator can re-read the list and verify its new
+            contents
+       And: The reassigned iterator, which is at the end of the list, cannot be
+            incremented anymore
+-------------------------------------------------------------------------------
+iterators.cpp:5
+...............................................................................
+
+iterators.cpp:75: 
+PASSED:
+  REQUIRE_THROWS_AS( ++iter )
+
+-------------------------------------------------------------------------------
 Scenario: List item random access
      Given: An integer list that has been grown and shrunk acutely
       When: An item is retrieved via item_at()
@@ -595,7 +1214,7 @@ Scenario: List item random access
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:21: 
+random_access.cpp:22: 
 PASSED:
   REQUIRE( item == -1 )
 with expansion:
@@ -610,7 +1229,7 @@ Scenario: List item random access
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:27: 
+random_access.cpp:28: 
 PASSED:
   REQUIRE_THROWS_AS( l.item_at(4000) )
 
@@ -623,7 +1242,7 @@ Scenario: List item random access
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:32: 
+random_access.cpp:33: 
 PASSED:
   REQUIRE_THROWS_AS( l.operator[](4000) )
 
@@ -636,7 +1255,7 @@ Scenario: List item random access
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:37: 
+random_access.cpp:38: 
 PASSED:
   REQUIRE_THROWS_AS( (const int&)l.operator[](4000) )
 
@@ -649,7 +1268,7 @@ Scenario: List item random access
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:44: 
+random_access.cpp:45: 
 PASSED:
   REQUIRE( item == -1 )
 with expansion:
@@ -660,18 +1279,18 @@ Scenario: List item random access
      Given: An integer list that has been grown and shrunk acutely
       When: An item is retrieved via operator[]
   And when: We try to change the value of the item
-      Then: Both our item copy and the item stored in the list change
+      Then: Both our local item and the item stored in the list change
 -------------------------------------------------------------------------------
 random_access.cpp:5
 ...............................................................................
 
-random_access.cpp:49: 
+random_access.cpp:50: 
 PASSED:
   REQUIRE( item == 5 )
 with expansion:
   5 == 5
 
-random_access.cpp:50: 
+random_access.cpp:51: 
 PASSED:
   REQUIRE( l.item_at(42) == 5 )
 with expansion:
@@ -1084,6 +1703,68 @@ PASSED:
 with expansion:
   0 == 0
 
+-------------------------------------------------------------------------------
+Scenario: List item replacement
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is replaced
+      Then: The replaced item, returned from replace(), has the expected value
+-------------------------------------------------------------------------------
+replace.cpp:5
+...............................................................................
+
+replace.cpp:24: 
+PASSED:
+  REQUIRE( old_item == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: List item replacement
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is replaced
+       And: The new item is now stored in the list at the replacement position
+-------------------------------------------------------------------------------
+replace.cpp:5
+...............................................................................
+
+replace.cpp:27: 
+PASSED:
+  REQUIRE( l[42] == 5 )
+with expansion:
+  5 == 5
+
+-------------------------------------------------------------------------------
+Scenario: List item replacement
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is replaced
+       And: The list size did not change
+-------------------------------------------------------------------------------
+replace.cpp:5
+...............................................................................
+
+replace.cpp:30: 
+PASSED:
+  REQUIRE( l.size() == old_size )
+with expansion:
+  100 == 100
+
+-------------------------------------------------------------------------------
+Scenario: List item replacement
+     Given: An integer list that has been grown and shrunk acutely
+      When: An out of bounds position is passed to replace()
+      Then: The list throws an out-of-range error
+-------------------------------------------------------------------------------
+replace.cpp:5
+...............................................................................
+
+replace.cpp:36: 
+PASSED:
+  REQUIRE_THROWS_AS( l.replace(7, l.size()) )
+
+replace.cpp:37: 
+PASSED:
+  REQUIRE_THROWS_AS( l.replace(7, 5000) )
+
 ===============================================================================
-All tests passed (124 assertions in 3 test cases)
+All tests passed (186 assertions in 7 test cases)
 

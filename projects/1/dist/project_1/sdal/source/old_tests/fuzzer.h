@@ -61,7 +61,7 @@ namespace cop3530 {
             T returned_item;
         };
         /*
-            we hold operations in one of our linked list. any of the ones implemented in this project should work.
+            we hold operations in one of our linked lists. any of the ones implemented in this project should work.
             since op_list is rebuilt everytime an operation is performed, this is a good way of checking for memory leaks
         */
         using op_list = SDAL<Op>;
@@ -181,7 +181,7 @@ namespace cop3530 {
             return oss.str();
         }
 
-        bool validate_lists(std::initializer_list<OpResult> op_results) {
+        bool validate_lists(std::initializer_list<OpResult> const& op_results) {
             auto op_results_iter = op_results.begin();
             assert(op_results_iter != op_results.end());
             OpResult previous_result = *op_results_iter;
@@ -220,8 +220,8 @@ namespace cop3530 {
 
     public:
         ListFuzzer() = delete;
-        ListFuzzer(unsigned int rand_seed, rv_func rand_val):
-            rand_val_func(rand_val)
+        ListFuzzer(unsigned int rand_seed, rv_func rand_val_func):
+            rand_val_func(rand_val_func)
         {}
         void test_lists() {
             int new_seed = rand();

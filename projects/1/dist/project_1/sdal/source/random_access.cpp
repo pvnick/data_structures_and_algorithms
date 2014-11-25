@@ -4,7 +4,8 @@
 
 SCENARIO("List item random access" ) {
     GIVEN( "An integer list that has been grown and shrunk acutely" ) {
-        INSTANTIATE_LIST(int, l);
+        LIST<int> l;
+        
         for (int i = 0; i != 1000; ++i) {
             l.push_back(1337);
             l.insert(1337, l.size() / 2);
@@ -45,7 +46,7 @@ SCENARIO("List item random access" ) {
             }
             AND_WHEN( "We try to change the value of the item" ) {
                 l[42] = 5;
-                THEN( "Both our item copy and the item stored in the list change" ) {
+                THEN( "Both our local item and the item stored in the list change" ) {
                     REQUIRE( item == 5 );
                     REQUIRE( l.item_at(42) == 5 );
                 }

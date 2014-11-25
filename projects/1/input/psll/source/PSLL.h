@@ -129,8 +129,10 @@ namespace cop3530 {
         //--------------------------------------------------
         // iterators
         //--------------------------------------------------
+        class PSLL_Const_Iter;
         class PSLL_Iter: public std::iterator<std::forward_iterator_tag, T>
         {
+            friend class PSLL_Const_Iter;
         public:
             // inheriting from std::iterator<std::forward_iterator_tag, T>
             // automagically sets up these typedefs...
@@ -152,11 +154,10 @@ namespace cop3530 {
                 if (start == nullptr)
                     throw std::runtime_error("PSLL_Iter: start cannot be null");
             }
-            PSLL_Iter(const PSLL_Iter& src) : here(src.here) {
-                if (*this != src)
-                    throw std::runtime_error("PSLL_Iter: copy constructor failed");
-            }
+            PSLL_Iter(const PSLL_Iter& src) : here(src.here) {}
             reference operator*() const {
+                if (here->is_dummy)
+                    throw std::out_of_range("SSLL_Iter: can't dereference end position");
                 return here->item;
             }
             pointer operator->() const {
@@ -212,12 +213,12 @@ namespace cop3530 {
                 if (start == nullptr)
                     throw std::runtime_error("PSLL_Const_Iter: start cannot be null");
             }
-            PSLL_Const_Iter(const PSLL_Const_Iter& src) : here(src.here) {
-                if (*this != src)
-                    throw std::runtime_error("PSLL_Const_Iter: copy constructor failed");
-            }
+            PSLL_Const_Iter(const PSLL_Const_Iter& src) : here(src.here) {}
+            PSLL_Const_Iter(const PSLL_Iter& src) : here(src.here) {}
 
             reference operator*() const {
+                if (here->is_dummy)
+                    throw std::out_of_range("SSLL_Iter: can't dereference end position");
                 return here->item;
             }
             pointer operator->() const {

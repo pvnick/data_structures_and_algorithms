@@ -4,8 +4,8 @@
 
 SCENARIO("List insertion" ) {
     GIVEN( "An empty integer list" ) {
-        INSTANTIATE_LIST(int, l);
-
+        LIST<int> l;
+        
         REQUIRE( l.size() == 0 );
         std::ostringstream contents;
         l.print(contents);

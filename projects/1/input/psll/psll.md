@@ -179,6 +179,7 @@ PSLL_Iter(const PSLL_Iter& src)
 
 * Returns a mutable reference to the item held at the current iterator position
 * It would be an error if the client properly attempted to change the value of the returned reference and the stored item value did not change
+* When the client attempts to dereference an end iterator, the iterator should throw an out-of-range error
 
 pointer operator->() const
 ------------
@@ -233,6 +234,7 @@ PSLL_Const_Iter(const PSLL_Const_Iter& src)
 
 * Returns an immutable reference to the item held at the current iterator position
 * The const keyword in the reference typedef guarantees that code which attempts to modify the referenced item will not compile
+* When the client attempts to dereference an end iterator, the iterator should throw an out-of-range error
 
 pointer operator->() const
 ------------

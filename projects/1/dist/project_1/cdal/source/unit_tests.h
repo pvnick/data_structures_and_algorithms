@@ -2,6 +2,7 @@
 #define _UNIT_TESTS_H_
 #include "CDAL.h"
 
-#define INSTANTIATE_LIST( T, OBJ_NAME ) cop3530::CDAL<T> OBJ_NAME
+template<typename T>
+using LIST = cop3530::CDAL<T>;
 
 #endif
