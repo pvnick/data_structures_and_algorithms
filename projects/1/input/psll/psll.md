@@ -52,6 +52,7 @@ PSLL(const PSLL& src)
 
 * Copy constructor - starting from uninitialized state, initialize the class, then use an iterator to push_bash() each source item into the current list
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 PSLL& operator=(const PSLL& src)
 ------------
@@ -59,6 +60,7 @@ PSLL& operator=(const PSLL& src)
 * Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state, 2) initialize the class, and 3) use an iterator to push_bash() each source item into the current list
 * Returns a reference to *this, the copied-to instance
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 T replace(const T& element, size_t position)
 ------------

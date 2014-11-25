@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-g++ -g --std=c++11 -I"$(pwd)/../../" unit_tester.cpp -o unit_tester
+g++ --std=c++11 -I"$(pwd)/../../" *.cpp -o unit_tester

@@ -174,7 +174,7 @@ namespace cop3530 {
                 if (&rhs == this) return *this;
                 curr_node = rhs.curr_node;
                 curr_array_index = rhs.curr_array_index;
-                if (*this != src)
+                if (*this != rhs)
                     throw std::runtime_error("CDAL_Iter: copy assignment failed");
                 return this;
             }
@@ -235,7 +235,7 @@ namespace cop3530 {
                 if (&rhs == this) return *this;
                 curr_node = rhs.curr_node;
                 curr_array_index = rhs.curr_array_index;
-                if (*this != src)
+                if (*this != rhs)
                     throw std::runtime_error("CDAL_Const_Iter: copy assignment failed");
                 return this;
             }
@@ -284,12 +284,12 @@ namespace cop3530 {
             return iterator(end_loc);
         }
 
-        const_iterator begin() {
+        const_iterator begin() const {
             ItemLoc start_loc = loc_from_pos(0);
             return const_iterator(start_loc);
         }
 
-        const_iterator end() {
+        const_iterator end() const {
             ItemLoc end_loc = loc_from_pos(size());
             return const_iterator(end_loc);
         }
@@ -534,11 +534,6 @@ namespace cop3530 {
                 out << "]";
             }
             return out;
-        }
-    protected:
-        bool validate_internal_integrity() {
-            //todo: fill this in
-            return true;
         }
     }; //end class CDAL
 } // end namespace cop3530

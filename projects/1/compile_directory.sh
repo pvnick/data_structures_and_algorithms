@@ -79,10 +79,10 @@ DIST_DIR=$CURR_DIR"/dist/project_1"
 rm -r $DIST_DIR 2> /dev/null
 mkdir -p $DIST_DIR
 cd input
-#compile_and_run_tests "ssll/source" 
-#compile_and_run_tests "cdal/source" 
-#compile_and_run_tests "psll/source" 
-#compile_and_run_tests "sdal/source" 
+compile_and_run_tests "ssll/source" 
+compile_and_run_tests "cdal/source" 
+compile_and_run_tests "psll/source" 
+compile_and_run_tests "sdal/source" 
 FILES="$(find . -name '*.?*')"
 IFS=$'\n'
 for FILE in $FILES; do

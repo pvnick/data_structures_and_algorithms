@@ -56,6 +56,7 @@ CDAL(const CDAL& src)
 * Copy constructor - starting from uninitialized state, initialize the class by allocating head/tail dummy nodes, then use an iterator to push_bash() each source item into the current list
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 CDAL& operator=(const CDAL& src)
 ------------
@@ -64,6 +65,7 @@ CDAL& operator=(const CDAL& src)
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Returns a reference to *this, the copied-to instance
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 
 void embiggen_if_necessary()

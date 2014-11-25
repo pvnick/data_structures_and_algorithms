@@ -5,7 +5,6 @@
 #include "ssll/source/SSLL.h"
 #include "sdal/source/SDAL.h"
 #include "psll/source/PSLL.h"
-#include "list_tester.h"
 #include <random>
 #include <functional>
 #include <vector>
@@ -57,7 +56,6 @@ namespace cop3530 {
             Op op;
             std::string list_class_name;
             int op_ret_val;
-            bool list_internal_integrity_intact;
             std::string new_list_contents;
             std::string error_message;
             T returned_item;
@@ -166,11 +164,9 @@ namespace cop3530 {
             std::cout << "Source code:" << std::endl;
             std::cout << op.read_op_src();
 
-            OpResult op_result{op, list_class_name, 1, true, "", ""};
+            OpResult op_result{op, list_class_name, 1, "", ""};
             try {
-                ListTester<L> list_tester(l);
                 op_result.op_ret_val = op.go(rand_val_func, op_result.returned_item, randi);
-                op_result.list_internal_integrity_intact = list_tester.validate_internal_integrity();
                 op_result.new_list_contents = get_list_contents(l);
             } catch(std::exception& e) {
                 op_result.error_message = e.what();
@@ -207,10 +203,6 @@ namespace cop3530 {
                     std::cerr << "list returned items dont match" << std::endl;
                     std::cerr << result.list_class_name << "=" << result.returned_item << std::endl;
                     std::cerr << previous_result.list_class_name << "=" << previous_result.returned_item << std::endl;
-                    throw;
-                } else if ( ! result.list_internal_integrity_intact) {
-                    std::cerr << "internal integrity check failed" << std::endl;
-                    std::cerr << result.list_class_name << std::endl;
                     throw;
                 } else if (result.error_message != previous_result.error_message) {
                     std::cerr << "error messages dont match" << std::endl;

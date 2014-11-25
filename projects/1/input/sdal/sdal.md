@@ -56,6 +56,7 @@ SDAL(const SDAL& src)
 * Copy constructor - starting from uninitialized state, initialize the class by allocating a number of nodes equal to the source instance's array size, then use an iterator to push_bash() each source item into the current list
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 SDAL& operator=(const SDAL& src)
 ------------
@@ -64,6 +65,7 @@ SDAL& operator=(const SDAL& src)
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Returns a reference to *this, the copied-to instance
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
+* The resulting state of the current instance should be independent of the source (ie changing an element on the current instance should not affect the original)
 
 
 void embiggen_if_necessary()

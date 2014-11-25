@@ -1,28 +1,78 @@
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-unit_tester is a Catch v1.0 b53 host application.
+unit_tester is a Catch v1.0 b11 host application.
 Run with -? for options
 
 -------------------------------------------------------------------------------
 Scenario: List insertion
      Given: An empty integer list
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:7: 
+insert.cpp:9: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
   0 == 0
 
-insert.h:10: 
+insert.cpp:12: 
 PASSED:
   REQUIRE( contents.str() == "<empty list>" )
 with expansion:
   "<empty list>" == "<empty list>"
 
-insert.h:12: 
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
@@ -34,10 +84,10 @@ Scenario: List insertion
       When: An item is inserted
       Then: The size increases by 1
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:17: 
+insert.cpp:19: 
 PASSED:
   REQUIRE( l.size() == 1 )
 with expansion:
@@ -47,22 +97,22 @@ with expansion:
 Scenario: List insertion
      Given: An empty integer list
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:7: 
+insert.cpp:9: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
   0 == 0
 
-insert.h:10: 
+insert.cpp:12: 
 PASSED:
   REQUIRE( contents.str() == "<empty list>" )
 with expansion:
   "<empty list>" == "<empty list>"
 
-insert.h:12: 
+insert.cpp:14: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
@@ -72,37 +122,62 @@ with expansion:
 Scenario: List insertion
      Given: An empty integer list
       When: An item is inserted
-       And: Printing the contents reflects the single inserted item
+       And: Printing the contents reflects the inserted item
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:22: 
+insert.cpp:24: 
 PASSED:
-  REQUIRE( new_contents.str() == "[0]" )
+  REQUIRE( new_contents.str() == "[1337]" )
 with expansion:
-  "[0]" == "[0]"
+  "[1337]" == "[1337]"
 
 -------------------------------------------------------------------------------
 Scenario: List insertion
      Given: An empty integer list
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:7: 
+insert.cpp:9: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
   0 == 0
 
-insert.h:10: 
+insert.cpp:12: 
 PASSED:
   REQUIRE( contents.str() == "<empty list>" )
 with expansion:
   "<empty list>" == "<empty list>"
 
-insert.h:12: 
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
@@ -112,37 +187,38 @@ with expansion:
 Scenario: List insertion
      Given: An empty integer list
       When: An item is inserted
-       And: The list's internal integrity is validated
+  And when: An item is inserted at the end of the list
+      Then: The size increases by 1
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:24: 
+insert.cpp:29: 
 PASSED:
-  REQUIRE( l.validate_internal_integrity() )
+  REQUIRE( l.size() == 2 )
 with expansion:
-  true
+  2 == 2
 
 -------------------------------------------------------------------------------
 Scenario: List insertion
      Given: An empty integer list
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:7: 
+insert.cpp:9: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
   0 == 0
 
-insert.h:10: 
+insert.cpp:12: 
 PASSED:
   REQUIRE( contents.str() == "<empty list>" )
 with expansion:
   "<empty list>" == "<empty list>"
 
-insert.h:12: 
+insert.cpp:14: 
 PASSED:
   REQUIRE( l.size() == 0 )
 with expansion:
@@ -151,58 +227,863 @@ with expansion:
 -------------------------------------------------------------------------------
 Scenario: List insertion
      Given: An empty integer list
-      When: 1000 items are inserted
+      When: An item is inserted
+  And when: An item is inserted at the end of the list
+       And: Printing the contents reflects the inserted item
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:34: 
+PASSED:
+  REQUIRE( new_contents.str() == "[1337,42]" )
+with expansion:
+  "[1337,42]" == "[1337,42]"
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+  And when: An item is inserted at the end of the list
+  And when: An item is pushed back
+      Then: The size increases by 1
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:39: 
+PASSED:
+  REQUIRE( l.size() == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+  And when: An item is inserted at the end of the list
+  And when: An item is pushed back
+       And: Printing the contents reflects the inserted item
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:44: 
+PASSED:
+  REQUIRE( new_contents.str() == "[1337,42,100]" )
+with expansion:
+  "[1337,42,100]" == "[1337,42,100]"
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+  And when: An item is inserted at the end of the list
+  And when: An item is pushed front
+      Then: The size increases by 1
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:50: 
+PASSED:
+  REQUIRE( l.size() == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted
+  And when: An item is inserted at the end of the list
+  And when: An item is pushed front
+       And: Printing the contents reflects the inserted item
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:55: 
+PASSED:
+  REQUIRE( new_contents.str() == "[100,1337,42]" )
+with expansion:
+  "[100,1337,42]" == "[100,1337,42]"
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: An item is inserted out of bounds
+      Then: The list throws an out of range error
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:63: 
+PASSED:
+  REQUIRE_THROWS_AS( l.insert(1234, 1000) )
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+-------------------------------------------------------------------------------
+insert.cpp:5
+...............................................................................
+
+insert.cpp:9: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+insert.cpp:12: 
+PASSED:
+  REQUIRE( contents.str() == "<empty list>" )
+with expansion:
+  "<empty list>" == "<empty list>"
+
+insert.cpp:14: 
+PASSED:
+  REQUIRE( l.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: List insertion
+     Given: An empty integer list
+      When: 1000 items are inserted using various methods
       Then: The size increases by 1000
 -------------------------------------------------------------------------------
-insert.h:3
+insert.cpp:5
 ...............................................................................
 
-insert.h:36: 
+insert.cpp:76: 
 PASSED:
   REQUIRE( l.size() == 1000 )
 with expansion:
   1000 == 1000
 
 -------------------------------------------------------------------------------
-Scenario: List insertion
-     Given: An empty integer list
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is retrieved via item_at()
+      Then: The item has the expected value
 -------------------------------------------------------------------------------
-insert.h:3
+random_access.cpp:5
 ...............................................................................
 
-insert.h:7: 
+random_access.cpp:21: 
 PASSED:
-  REQUIRE( l.size() == 0 )
+  REQUIRE( item == -1 )
 with expansion:
-  0 == 0
-
-insert.h:10: 
-PASSED:
-  REQUIRE( contents.str() == "<empty list>" )
-with expansion:
-  "<empty list>" == "<empty list>"
-
-insert.h:12: 
-PASSED:
-  REQUIRE( l.size() == 0 )
-with expansion:
-  0 == 0
+  -1 == -1
 
 -------------------------------------------------------------------------------
-Scenario: List insertion
-     Given: An empty integer list
-      When: 1000 items are inserted
-       And: The list's internal integrity is validated
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An out of bounds position is passed to item_at()
+      Then: The list throws an out-of-range error
 -------------------------------------------------------------------------------
-insert.h:3
+random_access.cpp:5
 ...............................................................................
 
-insert.h:38: 
+random_access.cpp:27: 
 PASSED:
-  REQUIRE( l.validate_internal_integrity() )
+  REQUIRE_THROWS_AS( l.item_at(4000) )
+
+-------------------------------------------------------------------------------
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An out of bounds position is passed to operator[]
+      Then: The list throws an out-of-range error
+-------------------------------------------------------------------------------
+random_access.cpp:5
+...............................................................................
+
+random_access.cpp:32: 
+PASSED:
+  REQUIRE_THROWS_AS( l.operator[](4000) )
+
+-------------------------------------------------------------------------------
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An out of bounds position is passed to const operator[]
+      Then: The list throws an out-of-range error
+-------------------------------------------------------------------------------
+random_access.cpp:5
+...............................................................................
+
+random_access.cpp:37: 
+PASSED:
+  REQUIRE_THROWS_AS( (const int&)l.operator[](4000) )
+
+-------------------------------------------------------------------------------
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is retrieved via operator[]
+      Then: The item has the expected value
+-------------------------------------------------------------------------------
+random_access.cpp:5
+...............................................................................
+
+random_access.cpp:44: 
+PASSED:
+  REQUIRE( item == -1 )
 with expansion:
-  true
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: List item random access
+     Given: An integer list that has been grown and shrunk acutely
+      When: An item is retrieved via operator[]
+  And when: We try to change the value of the item
+      Then: Both our item copy and the item stored in the list change
+-------------------------------------------------------------------------------
+random_access.cpp:5
+...............................................................................
+
+random_access.cpp:49: 
+PASSED:
+  REQUIRE( item == 5 )
+with expansion:
+  5 == 5
+
+random_access.cpp:50: 
+PASSED:
+  REQUIRE( l.item_at(42) == 5 )
+with expansion:
+  5 == 5
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is removed
+      Then: The size decreases by 1
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:21: 
+PASSED:
+  REQUIRE( l.size() == 999 )
+with expansion:
+  999 == 999
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is removed
+       And: The returned value has the expected value
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:24: 
+PASSED:
+  REQUIRE( ret_val == 42 )
+with expansion:
+  42 == 42
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An attempt is made to remove an item from out of bounds
+      Then: The list throws an out of range error
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:30: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(1000) )
+
+remove.cpp:31: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(2000) )
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is popped from the back
+      Then: The list size decreases by 1
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:38: 
+PASSED:
+  REQUIRE( l.size() == 999 )
+with expansion:
+  999 == 999
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is popped from the back
+       And: The returned value has the expected value
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:41: 
+PASSED:
+  REQUIRE( ret_val == 999 )
+with expansion:
+  999 == 999
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is popped from the front
+      Then: The list size decreases by 1
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:48: 
+PASSED:
+  REQUIRE( l.size() == 999 )
+with expansion:
+  999 == 999
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:9: 
+PASSED:
+  REQUIRE_THROWS_AS( l.remove(0) )
+
+remove.cpp:10: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_front() )
+
+remove.cpp:11: 
+PASSED:
+  REQUIRE_THROWS_AS( l.pop_back() )
+
+remove.cpp:16: 
+PASSED:
+  REQUIRE( l.size() == 1000 )
+with expansion:
+  1000 == 1000
+
+-------------------------------------------------------------------------------
+Scenario: List removal
+     Given: An integer list with 1000 items
+      When: An item is popped from the front
+       And: The returned value has the expected value
+-------------------------------------------------------------------------------
+remove.cpp:5
+...............................................................................
+
+remove.cpp:51: 
+PASSED:
+  REQUIRE( ret_val == 0 )
+with expansion:
+  0 == 0
 
 ===============================================================================
-All tests passed (20 assertions in 1 test case)
+All tests passed (124 assertions in 3 test cases)
 
