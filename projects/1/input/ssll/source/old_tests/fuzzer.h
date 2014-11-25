@@ -5,7 +5,6 @@
 #include "ssll/source/SSLL.h"
 #include "sdal/source/SDAL.h"
 #include "psll/source/PSLL.h"
-#include "list_tester.h"
 #include <random>
 #include <functional>
 #include <vector>
@@ -165,9 +164,8 @@ namespace cop3530 {
             std::cout << "Source code:" << std::endl;
             std::cout << op.read_op_src();
 
-            OpResult op_result{op, list_class_name, 1, true, "", ""};
+            OpResult op_result{op, list_class_name, 1, "", ""};
             try {
-                ListTester<L> list_tester(l);
                 op_result.op_ret_val = op.go(rand_val_func, op_result.returned_item, randi);
                 op_result.new_list_contents = get_list_contents(l);
             } catch(std::exception& e) {
