@@ -58,9 +58,20 @@ namespace cop3530 {
         }
 
         Node* design_new_node(Node* next = nullptr, bool dummy = false) const {
-            Node* n = new Node();
+            Node* n;
+            try {
+                n = new Node();
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "design_new_node(): failed to allocate memory for new node" << std::endl;
+                throw std::bad_alloc();
+            }
             n->is_dummy = dummy;
-            n->item_array = new T[array_size];
+            try {
+                n->item_array = new T[array_size];
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "design_new_node(): failed to allocate memory for item array" << std::endl;
+                throw std::bad_alloc();
+            }
             n->next = next;
             return n;
         }
@@ -98,7 +109,7 @@ namespace cop3530 {
                 //transform tail into a regular node and append a new tail
                 Node* n = tail;
                 n->is_dummy = false;
-                tail = n->next = design_new_node(nullptr, false);
+                tail = n->next = design_new_node(nullptr, true);
                 ++num_available_nodes;
                 ++embiggen_counter;
             }
@@ -135,8 +146,8 @@ namespace cop3530 {
         //--------------------------------------------------
         class CDAL_Iter: public std::iterator<std::forward_iterator_tag, T> {
         private:
-            Node* here_container;
-            size_t here_index;
+            Node* curr_node;
+            size_t curr_array_index;
         public:
             typedef std::ptrdiff_t difference_type;
             typedef T& reference;
@@ -147,19 +158,31 @@ namespace cop3530 {
             typedef CDAL_Iter& self_reference;
 
             //need copy constructor/assigner to make this a first class ADT (doesn't hold pointers that need freeing)
-            CDAL_Iter(Node* container, size_t index): here_container(container), here_index(index) {}
-            CDAL_Iter(const self_type& src): here_container(src.here_container), here_index(src.here_index) {}
+            CDAL_Iter(ItemLoc const& here): 
+                curr_node(here.node), 
+                curr_array_index(here.array_index)
+            {}
+            CDAL_Iter(const self_type& src): 
+                curr_node(src.curr_node), 
+                curr_array_index(src.curr_array_index)
+            {
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Iter: copy constructor failed");
+            }
             self_reference operator=(const self_type& rhs) {
                 //copy assigner
                 if (&rhs == this) return *this;
-                here_container = rhs.here_container;
-                here_index = rhs.here_index;
+                curr_node = rhs.curr_node;
+                curr_array_index = rhs.curr_array_index;
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Iter: copy assignment failed");
                 return this;
             }
-            self_reference operator++() {
-                //prefix (no int parameter)
-                here_index = (here_index + 1) % array_size;
-                if (here_index == 0) here_container = here_container->next;
+            self_reference operator++() { // preincrement
+                if (curr_node->is_dummy)
+                    throw std::out_of_range("CDAL_Iter: Can't traverse past the end of the list");
+                curr_array_index = (curr_array_index + 1) % array_size;
+                if (curr_array_index == 0) curr_node = curr_node->next;
                 return *this;
             }
             self_type operator++(int) { // postincrement
@@ -168,14 +191,14 @@ namespace cop3530 {
                 return t; //return state held before increment
             }
             reference operator*() const {
-                return here_container->item_array[here_index];
+                return curr_node->item_array[curr_array_index];
             }
             pointer operator->() const {
                 return & this->operator*();
             }
             bool operator==(const self_type& rhs) const {
-                return rhs.here_index == here_index
-                        && rhs.here_container == here_container;
+                return rhs.curr_node == curr_node
+                        && rhs.curr_array_index == curr_array_index;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
@@ -184,10 +207,9 @@ namespace cop3530 {
 
         class CDAL_Const_Iter: public std::iterator<std::forward_iterator_tag, T> {
         private:
-            const Node* here_container;
-            size_t here_index;
+            Node* curr_node;
+            size_t curr_array_index;
         public:
-            //todo: check on whether value_type should/shouldn't be const
             typedef const T value_type;
             typedef const T& reference;
             typedef const T* pointer;
@@ -196,19 +218,32 @@ namespace cop3530 {
             typedef CDAL_Const_Iter self_type;
             typedef CDAL_Const_Iter& self_reference;
 
-            CDAL_Const_Iter(const Node* container, size_t index): here_container(container), here_index(index) {}
-            CDAL_Const_Iter(const self_type& src): here_container(src.here_container), here_index(src.here_index) {}
+            //need copy constructor/assigner to make this a first class ADT (doesn't hold pointers that need freeing)
+            CDAL_Const_Iter(ItemLoc const& here): 
+                curr_node(here.node), 
+                curr_array_index(here.array_index)
+            {}
+            CDAL_Const_Iter(const self_type& src): 
+                curr_node(src.curr_node), 
+                curr_array_index(src.curr_array_index)
+            {
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Iter: copy constructor failed");
+            }
             self_reference operator=(const self_type& rhs) {
                 //copy assigner
                 if (&rhs == this) return *this;
-                here_container = rhs.here_container;
-                here_index = rhs.here_index;
+                curr_node = rhs.curr_node;
+                curr_array_index = rhs.curr_array_index;
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Const_Iter: copy assignment failed");
                 return this;
             }
-            self_reference operator++() {
-                //prefix (no int parameter)
-                here_index = (here_index + 1) % array_size;
-                if (here_index == 0) here_container = here_container->next;
+            self_reference operator++() { // preincrement
+                if (curr_node->is_dummy)
+                    throw std::out_of_range("CDAL_Const_Iter: Can't traverse past the end of the list");
+                curr_array_index = (curr_array_index + 1) % array_size;
+                if (curr_array_index == 0) curr_node = curr_node->next;
                 return *this;
             }
             self_type operator++(int) { // postincrement
@@ -217,14 +252,14 @@ namespace cop3530 {
                 return t; //return state held before increment
             }
             reference operator*() const {
-                return here_container->item_array[here_index];
+                return curr_node->item_array[curr_array_index];
             }
             pointer operator->() const {
                 return & this->operator*();
             }
             bool operator==(const self_type& rhs) const {
-                return rhs.here_index == here_index
-                        && rhs.here_container == here_container;
+                return rhs.curr_node == curr_node
+                        && rhs.curr_array_index == curr_array_index;
             }
             bool operator!=(const self_type& rhs) const {
                 return ! operator==(rhs);
@@ -240,21 +275,23 @@ namespace cop3530 {
         //todo: might need to add size_t here and other iterators if they were excluded or commented out
 
         iterator begin() {
-            return iterator(head->next, 0);
+            ItemLoc start_loc = loc_from_pos(0);
+            return iterator(start_loc);
         }
 
         iterator end() {
             ItemLoc end_loc = loc_from_pos(size());
-            return iterator(end_loc.node, end_loc.array_index);
+            return iterator(end_loc);
         }
 
-        const_iterator begin() const {
-            return const_iterator(head->next, 0);
+        const_iterator begin() {
+            ItemLoc start_loc = loc_from_pos(0);
+            return const_iterator(start_loc);
         }
 
-        const_iterator end() const {
+        const_iterator end() {
             ItemLoc end_loc = loc_from_pos(size());
-            return const_iterator(end_loc.node, end_loc.array_index);
+            return const_iterator(end_loc);
         }
 
         T& operator[](size_t i) {
@@ -430,7 +467,7 @@ namespace cop3530 {
             if (position >= size()) {
                 throw std::out_of_range(std::string("item_at: No element at position ") + std::to_string(position));
             }
-            return loc_from_pos(position).item_ref;
+            return operator[](position);
         }
 
         //--------------------------------------------------

@@ -191,7 +191,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie current_node->next==nullptr
+* Should throw an out-of-range error if we're at the end of the list, ie current_node->is_dummy==true
 
 self_type operator++(int)
 ------------
@@ -233,7 +233,7 @@ pointer operator->() const
 
 * Returns a pointer to the item held at the current iterator position by returning the value of operator*() with the address-of operator applied
 * The same validation measures apply here as to operator*()
-* The const keyword in the reference typedef guarantees that code which attempts to modify the referenced item will not compile
+* The const keyword in the pointer typedef guarantees that code which attempts to modify the referenced item will not compile
 
 self_reference operator=(const self_type& src)
 ------------
@@ -246,7 +246,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie current_node->next==nullptr
+* Should throw an out-of-range error if we're at the end of the list, ie current_node->is_dummy==true
 
 self_type operator++(int)
 ------------

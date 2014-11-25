@@ -45,6 +45,11 @@ const T& operator[](size_t i) const
 * Returns an immutable reference to the item at position i, so that the reference cannot be used to change the list's copy of the item
 * Providing a position greater than *or equal to* the current list size should throw an out-of-range error 
 
+SDAL(size_t num_nodes_to_preallocate = 50)
+------------
+
+* Default constructor - takes a parameter which defines the initial array capacity
+
 SDAL(const SDAL& src)
 ------------
 
@@ -219,7 +224,7 @@ bool operator!=(const self_type& rhs) const
 * Returns true IIF operator==() returns false, otherwise returns trus
 
 #Const Iterator Methods
-explicit SDAL_Const_Iter(Node* start)
+explicit SDAL_Const_Iter(T* item_array, T* end_ptr)
 ------------
 
 * Explicit constructor for an iterator which returns an immutable reference to the first item held in the item_array parameter
@@ -243,7 +248,7 @@ pointer operator->() const
 
 * Returns a pointer to the item held at the current iterator position by returning the value of operator*() with the address-of operator applied
 * The same validation measures apply here as to operator*()
-* The const keyword in the reference typedef guarantees that code which attempts to modify the referenced item will not compile
+* The const keyword in the pointer typedef guarantees that code which attempts to modify the referenced item will not compile
 
 self_reference operator=(const self_type& src)
 ------------

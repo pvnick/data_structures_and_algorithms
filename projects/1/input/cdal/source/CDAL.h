@@ -58,9 +58,20 @@ namespace cop3530 {
         }
 
         Node* design_new_node(Node* next = nullptr, bool dummy = false) const {
-            Node* n = new Node();
+            Node* n;
+            try {
+                n = new Node();
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "design_new_node(): failed to allocate memory for new node" << std::endl;
+                throw std::bad_alloc();
+            }
             n->is_dummy = dummy;
-            n->item_array = new T[array_size];
+            try {
+                n->item_array = new T[array_size];
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "design_new_node(): failed to allocate memory for item array" << std::endl;
+                throw std::bad_alloc();
+            }
             n->next = next;
             return n;
         }
@@ -98,7 +109,7 @@ namespace cop3530 {
                 //transform tail into a regular node and append a new tail
                 Node* n = tail;
                 n->is_dummy = false;
-                tail = n->next = design_new_node(nullptr, false);
+                tail = n->next = design_new_node(nullptr, true);
                 ++num_available_nodes;
                 ++embiggen_counter;
             }
@@ -137,8 +148,6 @@ namespace cop3530 {
         private:
             Node* curr_node;
             size_t curr_array_index;
-            Node* fin_node;
-            Node* fin_array_index;
         public:
             typedef std::ptrdiff_t difference_type;
             typedef T& reference;
@@ -149,29 +158,28 @@ namespace cop3530 {
             typedef CDAL_Iter& self_reference;
 
             //need copy constructor/assigner to make this a first class ADT (doesn't hold pointers that need freeing)
-            CDAL_Iter(ItemLoc const& here, ItemLoc const& fin): 
+            CDAL_Iter(ItemLoc const& here): 
                 curr_node(here.node), 
-                curr_array_index(here.array_index),
-                fin_node(fin.node), 
-                fin_array_index(fin.array_index)
+                curr_array_index(here.array_index)
             {}
             CDAL_Iter(const self_type& src): 
                 curr_node(src.curr_node), 
-                curr_array_index(src.curr_array_index),
-                fin_node(src.fin_node), 
-                fin_array_index(src.fin_array_index)
-            {}
+                curr_array_index(src.curr_array_index)
+            {
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Iter: copy constructor failed");
+            }
             self_reference operator=(const self_type& rhs) {
                 //copy assigner
                 if (&rhs == this) return *this;
                 curr_node = rhs.curr_node;
                 curr_array_index = rhs.curr_array_index;
-                fin_node = rhs.fin_node;
-                fin_array_index = rhs.fin_array_index;
+                if (*this != rhs)
+                    throw std::runtime_error("CDAL_Iter: copy assignment failed");
                 return this;
             }
             self_reference operator++() { // preincrement
-                if (curr_node == fin_node && curr_array_index == fin_array_index)
+                if (curr_node->is_dummy)
                     throw std::out_of_range("CDAL_Iter: Can't traverse past the end of the list");
                 curr_array_index = (curr_array_index + 1) % array_size;
                 if (curr_array_index == 0) curr_node = curr_node->next;
@@ -201,8 +209,6 @@ namespace cop3530 {
         private:
             Node* curr_node;
             size_t curr_array_index;
-            Node* fin_node;
-            size_t fin_array_index;
         public:
             typedef const T value_type;
             typedef const T& reference;
@@ -213,29 +219,28 @@ namespace cop3530 {
             typedef CDAL_Const_Iter& self_reference;
 
             //need copy constructor/assigner to make this a first class ADT (doesn't hold pointers that need freeing)
-            CDAL_Const_Iter(ItemLoc const& here, ItemLoc const& fin): 
+            CDAL_Const_Iter(ItemLoc const& here): 
                 curr_node(here.node), 
-                curr_array_index(here.array_index),
-                fin_node(fin.node), 
-                fin_array_index(fin.array_index)
+                curr_array_index(here.array_index)
             {}
             CDAL_Const_Iter(const self_type& src): 
                 curr_node(src.curr_node), 
-                curr_array_index(src.curr_array_index),
-                fin_node(src.fin_node), 
-                fin_array_index(src.fin_array_index)
-            {}
+                curr_array_index(src.curr_array_index)
+            {
+                if (*this != src)
+                    throw std::runtime_error("CDAL_Iter: copy constructor failed");
+            }
             self_reference operator=(const self_type& rhs) {
                 //copy assigner
                 if (&rhs == this) return *this;
                 curr_node = rhs.curr_node;
                 curr_array_index = rhs.curr_array_index;
-                fin_node = rhs.fin_node;
-                fin_array_index = rhs.fin_array_index;
+                if (*this != rhs)
+                    throw std::runtime_error("CDAL_Const_Iter: copy assignment failed");
                 return this;
             }
             self_reference operator++() { // preincrement
-                if (curr_node == fin_node && curr_array_index == fin_array_index)
+                if (curr_node->is_dummy)
                     throw std::out_of_range("CDAL_Const_Iter: Can't traverse past the end of the list");
                 curr_array_index = (curr_array_index + 1) % array_size;
                 if (curr_array_index == 0) curr_node = curr_node->next;
@@ -271,24 +276,22 @@ namespace cop3530 {
 
         iterator begin() {
             ItemLoc start_loc = loc_from_pos(0);
-            ItemLoc end_loc = loc_from_pos(size());
-            return iterator(start_loc, end_loc);
+            return iterator(start_loc);
         }
 
         iterator end() {
             ItemLoc end_loc = loc_from_pos(size());
-            return iterator(end_loc, end_loc);
+            return iterator(end_loc);
         }
 
         const_iterator begin() const {
             ItemLoc start_loc = loc_from_pos(0);
-            ItemLoc end_loc = loc_from_pos(size());
-            return const_iterator(start_loc, end_loc);
+            return const_iterator(start_loc);
         }
 
         const_iterator end() const {
             ItemLoc end_loc = loc_from_pos(size());
-            return const_iterator(end_loc, end_loc);
+            return const_iterator(end_loc);
         }
 
         T& operator[](size_t i) {
@@ -464,7 +467,7 @@ namespace cop3530 {
             if (position >= size()) {
                 throw std::out_of_range(std::string("item_at: No element at position ") + std::to_string(position));
             }
-            return loc_from_pos(position).item_ref;
+            return operator[](position);
         }
 
         //--------------------------------------------------
@@ -531,11 +534,6 @@ namespace cop3530 {
                 out << "]";
             }
             return out;
-        }
-    protected:
-        bool validate_internal_integrity() {
-            //todo: fill this in
-            return true;
         }
     }; //end class CDAL
 } // end namespace cop3530

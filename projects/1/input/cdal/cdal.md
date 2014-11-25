@@ -1,4 +1,4 @@
-% SDAL Informal Documentation
+% CDAL Informal Documentation
 % Paul Nickerson
 
 #List Methods
@@ -45,17 +45,22 @@ const T& operator[](size_t i) const
 * Returns an immutable reference to the item at position i, so that the reference cannot be used to change the list's copy of the item
 * Providing a position greater than *or equal to* the current list size should throw an out-of-range error 
 
-SDAL(const SDAL& src)
+CDAL()
 ------------
 
-* Copy constructor - starting from uninitialized state, initialize the class by allocating a number of nodes equal to the source instance's array size, then use an iterator to push_bash() each source item into the current list
+* Default constructor - initializes the class by allocating head/tail dummy nodes, then adding an initial node
+
+CDAL(const CDAL& src)
+------------
+
+* Copy constructor - starting from uninitialized state, initialize the class by allocating head/tail dummy nodes, then use an iterator to push_bash() each source item into the current list
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
 
-SDAL& operator=(const SDAL& src)
+CDAL& operator=(const CDAL& src)
 ------------
 
-* Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state by freeing the item array, 2) initialize the class by allocating a number of nodes equal to the source instance's array size, and 3) use an iterator to push_bash() each source item into the current list
+* Copy assignment operator - starting from an arbitrary state, 1) reset to uninialized state by freeing all the items, 2) initialize the class by allocating a number of nodes equal to the source instance's array size, and 3) use an iterator to push_bash() each source item into the current list
 * If we fail to allocate nodes, throw a bad_alloc exception
 * Returns a reference to *this, the copied-to instance
 * Afterwards, this->size() should equal src.size(). If not, throw a runtime_error
@@ -64,14 +69,13 @@ SDAL& operator=(const SDAL& src)
 void embiggen_if_necessary()
 ------------
 * Called whenever we attempt to increase the list size
-* Checks if backing array is full, and if so, allocate a new array 150% the size of the original, copy the items over to the new array, and deallocate the original one.
+* If each array slot in every link is filled and we want to add a new item, allocate and append a new link by transforming the tail node into a usable item array container that points to a freshly-allocated tail node
 * If we fail to allocate nodes, throw a bad_alloc exception
 
 void shrink_if_necessary()
 ------------
 * Called whenever we attempt to decrease the list size
-* Because we don't want the list to waste too much memory, whenever the array's size is >= 100 slots and fewer than half the slots are used, allocate a new array 50% the size of the original, copy the items over to the new array, and deallocate the original one.
-* If we fail to allocate nodes, throw a bad_alloc exception
+* Because we don't want the list to waste too much memory, whenever more than half of the arrays are unused (they would all be at the end of the chain), we deallocate half the arrays by traversing to the last node to keep, then dropping each subsequent node until we reach the tail
 
 T replace(const T& element, size_t position)
 ------------
@@ -121,7 +125,7 @@ T pop_back()
 T remove(size_t position)
 ------------
 
-* Removes and returns the the element at the specified position, shifting the subsequent elements one position to the "left" by traversing from the specified slot to the end of the array and moving each item to its preceding slot
+* Removes and returns the the element at the specified position, shifting the subsequent elements one position to the "left" by traversing from the specified slot in the node's array to the end of the last node's item array and moving each item to its preceding slot
 * May only be called with positions *less than* the current list size
 * It would be an error if, after removing, size() returned anything besides the old value returned from size() minus one
 
@@ -165,17 +169,17 @@ std::ostream& print(std::ostream& out) const
 
 #Iterator Methods
 
-explicit SDAL_Iter(T* item_array, T* end_ptr)
+CDAL_Iter(ItemLoc const& here) 
 ------------
 
-* Explicit constructor for an iterator which, when dereferenced, will return a mutable reference to the first item held in the item_array parameter
+* Explicit constructor for an iterator which, when dereferenced, will return a mutable reference to the item held at the node and array index described by the here parameter
 * Neither item_array nor end_ptr may be null
 * end_ptr must be greater than or equal to item_array
 
-SDAL_Iter(const SDAL_Iter& src)
+CDAL_Iter(const CDAL_Iter& src)
 ------------
 
-* Copy constructor - sets the current iterator position in the item array and the end position to that of src
+* Copy constructor - sets the current iterator position to the node and array index described by src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
 \detokenize{reference operator*() const}
@@ -201,7 +205,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie iter==iter_end
+* Should throw an out-of-range error if we're at the end of the list, ie curr_node->is_dummy
 
 self_type operator++(int)
 ------------
@@ -219,17 +223,15 @@ bool operator!=(const self_type& rhs) const
 * Returns true IIF operator==() returns false, otherwise returns trus
 
 #Const Iterator Methods
-explicit SDAL_Const_Iter(Node* start)
+CDAL_Iter(ItemLoc const& here) 
 ------------
 
-* Explicit constructor for an iterator which returns an immutable reference to the first item held in the item_array parameter
-* Neither item_array nor end_ptr may be null
-* end_ptr must be greater than or equal to item_array
+* Explicit constructor for an iterator which, when dereferenced, returns an immutable reference to the item held at the node and array index described by the here parameter
 
-SDAL_Const_Iter(const SDAL_Const_Iter& src)
+CDAL_Const_Iter(const CDAL_Const_Iter& src)
 ------------
 
-* Copy constructor - sets the iterator's current position to that of src
+* Copy constructor - sets the current iterator position to the node and array index described by src
 * Afterwards, operator==(src) should return true, otherwise throw a runtime_error indicating state corruption
 
 \detokenize{reference operator*() const}
@@ -243,7 +245,7 @@ pointer operator->() const
 
 * Returns a pointer to the item held at the current iterator position by returning the value of operator*() with the address-of operator applied
 * The same validation measures apply here as to operator*()
-* The const keyword in the reference typedef guarantees that code which attempts to modify the referenced item will not compile
+* The const keyword in the pointer typedef guarantees that code which attempts to modify the referenced item will not compile
 
 self_reference operator=(const self_type& src)
 ------------
@@ -256,7 +258,7 @@ self_reference operator++()
 ------------
 
 * Prefix increment operator - increments the current iterator then returns it as a reference
-* Should throw an out-of-range error if we're at the end of the list, ie iter==iter_end
+* Should throw an out-of-range error if we're at the end of the list, ie curr_node->is_dummy
 
 self_type operator++(int)
 ------------

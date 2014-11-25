@@ -49,15 +49,25 @@ namespace cop3530 {
             else
                 return node_at(position - 1);
         }
+        Node* allocate_new_node() {
+            Node* n;
+            try {
+                n = new Node();
+            } catch (std::bad_alloc& ba) {
+                std::cerr << "allocate_new_node(): failed to allocate memory for new node" << std::endl;
+                throw std::bad_alloc();
+            }
+            return n;
+        }
         Node* design_new_node(const T& element, Node* next = nullptr, bool dummy = false) {
-            Node* n = new Node();
+            Node* n = allocate_new_node();
             n->is_dummy = dummy;
             n->item = element;
             n->next = next;
             return n;
         }
         Node* design_new_node(Node* next = nullptr, bool dummy = false) {
-            Node* n = new Node();
+            Node* n = allocate_new_node();
             n->is_dummy = dummy;
             n->next = next;
             return n;
@@ -141,7 +151,7 @@ namespace cop3530 {
                 return *this;
             }
             self_reference operator++() { // preincrement
-                if (here->next == nullptr)
+                if (here->is_dummy)
                     throw std::out_of_range("SSLL_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;
@@ -202,7 +212,7 @@ namespace cop3530 {
                 return *this;
             }
             self_reference operator++() { // preincrement
-                if (here->next == nullptr)
+                if (here->is_dummy)
                     throw std::out_of_range("SSLL_Const_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;

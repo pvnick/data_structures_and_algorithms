@@ -171,7 +171,7 @@ namespace cop3530 {
                 return *this;
             }
             self_reference operator++() { // preincrement
-                if (here->next == nullptr)
+                if (here->is_dummy)
                     throw std::out_of_range("PSLL_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;
@@ -232,7 +232,7 @@ namespace cop3530 {
                 return *this;
             }
             self_reference operator++() { // preincrement
-                if (here->next == nullptr)
+                if (here->is_dummy)
                     throw std::out_of_range("PSLL_Const_Iter: Can't traverse past the end of the list");
                 here = here->next;
                 return *this;
