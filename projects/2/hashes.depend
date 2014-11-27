@@ -1,21 +1,39 @@
 # depslib dependency file v1.0
-1417110327 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417115602 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
 	<cstdlib>
-	"common.h"
+	"common/common.h"
 	"part1/source/open_addressing_map.h"
 	"part2/source/buckets_map.h"
+	"part3/source/part3.h"
 	<map>
 
 1416536089 /home/pvnick/data_structures_and_algorithms/projects/2/common.h
 
-1417063157 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
+1417115502 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
 	<iostream>
-	"../../common.h"
+	"../../common/SSLL.h"
+	"../../common/common.h"
 
-1417110493 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
+1417115514 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
 	<iostream>
-	"../../common.h"
+	"../../common/SSLL.h"
+	"../../common/common.h"
+
+1417123782 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
+	<string.h>
+	<limits>
+
+1417113996 /home/pvnick/data_structures_and_algorithms/projects/2/common/SSLL.h
+	<iostream>
+	<stdexcept>
+	<cassert>
+
+1417123933 /home/pvnick/data_structures_and_algorithms/projects/2/part3/source/part3.h
+	<iostream>
+	<string>
+	"../../common/SSLL.h"
+	"../../common/common.h"
 

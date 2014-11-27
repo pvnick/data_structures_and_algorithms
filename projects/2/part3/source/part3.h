@@ -1,18 +1,43 @@
-#ifndef _OPEN_ADDRESSING_MAP_H_
-#define _OPEN_ADDRESSING_MAP_H_
+#ifndef _PART3_H_
+#define _PART3_H_
 
 #include <iostream>
+#include <string>
 #include "../../common/SSLL.h"
 #include "../../common/common.h"
 
 namespace cop3530 {
-    class HashMapOpenAddressing {
+    template<typename key_type, typename value_type>
+    class HashMapOpenAddressingGeneric {
     private:
-        typedef int key_type;
-        typedef char value_type;
+        struct Key {
+            key_type raw_key_val;
+            size_t numeric_representation;
+            bool operator==(Key const& rhs) {
+                return compare(raw_key_val, rhs.raw_key_val);
+            }
+            bool operator==(key_type const& rhs) {
+                return compare(raw_key_val, rhs);
+            }
+            size_t hash(size_t map_capacity) {
+                size_t M = map_capacity;
+                return std::floor(M * std::fmod(raw_key_val * fib_hash_A, 1));
+            }
+            Key(key_type key):
+                raw_key_val(key),
+                numeric_representation(to_numeric(raw_key_val))
+            {}
+            Key() = default;
+        };
+        struct Value {
+            value_type raw_value_val;
+            bool operator==(Value const& rhs) {
+                return compare(raw_value_val, rhs.raw_value_val);
+            }
+        };
         struct Slot {
-            key_type key;
-            value_type value;
+            Key key;
+            Value value;
             bool is_occupied = false;
         };
         Slot* slots;
@@ -22,8 +47,7 @@ namespace cop3530 {
             return i;
         }
         size_t hash(key_type const& key) {
-            size_t M = capacity();
-            return std::floor(M * std::fmod(key * fib_hash_A, 1));
+            return Key(key).hash(capacity());
         }
         /*
             if there is an item matching key, stores it's slot index in slot_index, and
@@ -66,12 +90,12 @@ namespace cop3530 {
             return s.value;
         }
     public:
-        HashMapOpenAddressing(size_t const min_capacity)
+        HashMapOpenAddressingGeneric(size_t const min_capacity)
         {
             curr_capacity = 1 << static_cast<size_t>(std::ceil(lg(min_capacity))); //make capacity a power of 2, greater than the minimum capacity
             slots = new Slot[curr_capacity];
         }
-        ~HashMapOpenAddressing() {
+        ~HashMapOpenAddressingGeneric() {
             delete slots;
         }
         /*
@@ -83,8 +107,10 @@ namespace cop3530 {
             size_t index;
             if (capacity() == size())
                 return false;
-            search_internal(key, index);
-            insert_at_index(key, value, index);
+            Key k(key);
+            Value v(value);
+            search_internal(k, index);
+            insert_at_index(k, v, index);
             return true;
         }
         /*
@@ -96,7 +122,8 @@ namespace cop3530 {
             if ( ! search_internal(key, index))
                 //key not found
                 return false;
-            value = remove_at_index(index);
+            Value v = remove_at_index(index);
+            value = v.val;
             size_t start_index = index;
             size_t M = capacity();
             //remove and reinsert items until find unoccupied slot

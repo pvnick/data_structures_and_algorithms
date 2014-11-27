@@ -2,17 +2,19 @@
 #include <cmath>
 #include <iomanip>
 #include <cstdlib>
-#include "common.h"
+#include "common/common.h"
 #include "part1/source/open_addressing_map.h"
 #include "part2/source/buckets_map.h"
+#include "part3/source/part3.h"
 #include <map>
 
 
 int main() {
     size_t capacity = 10;
-	HashMapBuckets bucket_map(10);
-	HashMapOpenAddressing open_addr_map(10);
-	#define mymap bucket_map
+	cop3530::HashMapBuckets bucket_map(10);
+	cop3530::HashMapOpenAddressing open_addr_map(10000);
+	cop3530::HashMapOpenAddressingGeneric<int, char> generic_open_addr(10000);
+	#define mymap open_addr_map
 	srand(1337);
 	std::map<int, char> stdm;
     for (int i = 0; i != 100; ++i) {
