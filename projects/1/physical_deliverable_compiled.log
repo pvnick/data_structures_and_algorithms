@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.23)  25 NOV 2014 09:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.23)  25 NOV 2014 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,12 +331,6 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 7.
 
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learnin
 g.pdf, id=1, 614.295pt x 794.97pt>
@@ -346,7 +340,7 @@ arning.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
 rning.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf used on input line 9.
+/dist/project_1//learning.pdf used on input line 5.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
 arning.pdf Graphic file (type pdf)
@@ -354,68 +348,152 @@ arning.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
 rning.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf used on input line 9.
+/dist/project_1//learning.pdf used on input line 5.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learnin
+g.pdf, id=4, page=1, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+ </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learni
+ng.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learnin
-g.pdf, id=12, page=1, 614.295pt x 794.97pt>
+g.pdf, id=35, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
 arning.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf, page 1>
+rning.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf, page1 used on input line 9.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
-arning.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf, page1 used on input line 9.
+/dist/project_1//learning.pdf, page2 used on input line 5.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
 arning.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf, page 1>
+rning.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf, page1 used on input line 9.
+/dist/project_1//learning.pdf, page2 used on input line 5.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
 arning.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf, page 1>
+rning.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf, page1 used on input line 9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
-arning.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//learning.pdf, page1 used on input line 9.
+/dist/project_1//learning.pdf, page2 used on input line 5.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [2 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
-rning.pdf>] [3
+rning.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learnin
+g.pdf, id=40, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
 
-]
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page3 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page3 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page3 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [3 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//learnin
+g.pdf, id=45, page=4, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page4 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page4 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//le
+arning.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//learning.pdf, page4 used on input line 5.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [4 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//lea
+rning.pdf>] [5
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=41, 614.295pt x 794.97pt>
+ll.pdf, id=55, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf used on input line 12.
+/dist/project_1//ssll/ssll.pdf used on input line 8.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -423,18 +501,18 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf used on input line 12.
+/dist/project_1//ssll/ssll.pdf used on input line 8.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=44, page=1, 614.295pt x 794.97pt>
+ll.pdf, id=58, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page1 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -442,7 +520,7 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page1 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -450,7 +528,7 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page1 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -458,7 +536,7 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page1 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -466,29 +544,21 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page1 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [4
+ [6
 
  </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/s
 sll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=69, page=2, 614.295pt x 794.97pt>
+ll.pdf, id=91, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page2 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 2>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page2 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page2 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
@@ -496,259 +566,329 @@ ll/ssll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page2 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [5 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=78, page=3, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page3 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page2 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 3>
+l/ssll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page3 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page3 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [6 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=82, page=4, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page4 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page4 used on input line 12.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page4 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page2 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [7 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=87, page=5, 614.295pt x 794.97pt>
+ll.pdf, id=101, page=3, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 5>
+l/ssll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page5 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page3 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 5>
+l/ssll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page5 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page3 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 5>
+l/ssll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page5 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page3 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [8 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=91, page=6, 614.295pt x 794.97pt>
+ll.pdf, id=105, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 6>
+l/ssll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page6 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page4 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 6>
+l/ssll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page6 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page4 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 6>
+l/ssll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page6 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page4 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [9 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
 l/ssll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=95, page=7, 614.295pt x 794.97pt>
+ll.pdf, id=109, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 7>
+l/ssll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page7 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page5 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 7>
+l/ssll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page7 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page5 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 7>
+l/ssll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page7 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page5 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [10 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
-ll.pdf, id=99, page=8, 614.295pt x 794.97pt>
+ll.pdf, id=113, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 8>
+l/ssll.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page8 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page6 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 8>
+l/ssll.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page8 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page6 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/ssll.pdf, page 8>
+l/ssll.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/ssll.pdf, page8 used on input line 12.
+/dist/project_1//ssll/ssll.pdf, page6 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [11 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/ssll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
-urce/old_tests/testing_strategy_ssll.pdf, id=103, 614.295pt x 794.97pt>
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
+ll.pdf, id=117, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf>
+l/ssll.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf used on input 
-line 13.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf used on input 
-line 13.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
-urce/old_tests/testing_strategy_ssll.pdf, id=106, page=1, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
- input line 13.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
- input line 13.
+/dist/project_1//ssll/ssll.pdf, page7 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+l/ssll.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
- input line 13.
+/dist/project_1//ssll/ssll.pdf, page7 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+ll/ssll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+l/ssll.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
- input line 13.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
-l/source/old_tests/testing_strategy_ssll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
- input line 13.
+/dist/project_1//ssll/ssll.pdf, page7 used on input line 8.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [12 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
-ll/source/old_tests/testing_strategy_ssll.pdf>] [13
+ll/ssll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/ss
+ll.pdf, id=121, page=8, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/ssll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/ssll.pdf, page8 used on input line 8.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/ssll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/ssll.pdf, page8 used on input line 8.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/ssll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/ssll.pdf, page8 used on input line 8.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [13 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/ssll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
+urce/old_tests/testing_strategy_ssll.pdf, id=126, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf used on input 
+line 9.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf used on input 
+line 9.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
+urce/old_tests/testing_strategy_ssll.pdf, id=129, page=1, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page1 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [14 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
+urce/old_tests/testing_strategy_ssll.pdf, id=159, page=2, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 2>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page2 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 2>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page2 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 2>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page2 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [15 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
+urce/old_tests/testing_strategy_ssll.pdf, id=163, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page3 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page3 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssl
+l/source/old_tests/testing_strategy_ssll.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//ssll/source/old_tests/testing_strategy_ssll.pdf, page3 used on
+ input line 9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [16 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
+ll/source/old_tests/testing_strategy_ssll.pdf>] [17
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=127, 614.295pt x 794.97pt>
+ll.pdf, id=170, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf used on input line 16.
+/dist/project_1//psll/psll.pdf used on input line 12.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -756,18 +896,18 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf used on input line 16.
+/dist/project_1//psll/psll.pdf used on input line 12.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=130, page=1, 614.295pt x 794.97pt>
+ll.pdf, id=173, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page1 used on input line 16.
+/dist/project_1//psll/psll.pdf, page1 used on input line 12.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -775,7 +915,7 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page1 used on input line 16.
+/dist/project_1//psll/psll.pdf, page1 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -783,7 +923,7 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page1 used on input line 16.
+/dist/project_1//psll/psll.pdf, page1 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -791,7 +931,7 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page1 used on input line 16.
+/dist/project_1//psll/psll.pdf, page1 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -799,29 +939,21 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page1 used on input line 16.
+/dist/project_1//psll/psll.pdf, page1 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [14
+ [18
 
  </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/p
 sll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=153, page=2, 614.295pt x 794.97pt>
+ll.pdf, id=197, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page2 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 2>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page2 used on input line 16.
+/dist/project_1//psll/psll.pdf, page2 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
@@ -829,259 +961,267 @@ ll/psll.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
 l/psll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page2 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [15 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=160, page=3, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page3 used on input line 16.
+/dist/project_1//psll/psll.pdf, page2 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 3>
+l/psll.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page3 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page3 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [16 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=165, page=4, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page4 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page4 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page4 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [17 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=169, page=5, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page5 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page5 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page5 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [18 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=173, page=6, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page6 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page6 used on input line 16.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page6 used on input line 16.
+/dist/project_1//psll/psll.pdf, page2 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [19 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=178, page=7, 614.295pt x 794.97pt>
+ll.pdf, id=205, page=3, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 7>
+l/psll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page7 used on input line 16.
+/dist/project_1//psll/psll.pdf, page3 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 7>
+l/psll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page7 used on input line 16.
+/dist/project_1//psll/psll.pdf, page3 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 7>
+l/psll.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page7 used on input line 16.
+/dist/project_1//psll/psll.pdf, page3 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [20 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
-ll.pdf, id=182, page=8, 614.295pt x 794.97pt>
+ll.pdf, id=209, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 8>
+l/psll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page8 used on input line 16.
+/dist/project_1//psll/psll.pdf, page4 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 8>
+l/psll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page8 used on input line 16.
+/dist/project_1//psll/psll.pdf, page4 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/psll.pdf, page 8>
+l/psll.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/psll.pdf, page8 used on input line 16.
+/dist/project_1//psll/psll.pdf, page4 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [21 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/psll.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/so
-urce/old_tests/testing_strategy_psll.pdf, id=186, 614.295pt x 794.97pt>
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
+ll.pdf, id=213, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf>
+l/psll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf used on input 
-line 17.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf used on input 
-line 17.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/so
-urce/old_tests/testing_strategy_psll.pdf, id=189, page=1, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
- input line 17.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
- input line 17.
+/dist/project_1//psll/psll.pdf, page5 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf, page 1>
+l/psll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
- input line 17.
+/dist/project_1//psll/psll.pdf, page5 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+ll/psll.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf, page 1>
+l/psll.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
- input line 17.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
-l/source/old_tests/testing_strategy_psll.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
- input line 17.
+/dist/project_1//psll/psll.pdf, page5 used on input line 12.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [22 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
-ll/source/old_tests/testing_strategy_psll.pdf>] [23
+ll/psll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
+ll.pdf, id=217, page=6, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page6 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page6 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page6 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [23 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
+ll.pdf, id=221, page=7, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page7 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page7 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page7 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [24 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/ps
+ll.pdf, id=225, page=8, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page8 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page8 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/psll.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/psll.pdf, page8 used on input line 12.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [25 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/psll.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/so
+urce/old_tests/testing_strategy_psll.pdf, id=230, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf used on input 
+line 13.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf used on input 
+line 13.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/so
+urce/old_tests/testing_strategy_psll.pdf, id=233, page=1, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
+ input line 13.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
+ input line 13.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
+ input line 13.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
+ input line 13.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psl
+l/source/old_tests/testing_strategy_psll.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//psll/source/old_tests/testing_strategy_psll.pdf, page1 used on
+ input line 13.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [26 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
+ll/source/old_tests/testing_strategy_psll.pdf>] [27
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=209, 614.295pt x 794.97pt>
+al.pdf, id=253, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf used on input line 20.
+/dist/project_1//sdal/sdal.pdf used on input line 16.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1089,18 +1229,18 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf used on input line 20.
+/dist/project_1//sdal/sdal.pdf used on input line 16.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=212, page=1, 614.295pt x 794.97pt>
+al.pdf, id=256, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page1 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page1 used on input line 16.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1108,7 +1248,7 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page1 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page1 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1116,7 +1256,7 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page1 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page1 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1124,7 +1264,7 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page1 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page1 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1132,29 +1272,21 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page1 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page1 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [24
+ [28
 
  </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/s
 dal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=235, page=2, 614.295pt x 794.97pt>
+al.pdf, id=279, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page2 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 2>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page2 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page2 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
@@ -1162,259 +1294,267 @@ al/sdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
 l/sdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page2 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [25 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=243, page=3, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page3 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page2 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 3>
+l/sdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page3 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page3 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [26 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=247, page=4, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page4 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page4 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page4 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [27 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=251, page=5, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page5 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page5 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page5 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [28 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=255, page=6, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page6 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page6 used on input line 20.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page6 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page2 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [29 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=259, page=7, 614.295pt x 794.97pt>
+al.pdf, id=286, page=3, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 7>
+l/sdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page7 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page3 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 7>
+l/sdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page7 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page3 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 7>
+l/sdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page7 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page3 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [30 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
-al.pdf, id=263, page=8, 614.295pt x 794.97pt>
+al.pdf, id=290, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 8>
+l/sdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page8 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page4 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 8>
+l/sdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page8 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page4 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/sdal.pdf, page 8>
+l/sdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/sdal.pdf, page8 used on input line 20.
+/dist/project_1//sdal/sdal.pdf, page4 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [31 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/sdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/so
-urce/old_tests/testing_strategy_sdal.pdf, id=268, 614.295pt x 794.97pt>
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
+al.pdf, id=295, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf>
+l/sdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf used on input 
-line 21.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf used on input 
-line 21.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/so
-urce/old_tests/testing_strategy_sdal.pdf, id=271, page=1, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
- input line 21.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
- input line 21.
+/dist/project_1//sdal/sdal.pdf, page5 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+l/sdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
- input line 21.
+/dist/project_1//sdal/sdal.pdf, page5 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+al/sdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+l/sdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
- input line 21.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
-l/source/old_tests/testing_strategy_sdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
- input line 21.
+/dist/project_1//sdal/sdal.pdf, page5 used on input line 16.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [32 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
-al/source/old_tests/testing_strategy_sdal.pdf>] [33
+al/sdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
+al.pdf, id=299, page=6, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page6 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page6 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page6 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [33 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
+al.pdf, id=303, page=7, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page7 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page7 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page7 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [34 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/sd
+al.pdf, id=307, page=8, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page8 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page8 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/sdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/sdal.pdf, page8 used on input line 16.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [35 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/sdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/so
+urce/old_tests/testing_strategy_sdal.pdf, id=311, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf used on input 
+line 17.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf used on input 
+line 17.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/so
+urce/old_tests/testing_strategy_sdal.pdf, id=314, page=1, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sda
+l/source/old_tests/testing_strategy_sdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//sdal/source/old_tests/testing_strategy_sdal.pdf, page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [36 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
+al/source/old_tests/testing_strategy_sdal.pdf>] [37
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=291, 614.295pt x 794.97pt>
+al.pdf, id=336, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf used on input line 24.
+/dist/project_1//cdal/cdal.pdf used on input line 20.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1422,18 +1562,18 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf used on input line 24.
+/dist/project_1//cdal/cdal.pdf used on input line 20.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=294, page=1, 614.295pt x 794.97pt>
+al.pdf, id=339, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page1 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page1 used on input line 20.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1441,7 +1581,7 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page1 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page1 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1449,7 +1589,7 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page1 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page1 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1457,7 +1597,7 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page1 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page1 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1465,29 +1605,21 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 1>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page1 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page1 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [34
+ [38
 
  </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/c
 dal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=318, page=2, 614.295pt x 794.97pt>
+al.pdf, id=362, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page2 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 2>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page2 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page2 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
@@ -1495,382 +1627,390 @@ al/cdal.pdf Graphic file (type pdf)
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
 l/cdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page2 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [35 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=325, page=3, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page3 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page2 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 3>
+l/cdal.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page3 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 3>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page3 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [36 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=329, page=4, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page4 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page4 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 4>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page4 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [37 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=334, page=5, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page5 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page5 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 5>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page5 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [38 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=338, page=6, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page6 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page6 used on input line 24.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page6 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page2 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [39 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=342, page=7, 614.295pt x 794.97pt>
+al.pdf, id=369, page=3, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 7>
+l/cdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page7 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page3 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 7>
+l/cdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page7 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page3 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 7>
+l/cdal.pdf, page 3>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page7 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page3 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [40 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
-al.pdf, id=346, page=8, 614.295pt x 794.97pt>
+al.pdf, id=373, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 8>
+l/cdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page8 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page4 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 8>
+l/cdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page8 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page4 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/cdal.pdf, page 8>
+l/cdal.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/cdal.pdf, page8 used on input line 24.
+/dist/project_1//cdal/cdal.pdf, page4 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [41 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/cdal.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/so
-urce/old_tests/testing_strategy_cdal.pdf, id=350, 614.295pt x 794.97pt>
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
+al.pdf, id=377, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf>
+l/cdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf used on input 
-line 25.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf used on input 
-line 25.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/so
-urce/old_tests/testing_strategy_cdal.pdf, id=353, page=1, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
- input line 25.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
- input line 25.
+/dist/project_1//cdal/cdal.pdf, page5 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+l/cdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
- input line 25.
+/dist/project_1//cdal/cdal.pdf, page5 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+al/cdal.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+l/cdal.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
- input line 25.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
-l/source/old_tests/testing_strategy_cdal.pdf, page 1>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
-/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
- input line 25.
+/dist/project_1//cdal/cdal.pdf, page5 used on input line 20.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [42 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
-al/source/old_tests/testing_strategy_cdal.pdf>] [43
+al/cdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
+al.pdf, id=381, page=6, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page6 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page6 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 6>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page6 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [43 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
+al.pdf, id=386, page=7, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page7 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page7 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 7>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page7 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [44 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/cd
+al.pdf, id=390, page=8, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page8 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page8 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/cdal.pdf, page 8>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/cdal.pdf, page8 used on input line 20.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [45 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/cdal.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/so
+urce/old_tests/testing_strategy_cdal.pdf, id=394, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf used on input 
+line 21.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf used on input 
+line 21.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+</home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/so
+urce/old_tests/testing_strategy_cdal.pdf, id=397, page=1, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
+ input line 21.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
+ input line 21.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
+ input line 21.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
+ input line 21.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cda
+l/source/old_tests/testing_strategy_cdal.pdf, page 1>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/1
+/dist/project_1//cdal/source/old_tests/testing_strategy_cdal.pdf, page1 used on
+ input line 21.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [46 </home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
+al/source/old_tests/testing_strategy_cdal.pdf>] [47
 
 ]
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ss
 ll/checklist.txt  (verbatim)
- [44
+ [48
 
-] [45] [46] [47] [48]
+] [49] [50] [51] [52]
 (/home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ssll/so
-urce/SSLL.h [49
+urce/SSLL.h [53
 
-] [50] [51] [52] [53] [54]
+] [54] [55] [56] [57] [58]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [55] [56]
+ [59] [60]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [57] [58]) [59] [60
+ [61] [62]) [63] [64
 
 
 ]
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//ps
 ll/checklist.txt  (verbatim)
 
-[61
+[65
 
-] [62] [63] [64] [65]
+] [66] [67] [68] [69]
 (/home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//psll/so
-urce/PSLL.h [66
+urce/PSLL.h [70
 
-] [67] [68] [69] [70] [71] [72]
+] [71] [72] [73] [74] [75] [76]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [73] [74]
+ [77] [78]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [75] [76]) [77]
-[78
+ [79] [80]) [81]
+[82
 
 
 ]
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sd
 al/checklist.txt  (verbatim)
- [79
+ [83
 
-] [80] [81] [82] [83]
+] [84] [85] [86] [87]
 (/home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//sdal/so
-urce/SDAL.h [84
+urce/SDAL.h [88
 
 ]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no â in font cmtt9!
 Missing character: There is no • in font cmtt9!
- [85] [86] [87] [88] [89]
+ [89] [90] [91] [92] [93]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [90]
+ [94]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [91] [92]) [93] [94] [95
+ [95] [96]) [97] [98
 
 
 ]
 File: /home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cd
 al/checklist.txt  (verbatim)
+ [99
 
-[96
-
-] [97] [98] [99] [100]
+]
+[100] [101] [102] [103]
 (/home/pvnick/data_structures_and_algorithms/projects/1/dist/project_1//cdal/so
-urce/CDAL.h [101
+urce/CDAL.h [104
 
-] [102] [103] [104] [105] [106] [107] [108]
+] [105] [106] [107] [108] [109] [110]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [109]
+ [111] [112]
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ù in font cmtt9!
 Missing character: There is no ‚ in font cmtt9!
 Missing character: There is no Ä in font cmtt9!
 Missing character: There is no ú in font cmtt9!
- [110]
-[111]) [112] (./physical_deliverable_compiled.aux) ) 
+ [113]
+[114]) [115] (./physical_deliverable_compiled.aux) ) 
 Here is how much of TeX's memory you used:
- 6647 strings out of 495028
- 114089 string characters out of 6181497
- 244318 words of memory out of 5000000
- 9733 multiletter control sequences out of 15000+600000
- 7914 words of font info for 29 fonts, out of 8000000 for 9000
+ 6638 strings out of 495028
+ 115381 string characters out of 6181497
+ 242318 words of memory out of 5000000
+ 9732 multiletter control sequences out of 15000+600000
+ 4879 words of font info for 19 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,18n,60p,407b,1631s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
-Output written on physical_deliverable_compiled.pdf (112 pages, 361496 bytes).
+e1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmtt9.pfb>
+Output written on physical_deliverable_compiled.pdf (115 pages, 437974 bytes).
 PDF statistics:
- 631 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
+ 668 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 

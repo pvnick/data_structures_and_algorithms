@@ -132,6 +132,16 @@ namespace cop3530 {
                 return l.size();
             FUZZ_OP_END
             FUZZ_OP_START
+                ret_item = l[rand_int(l.size())];
+                return l.size();
+            FUZZ_OP_END
+            FUZZ_OP_START
+                size_t i = rand_int(l.size());
+                l[i] = rv();
+                ret_item = l.item_at(i);
+                return l.size();
+            FUZZ_OP_END
+            FUZZ_OP_START
                 ret_item = l.pop_front();
                 return l.size();
             FUZZ_OP_END
@@ -181,7 +191,7 @@ namespace cop3530 {
             return oss.str();
         }
 
-        bool validate_lists(std::initializer_list<OpResult> const& op_results) {
+        bool validate_lists(std::initializer_list<OpResult> op_results) {
             auto op_results_iter = op_results.begin();
             assert(op_results_iter != op_results.end());
             OpResult previous_result = *op_results_iter;

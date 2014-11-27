@@ -1,12 +1,7 @@
-% CDAL Informal Documentation
+% PSLL Testing Strategy
 % Paul Nickerson
 
-Something here
+Fuzz-testing
 -------------
 
-this is a test
-hello world
-
-Something here
--------------
-
+To test the Pool-using Singly-Linked List in parts 1 and 2, I used the fuzzer described in the SSLL Testing Strategy. Particular attention was paid to writing fuzzer operations which would insert and remove items frequently in an effort to corrupt the free list.

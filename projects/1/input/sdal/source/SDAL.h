@@ -3,7 +3,7 @@
 
 // SDAL.H
 //
-// Singly-linked list (non-polymorphic)
+// Simple Dynamic Array-based List (non-polymorphic)
 //
 // Authors: Paul Nickerson, Dave Small
 // for COP 3530
@@ -295,14 +295,13 @@ namespace cop3530 {
             returns the original element.
         */
         T replace(const T& element, size_t position) {
-            T old_item;
+            T item = element;
             if (position >= size()) {
                 throw std::out_of_range(std::string("replace: No element at position ") + std::to_string(position));
             } else {
-                old_item = item_array[position];
-                item_array[position] = element;
+                std::swap(item, operator[](position));
             }
-            return old_item;
+            return item;
         }
 
         //--------------------------------------------------
@@ -463,11 +462,6 @@ namespace cop3530 {
                 out << "]";
             }
             return out;
-        }
-    protected:
-        bool validate_internal_integrity() {
-            //todo: fill this in
-            return true;
         }
     };
 } // end namespace cop3530

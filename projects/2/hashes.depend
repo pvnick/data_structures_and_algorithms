@@ -1,10 +1,21 @@
 # depslib dependency file v1.0
-1416538534 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417110327 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
 	<cstdlib>
 	"common.h"
+	"part1/source/open_addressing_map.h"
+	"part2/source/buckets_map.h"
+	<map>
 
 1416536089 /home/pvnick/data_structures_and_algorithms/projects/2/common.h
+
+1417063157 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
+	<iostream>
+	"../../common.h"
+
+1417110493 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
+	<iostream>
+	"../../common.h"
 

@@ -12,7 +12,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add option='-I&quot;/home/pvnick/data_structures_and_algorithms/projects/1/input&quot;' />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,7 +34,31 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="input/cdal/source/CDAL.h" />
+		<Unit filename="input/cdal/source/catch.hpp" />
+		<Unit filename="input/cdal/source/insert.h" />
+		<Unit filename="input/cdal/source/list_tester.h" />
+		<Unit filename="input/cdal/source/old_tests/fuzzer.h" />
+		<Unit filename="input/cdal/source/old_tests/list_tester.h" />
+		<Unit filename="input/psll/source/PSLL.h" />
+		<Unit filename="input/psll/source/catch.hpp" />
+		<Unit filename="input/psll/source/insert.h" />
+		<Unit filename="input/psll/source/list_tester.h" />
+		<Unit filename="input/psll/source/old_tests/fuzzer.h" />
+		<Unit filename="input/psll/source/old_tests/list_tester.h" />
+		<Unit filename="input/sdal/source/SDAL.h" />
+		<Unit filename="input/sdal/source/catch.hpp" />
+		<Unit filename="input/sdal/source/insert.h" />
+		<Unit filename="input/sdal/source/list_tester.h" />
+		<Unit filename="input/sdal/source/old_tests/fuzzer.h" />
+		<Unit filename="input/sdal/source/old_tests/list_tester.h" />
+		<Unit filename="input/ssll/source/SSLL.h" />
+		<Unit filename="input/ssll/source/catch.hpp" />
+		<Unit filename="input/ssll/source/insert.h" />
+		<Unit filename="input/ssll/source/list_tester.h" />
+		<Unit filename="input/ssll/source/old_tests/fuzzer.cpp" />
+		<Unit filename="input/ssll/source/old_tests/fuzzer.h" />
+		<Unit filename="input/ssll/source/old_tests/list_tester.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

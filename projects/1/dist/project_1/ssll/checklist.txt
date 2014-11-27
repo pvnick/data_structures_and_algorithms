@@ -204,7 +204,8 @@ Paul Nickerson, 11/24/2014 in COP3530 section 1087
 ======================================================================
 In addition to the unit tests, the old_tests directory contains a fuzzer
 which stress-tests every list and compares their states to ensure they
-all behave equivalently as well as maintain internal integrity.
+all behave equivalently as well as maintain internal integrity. Compile
+with ./compile.sh and run with ./fuzzer
 ======================================================================
 
 How to compile and run my unit tests on the OpenBSD VM

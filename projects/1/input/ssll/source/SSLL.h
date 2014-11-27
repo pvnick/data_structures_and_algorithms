@@ -1,16 +1,3 @@
-//note to self: global search for todo and xxx before turning this assignment in
-
-
-
-
-
-
-
-
-
-
-
-
 #ifndef _SSLL_H_
 #define _SSLL_H_
 
@@ -304,16 +291,13 @@ namespace cop3530 {
             returns the original element.
         */
         T replace(const T& element, size_t position) {
-            T old_item;
+            T item = element;
             if (position >= size()) {
                 throw std::out_of_range(std::string("replace: No element at position ") + std::to_string(position));
             } else {
-                //we are guaranteed to be at a non-dummy item now because of the above if statement
-                Node* iter = node_at(position);
-                old_item = iter->item;
-                iter->item = element;
+                std::swap(item, operator[](position));
             }
-            return old_item;
+            return item;
         }
 
         //--------------------------------------------------
@@ -498,11 +482,6 @@ namespace cop3530 {
                 out << "]";
             }
             return out;
-        }
-    protected:
-        bool validate_internal_integrity() {
-            //todo: fill this in
-            return true;
         }
     }; //end class SSLL
 } // end namespace cop3530

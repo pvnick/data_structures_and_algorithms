@@ -296,7 +296,6 @@ namespace cop3530 {
         typedef CDAL_Iter iterator;
         typedef CDAL_Const_Iter const_iterator;
         typedef T value_type;
-        //todo: might need to add size_t here and other iterators if they were excluded or commented out
 
         iterator begin() {
             ItemLoc start_loc = loc_from_pos(0);
@@ -382,8 +381,7 @@ namespace cop3530 {
             if (position >= size()) {
                 throw std::out_of_range(std::string("replace: No element at position ") + std::to_string(position));
             } else {
-                ItemLoc loc = loc_from_pos(position);
-                std::swap(loc.item_ref, item);
+                std::swap(item, operator[](position));
             }
             return item;
         }
