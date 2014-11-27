@@ -11,29 +11,31 @@ namespace cop3530 {
     class HashMapOpenAddressingGeneric {
     private:
         struct Key {
-            key_type raw_key_val;
+            key_type raw_key;
             size_t numeric_representation;
-            bool operator==(Key const& rhs) {
-                return compare(raw_key_val, rhs.raw_key_val);
+            bool operator==(Key const& rhs) const {
+                return generic_hash_utils::is_equal(raw_key, rhs.raw_key);
             }
-            bool operator==(key_type const& rhs) {
-                return compare(raw_key_val, rhs);
+            bool operator==(key_type const& rhs) const {
+                return generic_hash_utils::is_equal(raw_key, rhs);
             }
-            size_t hash(size_t map_capacity) {
+            size_t hash(size_t map_capacity) const {
                 size_t M = map_capacity;
-                return std::floor(M * std::fmod(raw_key_val * fib_hash_A, 1));
+                return std::floor(M * std::fmod(numeric_representation * fib_hash_A, 1));
             }
-            Key(key_type key):
-                raw_key_val(key),
-                numeric_representation(to_numeric(raw_key_val))
+            explicit Key(key_type key):
+                raw_key(key),
+                numeric_representation(generic_hash_utils::to_numeric(raw_key))
             {}
             Key() = default;
         };
         struct Value {
-            value_type raw_value_val;
-            bool operator==(Value const& rhs) {
-                return compare(raw_value_val, rhs.raw_value_val);
+            value_type raw_value;
+            bool operator==(Value const& rhs) const {
+                return compare(raw_value, rhs.raw_value);
             }
+            explicit Value(value_type value): raw_value(value) {}
+            Value() = default;
         };
         struct Slot {
             Key key;
@@ -44,7 +46,8 @@ namespace cop3530 {
         size_t curr_capacity = 0;
         size_t num_occupied_slots = 0;
         size_t probe(size_t i) {
-            return i;
+            //linear probing
+            return 1;
         }
         size_t hash(key_type const& key) {
             return Key(key).hash(capacity());
@@ -54,12 +57,12 @@ namespace cop3530 {
             returns true (the item remains in the map). otherwise, returns false and,
             if there exists a free slot, stores the free slot's index in slot_index.
         */
-        bool search_internal(key_type const& key, size_t& slot_index) {
+        bool search_internal(Key const& key, size_t& slot_index) {
             bool found_item = false;
             size_t M = capacity();
-            size_t hash_val = hash(key);
+            size_t hash_val = key.hash(M);
             for (size_t i = 0; i != M; ++i) {
-                slot_index = (hash_val + probe(i)) % M;
+                slot_index = (hash_val + i * probe(i)) % M;
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].key == key) {
                         found_item = true;
@@ -72,7 +75,7 @@ namespace cop3530 {
             return found_item;
         }
         //all backing array manipulations should go through the following two methods
-        void insert_at_index(key_type const& key, value_type const& value, size_t index) {
+        void insert_at_index(Key const& key, Value const& value, size_t index) {
             Slot& s = slots[index];
             s.key = key;
             s.value = value;
@@ -81,7 +84,7 @@ namespace cop3530 {
                 ++num_occupied_slots;
             }
         }
-        value_type remove_at_index(size_t index) {
+        Value const& remove_at_index(size_t index) {
             Slot& s = slots[index];
             if (s.is_occupied) {
                 s.is_occupied = false;
@@ -119,11 +122,12 @@ namespace cop3530 {
         */
         bool remove(key_type const& key, value_type& value) {
             size_t index;
-            if ( ! search_internal(key, index))
+            Key k(key);
+            if ( ! search_internal(k, index))
                 //key not found
                 return false;
             Value v = remove_at_index(index);
-            value = v.val;
+            value = v.raw_value;
             size_t start_index = index;
             size_t M = capacity();
             //remove and reinsert items until find unoccupied slot
@@ -132,7 +136,7 @@ namespace cop3530 {
                 Slot s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
-                    insert(s.key, s.value);
+                    insert(s.key.raw_key, s.value.raw_value);
                 } else {
                     break;
                 }
@@ -145,9 +149,11 @@ namespace cop3530 {
         */
         bool search(key_type const& key, value_type& value) {
             size_t index;
-            if ( ! search_internal(key, index))
+            Key k(key);
+            if ( ! search_internal(k, index))
                 return false;
-            value = slots[index].value;
+            Value v(slots[index].value);
+            value = v.raw_value;
             return true;
         }
         /*
@@ -193,7 +199,7 @@ namespace cop3530 {
             out << '[';
             for (size_t i = 0; i != cap; ++i) {
                 if (slots[i].is_occupied) {
-                    out << slots[i].key;
+                    out << slots[i].key.raw_key;
                 } else {
                     out << "-";
                 }

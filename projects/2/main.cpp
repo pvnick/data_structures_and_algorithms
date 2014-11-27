@@ -14,7 +14,7 @@ int main() {
 	cop3530::HashMapBuckets bucket_map(10);
 	cop3530::HashMapOpenAddressing open_addr_map(10000);
 	cop3530::HashMapOpenAddressingGeneric<int, char> generic_open_addr(10000);
-	#define mymap open_addr_map
+	#define mymap generic_open_addr
 	srand(1337);
 	std::map<int, char> stdm;
     for (int i = 0; i != 100; ++i) {

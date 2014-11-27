@@ -26,6 +26,7 @@ namespace cop3530 {
         }
 
         inline size_t to_numeric(const char* x) {
+            //this function relies upon overflowing the size_t type
             unsigned int bits = 8;
             unsigned int base = 1 << bits;
             double numeric = 0;
