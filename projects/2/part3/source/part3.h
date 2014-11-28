@@ -12,8 +12,8 @@ namespace cop3530 {
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
              typename equality_predicate = hash_utils::functors::equality_predicate,
-             typename hash_functor_1 = hash_utils::functors::hash_fibonacci,
-             typename hash_functor_2 = hash_utils::functors::hash_mid_bits>
+             typename hash_functor_1 = hash_utils::functors::primary_hashes::hash_fibonacci,
+             typename hash_functor_2 = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapOpenAddressingGeneric {
     private:
         class Key {
@@ -22,21 +22,40 @@ namespace cop3530 {
             equality_predicate is_equal;
             hash_functor_1 hash1;
             hash_functor_2 hash2;
+            size_t hash1_val;
+            size_t hash2_val;
+            size_t old_map_capacity;
         public:
             bool operator==(Key const& rhs) const {
                 return is_equal(raw_key, rhs.raw_key);
             }
             size_t hash(size_t map_capacity, size_t probe_attempt) const {
-                return (hash1(raw_key, map_capacity, 0)
-                            + probe_attempt * hash2(raw_key, map_capacity, probe_attempt)
-                       ) % map_capacity;
+                size_t local_hash2_val;
+                if (map_capacity != old_map_capacity
+                    || (probe_attempt != 0 && hash2.changes_with_probe_attempt()))
+                {
+                    //if the hashing function value is dependent on the probe attempt
+                    //(eg quadratic probing), then we need to retrieve the new value
+                    local_hash2_val = hash2(raw_key, map_capacity, probe_attempt);
+                } else {
+                    //otherwise we can just use the value we have stored
+                    local_hash2_val = hash2_val;
+                }
+                return (hash1_val + probe_attempt * local_hash2_val) % map_capacity;
             }
-            key_type const& raw() {
+            key_type const& raw() const {
                 return raw_key;
             }
-            explicit Key(key_type key):
-                raw_key(key)
-            {}
+            void reset(key_type const& key, size_t map_capacity) {
+                raw_key = key;
+                old_map_capacity = map_capacity;
+                size_t base_probe_attempt = 0;
+                hash1_val = hash1(key, map_capacity, base_probe_attempt);
+                hash2_val = hash2(key, map_capacity, base_probe_attempt);
+            }
+            explicit Key(key_type key, size_t map_capacity) {
+                reset(key, map_capacity);
+            }
             Key() = default;
         };
         class Value {
@@ -127,7 +146,7 @@ namespace cop3530 {
             size_t index;
             if (capacity() == size())
                 return false;
-            Key k(key);
+            Key k(key, capacity());
             Value v(value);
             search_internal(k, index);
             insert_at_index(k, v, index);
@@ -139,7 +158,7 @@ namespace cop3530 {
         */
         bool remove(key_type const& key, value_type& value) {
             size_t index;
-            Key k(key);
+            Key k(key, capacity());
             if ( ! search_internal(k, index))
                 //key not found
                 return false;
@@ -166,7 +185,7 @@ namespace cop3530 {
         */
         bool search(key_type const& key, value_type& value) {
             size_t index;
-            Key k(key);
+            Key k(key, capacity());
             if ( ! search_internal(k, index))
                 return false;
             value = slots[index].item.value.raw();
