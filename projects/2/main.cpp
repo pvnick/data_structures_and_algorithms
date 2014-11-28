@@ -7,6 +7,8 @@
 #include "part2/source/buckets_map.h"
 #include "part3/source/part3.h"
 #include <map>
+#include "common/SSLL.h"
+#include "common/priority_queue.h"
 
 double to_dbl(int i) {
     return i + (double)i / 2;
@@ -16,7 +18,17 @@ std::string to_str(int i) {
     return std::to_string(to_dbl(i));
 }
 
+
 int main() {
+    cop3530::SSLL<Cluster> clusters;
+    for (int i = 0; i != 100; ++i) {
+        Cluster cluster{rand() % 100};
+        clusters.push_front(cluster);
+    }
+    cop3530::priority_queue<Cluster> pq(clusters);
+    while (!pq.empty())
+        std::cout << pq.get_next_item().size << std::endl;
+    exit(0);
     size_t capacity = 10;
 	cop3530::HashMapBuckets bucket_map(10);
 	cop3530::HashMapOpenAddressing open_addr_map(10000);

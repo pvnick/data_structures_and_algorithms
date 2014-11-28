@@ -12,16 +12,16 @@ namespace cop3530 {
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
              typename equality_predicate = hash_utils::functors::equality_predicate,
-             typename hash_functor_1 = hash_utils::functors::primary_hashes::hash_fibonacci,
-             typename hash_functor_2 = hash_utils::functors::secondary_hashes::hash_double>
+             typename primary_hash = hash_utils::functors::primary_hashes::hash_fibonacci,
+             typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapOpenAddressingGeneric {
     private:
         class Key {
         private:
             key_type raw_key;
             equality_predicate is_equal;
-            hash_functor_1 hash1;
-            hash_functor_2 hash2;
+            primary_hash hash1;
+            secondary_hash hash2;
             size_t hash1_val;
             size_t hash2_val;
             size_t old_map_capacity;
@@ -50,7 +50,7 @@ namespace cop3530 {
                 raw_key = key;
                 old_map_capacity = map_capacity;
                 size_t base_probe_attempt = 0;
-                hash1_val = hash1(key, map_capacity, base_probe_attempt);
+                hash1_val = hash1(key, map_capacity);
                 hash2_val = hash2(key, map_capacity, base_probe_attempt);
             }
             explicit Key(key_type key, size_t map_capacity) {
@@ -243,6 +243,11 @@ namespace cop3530 {
             }
             out << ']';
             return out;
+        }
+
+        priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
+            SSLL<hash_utils::ClusterInventory> clusters;
+
         }
     };
 }

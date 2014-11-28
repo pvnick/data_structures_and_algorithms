@@ -12,7 +12,10 @@ namespace cop3530 {
     namespace hash_utils {
         static constexpr double phi = 1.61803398875;
         static constexpr double fib_hash_A = 1 / phi;
-
+        struct ClusterInventory {
+            size_t size;
+            size_t num_instances;
+        };
         namespace functors {
             struct map_capacity_planner {
                 size_t operator()(size_t min_capacity) {
@@ -34,6 +37,12 @@ namespace cop3530 {
                     return a == b;
                 }
             };
+            template<typename T>
+            struct cluster_size_less_predicate {
+                bool operator()(T const& cluster1, T const& cluster2) {
+                    return cluster1.size < cluster2.size;
+                }
+            };
             namespace primary_hashes {
                 struct hash_fibonacci {
                 private:
@@ -42,25 +51,22 @@ namespace cop3530 {
                         return static_cast<size_t>(fractional_hash);
                     }
                 public:
-                    bool changes_with_probe_attempt() const {
-                        return false;
-                    }
-                    size_t operator()(const char* key, size_t map_capacity, size_t unused) const {
+                    size_t operator()(const char* key, size_t map_capacity) const {
                         unsigned int base = 257; //prime number chosen near an 8-bit character
                         size_t numeric = 0;
                         for (; *key != 0; ++key)
                             numeric = (numeric * base + *key) % map_capacity;
                         return hash_numeric(numeric, map_capacity);
                     }
-                    size_t operator()(double key, size_t map_capacity, size_t unused) const {
+                    size_t operator()(double key, size_t map_capacity) const {
                         return hash_numeric(key, map_capacity);
                     }
-                    size_t operator()(int key, size_t map_capacity, size_t unused) const {
+                    size_t operator()(int key, size_t map_capacity) const {
                         return hash_numeric(key, map_capacity);
                     }
-                    size_t operator()(std::string const& key, size_t map_capacity, size_t unused) const {
+                    size_t operator()(std::string const& key, size_t map_capacity) const {
                         const char* c_key = key.c_str();
-                        return operator()(c_key, map_capacity, unused);
+                        return operator()(c_key, map_capacity);
                     }
                 };
             }
