@@ -8,17 +8,24 @@
 #include "part3/source/part3.h"
 #include <map>
 
+double to_dbl(int i) {
+    return i + (double)i / 2;
+}
+
+std::string to_str(int i) {
+    return std::to_string(to_dbl(i));
+}
 
 int main() {
     size_t capacity = 10;
 	cop3530::HashMapBuckets bucket_map(10);
 	cop3530::HashMapOpenAddressing open_addr_map(10000);
-	cop3530::HashMapOpenAddressingGeneric<int, char> generic_open_addr(10000);
+	cop3530::HashMapOpenAddressingGeneric<double, char> generic_open_addr(10000);
 	#define mymap generic_open_addr
 	srand(1337);
 	std::map<int, char> stdm;
     for (int i = 0; i != 100; ++i) {
-        mymap.insert(i, 'a');
+        mymap.insert(to_dbl(i), 'a');
         stdm[i] = 'a';
     }
 	for (int i = 0; i != 1000; ++i) {
@@ -31,9 +38,9 @@ int main() {
 
             key = rand() % 20;
             value = 'a' + (rand() % 26);
-            mymap.insert(key, value);
+            mymap.insert(to_dbl(key), value);
             stdm[key] = value;
-            mymap.search(key, value2);
+            mymap.search(to_dbl(key), value2);
             if (stdm[key] != value2)
                 std::cout << "wot" << std::endl;
             /*
@@ -53,7 +60,7 @@ int main() {
             //std::cout << "Removing key: " << key << "... ";
             //bool found = map.sequential_search(key);
             value2 = stdm[key];
-            if (mymap.remove(key, value)){
+            if (mymap.remove(to_dbl(key), value)){
                 if (value2 != value) {
                     std::cout << "no match" << std::endl;
                 }

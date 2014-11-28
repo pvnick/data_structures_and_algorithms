@@ -3,68 +3,84 @@
 
 #include <iostream>
 #include <string>
+#include <functional>
 #include "../../common/SSLL.h"
 #include "../../common/common.h"
 
 namespace cop3530 {
-    template<typename key_type, typename value_type>
+    template<typename key_type,
+             typename value_type,
+             typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
+             typename equality_predicate = hash_utils::functors::equality_predicate,
+             typename hash_functor_1 = hash_utils::functors::hash_fibonacci,
+             typename hash_functor_2 = hash_utils::functors::hash_mid_bits>
     class HashMapOpenAddressingGeneric {
     private:
-        struct Key {
+        class Key {
+        private:
             key_type raw_key;
-            size_t numeric_representation;
+            equality_predicate is_equal;
+            hash_functor_1 hash1;
+            hash_functor_2 hash2;
+        public:
             bool operator==(Key const& rhs) const {
-                return generic_hash_utils::is_equal(raw_key, rhs.raw_key);
+                return is_equal(raw_key, rhs.raw_key);
             }
-            bool operator==(key_type const& rhs) const {
-                return generic_hash_utils::is_equal(raw_key, rhs);
+            size_t hash(size_t map_capacity, size_t probe_attempt) const {
+                return (hash1(raw_key, map_capacity, 0)
+                            + probe_attempt * hash2(raw_key, map_capacity, probe_attempt)
+                       ) % map_capacity;
             }
-            size_t hash(size_t map_capacity) const {
-                size_t M = map_capacity;
-                return std::floor(M * std::fmod(numeric_representation * fib_hash_A, 1));
+            key_type const& raw() {
+                return raw_key;
             }
             explicit Key(key_type key):
-                raw_key(key),
-                numeric_representation(generic_hash_utils::to_numeric(raw_key))
+                raw_key(key)
             {}
             Key() = default;
         };
-        struct Value {
+        class Value {
+        private:
             value_type raw_value;
+        public:
             bool operator==(Value const& rhs) const {
                 return compare(raw_value, rhs.raw_value);
+            }
+            value_type const& raw() {
+                return raw_value;
             }
             explicit Value(value_type value): raw_value(value) {}
             Value() = default;
         };
-        struct Slot {
+        struct Item {
             Key key;
             Value value;
+        };
+        struct Slot {
+            Item item;
             bool is_occupied = false;
         };
         Slot* slots;
+        capacity_plan_functor choose_capacity;
         size_t curr_capacity = 0;
         size_t num_occupied_slots = 0;
-        size_t probe(size_t i) {
+        size_t probe(size_t i) const {
             //linear probing
             return 1;
         }
-        size_t hash(key_type const& key) {
-            return Key(key).hash(capacity());
-        }
         /*
             if there is an item matching key, stores it's slot index in slot_index, and
-            returns true (the item remains in the map). otherwise, returns false and,
-            if there exists a free slot, stores the free slot's index in slot_index.
+            returns the the number of probe attempts required (the item remains in the map).
+            otherwise, returns the number of probe attempts requried to reach the encountered
+            empty slot and, if there exists a free slot, stores the free slot's index in slot_index.
         */
-        bool search_internal(Key const& key, size_t& slot_index) {
+        bool search_internal(Key const& key, size_t& slot_index) const {
             bool found_item = false;
             size_t M = capacity();
-            size_t hash_val = key.hash(M);
             for (size_t i = 0; i != M; ++i) {
-                slot_index = (hash_val + i * probe(i)) % M;
+                slot_index = key.hash(M, i);
                 if (slots[slot_index].is_occupied) {
-                    if (slots[slot_index].key == key) {
+                    if (slots[slot_index].item.key == key) {
                         found_item = true;
                         break;
                     }
@@ -77,8 +93,8 @@ namespace cop3530 {
         //all backing array manipulations should go through the following two methods
         void insert_at_index(Key const& key, Value const& value, size_t index) {
             Slot& s = slots[index];
-            s.key = key;
-            s.value = value;
+            s.item.key = key;
+            s.item.value = value;
             if ( ! s.is_occupied) {
                 s.is_occupied = true;
                 ++num_occupied_slots;
@@ -90,21 +106,22 @@ namespace cop3530 {
                 s.is_occupied = false;
                 --num_occupied_slots;
             }
-            return s.value;
+            return s.item.value;
         }
     public:
         HashMapOpenAddressingGeneric(size_t const min_capacity)
         {
-            curr_capacity = 1 << static_cast<size_t>(std::ceil(lg(min_capacity))); //make capacity a power of 2, greater than the minimum capacity
+            curr_capacity = choose_capacity(min_capacity);
             slots = new Slot[curr_capacity];
         }
         ~HashMapOpenAddressingGeneric() {
-            delete slots;
+            delete[] slots;
         }
         /*
-            if there is space available, adds the specified key/value-pair to the
-            hash map and returns true; otherwise returns false. If an item already
-            exists in the map with the same key, replace its value.
+            if there is space available, adds the specified key/value-pair
+            to the hash map and returns the number of probes required, P;
+            otherwise returns -1 * P. If an item already exists in the map
+            with the same key, replace its value
         */
         bool insert(key_type const& key, value_type const& value) {
             size_t index;
@@ -127,7 +144,7 @@ namespace cop3530 {
                 //key not found
                 return false;
             Value v = remove_at_index(index);
-            value = v.raw_value;
+            value = v.raw();
             size_t start_index = index;
             size_t M = capacity();
             //remove and reinsert items until find unoccupied slot
@@ -136,7 +153,7 @@ namespace cop3530 {
                 Slot s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
-                    insert(s.key.raw_key, s.value.raw_value);
+                    insert(s.item.key.raw(), s.item.value.raw());
                 } else {
                     break;
                 }
@@ -152,8 +169,7 @@ namespace cop3530 {
             Key k(key);
             if ( ! search_internal(k, index))
                 return false;
-            Value v(slots[index].value);
-            value = v.raw_value;
+            value = slots[index].item.value.raw();
             return true;
         }
         /*
@@ -168,25 +184,25 @@ namespace cop3530 {
         /*
             returns true IFF the map contains no elements.
         */
-        bool is_empty() {
+        bool is_empty() const {
             return size() == 0;
         }
         /*
             returns the number of slots in the map.
         */
-        size_t capacity() {
+        size_t capacity() const {
             return curr_capacity;
         }
         /*
             returns the number of items actually stored in the map.
         */
-        size_t size() {
+        size_t size() const {
             return num_occupied_slots;
         }
         /*
             returns the map's load factor (size = load * capacity).
         */
-        double load() {
+        double load() const {
             return static_cast<double>(size()) / capacity();
         }
         /*
@@ -194,12 +210,12 @@ namespace cop3530 {
             Empty slots shall be denoted by a hyphen, non-empty slots by that item's
             key. [This function will be used for debugging/monitoring].
         */
-        std::ostream& print(std::ostream& out) {
+        std::ostream& print(std::ostream& out) const {
             size_t cap = capacity();
             out << '[';
             for (size_t i = 0; i != cap; ++i) {
                 if (slots[i].is_occupied) {
-                    out << slots[i].key.raw_key;
+                    out << slots[i].item.key.raw();
                 } else {
                     out << "-";
                 }

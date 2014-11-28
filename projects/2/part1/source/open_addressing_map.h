@@ -23,7 +23,7 @@ namespace cop3530 {
         }
         size_t hash(key_type const& key) {
             size_t M = capacity();
-            return std::floor(M * std::fmod(key * fib_hash_A, 1));
+            return std::floor(M * std::fmod(key * hash_utils::fib_hash_A, 1));
         }
         /*
             if there is an item matching key, stores it's slot index in slot_index, and
