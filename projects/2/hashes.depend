@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417234927 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417242015 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
@@ -27,7 +27,7 @@
 	"../../common/SSLL.h"
 	"../../common/common.h"
 
-1417235334 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
+1417240980 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
 	<string.h>
 	<limits>
 
@@ -47,8 +47,9 @@
 	"SSLL.h"
 	"common.h"
 
-1417234560 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
+1417242787 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
 	<cstdlib>
+	<sstream>
 	"../../common/SSLL.h"
 	"../../common/common.h"
 	"../../common/priority_queue.h"

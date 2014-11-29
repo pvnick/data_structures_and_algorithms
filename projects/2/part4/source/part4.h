@@ -2,6 +2,7 @@
 #define _PART4_H_
 
 #include <cstdlib>
+#include <sstream>
 #include "../../common/SSLL.h"
 #include "../../common/common.h"
 #include "../../common/priority_queue.h"
@@ -26,6 +27,64 @@ namespace cop3530 {
         size_t free_index;
         size_t root_index;
         size_t curr_capacity;
+        void write_subtree(size_t subtree_root_index,
+                           std::string lines[],
+                           size_t root_line_index,
+                           size_t lbound_line_index /*inclusive*/,
+                           size_t ubound_line_index /*exclusive*/) const
+        {
+            Node subtree_root = nodes[subtree_root_index];
+            std::ostringstream oss;
+            //print the node
+            oss << "[" << subtree_root.key << "]";
+            lines[root_line_index] += oss.str();
+            //print the right descendents
+            if (subtree_root.right_index > 0) {
+                //at least 1 right child
+                size_t top_dashes = 1;
+                Node const& right_child = nodes[subtree_root.right_index];
+                if (right_child.left_index > 0) {
+                    //right child has at least 1 left child
+                    Node const& right_left_child = nodes[right_child.left_index];
+                    top_dashes += 2 * (1 + right_left_child.num_children);
+                }
+                size_t top_line_index = root_line_index - 1;
+                while (top_line_index >= root_line_index - top_dashes)
+                    lines[top_line_index--] += "|  ";
+                size_t right_child_line_index = top_line_index;
+                lines[top_line_index--] += "+--";
+                while (top_line_index >= lbound_line_index)
+                    lines[top_line_index--] += "   ";
+                write_subtree(subtree_root.right_index,
+                              lines,
+                              right_child_line_index,
+                              lbound_line_index,
+                              root_line_index);
+            }
+            //print the left descendents
+            if (subtree_root.left_index > 0) {
+                //at least 1 left child
+                size_t bottom_dashes = 1;
+                Node const& left_child = nodes[subtree_root.left_index];
+                if (left_child.right_index > 0) {
+                    //left child has at least 1 right child
+                    Node const& left_right_child = nodes[left_child.right_index];
+                    bottom_dashes += 2 * (1 + left_right_child.num_children);
+                }
+                size_t bottom_line_index = root_line_index + 1;
+                while (bottom_line_index <= root_line_index + bottom_dashes)
+                    lines[bottom_line_index++] += "|  ";
+                size_t left_child_line_index = bottom_line_index;
+                lines[bottom_line_index++] += "+--";
+                while (bottom_line_index < ubound_line_index)
+                    lines[bottom_line_index++] += "   ";
+                write_subtree(subtree_root.left_index,
+                              lines,
+                              left_child_line_index,
+                              root_line_index + 1,
+                              ubound_line_index);
+            }
+        }
         size_t procure_node(key_type const& key, value_type const& value) {
             //returns the index of what was the last free index
             size_t node_index = free_index;
@@ -43,10 +102,10 @@ namespace cop3530 {
             } else {
                 //parent was not a leaf
                 Node& n = nodes[subtree_root_index];
-                if (rand() < RAND_MAX / (n.num_children + 1)) {
+                /*if (rand() < RAND_MAX / (n.num_children + 1)) {
                     //randomly insert at the subtree root
                     insert_at_root(subtree_root_index, key, value);
-                } else {
+                } else {*/
                     //keep going down to the base of the tree
                     if (compare(key, n.key) == -1) {
                         //key is less than subtree root's key
@@ -55,7 +114,7 @@ namespace cop3530 {
                         insert_at_leaf(n.right_index, key, value);
                     }
                     n.num_children++;
-                }
+                //}
             }
         }
         void rotate_left(size_t& subtree_root_index) {
@@ -214,19 +273,20 @@ namespace cop3530 {
                +--[bobcat]
         */
         std::ostream& print(std::ostream& out) const {
-            /*size_t cap = capacity();
-            out << '[';
-            for (size_t i = 0; i != cap; ++i) {
-                if (slots[i].is_occupied) {
-                    out << slots[i].item.key.raw();
-                } else {
-                    out << "-";
-                }
-                if (i + 1 < cap)
-                    out << '|';
+            if (root_index == 0)
+                return out;
+            size_t num_lines = size() * 2 - 1;
+            //lines is 1-based because integer overflows are pernicious and sneaky
+            std::string lines[num_lines + 1];
+            Node const& root = nodes[root_index];
+            size_t root_line_index = 1;
+            if (root.right_index) {
+                root_line_index += 2 * (1 + nodes[root.right_index].num_children);
             }
-            out << ']';
-            return out;*/
+            write_subtree(1, lines, root_line_index, 1, num_lines + 1);
+            for (size_t i = 1; i <= num_lines; ++i)
+                out << lines[i] << std::endl;
+            return out;
         }
 
         priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
