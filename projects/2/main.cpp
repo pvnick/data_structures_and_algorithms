@@ -47,25 +47,11 @@ void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<std::string, std::string> map(100);
-    map.insert("house cat", rand_word_bank_string(word_bank));
+    cop3530::RBST<int, std::string> map(100);
+    for (size_t i = 0; i != 100; ++i)
+        map.insert(i, rand_word_bank_string(word_bank));
     map.print(std::cout) << std::endl;
-    map.insert("lion", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("panther", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("bobcat", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("cheetah", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("tiger", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("ocelot", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("leopard", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
-    map.insert("cougar", rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
+
     return 0;
     cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
     for (int i = 0; i != 100; ++i) {

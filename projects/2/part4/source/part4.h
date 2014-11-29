@@ -36,7 +36,7 @@ namespace cop3530 {
             Node subtree_root = nodes[subtree_root_index];
             std::ostringstream oss;
             //print the node
-            oss << "[" << subtree_root.key << "]";
+            oss << "[" << subtree_root.key << ", " << subtree_root.value << ", " << subtree_root.num_children << "]";
             lines[root_line_index] += oss.str();
             //print the right descendents
             if (subtree_root.right_index > 0) {
@@ -102,10 +102,10 @@ namespace cop3530 {
             } else {
                 //parent was not a leaf
                 Node& n = nodes[subtree_root_index];
-                /*if (rand() < RAND_MAX / (n.num_children + 1)) {
+                if (rand() < RAND_MAX / (n.num_children + 1)) {
                     //randomly insert at the subtree root
                     insert_at_root(subtree_root_index, key, value);
-                } else {*/
+                } else {
                     //keep going down to the base of the tree
                     if (compare(key, n.key) == -1) {
                         //key is less than subtree root's key
@@ -114,7 +114,7 @@ namespace cop3530 {
                         insert_at_leaf(n.right_index, key, value);
                     }
                     n.num_children++;
-                //}
+                }
             }
         }
         void rotate_left(size_t& subtree_root_index) {
@@ -169,7 +169,7 @@ namespace cop3530 {
                 } else {
                     insert_at_root(n.right_index, key, value);
                     n.num_children++;
-                    rotate_right(subtree_root_index);
+                    rotate_left(subtree_root_index);
                 }
             }
         }
@@ -283,7 +283,7 @@ namespace cop3530 {
             if (root.right_index) {
                 root_line_index += 2 * (1 + nodes[root.right_index].num_children);
             }
-            write_subtree(1, lines, root_line_index, 1, num_lines + 1);
+            write_subtree(root_index, lines, root_line_index, 1, num_lines + 1);
             for (size_t i = 1; i <= num_lines; ++i)
                 out << lines[i] << std::endl;
             return out;
