@@ -16,6 +16,15 @@ namespace cop3530 {
             size_t size;
             size_t num_instances;
         };
+        size_t rand_i(size_t max) {
+            size_t bucket_size = RAND_MAX / max;
+            size_t num_buckets = RAND_MAX / bucket_size;
+            size_t big_rand;
+            do {
+                    big_rand = rand();
+            } while(big_rand >= num_buckets * bucket_size);
+            return big_rand / bucket_size;
+        }
         namespace functors {
             struct map_capacity_planner {
                 size_t operator()(size_t min_capacity) {

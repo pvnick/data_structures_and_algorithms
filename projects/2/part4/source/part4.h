@@ -22,7 +22,15 @@ namespace cop3530 {
             size_t num_children;
             size_t left_index;
             size_t right_index;
-            void reset(key_type const new_key, value_type const& new_value) {
+            bool is_occupied;
+            void disable_and_adopt_free_tree(size_t free_index) {
+                is_occupied = false;
+                num_children = 0;
+                right_index = 0;
+                left_index = free_index;
+            }
+            void reset_and_enable(key_type const new_key, value_type const& new_value) {
+                is_occupied = true;
                 left_index = right_index = 0;
                 num_children = 0;
                 key = new_key;
@@ -80,10 +88,9 @@ namespace cop3530 {
             else {
                 Node& subtree_root = nodes[subtree_root_index];
                 //keep going down to the base of the tree
-                int cmp = compare(key, subtree_root.key);
                 int new_nodes_visited;
                 size_t index_to_delete;
-                switch (cmp) {
+                switch (compare(key, subtree_root.key)) {
                 case -1:
                     //key is less than subtree root's key
                     new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.left_index, key, value);
@@ -182,9 +189,7 @@ namespace cop3530 {
             }
         }
         void add_node_to_free_tree(size_t node_index) {
-            Node& to_free = nodes[node_index];
-            to_free.right_index = 0;
-            to_free.left_index = free_index;
+            nodes[node_index].disable_and_adopt_free_tree(free_index);
             free_index = node_index;
         }
         size_t procure_node(key_type const& key, value_type const& value) {
@@ -192,7 +197,7 @@ namespace cop3530 {
             size_t node_index = free_index;
             free_index = nodes[free_index].left_index;
             Node& n = nodes[node_index];
-            n.reset(key, value);
+            n.reset_and_enable(key, value);
             return node_index;
         }
         int insert_at_leaf(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
@@ -207,8 +212,7 @@ namespace cop3530 {
                     insert_at_root(subtree_root_index, key, value, found_key);
                 } else {
                     //keep going down to the base of the tree
-                    int cmp = compare(key, n.key);
-                    switch (cmp) {
+                    switch (compare(key, n.key)) {
                     case -1:
                         //key is less than subtree root's key
                         insert_at_leaf(n.left_index, key, value, found_key);
@@ -272,8 +276,7 @@ namespace cop3530 {
                 //parent was not a leaf
                 Node& n = nodes[subtree_root_index];
                 //keep going down to the base of the tree
-                int cmp = compare(key, n.key);
-                switch (cmp) {
+                switch (compare(key, n.key)) {
                 case -1:
                     //key is less than subtree root's key
                     insert_at_root(n.left_index, key, value, found_key);
@@ -314,8 +317,7 @@ namespace cop3530 {
                 return -1 * nodes_visited;
             else {
                 Node const& subtree_root = nodes[subtree_root_index];
-                int cmp = compare(key, subtree_root.key);
-                switch (cmp) {
+                switch (compare(key, subtree_root.key)) {
                 case -1:
                     //key is less than subtree root key
                     return do_search(nodes_visited + 1, subtree_root.left_index, key, value);
@@ -376,13 +378,13 @@ namespace cop3530 {
             return do_search(0, root_index, key, value);
         }
         /*
-            removes all items from the map.
+            removes all items from the map
         */
         void clear() {
             //Since I use size_t to hold the node indices, I make the node array
             //1-based, with child index of 0 indicating that the current node is a leaf
             for (size_t i = 1; i != capacity(); ++i)
-                nodes[i].left_index = i + 1;
+                nodes[i].disable_and_adopt_free_tree(i + 1);
             free_index = 1;
             root_index = 0;
         }
@@ -451,7 +453,26 @@ namespace cop3530 {
 
         priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
             SSLL<hash_utils::ClusterInventory> clusters;
+        }
 
+        /*
+            generate a random number, R, (1,size), and starting with slot zero in the backing array, find
+            the R-th occupied slot; remove the item from that slot (adjusting subsequent items as necessary),
+            and return its key.
+        */
+        key_type remove_random() {
+            size_t num_slots = capacity();
+            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
+            for (size_t i = 1; i <= num_slots; ++i) {
+                Node const& n = nodes[i];
+                if (n.is_occupied && --ith_node_to_delete == 0) {
+                    key_type key = n.key;
+                    value_type val_dummy;
+                    remove(key, val_dummy);
+                    return key;
+                    break;
+                }
+            }
         }
     };
 }

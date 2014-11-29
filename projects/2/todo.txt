@@ -1,0 +1,18 @@
+part1:
+-implement cluster distribution
+-implement remove random item
+-implement number of items needed to reach slot
+part2:
+-implement cluster distribution
+-implement remove random item
+-implement number of items needed to reach slot
+part3:
+-implement cluster distribution
+-implement remove random item
+-implement number of items needed to reach slot
+part4:
+-implement cluster distribution
+-implement remove random item
+-implement number of items needed to reach slot
+part4 bonus:
+-everything

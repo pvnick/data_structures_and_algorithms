@@ -77,13 +77,8 @@ int main() {
     std::random_shuffle(v.begin(), v.end());
 
     for (size_t i = 0; i < 20; i++) {
-        std::string val;
-        std::cout << "about to remove index " << v[i] << std::endl;
-        //system("sleep 1");
-        int nodes_visited = map.remove(v[i], val);
-        std::cout << "removed " << val << " in " << nodes_visited << " tries" << std::endl;
+        std::cout << "deleted key " << map.remove_random() << std::endl;
         map.print(std::cout) << std::endl;
-        //system("sleep 1");
     }
 
     return 0;

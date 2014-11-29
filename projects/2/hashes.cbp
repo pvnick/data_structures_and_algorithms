@@ -42,6 +42,7 @@
 		<Unit filename="part2/source/buckets_map.h" />
 		<Unit filename="part3/source/part3.h" />
 		<Unit filename="part4/source/part4.h" />
+		<Unit filename="todo.txt" />
 		<Extensions>
 			<code_completion />
 			<debugger />
