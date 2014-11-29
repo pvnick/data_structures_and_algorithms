@@ -12,7 +12,7 @@ namespace cop3530 {
     template<typename key_type,
              typename value_type,
              typename compare_functor = hash_utils::functors::compare_functor>
-    class RBST {
+    class AVL {
     private:
         compare_functor compare;
         struct Node;
@@ -23,7 +23,7 @@ namespace cop3530 {
             size_t num_children;
             size_t left_index;
             size_t right_index;
-            size_t height; //height tracking coded in this class, but not used (for AVL, which is this class with self-balancing)
+            size_t height;
             bool is_occupied;
             size_t seq_update_height(const Node* nodes) {
                 //this function is for debugging purposes, does recursive traversal to find the correct height
@@ -55,7 +55,7 @@ namespace cop3530 {
             }
             void reset_and_enable(key_type const new_key, value_type const& new_value) {
                 is_occupied = true;
-                height = 1; //self
+                height = 0;
                 left_index = right_index = 0;
                 num_children = 0;
                 key = new_key;
@@ -69,8 +69,7 @@ namespace cop3530 {
         size_t remove_smallest_key_node_index(size_t& subtree_root_index) {
             //returns the index of the node with the smallest key, while
             //setting its parent's left child index to the smallest key node's
-            //right child index. recursion downward through this function updates
-            //the heights of the nodes it traverses
+            //right child
             Node& subtree_root = nodes[subtree_root_index];
             size_t smallest_key_node_index = 0;
             if (subtree_root_index == 0) {
@@ -79,7 +78,7 @@ namespace cop3530 {
                 if (subtree_root.left_index) {
                     smallest_key_node_index = remove_smallest_key_node_index(subtree_root.left_index);
                     subtree_root.num_children--;
-                    subtree_root.update_height(nodes);
+                    subtree_root.update_height();
                 } else {
                     smallest_key_node_index = subtree_root_index;
                     subtree_root_index = subtree_root.right_index;
@@ -89,9 +88,8 @@ namespace cop3530 {
         }
         size_t remove_largest_key_node_index(size_t& subtree_root_index) {
             //returns the index of the node with the largest key, while
-            //setting its parent's right child index to the largest key node's
-            //left child index. recursion downward through this function updates
-            //the heights of the nodes it traverses
+            //setting its parent's right child index to the largets key node's
+            //left child
             Node& subtree_root = nodes[subtree_root_index];
             size_t largest_key_node_index = 0;
             if (subtree_root_index == 0) {
@@ -100,7 +98,7 @@ namespace cop3530 {
                 if (subtree_root.right_index) {
                     largest_key_node_index = remove_largest_key_node_index(subtree_root.right_index);
                     subtree_root.num_children--;
-                    subtree_root.update_height(nodes);
+                    subtree_root.update_height();
                 } else {
                     largest_key_node_index = subtree_root_index;
                     subtree_root_index = subtree_root.left_index;
@@ -108,38 +106,10 @@ namespace cop3530 {
             }
             return largest_key_node_index;
         }
-        void remove_node(size_t& subtree_root_index) {
-            Node& subtree_root = nodes[subtree_root_index];
-            size_t index_to_delete = subtree_root_index;
-            if (subtree_root.right_index || subtree_root.left_index) {
-                //subtree has at least one child
-                if (subtree_root.right_index)
-                    //replace the root with the smallest-keyed node in the right subtree
-                    subtree_root_index = remove_smallest_key_node_index(subtree_root.right_index);
-                else if (subtree_root.left_index)
-                    //replace the root with the largest-keyed node in the left subtree
-                    subtree_root_index = remove_largest_key_node_index(subtree_root.left_index);
-                //have the new root adopt the old root's children
-                Node& new_root = nodes[subtree_root_index];
-                new_root.left_index = subtree_root.left_index;
-                new_root.right_index = subtree_root.right_index;
-                //the new root has the same number of children as the old root, minus one
-                new_root.num_children = subtree_root.num_children - 1;
-                //removing the smallest/largest-keyed node from the old root has the effect of
-                //updating the heights of the old root's relevant subtrees (which the new root
-                //just adopted), so we can update the new root's height now
-                new_root.update_height(nodes);
-            } else
-                //neither subtree exists, so just delete the node
-                subtree_root_index = 0;
-            //node has been disowned by all ancestors, and has disowned all descendents, so free it
-            add_node_to_free_tree(index_to_delete);
-        }
         int do_remove(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                       size_t& subtree_root_index,
                       key_type const& key,
-                      value_type& value,
-                      bool& found_key)
+                      value_type& value)
         {
             if (subtree_root_index == 0)
                 //key not found
@@ -152,29 +122,40 @@ namespace cop3530 {
                 switch (compare(key, subtree_root.key)) {
                 case -1:
                     //key is less than subtree root's key
-                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.left_index, key, value, found_key);
-                    if (found_key) {
-                        //found the desired node and deleted it
-                        subtree_root.num_children--;
-                        //left child changed, so recompute subtree height
-                        subtree_root.update_height(nodes);
-                    }
+                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.left_index, key, value);
+                    //left child may have changed, so recompute subtree height
+                    subtree_root.update_height();
+                    subtree_root.num_children--;
                     return new_nodes_visited;
                 case 1:
                     //key is greater than subtree root's key
-                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.right_index, key, value, found_key);
-                    if (found_key) {
-                        //found the desired node and deleted it
-                        subtree_root.num_children--;
-                        //right child changed, so recompute subtree height
-                        subtree_root.update_height(nodes);
-                    }
+                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.right_index, key, value);
+                    //right child may have changed, so recompute subtree height
+                    subtree_root.update_height();
+                    subtree_root.num_children--;
                     return new_nodes_visited;
                 case 0:
                     //found key, remove the node
-                    found_key = true;
                     value = subtree_root.value;
-                    remove_node(subtree_root_index);
+                    index_to_delete = subtree_root_index;
+                    if (subtree_root.right_index || subtree_root.left_index) {
+                        //subtree has at least one child
+                        if (subtree_root.right_index)
+                            //replace the root with the smallest-keyed node in the right subtree
+                            subtree_root_index = remove_smallest_key_node_index(subtree_root.right_index);
+                        else if (subtree_root.left_index)
+                            //replace the root with the largest-keyed node in the left subtree
+                            subtree_root_index = remove_largest_key_node_index(subtree_root.left_index);
+                        //have the new root adopt the old root's children
+                        Node& new_root = nodes[subtree_root_index];
+                        new_root.left_index = subtree_root.left_index;
+                        new_root.right_index = subtree_root.right_index;
+                        //the new root has the same number of children as the old root, minus one
+                        new_root.num_children = subtree_root.num_children - 1;
+                    } else
+                        //neither subtree doesnt exists, so just delete the node
+                        subtree_root_index = 0;
+                    add_node_to_free_tree(index_to_delete);
                     return nodes_visited + 1;
                 default:
                     throw std::runtime_error("Unexpected compare() function return value");
@@ -246,9 +227,7 @@ namespace cop3530 {
             free_index = node_index;
         }
         size_t procure_node(key_type const& key, value_type const& value) {
-            //updates the free index to the first free node's left child (while transforming that first free
-            //node to an enabled node with the specified key/value) and returns the index of what was the last
-            //free index
+            //returns the index of what was the last free index
             size_t node_index = free_index;
             free_index = nodes[free_index].left_index;
             Node& n = nodes[node_index];
@@ -271,20 +250,14 @@ namespace cop3530 {
                     case -1:
                         //key is less than subtree root's key
                         insert_at_leaf(n.left_index, key, value, found_key);
-                        if ( ! found_key) {
-                            //given key is unique to the tree, so a new node was added
+                        if ( ! found_key)
                             n.num_children++;
-                            n.update_height(nodes);
-                        }
                         break;
                     case 1:
                         //key is greater than subtree root's key
                         insert_at_leaf(n.right_index, key, value, found_key);
-                        if ( ! found_key) {
-                            //given key is unique to the tree, so a new node was added
+                        if ( ! found_key)
                             n.num_children++;
-                            n.update_height(nodes);
-                        }
                         break;
                     case 0:
                         //found key, replace the value
@@ -301,53 +274,33 @@ namespace cop3530 {
             Node& subtree_root = nodes[subtree_root_index];
             size_t right_child_index = subtree_root.right_index;
             Node& right_child = nodes[right_child_index];
-
-            //original root adopts the right child's left subtree
             subtree_root.right_index = right_child.left_index;
-            //original root adopted a subtree (whose height did not change), so update its height
-            subtree_root.update_height(nodes);
-            //root has new children, so update that counter
+            right_child.left_index = subtree_root_index;
+            subtree_root_index = right_child_index;
+            //right child adopts root and its children
+            right_child.num_children = subtree_root.num_children;
+            //root has new children
             subtree_root.num_children = 0;
             if (subtree_root.left_index != 0)
                 subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
             if (subtree_root.right_index != 0)
                 subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
-
-            //right child adopts original root and its children
-            right_child.left_index = subtree_root_index;
-            //right child (new root) adopted the original root (whose height has been updated), so update its height
-            right_child.update_height(nodes);
-            //since right child took the subtree root's place, it has the same number of children as the original root
-            right_child.num_children = subtree_root.num_children;
-
-            //set the right child as the new root
-            subtree_root_index = right_child_index;
         }
         void rotate_right(size_t& subtree_root_index) {
             Node& subtree_root = nodes[subtree_root_index];
             size_t left_child_index = subtree_root.left_index;
             Node& left_child = nodes[left_child_index];
-
-            //original root adopts the left child's right subtree
             subtree_root.left_index = left_child.right_index;
-            //original root adopted a subtree (whose height did not change), so update its height
-            subtree_root.update_height(nodes);
-            //root has new children, so update that counter
+            left_child.right_index = subtree_root_index;
+            subtree_root_index = left_child_index;
+            //right child adopts root and its children
+            left_child.num_children = subtree_root.num_children;
+            //root has new children
             subtree_root.num_children = 0;
             if (subtree_root.left_index != 0)
                 subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
             if (subtree_root.right_index != 0)
                 subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
-
-            //left child adopts original root and its children
-            left_child.right_index = subtree_root_index;
-            //left child (new root) adopted the original root (whose height has been updated), so update its height
-            left_child.update_height(nodes);
-            //since left child took the subtree root's place, it has the same number of children as the original root
-            left_child.num_children = subtree_root.num_children;
-
-            //set the left child as the new root
-            subtree_root_index = left_child_index;
         }
         int insert_at_root(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
             if (subtree_root_index == 0) {
@@ -449,8 +402,7 @@ namespace cop3530 {
             it's value in value, and returns the number of probes required, V; otherwise returns -1 * V.
         */
         int remove(key_type const& key, value_type& value) {
-            bool found_key = false;
-            return do_remove(0, root_index, key, value, found_key);
+            return do_remove(0, root_index, key, value);
         }
         /*
             if there is an item matching key, stores it's value in value, and returns the number
@@ -557,16 +509,6 @@ namespace cop3530 {
                     break;
                 }
             }
-        }
-        size_t height(size_t subtree_root_index) {
-            if (subtree_root_index == 0) return 0;
-            Node const& n = nodes[subtree_root_index];
-            size_t lh = height(n.left_index);
-            size_t rh = height(n.right_index);
-            return 1 + std::max(lh, rh);
-        }
-        size_t height() {
-            return height(root_index);
         }
     };
 }

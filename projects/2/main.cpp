@@ -48,10 +48,13 @@ void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<int, std::string> map(20);
-    for (size_t i = 0; i != 20; ++i)
+    cop3530::RBST<int, std::string> map(1000);
+    for (size_t i = 0; i != 1000; ++i)
         map.insert(i, rand_word_bank_string(word_bank));
-    map.print(std::cout) << std::endl;
+    //map.print(std::cout) << std::endl;
+    std::cout << map.height() << std::endl;
+    return 0;
+    /*
     std::vector<int> v;
     for (int i = 0; i != 20; ++i)
         v.push_back(i);
@@ -80,7 +83,7 @@ int main() {
         std::cout << "deleted key " << map.remove_random() << std::endl;
         map.print(std::cout) << std::endl;
     }
-
+*/
     return 0;
     cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
     for (int i = 0; i != 100; ++i) {
