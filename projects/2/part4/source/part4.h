@@ -27,6 +27,82 @@ namespace cop3530 {
         size_t free_index;
         size_t root_index;
         size_t curr_capacity;
+        size_t remove_smallest_key_node_index(size_t& subtree_root_index) {
+            //returns the index of the node with the smallest key, while
+            //setting its parent's left child index to zero
+            Node& subtree_root = nodes[subtree_root_index];
+            size_t smallest_key_node_index = 0;
+            if (subtree_root_index == 0) {
+                throw std::runtime_error("Expected to find a valid node, but didn't");
+            } else {
+                if (subtree_root.left_index) {
+                    smallest_key_node_index = remove_smallest_key_node_index(subtree_root.left_index);
+                    subtree_root.num_children--;
+                } else {
+                    smallest_key_node_index = subtree_root_index;
+                    subtree_root_index = subtree_root.right_index;
+                }
+            }
+            return smallest_key_node_index;
+        }
+        size_t remove_largest_key_node_index(size_t& subtree_root_index) {
+            //returns the index of the node with the largest key, while
+            //setting its parent's right child index to zero
+            Node& subtree_root = nodes[subtree_root_index];
+            size_t largest_key_node_index = 0;
+            if (subtree_root_index == 0) {
+                throw std::runtime_error("Expected to find a valid node, but didn't");
+            } else {
+                if (subtree_root.right_index) {
+                    largest_key_node_index = remove_largest_key_node_index(subtree_root.right_index);
+                    subtree_root.num_children--;
+                } else {
+                    largest_key_node_index = subtree_root_index;
+                    subtree_root_index = subtree_root.left_index;
+                }
+            }
+            return largest_key_node_index;
+        }
+        void do_remove(size_t& subtree_root_index, key_type const& key, value_type& value) {
+            if (subtree_root_index == 0) {
+                throw std::runtime_error("Expected to find key, but didn't");
+            } else {
+                Node& subtree_root = nodes[subtree_root_index];
+                //keep going down to the base of the tree
+                int cmp = compare(key, subtree_root.key);
+                if (cmp == -1) {
+                    //key is less than subtree root's key
+                    do_remove(subtree_root.left_index, key, value);
+                    subtree_root.num_children--;
+                } else if (cmp == 1) {
+                    //key is greater than subtree root's key
+                    do_remove(subtree_root.right_index, key, value);
+                    subtree_root.num_children--;
+                } else {
+                    //found key, remove the node
+                    value = subtree_root.value;
+                    size_t index_to_delete = subtree_root_index;
+                    if (subtree_root.right_index || subtree_root.left_index) {
+                        //subtree has at least one child
+                        if (subtree_root.right_index)
+                            //replace the root with the smallest-keyed node in the right subtree
+                            subtree_root_index = remove_smallest_key_node_index(subtree_root.right_index);
+                        else if (subtree_root.left_index)
+                            //replace the root with the largest-keyed node in the left subtree
+                            subtree_root_index = remove_largest_key_node_index(subtree_root.left_index);
+                        //have the new root adopt the old root's children
+                        Node& new_root = nodes[subtree_root_index];
+                        new_root.left_index = subtree_root.left_index;
+                        new_root.right_index = subtree_root.right_index;
+                        //the new root has the same number of children as the old root, minus one
+                        new_root.num_children = subtree_root.num_children - 1;
+                    } else
+                        //neither subtree doesnt exists, so just delete the node
+                        subtree_root_index = 0;
+                    add_node_to_free_tree(index_to_delete);
+                }
+            }
+        }
         void write_subtree(size_t subtree_root_index,
                            std::string lines[],
                            size_t root_line_index,
@@ -84,6 +160,12 @@ namespace cop3530 {
                               root_line_index + 1,
                               ubound_line_index);
             }
+        }
+        void add_node_to_free_tree(size_t node_index) {
+            Node& to_free = nodes[node_index];
+            to_free.right_index = 0;
+            to_free.left_index = free_index;
+            free_index = node_index;
         }
         size_t procure_node(key_type const& key, value_type const& value) {
             //returns the index of what was the last free index
@@ -212,6 +294,7 @@ namespace cop3530 {
             it's value in value, and returns the number of probes required, V; otherwise returns -1 * V.
         */
         bool remove(key_type const& key, value_type& value) {
+            do_remove(root_index, key, value);
             return true;
         }
         /*

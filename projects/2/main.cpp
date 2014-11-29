@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <vector>
+#include <algorithm>
 #include <fstream>
 #include "common/common.h"
 #include "part1/source/open_addressing_map.h"
@@ -47,11 +48,24 @@ void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<int, std::string> map(100);
-    for (size_t i = 0; i != 100; ++i)
+    cop3530::RBST<int, std::string> map(20);
+    for (size_t i = 0; i != 20; ++i)
         map.insert(i, rand_word_bank_string(word_bank));
     map.print(std::cout) << std::endl;
+    std::vector<int> v;
+    for (int i = 0; i != 20; ++i)
+        v.push_back(i);
+    std::random_shuffle(v.begin(), v.end());
 
+    for (size_t i = 0; i < 20; i++) {
+        std::string val;
+        std::cout << "about to remove index " << v[i] << std::endl;
+        system("sleep 5");
+        map.remove(v[i], val);
+        std::cout << "removed " << val << std::endl;
+        map.print(std::cout) << std::endl;
+        system("sleep 5");
+    }
     return 0;
     cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
     for (int i = 0; i != 100; ++i) {

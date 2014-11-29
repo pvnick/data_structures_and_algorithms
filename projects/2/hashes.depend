@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1417244338 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417253173 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
 	<cstdlib>
 	<vector>
+	<algorithm>
 	<fstream>
 	"common/common.h"
 	"part1/source/open_addressing_map.h"
@@ -47,7 +48,7 @@
 	"SSLL.h"
 	"common.h"
 
-1417244369 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
+1417253640 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
 	<cstdlib>
 	<sstream>
 	"../../common/SSLL.h"
