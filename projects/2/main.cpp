@@ -50,9 +50,15 @@ int main() {
     read_word_file("strings.txt", &word_bank);
     cop3530::RBST<int, std::string> map(1000);
     for (size_t i = 0; i != 1000; ++i)
-        map.insert(i, rand_word_bank_string(word_bank));
-    //map.print(std::cout) << std::endl;
-    std::cout << map.height() << std::endl;
+        map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
+
+    for (size_t i = 0; i != 500; ++i)
+        map.remove_random();
+
+    for (size_t i = 0; i != 1000; ++i)
+        map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
+
+    map.print(std::cout) << std::endl;
     return 0;
     /*
     std::vector<int> v;

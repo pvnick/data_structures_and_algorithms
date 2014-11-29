@@ -25,17 +25,19 @@ namespace cop3530 {
             size_t right_index;
             size_t height; //height tracking coded in this class, but not used (for AVL, which is this class with self-balancing)
             bool is_occupied;
-            size_t seq_update_height(const Node* nodes) {
+            size_t get_height_recursive(Node* nodes) {
                 //this function is for debugging purposes, does recursive traversal to find the correct height
                 //todo: delete this function
                 size_t left_height = 0, right_height = 0;
+                size_t calculated_height = 0;
                 if (left_index)
-                    left_height = nodes[left_index].seq_height(nodes);
+                    left_height = nodes[left_index].get_height_recursive(nodes);
                 if (right_index)
-                    right_height = nodes[right_index].seq_height(nodes);
-                height = 1 + std::max(left_height, right_height);
+                    right_height = nodes[right_index].get_height_recursive(nodes);
+                calculated_height = 1 + std::max(left_height, right_height);
+                return calculated_height;
             }
-            void update_height(const Node* nodes) {
+            void update_height(Node* nodes) {
                 //note: this method depends on the left and right subtree heights being correct
                 size_t left_height = 0, right_height = 0;
                 if (left_index)
@@ -43,8 +45,13 @@ namespace cop3530 {
                 if (right_index)
                     right_height = nodes[right_index].height;
                 height = 1 + std::max(left_height, right_height);
-                //todo: delete the following expensive assertion
-                assert(seq_update_height(nodes) == height);
+                //todo: delete the following expensive check, or move it into DEBUG condition
+                size_t calculated_height = get_height_recursive(nodes);
+                if (calculated_height != height) {
+                    std::ostringstream msg;
+                    msg << "Manually calculated height, " << calculated_height << ", different than tracked height, " << height;
+                    throw std::runtime_error(msg.str());
+                }
             }
             void disable_and_adopt_free_tree(size_t free_index) {
                 is_occupied = false;
@@ -191,8 +198,8 @@ namespace cop3530 {
             std::ostringstream oss;
             //print the node
             //todo: fix this to only print the key
-            //oss << "[" << subtree_root.key << ", " << subtree_root.value << ", " << subtree_root.num_children << "]";
-            oss << "[" << subtree_root.key << "]";
+            oss << "[" << subtree_root.key << ": val=" << subtree_root.value << ", children=" << subtree_root.num_children << ", height=" << subtree_root.height << "]";
+            //oss << "[" << subtree_root.key << ", " << subtree_root.height << "]";
             buffer_lines[root_line_index] += oss.str();
             //print the right descendents
             if (subtree_root.right_index > 0) {
@@ -306,12 +313,6 @@ namespace cop3530 {
             subtree_root.right_index = right_child.left_index;
             //original root adopted a subtree (whose height did not change), so update its height
             subtree_root.update_height(nodes);
-            //root has new children, so update that counter
-            subtree_root.num_children = 0;
-            if (subtree_root.left_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
-            if (subtree_root.right_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
 
             //right child adopts original root and its children
             right_child.left_index = subtree_root_index;
@@ -319,6 +320,14 @@ namespace cop3530 {
             right_child.update_height(nodes);
             //since right child took the subtree root's place, it has the same number of children as the original root
             right_child.num_children = subtree_root.num_children;
+
+            //root has new children, so update that counter (done after changing the right child's children counter
+            //because that depends on the original root's counter)
+            subtree_root.num_children = 0;
+            if (subtree_root.left_index != 0)
+                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
+            if (subtree_root.right_index != 0)
+                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
 
             //set the right child as the new root
             subtree_root_index = right_child_index;
@@ -332,12 +341,6 @@ namespace cop3530 {
             subtree_root.left_index = left_child.right_index;
             //original root adopted a subtree (whose height did not change), so update its height
             subtree_root.update_height(nodes);
-            //root has new children, so update that counter
-            subtree_root.num_children = 0;
-            if (subtree_root.left_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
-            if (subtree_root.right_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
 
             //left child adopts original root and its children
             left_child.right_index = subtree_root_index;
@@ -345,6 +348,14 @@ namespace cop3530 {
             left_child.update_height(nodes);
             //since left child took the subtree root's place, it has the same number of children as the original root
             left_child.num_children = subtree_root.num_children;
+
+            //root has new children, so update that counter (done after changing the left child's children counter
+            //because that depends on the original root's counter)
+            subtree_root.num_children = 0;
+            if (subtree_root.left_index != 0)
+                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
+            if (subtree_root.right_index != 0)
+                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
 
             //set the left child as the new root
             subtree_root_index = left_child_index;
@@ -367,6 +378,9 @@ namespace cop3530 {
                         //will adopt the root and its children and will take on the value
                         //of its num_children
                         n.num_children++;
+                        //current subtree root may have had its height changed, so update that before
+                        //promoting the new node
+                        n.update_height(nodes);
                         rotate_right(subtree_root_index);
                     }
                     break;
@@ -375,6 +389,9 @@ namespace cop3530 {
                     insert_at_root(n.right_index, key, value, found_key);
                     if ( ! found_key) {
                         n.num_children++;
+                        //current subtree root may have had its height changed, so update that before
+                        //promoting the new node
+                        n.update_height(nodes);
                         rotate_left(subtree_root_index);
                     }
                     break;
@@ -557,16 +574,6 @@ namespace cop3530 {
                     break;
                 }
             }
-        }
-        size_t height(size_t subtree_root_index) {
-            if (subtree_root_index == 0) return 0;
-            Node const& n = nodes[subtree_root_index];
-            size_t lh = height(n.left_index);
-            size_t rh = height(n.right_index);
-            return 1 + std::max(lh, rh);
-        }
-        size_t height() {
-            return height(root_index);
         }
     };
 }
