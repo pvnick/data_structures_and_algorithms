@@ -1,30 +1,33 @@
 # depslib dependency file v1.0
-1417212640 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417234927 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
 	<cstdlib>
+	<vector>
+	<fstream>
 	"common/common.h"
 	"part1/source/open_addressing_map.h"
 	"part2/source/buckets_map.h"
 	"part3/source/part3.h"
+	"part4/source/part4.h"
 	<map>
 	"common/SSLL.h"
 	"common/priority_queue.h"
 
 1416536089 /home/pvnick/data_structures_and_algorithms/projects/2/common.h
 
-1417195152 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
+1417227824 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
 	<iostream>
 	"../../common/SSLL.h"
 	"../../common/common.h"
 
-1417195156 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
+1417227813 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
 	<iostream>
 	"../../common/SSLL.h"
 	"../../common/common.h"
 
-1417212491 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
+1417235334 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
 	<string.h>
 	<limits>
 
@@ -33,14 +36,20 @@
 	<stdexcept>
 	<cassert>
 
-1417210666 /home/pvnick/data_structures_and_algorithms/projects/2/part3/source/part3.h
+1417234482 /home/pvnick/data_structures_and_algorithms/projects/2/part3/source/part3.h
 	<iostream>
 	<string>
-	<functional>
 	"../../common/SSLL.h"
 	"../../common/common.h"
+	"../../common/priority_queue.h"
 
-1417212920 /home/pvnick/data_structures_and_algorithms/projects/2/common/priority_queue.h
+1417213387 /home/pvnick/data_structures_and_algorithms/projects/2/common/priority_queue.h
 	"SSLL.h"
 	"common.h"
+
+1417234560 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
+	<cstdlib>
+	"../../common/SSLL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
 

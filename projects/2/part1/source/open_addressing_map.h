@@ -68,6 +68,9 @@ namespace cop3530 {
     public:
         HashMapOpenAddressing(size_t const min_capacity)
         {
+            if (min_capacity == 0) {
+                throw std::domain_error("min_capacity must be at least 1");
+            }
             curr_capacity = 1 << static_cast<size_t>(std::ceil(lg(min_capacity))); //make capacity a power of 2, greater than the minimum capacity
             slots = new Slot[curr_capacity];
         }

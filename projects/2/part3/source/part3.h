@@ -3,15 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include <functional>
 #include "../../common/SSLL.h"
 #include "../../common/common.h"
+#include "../../common/priority_queue.h"
 
 namespace cop3530 {
     template<typename key_type,
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
-             typename equality_predicate = hash_utils::functors::equality_predicate,
+             typename compare_functor = hash_utils::functors::compare_functor,
              typename primary_hash = hash_utils::functors::primary_hashes::hash_fibonacci,
              typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapOpenAddressingGeneric {
@@ -19,7 +19,7 @@ namespace cop3530 {
         class Key {
         private:
             key_type raw_key;
-            equality_predicate is_equal;
+            compare_functor compare;
             primary_hash hash1;
             secondary_hash hash2;
             size_t hash1_val;
@@ -27,7 +27,7 @@ namespace cop3530 {
             size_t old_map_capacity;
         public:
             bool operator==(Key const& rhs) const {
-                return is_equal(raw_key, rhs.raw_key);
+                return compare(raw_key, rhs.raw_key) == 0;
             }
             size_t hash(size_t map_capacity, size_t probe_attempt) const {
                 size_t local_hash2_val;
@@ -130,6 +130,9 @@ namespace cop3530 {
     public:
         HashMapOpenAddressingGeneric(size_t const min_capacity)
         {
+            if (min_capacity == 0) {
+                throw std::domain_error("min_capacity must be at least 1");
+            }
             curr_capacity = choose_capacity(min_capacity);
             slots = new Slot[curr_capacity];
         }

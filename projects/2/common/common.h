@@ -23,18 +23,23 @@ namespace cop3530 {
                     return 1 << static_cast<size_t>(std::ceil(lg(min_capacity)));
                 }
             };
-            struct equality_predicate {
-                bool operator()(const char* a, const char* b) const {
-                    return strcmp(a, b) == 0;
+            struct compare_functor {
+                int operator()(const char* a, const char* b) const {
+                    int cmp = strcmp(a, b);
+                    return (cmp < 0 ? -1 :
+                                      (cmp > 0 ? 1 : 0));
                 }
-                bool operator()(double a, double b) const {
-                    return a == b;
+                int operator()(double a, double b) const {
+                    return (a < b ? -1 :
+                                    (a > b ? 1 : 0));
                 }
-                bool operator()(std::string const& a, std::string const& b) const {
-                    return a == b;
+                int operator()(std::string const& a, std::string const& b) const {
+                    return (a < b ? -1 :
+                                    (a > b ? 1 : 0));
                 }
-                bool operator()(int a, int b) const {
-                    return a == b;
+                int operator()(int a, int b) const {
+                    return (a < b ? -1 :
+                                    (a > b ? 1 : 0));
                 }
             };
             template<typename T>

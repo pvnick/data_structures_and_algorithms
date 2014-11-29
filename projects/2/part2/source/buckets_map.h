@@ -67,6 +67,9 @@ namespace cop3530 {
     public:
         HashMapBuckets(size_t const min_buckets)
         {
+            if (min_buckets == 0) {
+                throw std::domain_error("min_buckets must be at least 1");
+            }
             num_buckets = 1 << static_cast<size_t>(std::ceil(lg(min_buckets))); //make capacity a power of 2, greater than the minimum capacity
             init();
         }

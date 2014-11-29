@@ -2,10 +2,13 @@
 #include <cmath>
 #include <iomanip>
 #include <cstdlib>
+#include <vector>
+#include <fstream>
 #include "common/common.h"
 #include "part1/source/open_addressing_map.h"
 #include "part2/source/buckets_map.h"
 #include "part3/source/part3.h"
+#include "part4/source/part4.h"
 #include <map>
 #include "common/SSLL.h"
 #include "common/priority_queue.h"
@@ -14,18 +17,53 @@ double to_dbl(int i) {
     return i + (double)i / 2;
 }
 
+int randi(int max) {
+    if ( ! max)
+        return 0;
+    return rand() % max;
+}
+
 std::string to_str(int i) {
     return std::to_string(to_dbl(i));
 }
 
+std::string rand_word_bank_string(std::vector<std::string> const& word_bank) {
+    unsigned int word_index = randi(word_bank.size());
+    return word_bank[word_index];
+}
+
+void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
+    std::ifstream in(path);
+    if (in.good()) {
+        std::string word;
+        while (in >> word)
+            word_bank_out->push_back(word);
+    } else {
+        std::cerr << "You must have a file called strings.txt in this directory containing words to use when fuzzing" << std::endl;
+        exit(1);
+    }
+}
 
 int main() {
-    cop3530::SSLL<Cluster> clusters;
+    std::vector<std::string> word_bank;
+    read_word_file("strings.txt", &word_bank);
+    cop3530::RBST<std::string, std::string> map(100);
+    map.insert("tiger", rand_word_bank_string(word_bank));
+    map.insert("panther", rand_word_bank_string(word_bank));
+    map.insert("ocelot", rand_word_bank_string(word_bank));
+    map.insert("lion", rand_word_bank_string(word_bank));
+    map.insert("leopard", rand_word_bank_string(word_bank));
+    map.insert("house cat", rand_word_bank_string(word_bank));
+    map.insert("cougar", rand_word_bank_string(word_bank));
+    map.insert("cheetah", rand_word_bank_string(word_bank));
+    map.insert("bobcat", rand_word_bank_string(word_bank));
+    return 0;
+    cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
     for (int i = 0; i != 100; ++i) {
-        Cluster cluster{rand() % 100};
+        cop3530::hash_utils::ClusterInventory cluster{rand() % 100};
         clusters.push_front(cluster);
     }
-    cop3530::priority_queue<Cluster> pq(clusters);
+    cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> pq(clusters);
     while (!pq.empty())
         std::cout << pq.get_next_item().size << std::endl;
     exit(0);

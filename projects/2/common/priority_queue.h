@@ -5,6 +5,8 @@
 #include "common.h"
 
 namespace cop3530 {
+    //this class takes a simple singly linked list containing clusters and exposes
+    //a method (get_next_item) which returns the clusters is order of ascending size
     template<typename T,
              typename PriorityCompare = cop3530::hash_utils::functors::cluster_size_less_predicate<T>>
     class priority_queue {
