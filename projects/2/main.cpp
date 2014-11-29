@@ -60,12 +60,32 @@ int main() {
     for (size_t i = 0; i < 20; i++) {
         std::string val;
         std::cout << "about to remove index " << v[i] << std::endl;
-        system("sleep 5");
-        map.remove(v[i], val);
-        std::cout << "removed " << val << std::endl;
+        //system("sleep 1");
+        int nodes_visited = map.remove(v[i], val);
+        std::cout << "removed " << val << " in " << nodes_visited << " tries" << std::endl;
         map.print(std::cout) << std::endl;
-        system("sleep 5");
+        //system("sleep 1");
+        if (i == 5)
+            break;
     }
+
+    for (size_t i = 0; i != 20; ++i) {
+        std::cout << i << std::endl;
+        map.insert(i, rand_word_bank_string(word_bank));
+        map.print(std::cout) << std::endl;
+    }
+    std::random_shuffle(v.begin(), v.end());
+
+    for (size_t i = 0; i < 20; i++) {
+        std::string val;
+        std::cout << "about to remove index " << v[i] << std::endl;
+        //system("sleep 1");
+        int nodes_visited = map.remove(v[i], val);
+        std::cout << "removed " << val << " in " << nodes_visited << " tries" << std::endl;
+        map.print(std::cout) << std::endl;
+        //system("sleep 1");
+    }
+
     return 0;
     cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
     for (int i = 0; i != 100; ++i) {

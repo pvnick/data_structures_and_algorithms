@@ -100,7 +100,7 @@ namespace cop3530 {
                         //the second hash may not be zero (will cause an infinite loop).
                         //also, hash must be relatively prime to map_capacity so that every slot can be hit.
                         //since map capacity is a power of two, both properties are attainable by
-                        //adding one to the has if it is even
+                        //adding one to the hash if it is even
                         bool is_even = (hash & 1) == 0;
                         if (is_even)
                             ++hash;
@@ -111,7 +111,7 @@ namespace cop3530 {
                         return false;
                     }
                     size_t operator()(const char* key, size_t map_capacity, size_t unused) const {
-                        unsigned int base = 257; //prime number chosen near an 8-bit character
+                        unsigned int base = 257; //prime number chosen near an 8-bit character base
                         size_t numeric = 0;
                         for (; *key != 0; ++key)
                             numeric = (numeric * base + *key) % map_capacity;
