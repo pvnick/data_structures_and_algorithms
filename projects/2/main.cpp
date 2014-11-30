@@ -9,7 +9,8 @@
 #include "part1/source/open_addressing_map.h"
 #include "part2/source/buckets_map.h"
 #include "part3/source/part3.h"
-#include "part4/source/part4.h"
+#include "part4/source/rbst.h"
+#include "part4_bonus/source/avl.h"
 #include <map>
 #include "common/SSLL.h"
 #include "common/priority_queue.h"
@@ -48,17 +49,26 @@ void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<int, std::string> map(1000);
-    for (size_t i = 0; i != 1000; ++i)
+    cop3530::AVL<int, std::string> map(100000);
+    /*for (size_t i = 0; i != 1000; ++i)
         map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
 
     for (size_t i = 0; i != 500; ++i)
         map.remove_random();
-
-    for (size_t i = 0; i != 1000; ++i)
-        map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
-
+*/
+    for (size_t i = 0; i != 100000; ++i) {
+        map.insert(i, rand_word_bank_string(word_bank));
+    }
     map.print(std::cout) << std::endl;
+    /*
+    for (size_t i = 20; i != 30; ++i) {
+        map.insert(i, rand_word_bank_string(word_bank));
+        map.print(std::cout) << std::endl;
+    }
+    for (size_t i = 0; i != 20; ++i) {
+        map.insert(cop3530::hash_utils::rand_i(100), rand_word_bank_string(word_bank));
+        map.print(std::cout) << std::endl;
+    }*/
     return 0;
     /*
     std::vector<int> v;

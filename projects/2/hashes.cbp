@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="common/CDAL.h" />
 		<Unit filename="common/SSLL.h" />
 		<Unit filename="common/common.h" />
 		<Unit filename="common/priority_queue.h" />
@@ -41,7 +42,8 @@
 		<Unit filename="part1/source/open_addressing_map.h" />
 		<Unit filename="part2/source/buckets_map.h" />
 		<Unit filename="part3/source/part3.h" />
-		<Unit filename="part4/source/part4.h" />
+		<Unit filename="part4/source/rbst.h" />
+		<Unit filename="part4_bonus/source/avl.h" />
 		<Unit filename="todo.txt" />
 		<Extensions>
 			<code_completion />

@@ -1,5 +1,5 @@
-#ifndef _PART4_H_
-#define _PART4_H_
+#ifndef _AVL_H_
+#define _AVL_H_
 
 #include <cstdlib>
 #include <sstream>
@@ -7,328 +7,41 @@
 #include "../../common/CDAL.h"
 #include "../../common/common.h"
 #include "../../common/priority_queue.h"
+#include "../../part4/source/rbst.h"
 
 namespace cop3530 {
     template<typename key_type,
              typename value_type,
              typename compare_functor = hash_utils::functors::compare_functor>
-    class AVL {
-    private:
-        compare_functor compare;
-        struct Node;
-        typedef Node* link;
-        struct Node {
-            key_type key;
-            value_type value;
-            size_t num_children;
-            size_t left_index;
-            size_t right_index;
-            size_t height;
-            bool is_occupied;
-            size_t seq_update_height(const Node* nodes) {
-                //this function is for debugging purposes, does recursive traversal to find the correct height
-                //todo: delete this function
-                size_t left_height = 0, right_height = 0;
-                if (left_index)
-                    left_height = nodes[left_index].seq_height(nodes);
-                if (right_index)
-                    right_height = nodes[right_index].seq_height(nodes);
-                height = 1 + std::max(left_height, right_height);
-            }
-            void update_height(const Node* nodes) {
-                //note: this method depends on the left and right subtree heights being correct
-                size_t left_height = 0, right_height = 0;
-                if (left_index)
-                    left_height = nodes[left_index].height;
-                if (right_index)
-                    right_height = nodes[right_index].height;
-                height = 1 + std::max(left_height, right_height);
-                //todo: delete the following expensive assertion
-                assert(seq_update_height(nodes) == height);
-            }
-            void disable_and_adopt_free_tree(size_t free_index) {
-                is_occupied = false;
-                height = 0;
-                num_children = 0;
-                right_index = 0;
-                left_index = free_index;
-            }
-            void reset_and_enable(key_type const new_key, value_type const& new_value) {
-                is_occupied = true;
-                height = 0;
-                left_index = right_index = 0;
-                num_children = 0;
-                key = new_key;
-                value = new_value;
-            }
-        };
-        Node* nodes; //***note: array is 1-based so leaf nodes have child indices set to zero
-        size_t free_index;
-        size_t root_index;
-        size_t curr_capacity;
-        size_t remove_smallest_key_node_index(size_t& subtree_root_index) {
-            //returns the index of the node with the smallest key, while
-            //setting its parent's left child index to the smallest key node's
-            //right child
-            Node& subtree_root = nodes[subtree_root_index];
-            size_t smallest_key_node_index = 0;
-            if (subtree_root_index == 0) {
-                throw std::runtime_error("Expected to find a valid node, but didn't");
-            } else {
-                if (subtree_root.left_index) {
-                    smallest_key_node_index = remove_smallest_key_node_index(subtree_root.left_index);
-                    subtree_root.num_children--;
-                    subtree_root.update_height();
-                } else {
-                    smallest_key_node_index = subtree_root_index;
-                    subtree_root_index = subtree_root.right_index;
-                }
-            }
-            return smallest_key_node_index;
-        }
-        size_t remove_largest_key_node_index(size_t& subtree_root_index) {
-            //returns the index of the node with the largest key, while
-            //setting its parent's right child index to the largets key node's
-            //left child
-            Node& subtree_root = nodes[subtree_root_index];
-            size_t largest_key_node_index = 0;
-            if (subtree_root_index == 0) {
-                throw std::runtime_error("Expected to find a valid node, but didn't");
-            } else {
-                if (subtree_root.right_index) {
-                    largest_key_node_index = remove_largest_key_node_index(subtree_root.right_index);
-                    subtree_root.num_children--;
-                    subtree_root.update_height();
-                } else {
-                    largest_key_node_index = subtree_root_index;
-                    subtree_root_index = subtree_root.left_index;
-                }
-            }
-            return largest_key_node_index;
-        }
-        int do_remove(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
-                      size_t& subtree_root_index,
-                      key_type const& key,
-                      value_type& value)
-        {
-            if (subtree_root_index == 0)
-                //key not found
-                return -1 * nodes_visited;
-            else {
-                Node& subtree_root = nodes[subtree_root_index];
-                //keep going down to the base of the tree
-                int new_nodes_visited;
-                size_t index_to_delete;
-                switch (compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root's key
-                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.left_index, key, value);
-                    //left child may have changed, so recompute subtree height
-                    subtree_root.update_height();
-                    subtree_root.num_children--;
-                    return new_nodes_visited;
-                case 1:
-                    //key is greater than subtree root's key
-                    new_nodes_visited = do_remove(nodes_visited + 1, subtree_root.right_index, key, value);
-                    //right child may have changed, so recompute subtree height
-                    subtree_root.update_height();
-                    subtree_root.num_children--;
-                    return new_nodes_visited;
-                case 0:
-                    //found key, remove the node
-                    value = subtree_root.value;
-                    index_to_delete = subtree_root_index;
-                    if (subtree_root.right_index || subtree_root.left_index) {
-                        //subtree has at least one child
-                        if (subtree_root.right_index)
-                            //replace the root with the smallest-keyed node in the right subtree
-                            subtree_root_index = remove_smallest_key_node_index(subtree_root.right_index);
-                        else if (subtree_root.left_index)
-                            //replace the root with the largest-keyed node in the left subtree
-                            subtree_root_index = remove_largest_key_node_index(subtree_root.left_index);
-                        //have the new root adopt the old root's children
-                        Node& new_root = nodes[subtree_root_index];
-                        new_root.left_index = subtree_root.left_index;
-                        new_root.right_index = subtree_root.right_index;
-                        //the new root has the same number of children as the old root, minus one
-                        new_root.num_children = subtree_root.num_children - 1;
-                    } else
-                        //neither subtree doesnt exists, so just delete the node
-                        subtree_root_index = 0;
-                    add_node_to_free_tree(index_to_delete);
-                    return nodes_visited + 1;
-                default:
-                    throw std::runtime_error("Unexpected compare() function return value");
-                }
-            }
-        }
-        void write_subtree_buffer(size_t subtree_root_index,
-                                  CDAL<std::string>& buffer_lines,
-                                  size_t root_line_index,
-                                  size_t lbound_line_index /*inclusive*/,
-                                  size_t ubound_line_index /*exclusive*/) const
-        {
-            Node subtree_root = nodes[subtree_root_index];
-            std::ostringstream oss;
-            //print the node
-            //todo: fix this to only print the key
-            //oss << "[" << subtree_root.key << ", " << subtree_root.value << ", " << subtree_root.num_children << "]";
-            oss << "[" << subtree_root.key << "]";
-            buffer_lines[root_line_index] += oss.str();
-            //print the right descendents
-            if (subtree_root.right_index > 0) {
-                //at least 1 right child
-                size_t top_dashes = 1;
-                Node const& right_child = nodes[subtree_root.right_index];
-                if (right_child.left_index > 0) {
-                    //right child has at least 1 left child
-                    Node const& right_left_child = nodes[right_child.left_index];
-                    top_dashes += 2 * (1 + right_left_child.num_children);
-                }
-                size_t top_line_index = root_line_index - 1;
-                while (top_line_index >= root_line_index - top_dashes)
-                    buffer_lines[top_line_index--] += "|  ";
-                size_t right_child_line_index = top_line_index;
-                buffer_lines[top_line_index--] += "+--";
-                while (top_line_index >= lbound_line_index)
-                    buffer_lines[top_line_index--] += "   ";
-                write_subtree_buffer(subtree_root.right_index,
-                                     buffer_lines,
-                                     right_child_line_index,
-                                     lbound_line_index,
-                                     root_line_index);
-            }
-            //print the left descendents
-            if (subtree_root.left_index > 0) {
-                //at least 1 left child
-                size_t bottom_dashes = 1;
-                Node const& left_child = nodes[subtree_root.left_index];
-                if (left_child.right_index > 0) {
-                    //left child has at least 1 right child
-                    Node const& left_right_child = nodes[left_child.right_index];
-                    bottom_dashes += 2 * (1 + left_right_child.num_children);
-                }
-                size_t bottom_line_index = root_line_index + 1;
-                while (bottom_line_index <= root_line_index + bottom_dashes)
-                    buffer_lines[bottom_line_index++] += "|  ";
-                size_t left_child_line_index = bottom_line_index;
-                buffer_lines[bottom_line_index++] += "+--";
-                while (bottom_line_index < ubound_line_index)
-                    buffer_lines[bottom_line_index++] += "   ";
-                write_subtree_buffer(subtree_root.left_index,
-                                     buffer_lines,
-                                     left_child_line_index,
-                                     root_line_index + 1,
-                                     ubound_line_index);
-            }
-        }
-        void add_node_to_free_tree(size_t node_index) {
-            nodes[node_index].disable_and_adopt_free_tree(free_index);
-            free_index = node_index;
-        }
-        size_t procure_node(key_type const& key, value_type const& value) {
-            //returns the index of what was the last free index
-            size_t node_index = free_index;
-            free_index = nodes[free_index].left_index;
-            Node& n = nodes[node_index];
-            n.reset_and_enable(key, value);
-            return node_index;
-        }
-        int insert_at_leaf(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
+    class AVL: public RBST<key_type, value_type, compare_functor> {
+        using typename RBST<key_type, value_type, compare_functor>::Node;
+        int insert_balanced(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
             if (subtree_root_index == 0) {
                 //parent was a leaf, so create a new leaf
-                subtree_root_index = procure_node(key, value);
+                subtree_root_index = this->procure_node(key, value);
             } else {
                 //parent was not a leaf
-                Node& n = nodes[subtree_root_index];
-                if (rand() < RAND_MAX / (n.num_children + 1)) {
-                    //randomly insert at the subtree root
-                    insert_at_root(subtree_root_index, key, value, found_key);
-                } else {
-                    //keep going down to the base of the tree
-                    switch (compare(key, n.key)) {
-                    case -1:
-                        //key is less than subtree root's key
-                        insert_at_leaf(n.left_index, key, value, found_key);
-                        if ( ! found_key)
-                            n.num_children++;
-                        break;
-                    case 1:
-                        //key is greater than subtree root's key
-                        insert_at_leaf(n.right_index, key, value, found_key);
-                        if ( ! found_key)
-                            n.num_children++;
-                        break;
-                    case 0:
-                        //found key, replace the value
-                        n.value = value;
-                        found_key = true;
-                        break;
-                    default:
-                        throw std::runtime_error("Unexpected compare() function return value");
-                    }
-                }
-            }
-        }
-        void rotate_left(size_t& subtree_root_index) {
-            Node& subtree_root = nodes[subtree_root_index];
-            size_t right_child_index = subtree_root.right_index;
-            Node& right_child = nodes[right_child_index];
-            subtree_root.right_index = right_child.left_index;
-            right_child.left_index = subtree_root_index;
-            subtree_root_index = right_child_index;
-            //right child adopts root and its children
-            right_child.num_children = subtree_root.num_children;
-            //root has new children
-            subtree_root.num_children = 0;
-            if (subtree_root.left_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
-            if (subtree_root.right_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
-        }
-        void rotate_right(size_t& subtree_root_index) {
-            Node& subtree_root = nodes[subtree_root_index];
-            size_t left_child_index = subtree_root.left_index;
-            Node& left_child = nodes[left_child_index];
-            subtree_root.left_index = left_child.right_index;
-            left_child.right_index = subtree_root_index;
-            subtree_root_index = left_child_index;
-            //right child adopts root and its children
-            left_child.num_children = subtree_root.num_children;
-            //root has new children
-            subtree_root.num_children = 0;
-            if (subtree_root.left_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.left_index].num_children;
-            if (subtree_root.right_index != 0)
-                subtree_root.num_children += 1 + nodes[subtree_root.right_index].num_children;
-        }
-        int insert_at_root(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
-            if (subtree_root_index == 0) {
-                //parent was a leaf, so create a new leaf
-                subtree_root_index = procure_node(key, value);
-            } else {
-                //parent was not a leaf
-                Node& n = nodes[subtree_root_index];
                 //keep going down to the base of the tree
-                switch (compare(key, n.key)) {
+                Node& n = this->nodes[subtree_root_index];
+                switch (this->compare(key, n.key)) {
                 case -1:
                     //key is less than subtree root's key
-                    insert_at_root(n.left_index, key, value, found_key);
+                    this->insert_balanced(n.left_index, key, value, found_key);
                     if ( ! found_key) {
-                        //new node currently a new child of subtree root, so increment
-                        //the subtree root's number of children before rotating - new node
-                        //will adopt the root and its children and will take on the value
-                        //of its num_children
+                        //given key is unique to the tree, so a new node was added
                         n.num_children++;
-                        rotate_right(subtree_root_index);
+                        n.update_height(this->nodes);
+                        balance(subtree_root_index);
                     }
                     break;
                 case 1:
                     //key is greater than subtree root's key
-                    insert_at_root(n.right_index, key, value, found_key);
+                    insert_balanced(n.right_index, key, value, found_key);
                     if ( ! found_key) {
+                        //given key is unique to the tree, so a new node was added
                         n.num_children++;
-                        rotate_left(subtree_root_index);
+                        n.update_height(this->nodes);
+                        balance(subtree_root_index);
                     }
                     break;
                 case 0:
@@ -341,174 +54,64 @@ namespace cop3530 {
                 }
             }
         }
-        int do_search(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
-                      size_t subtree_root_index,
-                      key_type const& key,
-                      value_type value) const
-        {
-            if (subtree_root_index == 0)
-                //key not found
-                return -1 * nodes_visited;
-            else {
-                Node const& subtree_root = nodes[subtree_root_index];
-                switch (compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root key
-                    return do_search(nodes_visited + 1, subtree_root.left_index, key, value);
+        void balance(size_t& subtree_root_index) {
+            Node& root = this->nodes[subtree_root_index];
+            int root_bal_fact = root.balance_factor(this->nodes);
+            if (root_bal_fact == -2) {
+                //right subtree is too heavy
+                size_t& right_index = root.right_index;
+                Node& right_child = this->nodes[right_index];
+                switch(right_child.balance_factor(this->nodes)) {
                 case 1:
-                    //key is greater than subtree root key
-                    return do_search(nodes_visited + 1, subtree_root.right_index, key, value);
-                case 0:
-                    //found key
-                    value = subtree_root.value;
-                    return nodes_visited + 1;
+                    //right left
+                    this->rotate_right(right_index);
+                    this->rotate_left(subtree_root_index);
+                    break;
+                case -1: //todo: see if this needs to be 0 also
+                    //right right
+                    this->rotate_left(subtree_root_index);
                     break;
                 default:
-                    throw std::runtime_error("Unexpected compare() function return value");
+                    throw std::runtime_error(std::string("Unexpected balance factor with heavy right subtree: ")
+                                             + std::to_string(right_child.balance_factor(this->nodes)));
                 }
+            } else if (root_bal_fact == 2) {
+                //left subtree is too heavy
+                size_t& left_index = root.left_index;
+                Node& left_child = this->nodes[left_index];
+                switch(left_child.balance_factor(this->nodes)) {
+                case -1:
+                    //left right
+                    this->rotate_left(left_index);
+                    this->rotate_right(subtree_root_index);
+                    break;
+                case 1: //todo: see if this needs to be 0 also
+                    //left left
+                    this->rotate_right(subtree_root_index);
+                    break;
+                default:
+                    throw std::runtime_error(std::string("Unexpected balance factor with heavy left subtree: ")
+                                             + std::to_string(left_child.balance_factor(this->nodes)));
+                }
+            } else if (std::abs(root_bal_fact > 2)) {
+                throw std::runtime_error(std::string("Unexpected balance factor when checking for heavy subtree: ")
+                                         + std::to_string(root_bal_fact));
             }
         }
     public:
-        /*
-            The constructor will allocate an array of capacity (binary
-            tree) nodes. Then make a chain from all the nodes (e.g.,
-            make node 2 the left child of node 1, make node 3 the left
-            child of node 2, &c. this is the initial free list.
-        */
-        RBST(size_t capacity):
-            curr_capacity(capacity)
-        {
-            if (capacity == 0) {
-                throw std::domain_error("capacity must be at least 1");
-            }
-            nodes = new Node[capacity + 1];
-            clear();
-        }
+        AVL(size_t capacity): RBST<key_type, value_type, compare_functor>(capacity) {}
         /*
             if there is space available, adds the specified key/value-pair to the tree
             and returns the number of nodes visited, V; otherwise returns -1 * V. If an
             item already exists in the tree with the same key, replace its value.
         */
         bool insert(key_type const& key, value_type const& value) {
-            if (size() == capacity())
+            if (this->size() == this->capacity())
                 //no more space
                 return 0;
             bool found_key = false;
-            insert_at_leaf(root_index, key, value, found_key);
+            insert_balanced(this->root_index, key, value, found_key);
             return true;
-        }
-        /*
-            if there is an item matching key, removes the key/value-pair from the tree, stores
-            it's value in value, and returns the number of probes required, V; otherwise returns -1 * V.
-        */
-        int remove(key_type const& key, value_type& value) {
-            return do_remove(0, root_index, key, value);
-        }
-        /*
-            if there is an item matching key, stores it's value in value, and returns the number
-            of nodes visited, V; otherwise returns -1 * V. Regardless, the item remains in the tree.
-        */
-        int search(key_type const& key, value_type& value) {
-            return do_search(0, root_index, key, value);
-        }
-        /*
-            removes all items from the map
-        */
-        void clear() {
-            //Since I use size_t to hold the node indices, I make the node array
-            //1-based, with child index of 0 indicating that the current node is a leaf
-            for (size_t i = 1; i != capacity(); ++i)
-                nodes[i].disable_and_adopt_free_tree(i + 1);
-            free_index = 1;
-            root_index = 0;
-        }
-        /*
-            returns true IFF the map contains no elements.
-        */
-        bool is_empty() const {
-            return size() == 0;
-        }
-        /*
-            returns the number of slots in the backing array.
-        */
-        size_t capacity() const {
-            return curr_capacity;
-        }
-        /*
-            returns the number of items actually stored in the tree.
-        */
-        size_t size() const {
-            Node const& n = nodes[root_index];
-            return 1 + n.num_children;
-        }
-        /*
-            [not a regular RBST operation, but specific to this implementation]
-            returns the tree's load factor: load = size / capacity.
-        */
-        double load() const {
-            return static_cast<double>(size()) / capacity();
-        }
-        /*
-            prints the tree in the following format:
-            +--[tiger]
-            |  |
-            |  |  +--[panther]
-            |  |  |
-            |  +--[ocelot]
-            |     |
-            |     +--[lion]
-            |
-            [leopard]
-            |
-            |     +--[house cat]
-            |     |
-            |  +--[cougar]
-            |  |
-            +--[cheetah]
-               |
-               +--[bobcat]
-        */
-        std::ostream& print(std::ostream& out) const {
-            if (root_index == 0)
-                return out;
-            size_t num_lines = size() * 2 - 1;
-            //use CDAL here so we can print really super-huge trees where the write buffer doesn't fit in memory
-            CDAL<std::string> buffer_lines(100000);
-            for(size_t i = 0; i <= num_lines; ++i)
-                buffer_lines.push_back("");
-            Node const& root = nodes[root_index];
-            size_t root_line_index = 1;
-            if (root.right_index) {
-                root_line_index += 2 * (1 + nodes[root.right_index].num_children);
-            }
-            write_subtree_buffer(root_index, buffer_lines, root_line_index, 1, num_lines + 1);
-            for (size_t i = 1; i <= num_lines; ++i)
-                out << buffer_lines[i] << std::endl;
-            return out;
-        }
-
-        priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
-            SSLL<hash_utils::ClusterInventory> clusters;
-        }
-
-        /*
-            generate a random number, R, (1,size), and starting with slot zero in the backing array, find
-            the R-th occupied slot; remove the item from that slot (adjusting subsequent items as necessary),
-            and return its key.
-        */
-        key_type remove_random() {
-            size_t num_slots = capacity();
-            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            for (size_t i = 1; i <= num_slots; ++i) {
-                Node const& n = nodes[i];
-                if (n.is_occupied && --ith_node_to_delete == 0) {
-                    key_type key = n.key;
-                    value_type val_dummy;
-                    remove(key, val_dummy);
-                    return key;
-                    break;
-                }
-            }
         }
     };
 }

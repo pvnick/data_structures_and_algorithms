@@ -1,5 +1,5 @@
-#ifndef _PART4_H_
-#define _PART4_H_
+#ifndef _RBST_H_
+#define _RBST_H_
 
 #include <cstdlib>
 #include <sstream>
@@ -13,7 +13,7 @@ namespace cop3530 {
              typename value_type,
              typename compare_functor = hash_utils::functors::compare_functor>
     class RBST {
-    private:
+    protected: //let AVL inherit everything
         compare_functor compare;
         struct Node;
         typedef Node* link;
@@ -67,6 +67,14 @@ namespace cop3530 {
                 num_children = 0;
                 key = new_key;
                 value = new_value;
+            }
+            int balance_factor(const Node* nodes) {
+                size_t left_height = 0, right_height = 0;
+                if (left_index)
+                    left_height = nodes[left_index].height;
+                if (right_index)
+                    right_height = nodes[right_index].height;
+                return static_cast<long int>(left_height) - static_cast<long int>(right_height);
             }
         };
         Node* nodes; //***note: array is 1-based so leaf nodes have child indices set to zero
@@ -155,7 +163,6 @@ namespace cop3530 {
                 Node& subtree_root = nodes[subtree_root_index];
                 //keep going down to the base of the tree
                 int new_nodes_visited;
-                size_t index_to_delete;
                 switch (compare(key, subtree_root.key)) {
                 case -1:
                     //key is less than subtree root's key
@@ -198,7 +205,7 @@ namespace cop3530 {
             std::ostringstream oss;
             //print the node
             //todo: fix this to only print the key
-            oss << "[" << subtree_root.key << ": val=" << subtree_root.value << ", children=" << subtree_root.num_children << ", height=" << subtree_root.height << "]";
+            oss << "[" << subtree_root.key << ": val=" << subtree_root.value << ", children=" << subtree_root.num_children << ", height=" << subtree_root.height << ", bal fact=" << subtree_root.balance_factor(nodes) << "]";
             //oss << "[" << subtree_root.key << ", " << subtree_root.height << "]";
             buffer_lines[root_line_index] += oss.str();
             //print the right descendents
@@ -262,7 +269,8 @@ namespace cop3530 {
             n.reset_and_enable(key, value);
             return node_index;
         }
-        int insert_at_leaf(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
+        //todo: fill in the following return value
+        virtual int insert_at_leaf(size_t& subtree_root_index, key_type const& key, value_type const& value, bool& found_key) {
             if (subtree_root_index == 0) {
                 //parent was a leaf, so create a new leaf
                 subtree_root_index = procure_node(key, value);
@@ -562,6 +570,7 @@ namespace cop3530 {
             and return its key.
         */
         key_type remove_random() {
+            key_type empty;
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
             for (size_t i = 1; i <= num_slots; ++i) {
@@ -574,6 +583,7 @@ namespace cop3530 {
                     break;
                 }
             }
+            return empty;
         }
     };
 }

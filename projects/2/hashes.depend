@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417297880 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417308366 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
@@ -11,7 +11,8 @@
 	"part1/source/open_addressing_map.h"
 	"part2/source/buckets_map.h"
 	"part3/source/part3.h"
-	"part4/source/part4.h"
+	"part4/source/rbst.h"
+	"part4_bonus/source/avl.h"
 	<map>
 	"common/SSLL.h"
 	"common/priority_queue.h"
@@ -61,4 +62,21 @@
 	<stdexcept>
 	<cassert>
 	<math.h>
+
+1417305159 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/rbst.h
+	<cstdlib>
+	<sstream>
+	"../../common/SSLL.h"
+	"../../common/CDAL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
+
+1417308427 /home/pvnick/data_structures_and_algorithms/projects/2/part4_bonus/source/avl.h
+	<cstdlib>
+	<sstream>
+	"../../common/SSLL.h"
+	"../../common/CDAL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
+	"../../part4/source/rbst.h"
 
