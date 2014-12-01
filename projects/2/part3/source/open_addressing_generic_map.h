@@ -1,9 +1,8 @@
-#ifndef _PART3_H_
-#define _PART3_H_
+#ifndef _HASHMAPOPENADDRESSINGGENERIC_H_
+#define _HASHMAPOPENADDRESSINGGENERIC_H_
 
 #include <iostream>
 #include <string>
-#include "../../common/SSLL.h"
 #include "../../common/common.h"
 #include "../../common/priority_queue.h"
 
@@ -249,7 +248,6 @@ namespace cop3530 {
         }
 
         priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
-            SSLL<hash_utils::ClusterInventory> clusters;
 
         }
     };
