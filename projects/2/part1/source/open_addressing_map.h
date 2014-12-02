@@ -73,7 +73,8 @@ namespace cop3530 {
             if (min_capacity == 0) {
                 throw std::domain_error("min_capacity must be at least 1");
             }
-            curr_capacity = 1 << static_cast<size_t>(std::ceil(lg(min_capacity))); //make capacity a power of 2, greater than the minimum capacity
+            cop3530::hash_utils::functors::map_capacity_planner capacity_planner;
+            curr_capacity = capacity_planner(min_capacity); //make capacity a power of 2, greater than the minimum capacity
             slots = new Slot[curr_capacity];
         }
         ~HashMapOpenAddressing() {
@@ -86,7 +87,7 @@ namespace cop3530 {
         */
         int insert(key_type const& key, value_type const& value) {
             size_t M = capacity();
-            if (capacity() == size())
+            if (M == size())
                 return -1 * size();
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required)) % M;
@@ -241,20 +242,19 @@ namespace cop3530 {
         */
         key_type remove_random() {
             key_type empty;
-            if (size() == 0) return empty;
+            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            for (size_t i = 1; i <= num_slots; ++i) {
+            for (size_t i = 0; i != num_slots; ++i) {
                 Slot const& slot = slots[i];
                 if (slot.is_occupied && --ith_node_to_delete == 0) {
                     key_type key = slot.key;
                     value_type val_dummy;
                     remove(key, val_dummy);
                     return key;
-                    break;
                 }
             }
-            return empty;
+            throw std::logic_error("Unexpected end of remove_random function");
         }
     };
 }

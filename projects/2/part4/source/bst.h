@@ -529,7 +529,7 @@ namespace cop3530 {
         */
         virtual key_type remove_random() {
             key_type empty;
-            if (size() == 0) return empty;
+            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
             for (size_t i = 1; i <= num_slots; ++i) {
@@ -539,10 +539,9 @@ namespace cop3530 {
                     value_type val_dummy;
                     remove(key, val_dummy);
                     return key;
-                    break;
                 }
             }
-            return empty;
+            throw std::logic_error("Unexpected end of remove_random function");
         }
     };
 }

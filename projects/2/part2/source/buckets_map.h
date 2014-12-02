@@ -3,12 +3,15 @@
 
 #include <iostream>
 #include "../../common/common.h"
+#include "../../common/SSLL.h"
+#include "../../common/priority_queue.h"
 
 namespace cop3530 {
     class HashMapBuckets {
     private:
         typedef int key_type;
         typedef char value_type;
+        typedef hash_utils::ClusterInventory ClusterInventory;
         struct Item {
             key_type key;
             value_type value;
@@ -43,23 +46,25 @@ namespace cop3530 {
         }
         /*
             searches the bucket corresponding to the specified key's hash for that
-            key. if found, stores a reference to that item and returns true.
-            otherwise, returns false and stores the pointer to the tail dummy node in
+            key. if found, stores a reference to that item and returns P, the number of
+            probe attempts needed to get to the item (ie the number of chain links needed
+            to be traversed). otherwise return -1 * P and stores the pointer to the tail dummy node in
             item_ptr.
         */
-        bool search_internal(key_type const& key, link& item_ptr) {
-            bool found_item = false;
+        int search_internal(key_type const& key, link& item_ptr) {
+            int probe_attempts = 1;
             size_t hash_val = hash(key);
             Bucket& bucket = buckets[hash_val];
             item_ptr = bucket.head;
             while ( ! item_ptr->is_dummy) {
                 if (item_ptr->key == key) {
-                    found_item = true;
-                    break;
+                    return probe_attempts;
                 }
                 item_ptr = item_ptr->next;
+                ++probe_attempts;
             }
-            return found_item;
+            //key not found
+            return probe_attempts * -1;
         }
         void init() {
             buckets = new Bucket[num_buckets];
@@ -70,54 +75,67 @@ namespace cop3530 {
             if (min_buckets == 0) {
                 throw std::domain_error("min_buckets must be at least 1");
             }
-            num_buckets = 1 << static_cast<size_t>(std::ceil(lg(min_buckets))); //make capacity a power of 2, greater than the minimum capacity
+            cop3530::hash_utils::functors::map_capacity_planner capacity_planner;
+            num_buckets = capacity_planner(min_buckets); //make capacity a power of 2, greater than the minimum capacity
             init();
         }
         ~HashMapBuckets() {
             delete[] buckets;
         }
-        bool insert(key_type const& key, value_type const& value) {
+        /*
+            if there is space available, adds the specified key/value-pair to the hash map and returns the
+            number of probes required, P; otherwise returns -1 * P (that's a lie: we will always have space
+            available because each bucket contains a linked list that is indefinitely growable). If an item
+            already exists in the map with the same key, replace its value.
+        */
+        int insert(key_type const& key, value_type const& value) {
+            size_t M = capacity();
             Item* item;
-            if (search_internal(key, item))
+            int probes_required = search_internal(key, item);
+            if (probes_required > 0)
+                //found item
                 item->value = value;
             else {
-                //currently holding tail. transform it into a valid item then add a new tail
+                //currently holding tail (item not found). transform it into a valid item then add a new tail
                 item->is_dummy = false;
                 item->key = key;
                 item->value = value;
                 item->next = new Item(nullptr);
                 ++num_items;
             }
-            return true;
+            return std::abs(probes_required);
         }
         /*
-            if there is an item matching key, removes the key/value-pair from the
-            map, stores it's value in value, and returns true; otherwise returns false.
+            if there is an item matching key, removes the key/value-pair from the map, stores it's value in
+            value, and returns the number of probes required, P; otherwise returns -1 * P.
         */
-        bool remove(key_type const& key, value_type& value) {
+        int remove(key_type const& key, value_type& value) {
             Item* item;
-            if ( ! search_internal(key, item))
-                //key not found
-                return false;
-            value = item->value;
-            //swap the current item for the next one
-            Item* to_delete = item->next;
-            *item = *to_delete;
-            delete to_delete;
-            --num_items;
-            return true;
+            int probes_required = search_internal(key, item);
+            if (probes_required > 0) {
+                //found item
+                value = item->value;
+                //swap the current item for the next one
+                Item* to_delete = item->next;
+                *item = *to_delete;
+                delete to_delete;
+                --num_items;
+            }
+            return probes_required;
         }
         /*
-            if there is an item matching key, stores it's value in value, and
-            returns true (the item remains in the map); otherwise returns false.
+            if there is an item matching key, stores it's value in value, and returns the
+            number of probes required, P; otherwise returns -1 * P. Regardless, the item
+            remains in the map.
         */
-        bool search(key_type const& key, value_type& value) {
+        int search(key_type const& key, value_type& value) {
             Item* item;
-            if ( ! search_internal(key, item))
-                //key not found
-                return false;
-            value = item->value;
-            return true;
+            int probes_required = search_internal(key, item);
+            if (probes_required > 0) {
+                //found item
+                value = item->value;
+            }
+            return probes_required;
         }
         /*
             removes all items from the map.
@@ -171,6 +189,73 @@ namespace cop3530 {
             }
             out << ']';
             return out;
+        }
+
+        /*
+            returns a priority queue containing cluster sizes and instances (in the form of ClusterInventory
+            struct instances), sorted by cluster size.
+        */
+        priority_queue<ClusterInventory> cluster_distribution() {
+            //use an array to count cluster instances, then feed those to a priority queue and return it.
+            SSLL<ClusterInventory> clusters;
+            size_t curr_cluster_size = 0;
+            size_t M = capacity();
+            for (size_t i = 0; i != M; ++i) {
+                Bucket const& bucket = buckets[i];
+                size_t bucket_size = 0;
+                Item* item_ptr = bucket.head;
+                while ( ! item_ptr->is_dummy) {
+                    ++bucket_size;
+                    item_ptr = item_ptr->next;
+                }
+                //I don't love this O(N^2) implementation, but premature optimization is the root of all evil and late projects
+                SSLL<ClusterInventory>::iterator cluster_iterator = clusters.begin();
+                SSLL<ClusterInventory>::iterator cluster_iterator_end = clusters.end();
+                bool found_cluster = false;
+                for (; cluster_iterator != cluster_iterator_end; ++cluster_iterator) {
+                    if (cluster_iterator->cluster_size == bucket_size) {
+                        found_cluster = true;
+                        break;
+                    }
+                }
+                if (found_cluster)
+                    cluster_iterator->num_instances++;
+                else
+                    clusters.push_back({bucket_size, 1});
+            }
+            priority_queue<ClusterInventory> cluster_pq;
+            SSLL<ClusterInventory>::const_iterator cluster_iterator = clusters.begin();
+            SSLL<ClusterInventory>::const_iterator cluster_iterator_end = clusters.end();
+            for (; cluster_iterator != cluster_iterator_end; ++cluster_iterator) {
+                if (cluster_iterator->cluster_size > 0)
+                    cluster_pq.add_to_queue(*cluster_iterator);
+            }
+            return cluster_pq;
+        }
+
+        /*
+            generate a random number, R, (1,size), and starting with slot zero in the backing array,
+            find the R-th occupied slot; remove the item from that slot (adjusting subsequent items as
+            necessary), and return its key.
+        */
+        key_type remove_random() {
+            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
+            size_t num_slots = capacity();
+            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
+            for (size_t i = 0; i != num_slots; ++i) {
+                Bucket const& bucket = buckets[i];
+                Item* item_ptr = bucket.head;
+                while ( ! item_ptr->is_dummy) {
+                    if (--ith_node_to_delete == 0) {
+                        key_type key = item_ptr->key;
+                        value_type val_dummy;
+                        remove(key, val_dummy);
+                        return key;
+                    }
+                    item_ptr = item_ptr->next;
+                }
+            }
+            throw std::logic_error("Unexpected end of remove_random function");
         }
     };
 }

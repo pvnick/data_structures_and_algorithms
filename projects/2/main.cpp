@@ -66,13 +66,11 @@ int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
 
-    cop3530::HashMapOpenAddressing open_addr_map(10000);
-    for (int i = 0; i != 1000; ++i)
-        open_addr_map.insert(cop3530::hash_utils::rand_i(10000), 'a');
-    for (int i = 0; i != 1000; ++i)
-        std::cout << open_addr_map.remove_random() << std::endl;
+    cop3530::HashMapBuckets map(1000);
+    for (int i = 0; i != 100000; i += 1)
+        map.insert(cop3530::hash_utils::rand_i(1000000), 'a');
 
-    cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = open_addr_map.cluster_distribution();
+    cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {
         cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();
         std::cout << "size=" << cluster.cluster_size << ", instances=" << cluster.num_instances << std::endl;
@@ -80,6 +78,11 @@ int main() {
     //histogram(vals, 40, 40);
     return 0;
 
+}
+
+int other_stuff() {
+    std::vector<std::string> word_bank;
+    read_word_file("strings.txt", &word_bank);
     cop3530::RBST<int, std::string> map(10000);
     /*for (size_t i = 0; i != 1000; ++i)
         map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));

@@ -53,8 +53,9 @@ namespace cop3530 {
         }
         T get_next_item() {
             std::swap(tree[1], tree[num_items]);
+            T ret = tree[num_items--];
             fix_down();
-            return tree[num_items--];
+            return ret;
         }
         void add_to_queue(T const& item) {
             tree.push_back(item);
