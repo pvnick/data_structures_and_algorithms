@@ -15,6 +15,7 @@ namespace cop3530 {
              typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapOpenAddressingGeneric {
     private:
+        typedef hash_utils::ClusterInventory ClusterInventory;
         class Key {
         private:
             key_type raw_key;
@@ -241,8 +242,50 @@ namespace cop3530 {
             return out;
         }
 
-        priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
-
+        priority_queue<ClusterInventory> cluster_distribution() {
+            //use an array to count cluster instances, then feed those to a priority queue and return it.
+            size_t M = capacity();
+            size_t cluster_counter[M + 1];
+            for (size_t i = 0; i <= M; ++i)
+                cluster_counter[i] = 0;
+            if (size() == M) {
+                //handle the special case when the map is full
+                cluster_counter[size()]++;
+            } else {
+                //have at least one unoccupied slot
+                bool first_cluster_skipped = false;
+                size_t curr_cluster_size = 0;
+                //treat the backing array as a circular buffer and make a maximum of two passes to
+                //capture everything, including the wraparound cluster if it exists
+                for (size_t i = 1; i != M * 2; ++i) {
+                    Slot const& curr_slot = slots[i % M], prev_slot = slots[(i - 1) % M];
+                    if (curr_slot.is_occupied && prev_slot.is_occupied) {
+                        //still in a cluster
+                        ++curr_cluster_size;
+                    } else if (curr_slot.is_occupied && prev_slot.is_occupied == false) {
+                        //found a new cluster
+                        curr_cluster_size = 1;
+                    } else if ( ! curr_slot.is_occupied && prev_slot.is_occupied) {
+                        //found the end of a cluster
+                        if (first_cluster_skipped) {
+                            cluster_counter[curr_cluster_size]++;
+                            if (i >= M) {
+                                //reached the end of the first cluster in the second pass, so no all clusters have been handled
+                                break;
+                            }
+                        } else {
+                            first_cluster_skipped = true;
+                        }
+                    }
+                }
+            }
+            priority_queue<ClusterInventory> cluster_pq;
+            for (size_t i = 1; i <= M; ++i)
+                if (cluster_counter[i] > 0) {
+                    ClusterInventory cluster{i, cluster_counter[i]};
+                    cluster_pq.add_to_queue(cluster);
+                }
+            return cluster_pq;
         }
     };
 }

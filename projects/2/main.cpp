@@ -66,7 +66,7 @@ int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
 
-    cop3530::HashMapOpenAddressing open_addr_map(10000);
+    cop3530::HashMapOpenAddressingGeneric<int, char> open_addr_map(10000);
     for (int i = 0; i != 1000; ++i)
         open_addr_map.insert(cop3530::hash_utils::rand_i(10000), 'a');
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = open_addr_map.cluster_distribution();
