@@ -8,6 +8,15 @@
 #include "bst.h"
 #include "rbst.h"
 
+/*
+    Note about the following method:
+    We pretty-print the tree to a file and filter out everything but the keys.
+    If the BST tree has the proper structure, those keys will exist in the file naturally sorted.
+    We check this by piping the keys through uniq and sort to eliminate duplicates and sort
+    the keys to how we would expect. If the result of the second operation does not change the 
+    contents of the file, the tree has proper structure
+*/
+
 SCENARIO( "Valid BST tree structure is maintained" ) {
     /*
         numeric type keys, notice the -n flag in the sort command when validating structure
@@ -34,7 +43,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 out.close();
                 //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                 std::string unsorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -rn | tr '\n' ','"));
+                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -rn | tr '\n' ','"));
                 REQUIRE(unsorted_keys == sorted_keys);
                 cop3530::unit_test_utils::delete_file(tree_out_file);
             }
@@ -64,7 +73,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         out.close();
                         //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                         std::string unsorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -rn | tr '\n' ','"));
+                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -rn | tr '\n' ','"));
                         REQUIRE(unsorted_keys == sorted_keys);
                         cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
@@ -95,7 +104,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 out.close();
                 //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | tr '\n' ',' "));
-                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | sort -nr | tr '\n' ','"));
+                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | uniq | sort -nr | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
                 cop3530::unit_test_utils::delete_file(tree_out_file);
             }
@@ -125,7 +134,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         out.close();
                         //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | tr '\n' ',' "));
-                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | sort -nr | tr '\n' ','"));
+                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | uniq | sort -nr | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
                         cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
@@ -159,7 +168,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 out.close();
                 //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
+                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -r | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
                 cop3530::unit_test_utils::delete_file(tree_out_file);
             }
@@ -189,7 +198,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         out.close();
                         //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
+                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -r | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
                         cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
@@ -220,7 +229,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 out.close();
                 //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
+                std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -r | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
                 cop3530::unit_test_utils::delete_file(tree_out_file);
             }
@@ -250,7 +259,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         out.close();
                         //get the keys from the pretty-print tree structure and compare their natural order to ascending numerical order
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
-                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
+                        std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | uniq | sort -r | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
                         cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
