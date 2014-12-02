@@ -13,6 +13,7 @@ namespace cop3530 {
              typename compare_functor = hash_utils::functors::compare_functor>
     class BST {
     protected: //let RBST and AVL inherit everything
+        typedef hash_utils::ClusterInventory ClusterInventory;
         compare_functor compare;
         struct Node;
         typedef Node* link;
@@ -399,6 +400,43 @@ namespace cop3530 {
             }
             return nodes_visited;
         }
+        void prepare_cluster_distribution(size_t subtree_root_index,
+                                          size_t curr_height, //includes the height of the current node, ie assumes current node exists
+                                          size_t cluster_counter[])
+        {
+            Node const& subtree_root = nodes[subtree_root_index];
+            if ( ! subtree_root.left_index && ! subtree_root.right_index)
+                //at a leaf node
+                cluster_counter[curr_height]++;
+            else {
+                if (subtree_root.left_index)
+                    prepare_cluster_distribution(subtree_root.left_index, curr_height + 1, cluster_counter);
+                if (subtree_root.right_index)
+                    prepare_cluster_distribution(subtree_root.right_index, curr_height + 1, cluster_counter);
+            }
+        }
+
+        void remove_ith_node_inorder(size_t& subtree_root_index,
+                                     size_t& ith_node_to_delete,
+                                     key_type& key)
+        {
+            Node& subtree_root = nodes[subtree_root_index];
+            if (subtree_root.left_index)
+                remove_ith_node_inorder(subtree_root.left_index, ith_node_to_delete, key);
+            if (ith_node_to_delete == 0)
+                //deleted node in child subtree; nothing more to do
+                return;
+            if (--ith_node_to_delete == 0) {
+                //delete the current node
+                value_type dummy_val;
+                remove(subtree_root.key, dummy_val);
+                key = subtree_root.key;
+                return;
+            }
+            if (subtree_root.right_index)
+                remove_ith_node_inorder(subtree_root.right_index, ith_node_to_delete, key);
+        }
+
     public:
         /*
             The constructor will allocate an array of capacity (binary
@@ -519,28 +557,38 @@ namespace cop3530 {
             return out;
         }
 
+        /*
+            returns a list indicating the number of leaf nodes at each height (since the RBST doesn't exhibit
+            true clustering, but can have degenerate branches).
+        */
         virtual priority_queue<hash_utils::ClusterInventory> cluster_distribution() {
+            //use an array to count cluster instances, then feed those to a priority queue and return it.
+            priority_queue<ClusterInventory> cluster_pq;
+            if (is_empty()) return cluster_pq;
+            size_t max_height = nodes[root_index].height;
+            size_t cluster_counter[max_height + 1];
+            for (size_t i = 0; i <= max_height; ++i)
+                cluster_counter[i] = 0;
+            prepare_cluster_distribution(root_index, 1, cluster_counter);
+            for (size_t i = 1; i <= max_height; ++i)
+                if (cluster_counter[i] > 0) {
+                    ClusterInventory cluster{i, cluster_counter[i]};
+                    cluster_pq.add_to_queue(cluster);
+                }
+            return cluster_pq;
         }
 
         /*
-            generate a random number, R, (1,size), and starting with slot zero in the backing array, find
-            the R-th occupied slot; remove the item from that slot (adjusting subsequent items as necessary),
+            generate a random number, R, (1,size), and starting with the root (node 1), do an in-order
+            traversal to find the R-th occupied node; remove that node (adjusting its children accordingly),
             and return its key.
         */
         virtual key_type remove_random() {
             if (size() == 0) throw std::logic_error("Cant remove from an empty map");
-            size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            for (size_t i = 1; i <= num_slots; ++i) {
-                Node const& n = nodes[i];
-                if (n.is_occupied && --ith_node_to_delete == 0) {
-                    key_type key = n.key;
-                    value_type val_dummy;
-                    remove(key, val_dummy);
-                    return key;
-                }
-            }
-            throw std::logic_error("Unexpected end of remove_random function");
+            key_type key;
+            remove_ith_node_inorder(root_index, ith_node_to_delete, key);
+            return key;
         }
     };
 }

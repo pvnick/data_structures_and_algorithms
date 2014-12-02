@@ -192,6 +192,8 @@ namespace cop3530 {
 
         priority_queue<ClusterInventory> cluster_distribution() {
             //use an array to count cluster instances, then feed those to a priority queue and return it.
+            priority_queue<ClusterInventory> cluster_pq;
+            if (size() == 0) return cluster_pq;
             size_t M = capacity();
             size_t cluster_counter[M + 1];
             for (size_t i = 0; i <= M; ++i)
@@ -227,7 +229,6 @@ namespace cop3530 {
                     }
                 }
             }
-            priority_queue<ClusterInventory> cluster_pq;
             for (size_t i = 1; i <= M; ++i)
                 if (cluster_counter[i] > 0) {
                     ClusterInventory cluster{i, cluster_counter[i]};

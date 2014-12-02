@@ -176,7 +176,6 @@ namespace cop3530 {
                 return -1 * probes_required;
             Value v = remove_at_index(index);
             value = v.raw();
-            size_t start_index = index;
             //remove and reinsert items until find unoccupied slot (guaranteed to happen since we just removed an item)
             for (int i = 1; ; ++i) {
                 index = k.hash(M, i);
@@ -264,6 +263,8 @@ namespace cop3530 {
 
         priority_queue<ClusterInventory> cluster_distribution() {
             //use an array to count cluster instances, then feed those to a priority queue and return it.
+            priority_queue<ClusterInventory> cluster_pq;
+            if (size() == 0) return cluster_pq;
             size_t M = capacity();
             size_t cluster_counter[M + 1];
             for (size_t i = 0; i <= M; ++i)
@@ -299,7 +300,6 @@ namespace cop3530 {
                     }
                 }
             }
-            priority_queue<ClusterInventory> cluster_pq;
             for (size_t i = 1; i <= M; ++i)
                 if (cluster_counter[i] > 0) {
                     ClusterInventory cluster{i, cluster_counter[i]};

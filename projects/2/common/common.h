@@ -11,7 +11,6 @@ namespace cop3530 {
     }
 
     namespace hash_utils {
-        static constexpr double phi = 1 / 1.61803398875; //dividing lets us get more decimal places
         static constexpr size_t max_size_t = std::numeric_limits<size_t>::max();
         struct ClusterInventory {
             size_t cluster_size;
@@ -66,6 +65,9 @@ namespace cop3530 {
             };
             namespace primary_hashes {
                 struct hash_basic {
+                //this is such a stupid hash method, but unlike my pathetic attempts at implementing
+                //various other hashing methods, it works and is generalizable to all the required key
+                //types. together with double hashing it should make for a passable hashing routine.
                 public:
                     size_t operator()(const char* key) const {
                         return str_to_numeric(key);

@@ -91,7 +91,6 @@ namespace cop3530 {
             already exists in the map with the same key, replace its value.
         */
         int insert(key_type const& key, value_type const& value) {
-            size_t M = capacity();
             Item* item;
             int probes_required = search_internal(key, item);
             if (probes_required > 0)
@@ -198,9 +197,10 @@ namespace cop3530 {
             struct instances), sorted by cluster size.
         */
         priority_queue<ClusterInventory> cluster_distribution() {
-            //use an array to count cluster instances, then feed those to a priority queue and return it.
+            //use a simple linked list to count cluster instances, then feed those to a priority queue and return it.
+            priority_queue<ClusterInventory> cluster_pq;
+            if (size() == 0) return cluster_pq;
             SSLL<ClusterInventory> clusters;
-            size_t curr_cluster_size = 0;
             size_t M = capacity();
             for (size_t i = 0; i != M; ++i) {
                 Bucket const& bucket = buckets[i];
@@ -225,7 +225,6 @@ namespace cop3530 {
                 else
                     clusters.push_back({bucket_size, 1});
             }
-            priority_queue<ClusterInventory> cluster_pq;
             SSLL<ClusterInventory>::const_iterator cluster_iterator = clusters.begin();
             SSLL<ClusterInventory>::const_iterator cluster_iterator_end = clusters.end();
             for (; cluster_iterator != cluster_iterator_end; ++cluster_iterator) {

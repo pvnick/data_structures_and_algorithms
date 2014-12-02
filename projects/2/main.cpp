@@ -65,153 +65,18 @@ void histogram(std::vector<size_t> const& vals, size_t bins = 20, size_t max_bar
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-
-    cop3530::HashMapOpenAddressingGeneric<int, char> map(1000);
-    for (int i = 0; i != 1000; i += 1) {
-        map.insert(cop3530::hash_utils::rand_i(1000000), 'a');
-        if (i > 100 && cop3530::hash_utils::rand_i(5) == 0)
-            map.remove_random();
+    cop3530::AVL<std::string, std::string> map(1000);
+    for (size_t i = 0; i != 1000; ++i) {
+        map.insert(rand_word_bank_string(word_bank) + std::to_string(i), rand_word_bank_string(word_bank));
     }
+    map.print(std::cout) << std::endl;
 
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {
         cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();
         std::cout << cluster << std::endl;
     }
-    map.print(std::cout) << std::endl;
     //histogram(vals, 40, 40);
     return 0;
 
 }
-
-int other_stuff() {
-    std::vector<std::string> word_bank;
-    read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<int, std::string> map(10000);
-    /*for (size_t i = 0; i != 1000; ++i)
-        map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
-
-    for (size_t i = 0; i != 500; ++i)
-        map.remove_random();
-*/
-    for (size_t i = 0; i != 10000; ++i) {
-        map.insert(i, rand_word_bank_string(word_bank));
-        if (i > 1000)
-            map.remove_random();
-        //map.validate_integrity();
-    //map.print(std::cout) << std::endl;
-    }
-    map.print(std::cout) << std::endl;
-
-    /*
-    for (size_t i = 0; i != 1000; ++i) {
-        if ((i % 100) == 0)
-            map.print(std::cout) << std::endl;
-
-        map.validate_integrity();
-    }*/
-    /*
-    for (size_t i = 20; i != 30; ++i) {
-        map.insert(i, rand_word_bank_string(word_bank));
-        map.print(std::cout) << std::endl;
-    }
-    for (size_t i = 0; i != 20; ++i) {
-        map.insert(cop3530::hash_utils::rand_i(100), rand_word_bank_string(word_bank));
-        map.print(std::cout) << std::endl;
-    }*/
-    return 0;
-    /*
-    std::vector<int> v;
-    for (int i = 0; i != 20; ++i)
-        v.push_back(i);
-    std::random_shuffle(v.begin(), v.end());
-
-    for (size_t i = 0; i < 20; i++) {
-        std::string val;
-        std::cout << "about to remove index " << v[i] << std::endl;
-        //system("sleep 1");
-        int nodes_visited = map.remove(v[i], val);
-        std::cout << "removed " << val << " in " << nodes_visited << " tries" << std::endl;
-        map.print(std::cout) << std::endl;
-        //system("sleep 1");
-        if (i == 5)
-            break;
-    }
-
-    for (size_t i = 0; i != 20; ++i) {
-        std::cout << i << std::endl;
-        map.insert(i, rand_word_bank_string(word_bank));
-        map.print(std::cout) << std::endl;
-    }
-    std::random_shuffle(v.begin(), v.end());
-
-    for (size_t i = 0; i < 20; i++) {
-        std::cout << "deleted key " << map.remove_random() << std::endl;
-        map.print(std::cout) << std::endl;
-    }
-*/
-    return 0;
-    size_t capacity = 10;
-	cop3530::HashMapBuckets bucket_map(10);
-	cop3530::HashMapOpenAddressingGeneric<double, char> generic_open_addr(10000);
-	#define mymap generic_open_addr
-	srand(1337);
-	std::map<int, char> stdm;
-    for (int i = 0; i != 100; ++i) {
-        mymap.insert(to_dbl(i), 'a');
-        stdm[i] = 'a';
-    }
-	for (int i = 0; i != 1000; ++i) {
-        int key;
-        char value;
-        char value2;
-        switch(rand() % 2) {
-        case 0:
-            //insert
-
-            key = rand() % 20;
-            value = 'a' + (rand() % 26);
-            mymap.insert(to_dbl(key), value);
-            stdm[key] = value;
-            mymap.search(to_dbl(key), value2);
-            if (stdm[key] != value2)
-                std::cout << "wot" << std::endl;
-            /*
-            std::cout << "Inserting <" << key << "," << value << ">... ";
-            if (map.insert(key, value))
-                std::cout << "success" << std::endl;
-            else
-                std::cout << "fail" << std::endl;
-            break;
-            */
-            break;
-        case 1:
-            //remove
-            //std::cout << "start: " << std::endl;
-            //map.print(std::cout) << std::endl;
-            key = rand() % 20;
-            //std::cout << "Removing key: " << key << "... ";
-            //bool found = map.sequential_search(key);
-            value2 = stdm[key];
-            if (mymap.remove(to_dbl(key), value)){
-                if (value2 != value) {
-                    std::cout << "no match" << std::endl;
-                }
-                std::cout << "value " << (stdm[key] == value ? " does " : " does not ") << " match" << std::endl;
-                stdm[key] = 0;
-            }
-            /*if (map.remove(key, value)) {
-                if ( ! found)
-                    std::cout << "shouldnt have found: " << value << std::endl;
-            } else {
-                if (found)
-                    std::cout << "should have found" << std::endl;
-            }*/
-            //std::cout << "end: " << std::endl;
-            //map.print(std::cout) << std::endl;
-            break;
-        }
-    }
-}
-
-

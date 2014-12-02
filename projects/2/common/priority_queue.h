@@ -12,7 +12,8 @@ namespace cop3530 {
     class priority_queue {
     private:
         PriorityCompare first_arg_higher_priority;
-        //SDAL has all the benefits of std::vector while having the added benefit of being legal to use in cop3530
+        //SDAL has all the benefits of std::vector (ie fast random access and automatic resizing)
+        //while having the added benefit of being legal to use in cop3530
         SDAL<T> tree;
         size_t num_items = 0;
         void fix_up(size_t index) {
