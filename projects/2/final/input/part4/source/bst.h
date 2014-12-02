@@ -9,17 +9,17 @@
 
 namespace cop3530 {
     template<typename key_type,
-             typename value_type,
-             typename compare_functor = hash_utils::functors::compare_functor>
+             typename value_type>
     class BST {
     protected: //let RBST and AVL inherit everything
         typedef hash_utils::ClusterInventory ClusterInventory;
-        compare_functor compare;
+        typedef hash_utils::Key<key_type> Key;
+        typedef hash_utils::Value<value_type> Value;
         struct Node;
         typedef Node* link;
         struct Node {
-            key_type key;
-            value_type value;
+            Key key;
+            Value value;
             size_t num_children;
             size_t left_index;
             size_t right_index;
@@ -74,7 +74,7 @@ namespace cop3530 {
                 right_index = 0;
                 left_index = free_index;
             }
-            void reset_and_enable(key_type const new_key, value_type const& new_value) {
+            void reset_and_enable(Key const& new_key, Value const& new_value) {
                 is_occupied = true;
                 height = 1; //self
                 left_index = right_index = 0;
@@ -166,8 +166,8 @@ namespace cop3530 {
         }
         virtual int do_remove(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                               size_t& subtree_root_index,
-                              key_type const& key,
-                              value_type& value,
+                              Key const& key,
+                              Value& value,
                               bool& found_key)
         {
             if (subtree_root_index == 0)
@@ -177,9 +177,7 @@ namespace cop3530 {
                 Node& subtree_root = nodes[subtree_root_index];
                 ++nodes_visited;
                 //keep going down to the base of the tree
-                switch (compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root's key
+                if (key < subtree_root.key) {
                     nodes_visited = do_remove(nodes_visited, subtree_root.left_index, key, value, found_key);
                     if (found_key) {
                         //found the desired node and delete it
@@ -187,9 +185,7 @@ namespace cop3530 {
                         //left child changed, so recompute subtree height
                         subtree_root.update_height(nodes);
                     }
-                    break;
-                case 1:
-                    //key is greater than subtree root's key
+                } else if (key > subtree_root.key) {
                     nodes_visited = do_remove(nodes_visited, subtree_root.right_index, key, value, found_key);
                     if (found_key) {
                         //found the desired node and delete it
@@ -197,15 +193,13 @@ namespace cop3530 {
                         //right child changed, so recompute subtree height
                         subtree_root.update_height(nodes);
                     }
-                    break;
-                case 0:
+                } else if (key == subtree_root.key) {
                     //found key, remove the node
                     found_key = true;
                     value = subtree_root.value;
                     remove_node(subtree_root_index);
-                    break;
-                default:
-                    throw std::domain_error("Unexpected compare() function return value");
+                } else {
+                    throw std::logic_error("Unexpected compare result");
                 }
             }
             return nodes_visited;
@@ -220,7 +214,7 @@ namespace cop3530 {
             std::ostringstream oss;
             //print the node
             //todo: fix this to only print the key
-            oss << "[" << subtree_root.key << "]";
+            oss << "[" << subtree_root.key.raw() << "]";
             buffer_lines[root_line_index] += oss.str();
             //print the right descendents
             if (subtree_root.right_index > 0) {
@@ -273,7 +267,7 @@ namespace cop3530 {
             nodes[node_index].disable_and_adopt_free_tree(free_index);
             free_index = node_index;
         }
-        size_t procure_node(key_type const& key, value_type const& value) {
+        size_t procure_node(Key const& key, Value const& value) {
             //updates the free index to the first free node's left child (while transforming that first free
             //node to an enabled node with the specified key/value) and returns the index of what was the last
             //free index
@@ -285,8 +279,8 @@ namespace cop3530 {
         }
         virtual int insert_at_leaf(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                                   size_t& subtree_root_index,
-                                  key_type const& key,
-                                  value_type const& value,
+                                  Key const& key,
+                                  Value const& value,
                                   bool& found_key)
         {
             if (subtree_root_index == 0) {
@@ -297,32 +291,26 @@ namespace cop3530 {
                 //keep going down to the base of the tree
                 Node& subtree_root = nodes[subtree_root_index];
                 ++nodes_visited;
-                switch (compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root's key
+                if (key < subtree_root.key) {
                     nodes_visited = insert_at_leaf(nodes_visited, subtree_root.left_index, key, value, found_key);
                     if ( ! found_key) {
                         //given key is unique to the tree, so a new node was added
                         subtree_root.num_children++;
                         subtree_root.update_height(nodes);
                     }
-                    break;
-                case 1:
-                    //key is greater than subtree root's key
+                } else if (key > subtree_root.key) {
                     nodes_visited = insert_at_leaf(nodes_visited, subtree_root.right_index, key, value, found_key);
                     if ( ! found_key) {
                         //given key is unique to the tree, so a new node was added
                         subtree_root.num_children++;
                         subtree_root.update_height(nodes);
                     }
-                    break;
-                case 0:
+                } else if (key == subtree_root.key) {
                     //found key, replace the value
                     subtree_root.value = value;
                     found_key = true;
-                    break;
-                default:
-                    throw std::domain_error("Unexpected compare() function return value");
+                } else {
+                    throw std::logic_error("Unexpected compare result");
                 }
             }
             return nodes_visited;
@@ -385,8 +373,8 @@ namespace cop3530 {
         }
         int do_search(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                       size_t subtree_root_index,
-                      key_type const& key,
-                      value_type value,
+                      Key const& key,
+                      Value& value,
                       bool& found_key) const
         {
             if (subtree_root_index == 0)
@@ -395,22 +383,16 @@ namespace cop3530 {
             else {
                 Node const& subtree_root = nodes[subtree_root_index];
                 ++nodes_visited;
-                switch (compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root key
+                if (key < subtree_root.key) {
                     nodes_visited = do_search(nodes_visited, subtree_root.left_index, key, value, found_key);
-                    break;
-                case 1:
-                    //key is greater than subtree root key
+                } else if (key > subtree_root.key) {
                     nodes_visited = do_search(nodes_visited, subtree_root.right_index, key, value, found_key);
-                    break;
-                case 0:
-                    //found key
+                } else if (key == subtree_root.key) {
+                    //found key, replace the value
                     value = subtree_root.value;
                     found_key = true;
-                    break;
-                default:
-                    throw std::domain_error("Unexpected compare() function return value");
+                } else {
+                    throw std::logic_error("Unexpected compare result");
                 }
             }
             return nodes_visited;
@@ -433,7 +415,7 @@ namespace cop3530 {
 
         void remove_ith_node_inorder(size_t& subtree_root_index,
                                      size_t& ith_node_to_delete,
-                                     key_type& key)
+                                     Key& key)
         {
             Node& subtree_root = nodes[subtree_root_index];
             if (subtree_root.left_index)
@@ -444,7 +426,7 @@ namespace cop3530 {
             if (--ith_node_to_delete == 0) {
                 //delete the current node
                 value_type dummy_val;
-                remove(subtree_root.key, dummy_val);
+                remove(subtree_root.key.raw(), dummy_val);
                 key = subtree_root.key;
                 return;
             }
@@ -478,7 +460,9 @@ namespace cop3530 {
                 //no more space
                 return -1 * size();
             bool found_key = false;
-            size_t nodes_visited = insert_at_leaf(0, root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = insert_at_leaf(0, root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;
@@ -489,9 +473,13 @@ namespace cop3530 {
         */
         virtual int remove(key_type const& key, value_type& value) {
             bool found_key = false;
-            size_t nodes_visited = do_remove(0, root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = do_remove(0, root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
+            if (found_key)
+                value = v.raw();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
@@ -500,7 +488,11 @@ namespace cop3530 {
         */
         virtual int search(key_type const& key, value_type& value) {
             bool found_key = false;
-            size_t nodes_visited = do_search(0, root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = do_search(0, root_index, k, v, found_key);
+            if (found_key)
+                value = v.raw();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
@@ -605,13 +597,15 @@ namespace cop3530 {
             generate a random number, R, (1,size), and starting with the root (node 1), do an in-order
             traversal to find the R-th occupied node; remove that node (adjusting its children accordingly),
             and return its key.
+
+            ***XXX: this likely contains a bug when using const char* keys in that we'll be returning a dangling pointer!!!***
         */
         virtual key_type remove_random() {
             if (size() == 0) throw std::logic_error("Cant remove from an empty map");
-            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            key_type key;
+            size_t ith_node_to_delete = 1 + rand_i(size());
+            Key key;
             remove_ith_node_inorder(root_index, ith_node_to_delete, key);
-            return key;
+            return key.raw();
         }
     };
 }

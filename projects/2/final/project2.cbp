@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -32,6 +33,28 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="input/common/CDAL.h" />
+		<Unit filename="input/common/SDAL.h" />
+		<Unit filename="input/common/SSLL.h" />
+		<Unit filename="input/common/common.h" />
+		<Unit filename="input/common/priority_queue.h" />
+		<Unit filename="input/common/unit_test_utils.h" />
+		<Unit filename="input/part1/checklist.txt" />
+		<Unit filename="input/part1/source/open_addressing_map.h" />
+		<Unit filename="input/part1/source/unit_tests.cpp" />
+		<Unit filename="input/part2/checklist.txt" />
+		<Unit filename="input/part2/source/buckets_map.h" />
+		<Unit filename="input/part3/bucket/checklist.txt" />
+		<Unit filename="input/part3/bucket/source/buckets_map_generic.h" />
+		<Unit filename="input/part3/open_addressing/checklist.txt" />
+		<Unit filename="input/part3/open_addressing/source/open_addressing_generic_map.h" />
+		<Unit filename="input/part4/checklist.txt" />
+		<Unit filename="input/part4/source/bst.h" />
+		<Unit filename="input/part4/source/rbst.h" />
+		<Unit filename="input/part4/source/tree_structure.cpp" />
+		<Unit filename="input/part4/source/unit_tests.cpp" />
+		<Unit filename="input/part4_bonus/checklist.txt" />
+		<Unit filename="input/part4_bonus/source/avl.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

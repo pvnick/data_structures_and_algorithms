@@ -10,9 +10,8 @@
 
 namespace cop3530 {
     template<typename key_type,
-             typename value_type,
-             typename compare_functor = hash_utils::functors::compare_functor>
-    class AVL: public BST<key_type, value_type, compare_functor> {
+             typename value_type>
+    class AVL: public BST<key_type, value_type> {
     /*
         The trick to AVL is to perform standard BST operations, but wrap recursive methods that might unbalance
         the tree with methods that rebalance the tree after performing those operations. Thus the balance factor
@@ -20,12 +19,14 @@ namespace cop3530 {
         changes in subtree height and overwrite the needed virtual methods.
     */
     private:
-        using super = BST<key_type, value_type, compare_functor>;
+        using super = BST<key_type, value_type>;
         using typename super::Node;
+        typedef hash_utils::Key<key_type> Key;
+        typedef hash_utils::Value<value_type> Value;
         int insert_at_leaf(size_t nodes_visited,
                            size_t& subtree_root_index,
-                           key_type const& key,
-                           value_type const& value,
+                           Key const& key,
+                           Value const& value,
                            bool& found_key)
         {
             nodes_visited = super::insert_at_leaf(nodes_visited, subtree_root_index, key, value, found_key);
@@ -44,8 +45,8 @@ namespace cop3530 {
         }
         int do_remove(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                       size_t& subtree_root_index,
-                      key_type const& key,
-                      value_type& value,
+                      Key const& key,
+                      Value& value,
                       bool& found_key)
         {
             nodes_visited = super::do_remove(nodes_visited, subtree_root_index, key, value, found_key);
@@ -125,7 +126,9 @@ namespace cop3530 {
                 //no more space
                 return -1 * this->size();
             bool found_key = false;
-            size_t nodes_visited = insert_at_leaf(0, this->root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
             validate_avl_balance();
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
@@ -137,10 +140,14 @@ namespace cop3530 {
         */
         int remove(key_type const& key, value_type& value) {
             bool found_key = false;
-            size_t nodes_visited = do_remove(0, this->root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = do_remove(0, this->root_index, k, v, found_key);
             validate_avl_balance();
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
+            if (found_key)
+                value = v.raw();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
     };

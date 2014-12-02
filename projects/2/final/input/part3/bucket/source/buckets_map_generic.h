@@ -10,77 +10,13 @@ namespace cop3530 {
     template<typename key_type,
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
-             typename compare_functor = hash_utils::functors::compare_functor,
              typename primary_hash = hash_utils::functors::primary_hashes::hash_basic,
              typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapBucketsGeneric {
     private:
         typedef hash_utils::ClusterInventory ClusterInventory;
-        class Key {
-        private:
-            key_type raw_key;
-            compare_functor compare;
-            primary_hash hasher1;
-            secondary_hash hasher2;
-            size_t hash1_val;
-            size_t hash2_val;
-            size_t old_map_capacity;
-        public:
-            bool operator==(Key const& rhs) const {
-                return compare(raw_key, rhs.raw_key) == 0;
-            }
-            bool operator==(key_type const& rhs) const {
-                return compare(raw_key, rhs) == 0;
-            }
-            bool operator!=(Key const& rhs) const {
-                return ! operator==(rhs);
-            }
-            bool operator!=(key_type const& rhs) const {
-                return ! operator==(rhs);
-            }
-            size_t hash(size_t map_capacity, size_t probe_attempt) const {
-                size_t local_hash2_val;
-                if (probe_attempt != 0 && hasher2.changes_with_probe_attempt())
-                {
-                    //if the hashing function value is dependent on the probe attempt
-                    //(eg quadratic probing), then we need to retrieve the new value
-                    local_hash2_val = hasher2(raw_key, probe_attempt);
-                } else {
-                    //otherwise we can just use the value we have stored
-                    local_hash2_val = hash2_val;
-                }
-                return (hash1_val + probe_attempt * local_hash2_val) % map_capacity;
-            }
-            key_type const& raw() const {
-                return raw_key;
-            }
-            void reset(key_type const& key) {
-                raw_key = key;
-                size_t base_probe_attempt = 0;
-                hash1_val = hasher1(key);
-                hash2_val = hasher2(key, base_probe_attempt);
-            }
-            explicit Key(key_type key) {
-                reset(key);
-            }
-            Key() = default;
-        };
-        class Value {
-        private:
-            value_type raw_value;
-        public:
-            bool operator==(Value const& rhs) const {
-                return compare(raw_value, rhs.raw_value);
-            }
-            bool operator==(value_type const& rhs) const {
-                return compare(raw_value, rhs) == 0;
-            }
-            value_type const& raw() const {
-                return raw_value;
-            }
-            explicit Value(value_type value): raw_value(value) {}
-            Value() = default;
-        };
+        typedef hash_utils::Key<key_type, primary_hash, secondary_hash> Key;
+        typedef hash_utils::Value<value_type> Value;
         struct Item {
             Key key;
             Value value;
@@ -319,7 +255,7 @@ namespace cop3530 {
         key_type remove_random() {
             if (size() == 0) throw std::logic_error("Cant remove from an empty map");
             size_t num_slots = capacity();
-            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
+            size_t ith_node_to_delete = 1 + rand_i(size());
             for (size_t i = 0; i != num_slots; ++i) {
                 Bucket const& bucket = buckets[i];
                 Item* item_ptr = bucket.head;

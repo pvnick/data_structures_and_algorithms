@@ -1,4 +1,4 @@
-#define _DEBUG_ true
+#define _DEBUG_ false
 
 #include <iostream>
 #include <cmath>
@@ -66,15 +66,25 @@ void histogram(std::vector<size_t> const& vals, size_t bins = 20, size_t max_bar
         std::cout << std::string(x / bin_scale, '*') << std::endl;
 }
 
+typedef cop3530::hash_utils::Key<int> BlahBlah;
+
 int main() {
+BlahBlah k1(1);
+BlahBlah k2(2);
+std::cout << (k1 < k2) << std::endl;
+return 0;
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::RBST<std::string, int> map(1000);
-    for (size_t i = 0; i != 100000; ++i) {
-        map.insert(std::to_string(cop3530::hash_utils::rand_i(1000000)), i);
+    cop3530::RBST<int, int> map(20);
+    for (size_t i = 0; i != 20; ++i) {
+        map.insert(i, i);
     }
-    //map.print(std::cout) << std::endl;
-
+    map.print(std::cout) << std::endl;
+if (_DEBUG_)
+std::cout << "debug on" << std::endl;
+else
+std::cout << "debug off" << std::endl;
+    return 0;
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {
         cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();

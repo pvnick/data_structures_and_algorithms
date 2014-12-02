@@ -11,21 +11,22 @@
 
 namespace cop3530 {
     template<typename key_type,
-             typename value_type,
-             typename compare_functor = hash_utils::functors::compare_functor>
-    class RBST: public BST<key_type, value_type, compare_functor> {
+             typename value_type>
+    class RBST: public BST<key_type, value_type> {
     /*
         Within the RBST insert_at_leaf method, the recursive execution path is randomly redirected
         to insert at the root. Therefore, we simply inherit from a generic BST class and wrap the
         insert_at_leaf method with that potential alternative execution path
     */
     private:
-        using super = BST<key_type, value_type, compare_functor>;
+        using super = BST<key_type, value_type>;
         using typename super::Node;
+        typedef hash_utils::Key<key_type> Key;
+        typedef hash_utils::Value<value_type> Value;
         int insert_at_leaf(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                            size_t& subtree_root_index,
-                           key_type const& key,
-                           value_type const& value,
+                           Key const& key,
+                           Value const& value,
                            bool& found_key)
         {
             //parent was not a leaf
@@ -40,8 +41,8 @@ namespace cop3530 {
         }
         int insert_at_root(size_t nodes_visited,
                            size_t& subtree_root_index,
-                           key_type const& key,
-                           value_type const& value,
+                           Key const& key,
+                           Value const& value,
                            bool& found_key)
         {
             if (subtree_root_index == 0) {
@@ -52,9 +53,8 @@ namespace cop3530 {
                 Node& subtree_root = this->nodes[subtree_root_index];
                 ++nodes_visited;
                 //keep going down to the base of the tree
-                switch (this->compare(key, subtree_root.key)) {
-                case -1:
-                    //key is less than subtree root's key
+
+                if (key < subtree_root.key) {
                     nodes_visited = insert_at_root(nodes_visited, subtree_root.left_index, key, value, found_key);
                     if ( ! found_key) {
                         //new node currently a new child of subtree root, so increment
@@ -68,9 +68,7 @@ namespace cop3530 {
                         subtree_root.update_height(this->nodes);
                         this->rotate_right(subtree_root_index);
                     }
-                    break;
-                case 1:
-                    //key is greater than subtree root's key
+                } else if (key > subtree_root.key) {
                     nodes_visited = insert_at_root(nodes_visited, subtree_root.right_index, key, value, found_key);
                     if ( ! found_key) {
                         subtree_root.num_children++;
@@ -80,14 +78,12 @@ namespace cop3530 {
                         subtree_root.update_height(this->nodes);
                         this->rotate_left(subtree_root_index);
                     }
-                    break;
-                case 0:
+                } else if (key == subtree_root.key) {
                     //found key, replace the value
                     subtree_root.value = value;
                     found_key = true;
-                    break;
-                default:
-                    throw std::domain_error("insert_at_root: Unexpected compare() function return value");
+                } else {
+                    throw std::logic_error("Unexpected compare result");
                 }
             }
             return nodes_visited;
@@ -104,7 +100,9 @@ namespace cop3530 {
                 //no more space
                 return -1 * this->size();
             bool found_key = false;
-            size_t nodes_visited = insert_at_leaf(0, this->root_index, key, value, found_key);
+            Key k(key);
+            Value v(value);
+            size_t nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;

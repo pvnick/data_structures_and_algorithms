@@ -9,10 +9,20 @@
 #include <string.h>
 #include <limits>
 #include <ostream>
+#include <cmath>
 
 namespace cop3530 {
     double lg(size_t i) {
         return std::log(i) / std::log(2);
+    }
+    size_t rand_i(size_t max) {
+        size_t bucket_size = RAND_MAX / max;
+        size_t num_buckets = RAND_MAX / bucket_size;
+        size_t big_rand;
+        do {
+                big_rand = rand();
+        } while(big_rand >= num_buckets * bucket_size);
+        return big_rand / bucket_size;
     }
 
     namespace hash_utils {
@@ -26,15 +36,7 @@ namespace cop3530 {
                 }
             };
         };
-        size_t rand_i(size_t max) {
-            size_t bucket_size = RAND_MAX / max;
-            size_t num_buckets = RAND_MAX / bucket_size;
-            size_t big_rand;
-            do {
-                    big_rand = rand();
-            } while(big_rand >= num_buckets * bucket_size);
-            return big_rand / bucket_size;
-        }
+
         size_t str_to_numeric(const char* str) {
             unsigned int base = 257; //prime number chosen near an 8-bit character
             size_t numeric = 0;
@@ -142,6 +144,126 @@ namespace cop3530 {
                 };
             }
         }
+
+        template<typename T>
+        class GenericContainer {
+            /*
+                for the types we need to support other than const char* (ie int, double, and std::string),
+                we can pass these around willy-nilly. for const char*, handled below, we will obtain our
+                own copy of the character array by wrapping it in a std::string
+            */
+        private:
+            T raw;
+        public:
+            GenericContainer(const T& val): raw(val) {}
+            GenericContainer() = default;
+            T operator()() const {
+                return raw;
+            }
+            void reset(const T& val) {
+                raw = val;
+            }
+        };
+        template<>
+        class GenericContainer<const char*> {
+            /*
+                class template specialization for character arrays, stores a local copy of the character array 
+                wrapped in a std::string so that it wont go out of scope and lead to memory corruption
+            */
+        private:
+            std::string raw;
+        public:
+            GenericContainer(const char* val): raw(val) {}
+            GenericContainer() = default;
+            const char* operator()() const {
+                return raw.c_str();
+            }
+            void reset(const char* val) {
+                raw = val;
+            }
+        };
+
+        template<typename key_type,
+                 typename primary_hash = hash_utils::functors::primary_hashes::hash_basic,
+                 typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
+        class Key {
+        private:
+            GenericContainer<key_type> raw_key;
+            functors::compare_functor compare;
+            primary_hash hasher1;
+            secondary_hash hasher2;
+            size_t hash1_val;
+            size_t hash2_val;
+            size_t old_map_capacity;
+        public:
+            bool operator==(Key const& rhs) const {
+                return compare(raw_key(), rhs.raw_key()) == 0;
+            }
+            bool operator==(key_type const& rhs) const {
+                return compare(raw_key(), rhs) == 0;
+            }
+            bool operator<(Key const& rhs) const {
+                return compare(raw_key(), rhs.raw_key()) == -1;
+            }
+            bool operator<(key_type const& rhs) const {
+                return compare(raw_key(), rhs) == -1;
+            }
+            bool operator>(Key const& rhs) const {
+                return compare(raw_key(), rhs.raw_key()) == 1;
+            }
+            bool operator>(key_type const& rhs) const {
+                return compare(raw_key(), rhs) == 1;
+            }
+            bool operator!=(Key const& rhs) const {
+                return ! operator==(rhs);
+            }
+            bool operator!=(key_type const& rhs) const {
+                return ! operator==(rhs);
+            }
+            size_t hash(size_t map_capacity, size_t probe_attempt) const {
+                size_t local_hash2_val;
+                if (probe_attempt != 0 && hasher2.changes_with_probe_attempt())
+                {
+                    //if the hashing function value is dependent on the probe attempt
+                    //(eg quadratic probing), then we need to retrieve the new value
+                    local_hash2_val = hasher2(raw_key(), probe_attempt);
+                } else {
+                    //otherwise we can just use the value we have stored
+                    local_hash2_val = hash2_val;
+                }
+                return (hash1_val + probe_attempt * local_hash2_val) % map_capacity;
+            }
+            key_type raw() const {
+                return raw_key();
+            }
+            void reset(key_type const& key) {
+                raw_key.reset(key);
+                size_t base_probe_attempt = 0;
+                hash1_val = hasher1(key);
+                hash2_val = hasher2(key, base_probe_attempt);
+            }
+            explicit Key(key_type const& key): raw_key(key) {
+                reset(key);
+            }
+            Key() = default;
+        };
+        template <typename value_type>
+        class Value {
+        private:
+            GenericContainer<value_type> raw_value;
+        public:
+            bool operator==(Value const& rhs) const {
+                return compare(raw_value(), rhs.raw_value());
+            }
+            bool operator==(value_type const& rhs) const {
+                return compare(raw_value(), rhs) == 0;
+            }
+            value_type raw() const {
+                return raw_value();
+            }
+            explicit Value(value_type const& value): raw_value(value) {}
+            Value() = default;
+        };
     }
 }
 
