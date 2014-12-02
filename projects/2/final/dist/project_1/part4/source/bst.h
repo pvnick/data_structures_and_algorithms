@@ -206,8 +206,7 @@ namespace cop3530 {
             std::ostringstream oss;
             //print the node
             //todo: fix this to only print the key
-            oss << "[" << subtree_root.key << ": val=" << subtree_root.value << ", children=" << subtree_root.num_children << ", height=" << subtree_root.height << ", bal fact=" << subtree_root.balance_factor(nodes) << "]";
-            //oss << "[" << subtree_root.key << ", " << subtree_root.height << "]";
+            oss << "[" << subtree_root.key << "]";
             buffer_lines[root_line_index] += oss.str();
             //print the right descendents
             if (subtree_root.right_index > 0) {

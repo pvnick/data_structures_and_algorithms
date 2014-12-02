@@ -120,9 +120,11 @@ namespace cop3530 {
         int insert(key_type const& key, value_type const& value) {
             if (this->size() == this->capacity())
                 //no more space
-                return 0;
+                return -1 * this->size();
             bool found_key = false;
-            return insert_at_leaf(0, this->root_index, key, value, found_key);
+            size_t nodes_visited = insert_at_leaf(0, this->root_index, key, value, found_key);
+            validate_integrity();
+            return nodes_visited;
         }
         /*
             if there is an item matching key, removes the key/value-pair from the tree, stores
@@ -130,9 +132,9 @@ namespace cop3530 {
         */
         int remove(key_type const& key, value_type& value) {
             bool found_key = false;
-            int nodes_visited = do_remove(0, this->root_index, key, value, found_key);
+            size_t nodes_visited = do_remove(0, this->root_index, key, value, found_key);
             validate_integrity();
-            return nodes_visited;
+            return found_key ? nodes_visited : -1 * nodes_visited;
         }
     };
 }

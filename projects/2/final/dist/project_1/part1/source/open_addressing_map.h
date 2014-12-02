@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "../../common/common.h"
-#include "../../part4/source/rbst.h"
 
 namespace cop3530 {
     class HashMapOpenAddressing {
@@ -82,30 +81,29 @@ namespace cop3530 {
             delete slots;
         }
         /*
-            if there is space available, adds the specified key/value-pair to the hash map and returns the
-            number of probes required, P; otherwise returns -1 * P. If an item already exists in the map
-            with the same key, replace its value.
+            if there is space available, adds the specified key/value-pair to the hash map and returns true; otherwise
+            returns false. If an item already exists in the map with the same key, replace its value.
         */
-        int insert(key_type const& key, value_type const& value) {
+        bool insert(key_type const& key, value_type const& value) {
             size_t M = capacity();
             if (M == size())
-                return -1 * size();
+                return false;
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required)) % M;
             insert_at_index(key, value, index);
-            return probes_required;
+            return true;
         }
         /*
-            if there is an item matching key, removes the key/value-pair from the map, stores it's value in
-            value, and returns the number of probes required, P; otherwise returns -1 * P.
+            if there is an item matching key, removes the key/value-pair from the map, stores it's value in value,
+            and returns true; otherwise returns false.
         */
-        int remove(key_type const& key, value_type& value) {
+        bool remove(key_type const& key, value_type& value) {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required)) % M;
             if (slots[index].key != key)
                 //key not found
-                return -1 * probes_required;
+                return false;
             value = remove_at_index(index);
             size_t start_index = index;
             //remove and reinsert items until find unoccupied slot
@@ -119,22 +117,21 @@ namespace cop3530 {
                     break;
                 }
             }
-            return probes_required;
+            return true;
         }
         /*
-            if there is an item matching key, stores it's value in value, and returns the
-            number of probes required, P; otherwise returns -1 * P. Regardless, the item
-            remains in the map.
+            if there is an item matching key, stores it's value in value,
+            and returns true (the item remains in the map); otherwise returns false.
         */
-        int search(key_type const& key, value_type& value) {
+        bool search(key_type const& key, value_type& value) {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required)) % M;
             if (slots[index].key != key)
                 //key not found
-                return -1 * probes_required;
+                return false;
             value = slots[index].value;
-            return probes_required;
+            return true;
         }
         /*
             removes all items from the map.
@@ -190,73 +187,6 @@ namespace cop3530 {
             return out;
         }
 
-        priority_queue<ClusterInventory> cluster_distribution() {
-            //use an array to count cluster instances, then feed those to a priority queue and return it.
-            priority_queue<ClusterInventory> cluster_pq;
-            if (size() == 0) return cluster_pq;
-            size_t M = capacity();
-            size_t cluster_counter[M + 1];
-            for (size_t i = 0; i <= M; ++i)
-                cluster_counter[i] = 0;
-            if (size() == M) {
-                //handle the special case when the map is full
-                cluster_counter[size()]++;
-            } else {
-                //have at least one unoccupied slot
-                bool first_cluster_skipped = false;
-                size_t curr_cluster_size = 0;
-                //treat the backing array as a circular buffer and make a maximum of two passes to
-                //capture everything, including the wraparound cluster if it exists
-                for (size_t i = 1; i != M * 2; ++i) {
-                    Slot const& curr_slot = slots[i % M], prev_slot = slots[(i - 1) % M];
-                    if (curr_slot.is_occupied && prev_slot.is_occupied) {
-                        //still in a cluster
-                        ++curr_cluster_size;
-                    } else if (curr_slot.is_occupied && prev_slot.is_occupied == false) {
-                        //found a new cluster
-                        curr_cluster_size = 1;
-                    } else if ( ! curr_slot.is_occupied && prev_slot.is_occupied) {
-                        //found the end of a cluster
-                        if (first_cluster_skipped) {
-                            cluster_counter[curr_cluster_size]++;
-                            if (i >= M) {
-                                //reached the end of the first cluster in the second pass, so no all clusters have been handled
-                                break;
-                            }
-                        } else {
-                            first_cluster_skipped = true;
-                        }
-                    }
-                }
-            }
-            for (size_t i = 1; i <= M; ++i)
-                if (cluster_counter[i] > 0) {
-                    ClusterInventory cluster{i, cluster_counter[i]};
-                    cluster_pq.add_to_queue(cluster);
-                }
-            return cluster_pq;
-        }
-
-        /*
-            generate a random number, R, (1,size), and starting with slot zero in the backing array,
-            find the R-th occupied slot; remove the item from that slot (adjusting subsequent items as
-            necessary), and return its key.
-        */
-        key_type remove_random() {
-            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
-            size_t num_slots = capacity();
-            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            for (size_t i = 0; i != num_slots; ++i) {
-                Slot const& slot = slots[i];
-                if (slot.is_occupied && --ith_node_to_delete == 0) {
-                    key_type key = slot.key;
-                    value_type val_dummy;
-                    remove(key, val_dummy);
-                    return key;
-                }
-            }
-            throw std::logic_error("Unexpected end of remove_random function");
-        }
     };
 }
 

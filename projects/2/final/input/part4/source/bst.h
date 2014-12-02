@@ -206,8 +206,7 @@ namespace cop3530 {
             std::ostringstream oss;
             //print the node
             //todo: fix this to only print the key
-            oss << "[" << subtree_root.key << ": val=" << subtree_root.value << ", children=" << subtree_root.num_children << ", height=" << subtree_root.height << ", bal fact=" << subtree_root.balance_factor(nodes) << "]";
-            //oss << "[" << subtree_root.key << ", " << subtree_root.height << "]";
+            oss << "[" << subtree_root.key << "]";
             buffer_lines[root_line_index] += oss.str();
             //print the right descendents
             if (subtree_root.right_index > 0) {
@@ -373,7 +372,8 @@ namespace cop3530 {
         int do_search(size_t nodes_visited, //starts at 0 when this function is first called (ie does not include current node visitation)
                       size_t subtree_root_index,
                       key_type const& key,
-                      value_type value) const
+                      value_type value,
+                      bool& found_key) const
         {
             if (subtree_root_index == 0)
                 //key not found
@@ -393,6 +393,7 @@ namespace cop3530 {
                 case 0:
                     //found key
                     value = subtree_root.value;
+                    found_key = true;
                     break;
                 default:
                     throw std::domain_error("Unexpected compare() function return value");
@@ -461,9 +462,10 @@ namespace cop3530 {
         virtual int insert(key_type const& key, value_type const& value) {
             if (size() == capacity())
                 //no more space
-                return 0;
+                return -1 * size();
             bool found_key = false;
-            return insert_at_leaf(0, root_index, key, value, found_key);
+            size_t nodes_visited = insert_at_leaf(0, root_index, key, value, found_key);
+            return nodes_visited;
         }
         /*
             if there is an item matching key, removes the key/value-pair from the tree, stores
@@ -471,14 +473,17 @@ namespace cop3530 {
         */
         virtual int remove(key_type const& key, value_type& value) {
             bool found_key = false;
-            return do_remove(0, root_index, key, value, found_key);
+            size_t nodes_visited = do_remove(0, root_index, key, value, found_key);
+            return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
             if there is an item matching key, stores it's value in value, and returns the number
             of nodes visited, V; otherwise returns -1 * V. Regardless, the item remains in the tree.
         */
         virtual int search(key_type const& key, value_type& value) {
-            return do_search(0, root_index, key, value);
+            bool found_key = false;
+            size_t nodes_visited = do_search(0, root_index, key, value, found_key);
+            return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
             removes all items from the map

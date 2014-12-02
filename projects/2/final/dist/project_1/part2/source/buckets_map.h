@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include "../../common/common.h"
-#include "../../common/SSLL.h"
-#include "../../common/priority_queue.h"
 
 namespace cop3530 {
     class HashMapBuckets {
@@ -17,7 +15,6 @@ namespace cop3530 {
             value_type value;
             Item* next;
             bool is_dummy;
-            Item(Item* next, key_type const& key, value_type const& value): next(next), is_dummy(false) {}
             Item(Item* next): next(next), is_dummy(true) {}
         };
         struct Bucket {
@@ -85,12 +82,11 @@ namespace cop3530 {
             delete[] buckets;
         }
         /*
-            if there is space available, adds the specified key/value-pair to the hash map and returns the
-            number of probes required, P; otherwise returns -1 * P (that's a lie: we will always have space
-            available because each bucket contains a linked list that is indefinitely growable). If an item
-            already exists in the map with the same key, replace its value.
+            if there is space available, adds the specified key/value-pair to the hash map and returns true; otherwise
+            returns false. If an item already exists in the map with the same key, replace its value.
+            note: this will never return false because we add to a linked list to resolve collisions
         */
-        int insert(key_type const& key, value_type const& value) {
+        bool insert(key_type const& key, value_type const& value) {
             Item* item;
             int probes_required = search_internal(key, item);
             if (probes_required > 0)
@@ -104,13 +100,13 @@ namespace cop3530 {
                 item->next = new Item(nullptr);
                 ++num_items;
             }
-            return std::abs(probes_required);
+            return true;
         }
         /*
-            if there is an item matching key, removes the key/value-pair from the map, stores it's value in
-            value, and returns the number of probes required, P; otherwise returns -1 * P.
+            if there is an item matching key, removes the key/value-pair from the map, stores it's
+            value in value, and returns true; otherwise returns false.
         */
-        int remove(key_type const& key, value_type& value) {
+        bool remove(key_type const& key, value_type& value) {
             Item* item;
             int probes_required = search_internal(key, item);
             if (probes_required > 0) {
@@ -121,22 +117,23 @@ namespace cop3530 {
                 *item = *to_delete;
                 delete to_delete;
                 --num_items;
+                return true;
             }
-            return probes_required;
+            return false;
         }
         /*
-            if there is an item matching key, stores it's value in value, and returns the
-            number of probes required, P; otherwise returns -1 * P. Regardless, the item
-            remains in the map.
+            if there is an item matching key, stores it's value in value, and returns true (the
+            item remains in the map); otherwise returns false.
         */
-        int search(key_type const& key, value_type& value) {
+        bool search(key_type const& key, value_type& value) {
             Item* item;
             int probes_required = search_internal(key, item);
             if (probes_required > 0) {
                 //found item
                 value = item->value;
+                return true;
             }
-            return probes_required;
+            return false;
         }
         /*
             removes all items from the map.
@@ -164,10 +161,20 @@ namespace cop3530 {
             return num_items;
         }
         /*
-            returns the map's load factor (size = load * capacity).
+            returns the map's load factor (occupied buckets = load * capacity).
         */
         double load() {
-            return static_cast<double>(size()) / capacity();
+            size_t occupied_buckets = 0;
+            if (size() > 0) {
+                size_t M = capacity();
+                for (size_t i = 0; i != M; ++i) {
+                    Bucket const& bucket = buckets[i];
+                    if ( ! bucket.head->is_dummy)
+                        //bucket has at least one item
+                        occupied_buckets++;
+                }
+            }
+            return static_cast<double>(occupied_buckets) / capacity();
         }
         /*
             inserts into the ostream, the backing array's contents in sequential order.
@@ -180,7 +187,7 @@ namespace cop3530 {
             out << '[';
             for (size_t i = 0; i != cap; ++i) {
                 Bucket const& bucket = buckets[i];
-                for (Item* item = bucket.head; item->is_dummy != false; item = item->next) {
+                for (Item* item = bucket.head; item->is_dummy != true; item = item->next) {
                     if (print_separator)
                         out << "|";
                     else
@@ -192,72 +199,6 @@ namespace cop3530 {
             return out;
         }
 
-        /*
-            returns a priority queue containing cluster sizes and instances (in the form of ClusterInventory
-            struct instances), sorted by cluster size.
-        */
-        priority_queue<ClusterInventory> cluster_distribution() {
-            //use a simple linked list to count cluster instances, then feed those to a priority queue and return it.
-            priority_queue<ClusterInventory> cluster_pq;
-            if (size() == 0) return cluster_pq;
-            SSLL<ClusterInventory> clusters;
-            size_t M = capacity();
-            for (size_t i = 0; i != M; ++i) {
-                Bucket const& bucket = buckets[i];
-                size_t bucket_size = 0;
-                Item* item_ptr = bucket.head;
-                while ( ! item_ptr->is_dummy) {
-                    ++bucket_size;
-                    item_ptr = item_ptr->next;
-                }
-                //I don't love this O(N^2) implementation, but premature optimization is the root of all evil and late projects
-                SSLL<ClusterInventory>::iterator cluster_iterator = clusters.begin();
-                SSLL<ClusterInventory>::iterator cluster_iterator_end = clusters.end();
-                bool found_cluster = false;
-                for (; cluster_iterator != cluster_iterator_end; ++cluster_iterator) {
-                    if (cluster_iterator->cluster_size == bucket_size) {
-                        found_cluster = true;
-                        break;
-                    }
-                }
-                if (found_cluster)
-                    cluster_iterator->num_instances++;
-                else
-                    clusters.push_back({bucket_size, 1});
-            }
-            SSLL<ClusterInventory>::const_iterator cluster_iterator = clusters.begin();
-            SSLL<ClusterInventory>::const_iterator cluster_iterator_end = clusters.end();
-            for (; cluster_iterator != cluster_iterator_end; ++cluster_iterator) {
-                if (cluster_iterator->cluster_size > 0)
-                    cluster_pq.add_to_queue(*cluster_iterator);
-            }
-            return cluster_pq;
-        }
-
-        /*
-            generate a random number, R, (1,size), and starting with slot zero in the backing array,
-            find the R-th occupied slot; remove the item from that slot (adjusting subsequent items as
-            necessary), and return its key.
-        */
-        key_type remove_random() {
-            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
-            size_t num_slots = capacity();
-            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
-            for (size_t i = 0; i != num_slots; ++i) {
-                Bucket const& bucket = buckets[i];
-                Item* item_ptr = bucket.head;
-                while ( ! item_ptr->is_dummy) {
-                    if (--ith_node_to_delete == 0) {
-                        key_type key = item_ptr->key;
-                        value_type val_dummy;
-                        remove(key, val_dummy);
-                        return key;
-                    }
-                    item_ptr = item_ptr->next;
-                }
-            }
-            throw std::logic_error("Unexpected end of remove_random function");
-        }
     };
 }
 

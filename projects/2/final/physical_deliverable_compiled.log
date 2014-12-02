@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.23)  2 DEC 2014 01:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.23)  2 DEC 2014 01:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,12 +872,12 @@ ommon/priority_queue.h [24
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
 art1/source/open_addressing_map.h [26
 
-] [27] [28] [29] [30]) [31] [32
+] [27] [28]) [29] [30
 
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=188, 614.295pt x 794.97pt>
+art2/part2.pdf, id=181, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
@@ -896,7 +896,7 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=191, page=1, 614.295pt x 794.97pt>
+art2/part2.pdf, id=184, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
@@ -937,12 +937,12 @@ _1//part2/part2.pdf Graphic file (type pdf)
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part2/part2.pdf, page1 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [33
+ [31
 
  </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//
 part2/part2.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=214, page=2, 614.295pt x 794.97pt>
+art2/part2.pdf, id=208, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
@@ -966,197 +966,197 @@ _1//part2/part2.pdf Graphic file (type pdf)
 1//part2/part2.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part2/part2.pdf, page2 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [32 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art2/part2.pdf, id=215, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [33 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art2/part2.pdf, id=219, page=4, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part2/part2.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part2/part2.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [34 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=221, page=3, 614.295pt x 794.97pt>
+art2/part2.pdf, id=223, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 3>
+1//part2/part2.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 3>
+1//part2/part2.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 3>
+1//part2/part2.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page3 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [35 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=225, page=4, 614.295pt x 794.97pt>
+art2/part2.pdf, id=227, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 4>
+1//part2/part2.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 4>
+1//part2/part2.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 4>
+1//part2/part2.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page4 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [36 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=229, page=5, 614.295pt x 794.97pt>
+art2/part2.pdf, id=231, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 5>
+1//part2/part2.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 5>
+1//part2/part2.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 5>
+1//part2/part2.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page5 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [37 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=234, page=6, 614.295pt x 794.97pt>
+art2/part2.pdf, id=236, page=8, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 6>
+1//part2/part2.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 6>
+1//part2/part2.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 6>
+1//part2/part2.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page6 used on input line 15.
+/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [38 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/part2.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=238, page=7, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page7 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [39 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/part2.pdf, id=242, page=8, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part2/part2.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part2/part2.pdf, page8 used on input line 15.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [40 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part2/part2.pdf>]
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part2/checklist.txt  (verbatim)
- [41] [42]
+ [39] [40]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/common.h [43
+ommon/common.h [41
 
-] [44] [45]) [46]
+] [42] [43]) [44]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/priority_queue.h [47
+ommon/priority_queue.h [45
 
-]) [48]
+]) [46]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art2/source/buckets_map.h [49
+art2/source/buckets_map.h [47
 
-] [50] [51] [52] [53]) [54] [55
+] [48] [49] [50]) [51] [52
 
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=294, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=284, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
@@ -1177,7 +1177,7 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=297, page=1, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=287, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
@@ -1223,12 +1223,12 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part3/open_addressing/part3open.pdf, page1 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [56
+ [53
 
  </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//
 part3/open_addressing/part3open.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=320, page=2, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=310, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
@@ -1254,207 +1254,207 @@ _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 1//part3/open_addressing/part3open.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part3/open_addressing/part3open.pdf, page2 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [54 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/open_addressing/part3open.pdf, id=317, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [55 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/open_addressing/part3open.pdf, id=322, page=4, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [56 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/open_addressing/part3open.pdf, id=326, page=5, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
+ line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/open_addressing/part3open.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [57 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=328, page=3, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=331, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 3>
+1//part3/open_addressing/part3open.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 3>
+1//part3/open_addressing/part3open.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 3>
+1//part3/open_addressing/part3open.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page3 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [58 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=332, page=4, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=335, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 4>
+1//part3/open_addressing/part3open.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 4>
+1//part3/open_addressing/part3open.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 4>
+1//part3/open_addressing/part3open.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page4 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [59 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=336, page=5, 614.295pt x 794.97pt>
+art3/open_addressing/part3open.pdf, id=339, page=8, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 5>
+1//part3/open_addressing/part3open.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 5>
+1//part3/open_addressing/part3open.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 5>
+1//part3/open_addressing/part3open.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page5 used on input
+/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
  line 22.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [60 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/part3open.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=340, page=6, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page6 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [61 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=345, page=7, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page7 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [62 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/part3open.pdf, id=349, page=8, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/open_addressing/part3open.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/open_addressing/part3open.pdf, page8 used on input
- line 22.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [63 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/open_addressing/part3open.pdf>]
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/open_addressing/checklist.txt  (verbatim)
- [64] [65]
+ [61] [62]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/common.h [66
+ommon/common.h [63
 
-] [67] [68]) [69]
+] [64] [65]) [66]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/priority_queue.h [70
+ommon/priority_queue.h [67
 
-]) [71]
+]) [68]
 Overfull \hbox (43.21751pt too wide) in paragraph at lines 26--26
 |\OT1/cmr/bx/n/14.4 part3/open[]addressing/source/open[]addressing[]generic[]ma
 p.h| 
@@ -1462,15 +1462,15 @@ p.h|
 
 
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/open_addressing/source/open_addressing_generic_map.h [72
+art3/open_addressing/source/open_addressing_generic_map.h [69
 
-] [73] [74]
-[75] [76] [77]) [78] [79
+] [70] [71]
+[72] [73] [74]) [75] [76
 
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=404, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=394, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
@@ -1489,7 +1489,7 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=407, page=1, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=397, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
@@ -1535,12 +1535,12 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part3/bucket/part3bucket.pdf, page1 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [80
+ [77
 
  </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//
 part3/bucket/part3bucket.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=430, page=2, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=420, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
@@ -1566,217 +1566,218 @@ _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 1//part3/bucket/part3bucket.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part3/bucket/part3bucket.pdf, page2 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [78 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/bucket/part3bucket.pdf, id=427, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [79 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/bucket/part3bucket.pdf, id=432, page=4, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 4>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [80 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art3/bucket/part3bucket.pdf, id=436, page=5, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
+9.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part3/bucket/part3bucket.pdf, page 5>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [81 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=437, page=3, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=440, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 3>
+1//part3/bucket/part3bucket.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 3>
+1//part3/bucket/part3bucket.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 3>
+1//part3/bucket/part3bucket.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page3 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [82 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=441, page=4, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=444, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 4>
+1//part3/bucket/part3bucket.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 4>
+1//part3/bucket/part3bucket.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 4>
+1//part3/bucket/part3bucket.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page4 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [83 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=445, page=5, 614.295pt x 794.97pt>
+art3/bucket/part3bucket.pdf, id=448, page=8, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 5>
+1//part3/bucket/part3bucket.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 5>
+1//part3/bucket/part3bucket.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 5>
+1//part3/bucket/part3bucket.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page5 used on input line 2
+/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
 9.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [84 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/part3bucket.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=449, page=6, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 6>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page6 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [85 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=454, page=7, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 7>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page7 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [86 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/part3bucket.pdf, id=458, page=8, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part3/bucket/part3bucket.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part3/bucket/part3bucket.pdf, page8 used on input line 2
-9.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [87 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part3/bucket/part3bucket.pdf>]
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part3/bucket/checklist.txt  (verbatim)
 
-[88] [89]
+[85] [86]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/common.h [90
+ommon/common.h [87
 
-] [91] [92]) [93]
+] [88] [89]) [90]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/priority_queue.h [94
+ommon/priority_queue.h [91
 
-]) [95]
+]) [92]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art3/bucket/source/buckets_map.h [96
+art3/bucket/source/buckets_map_generic.h [93
 
-] [97] [98] [99] [100]) [101] [102
+] [94] [95] [96] [97] [98] [99])
+[100] [101
 
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=510, 614.295pt x 794.97pt>
+art4/part4.pdf, id=507, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
@@ -1795,7 +1796,7 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=513, page=1, 614.295pt x 794.97pt>
+art4/part4.pdf, id=510, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
@@ -1836,12 +1837,12 @@ _1//part4/part4.pdf Graphic file (type pdf)
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part4/part4.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [103
+ [102
 
  </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//
 part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=537, page=2, 614.295pt x 794.97pt>
+art4/part4.pdf, id=533, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
@@ -1865,202 +1866,202 @@ _1//part4/part4.pdf Graphic file (type pdf)
 1//part4/part4.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part4/part4.pdf, page2 used on input line 36.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [103 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
+t_1//part4/part4.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art4/part4.pdf, id=541, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4/part4.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4/part4.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4/part4.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4/part4.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4/part4.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4/part4.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [104 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=544, page=3, 614.295pt x 794.97pt>
+art4/part4.pdf, id=545, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 3>
+1//part4/part4.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 3>
+1//part4/part4.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 3>
+1//part4/part4.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page3 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [105 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=548, page=4, 614.295pt x 794.97pt>
+art4/part4.pdf, id=549, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 4>
+1//part4/part4.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 4>
+1//part4/part4.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 4>
+1//part4/part4.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page4 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [106 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=552, page=5, 614.295pt x 794.97pt>
+art4/part4.pdf, id=553, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 5>
+1//part4/part4.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 5>
+1//part4/part4.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 5>
+1//part4/part4.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page5 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [107 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=556, page=6, 614.295pt x 794.97pt>
+art4/part4.pdf, id=557, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 6>
+1//part4/part4.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 6>
+1//part4/part4.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 6>
+1//part4/part4.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page6 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [108 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=560, page=7, 614.295pt x 794.97pt>
+art4/part4.pdf, id=561, page=8, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 7>
+1//part4/part4.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 7>
+1//part4/part4.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/part4.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 7>
+1//part4/part4.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page7 used on input line 36.
+/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [109 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4/part4.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/part4.pdf, id=565, page=8, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4/part4.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4/part4.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4/part4.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4/part4.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4/part4.pdf, page8 used on input line 36.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [110 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
-t_1//part4/part4.pdf>]
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4/checklist.txt  (verbatim)
- [111] [112]
+ [110] [111]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/common.h [113
+ommon/common.h [112
 
-] [114] [115]) [116]
+] [113] [114]) [115]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/priority_queue.h [117
+ommon/priority_queue.h [116
 
-]) [118]
+]) [117]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/source/bst.h [119
+art4/source/bst.h [118
 
-] [120] [121] [122] [123] [124] [125] [126] [127]
-[128] [129] [130]) [131]
+] [119] [120] [121] [122] [123] [124] [125] [126]
+[127] [128] [129]) [130]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4/source/rbst.h [132
+art4/source/rbst.h [131
 
-] [133]) [134] [135
+] [132]) [133] [134
 
 
 ]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=649, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=645, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
@@ -2079,7 +2080,7 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=652, page=1, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=648, page=1, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
@@ -2125,12 +2126,12 @@ Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part4_bonus/part4bonus.pdf, page1 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [136
+ [135
 
  </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//
 part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=675, page=2, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=672, page=2, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
@@ -2156,232 +2157,232 @@ _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 1//part4_bonus/part4bonus.pdf, page 2>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
 /final/dist/project_1//part4_bonus/part4bonus.pdf, page2 used on input line 44.
+
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [136 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
+t_1//part4_bonus/part4bonus.pdf>]
+</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
+art4_bonus/part4bonus.pdf, id=679, page=3, 614.295pt x 794.97pt>
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4_bonus/part4bonus.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
+
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4_bonus/part4bonus.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
+
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
+_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
+
+<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
+1//part4_bonus/part4bonus.pdf, page 3>
+Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [137 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=682, page=3, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=683, page=4, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 3>
+1//part4_bonus/part4bonus.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 3>
+1//part4_bonus/part4bonus.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 3>
+1//part4_bonus/part4bonus.pdf, page 4>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page3 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [138 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=686, page=4, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=687, page=5, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 4>
+1//part4_bonus/part4bonus.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 4>
+1//part4_bonus/part4bonus.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 4>
+1//part4_bonus/part4bonus.pdf, page 5>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page4 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [139 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=691, page=5, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=692, page=6, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 5>
+1//part4_bonus/part4bonus.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 5>
+1//part4_bonus/part4bonus.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 5>
+1//part4_bonus/part4bonus.pdf, page 6>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page5 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [140 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=695, page=6, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=696, page=7, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 6>
+1//part4_bonus/part4bonus.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 6>
+1//part4_bonus/part4bonus.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 6>
+1//part4_bonus/part4bonus.pdf, page 7>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page6 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [141 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=699, page=7, 614.295pt x 794.97pt>
+art4_bonus/part4bonus.pdf, id=700, page=8, 614.295pt x 794.97pt>
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 7>
+1//part4_bonus/part4bonus.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 7>
+1//part4_bonus/part4bonus.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
 
 <use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 7>
+1//part4_bonus/part4bonus.pdf, page 8>
 Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page7 used on input line 44.
+/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
 
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [142 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
 t_1//part4_bonus/part4bonus.pdf>]
-</home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/part4bonus.pdf, id=703, page=8, 614.295pt x 794.97pt>
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
-
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
-
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
-_1//part4_bonus/part4bonus.pdf Graphic file (type pdf)
-
-<use /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_
-1//part4_bonus/part4bonus.pdf, page 8>
-Package pdftex.def Info: /home/pvnick/data_structures_and_algorithms/projects/2
-/final/dist/project_1//part4_bonus/part4bonus.pdf, page8 used on input line 44.
-
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [143 </home/pvnick/data_structures_and_algorithms/projects/2/final/dist/projec
-t_1//part4_bonus/part4bonus.pdf>]
 File: /home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project
 _1//part4_bonus/checklist.txt  (verbatim)
 
-[144] [145]
+[143] [144]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/common.h [146
+ommon/common.h [145
 
-] [147] [148]) [149]
+] [146] [147]) [148]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//c
-ommon/priority_queue.h [150
+ommon/priority_queue.h [149
 
-]) [151]
+]) [150]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/source/bst.h [152
+art4_bonus/source/bst.h [151
 
-] [153] [154] [155] [156] [157] [158] [159]
-[160] [161] [162] [163]) [164]
+] [152] [153] [154] [155] [156] [157] [158]
+[159] [160] [161] [162]) [163]
 (/home/pvnick/data_structures_and_algorithms/projects/2/final/dist/project_1//p
-art4_bonus/source/avl.h [165
+art4_bonus/source/avl.h [164
 
 ]
 Overfull \hbox (83.19536pt too wide) in paragraph at lines 76--77
 [][][][][][][][][][][][][][][][][][]  
  []
 
-[166]
+[165]
 Overfull \hbox (78.47041pt too wide) in paragraph at lines 95--96
 [][][][][][][][][][][][][][][][][][]  
  []
 
-[167]) [168] (./physical_deliverable_compiled.aux) ) 
+[166]) [167] (./physical_deliverable_compiled.aux) ) 
 Here is how much of TeX's memory you used:
- 6936 strings out of 495028
- 127629 string characters out of 6181497
+ 6943 strings out of 495028
+ 127814 string characters out of 6181497
  253315 words of memory out of 5000000
- 9997 multiletter control sequences out of 15000+600000
+ 10003 multiletter control sequences out of 15000+600000
  4879 words of font info for 19 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,18n,60p,490b,1605s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2395,10 +2396,10 @@ e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10
 .pfb>
-Output written on physical_deliverable_compiled.pdf (168 pages, 453866 bytes).
+Output written on physical_deliverable_compiled.pdf (167 pages, 450785 bytes).
 PDF statistics:
- 816 PDF objects out of 1000 (max. 8388607)
- 552 compressed objects within 6 object streams
+ 813 PDF objects out of 1000 (max. 8388607)
+ 550 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  386 words of extra memory for PDF output out of 10000 (max. 10000000)
 

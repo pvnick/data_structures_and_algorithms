@@ -52,14 +52,14 @@ Should it be determined that any are not 100% true, I agree to take a 0
 (zero) on the assignment: yes
 
 I affirm that I am the sole author of this AVL Tree
-and the associated tests.  
+and the associated tests.
 Paul Nickerson, Dec 2 in COP3520 section 1087
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
 How to compile and run my unit tests on the OpenBSD VM
-cd part5/source
+cd part4_bonus/source
 ./compile.sh
 ./run_tests > output.txt
 

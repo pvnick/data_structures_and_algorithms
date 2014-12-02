@@ -23,7 +23,6 @@ as described in part IV:
 * insert: yes
 * remove: yes
 * search: yes
-* search: yes
 * clear: yes
 * is_empty: yes
 * capacity: yes
@@ -51,7 +50,7 @@ Should it be determined that any are not 100% true, I agree to take a 0
 (zero) on the assignment: yes
 
 I affirm that I am the sole author of this Randomized BST
-and the associated tests.  
+and the associated tests.
 Paul Nickerson, Dec 2 in COP3520 section 1087
 
 ----------------------------------------------------------------------

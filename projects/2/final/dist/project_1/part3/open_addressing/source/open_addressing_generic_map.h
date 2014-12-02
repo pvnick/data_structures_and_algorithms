@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "../../common/common.h"
-#include "../../common/priority_queue.h"
+#include "../../../common/common.h"
+#include "../../../common/priority_queue.h"
 
 namespace cop3530 {
     template<typename key_type,

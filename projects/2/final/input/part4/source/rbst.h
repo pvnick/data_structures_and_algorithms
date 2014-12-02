@@ -100,7 +100,7 @@ namespace cop3530 {
         int insert(key_type const& key, value_type const& value) {
             if (this->size() == this->capacity())
                 //no more space
-                return 0;
+                return -1 * this->size();
             bool found_key = false;
             return insert_at_leaf(0, this->root_index, key, value, found_key);
         }

@@ -5,8 +5,7 @@
 #include "common.h"
 
 namespace cop3530 {
-    //this class takes a simple singly linked list containing clusters and exposes
-    //a method (get_next_item) which returns the clusters is order of ascending size
+    //this class allows efficient sorting clusters by size for the cluster_distribution functions
     template<typename T,
              typename PriorityCompare = cop3530::hash_utils::ClusterInventory::cluster_size_less_predicate>
     class priority_queue {
@@ -43,7 +42,6 @@ namespace cop3530 {
             }
         }
     public:
-        //take a linked list of cluster descriptors and add each to the priority queue
         priority_queue(size_t preallocation_size = 100): tree(preallocation_size + 1) {
             T empty_item;
             tree.push_back(empty_item);
