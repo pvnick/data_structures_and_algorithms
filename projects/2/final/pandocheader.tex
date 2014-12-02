@@ -1,0 +1,70 @@
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{pdfpages}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{caption}
+
+\fontsize{12}{14}
+
+\renewcommand{\familydefault}{\rmdefault}
+\newcommand{\sectiontitlepage}[1] {
+  \clearpage
+  \vspace*{\stretch{1.0}}
+  \begin{center}
+    \Large\textbf{#1}
+  \end{center}
+  \vspace*{\stretch{2.0}} 
+  \clearpage
+}
+
+\newcommand{\includedeliverable}[1] {
+  \includepdf[pages={-}]{\inputincludepath/#1}
+}
+
+\newcommand{\includetext}[1] {
+  \section*{\detokenize{#1}}
+  \begin{center}
+  \begingroup
+  \verbatiminput{\inputincludepath/#1}
+  \endgroup
+  \end{center}
+  %\begingroup
+  %\obeylines
+  %  \input{}%
+  %\endgroup%
+  
+  \clearpage
+}
+
+\makeatletter % changes the catcode of @ to 11
+\newcommand{\includecode}[1]{
+  \section*{\detokenize{#1}}
+  \filename@parse{#1} 
+  \lstinputlisting[title=\filename@base.\filename@ext]{\inputincludepath/#1}
+  \clearpage
+}
+\makeatother % changes the catcode of @ back to 12
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  stepnumber=1,
+  breakatwhitespace=true,
+  tabsize=4
+}
