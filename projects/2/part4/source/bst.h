@@ -528,7 +528,6 @@ namespace cop3530 {
             and return its key.
         */
         virtual key_type remove_random() {
-            key_type empty;
             if (size() == 0) throw std::logic_error("Cant remove from an empty map");
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());

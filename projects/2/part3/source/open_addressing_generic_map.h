@@ -29,6 +29,15 @@ namespace cop3530 {
             bool operator==(Key const& rhs) const {
                 return compare(raw_key, rhs.raw_key) == 0;
             }
+            bool operator==(key_type const& rhs) const {
+                return compare(raw_key, rhs) == 0;
+            }
+            bool operator!=(Key const& rhs) const {
+                return ! operator==(rhs);
+            }
+            bool operator!=(key_type const& rhs) const {
+                return ! operator==(rhs);
+            }
             size_t hash(size_t map_capacity, size_t probe_attempt) const {
                 size_t local_hash2_val;
                 if (probe_attempt != 0 && hasher2.changes_with_probe_attempt())
@@ -63,7 +72,10 @@ namespace cop3530 {
             bool operator==(Value const& rhs) const {
                 return compare(raw_value, rhs.raw_value);
             }
-            value_type const& raw() {
+            bool operator==(value_type const& rhs) const {
+                return compare(raw_value, rhs) == 0;
+            }
+            value_type const& raw() const {
                 return raw_value;
             }
             explicit Value(value_type value): raw_value(value) {}
@@ -82,27 +94,26 @@ namespace cop3530 {
         size_t curr_capacity = 0;
         size_t num_occupied_slots = 0;
         /*
-            if there is an item matching key, stores it's slot index in slot_index, and
-            returns the the number of probe attempts required (the item remains in the map).
-            otherwise, returns the number of probe attempts requried to reach the encountered
-            empty slot and, if there exists a free slot, stores the free slot's index in slot_index.
+            searches the map for an item matching key. returns the number of probe attempts needed
+            to reach either the item or an empty slot
         */
-        bool search_internal(Key const& key, size_t& slot_index) const {
-            bool found_item = false;
+        int search_internal(Key const& key) {
             size_t M = capacity();
-            for (size_t i = 0; i != M; ++i) {
-                slot_index = key.hash(M, i);
+            size_t probes_required;
+            for (probes_required = 0; probes_required != M; ++probes_required) {
+                size_t slot_index = key.hash(M, probes_required);
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].item.key == key) {
-                        found_item = true;
+                        //found the key
                         break;
                     }
                 } else
                     //found unoccupied slot
                     break;
             }
-            return found_item;
+            return probes_required;
         }
+
         //all backing array manipulations should go through the following two methods
         void insert_at_index(Key const& key, Value const& value, size_t index) {
             Slot& s = slots[index];
@@ -133,40 +144,43 @@ namespace cop3530 {
         ~HashMapOpenAddressingGeneric() {
             delete[] slots;
         }
+
         /*
-            if there is space available, adds the specified key/value-pair
-            to the hash map and returns the number of probes required, P;
-            otherwise returns -1 * P. If an item already exists in the map
-            with the same key, replace its value
+            if there is space available, adds the specified key/value-pair to the hash map and returns the
+            number of probes required, P; otherwise returns -1 * P. If an item already exists in the map
+            with the same key, replace its value.
         */
-        bool insert(key_type const& key, value_type const& value) {
-            size_t index;
-            if (capacity() == size())
-                return false;
+        int insert(key_type const& key, value_type const& value) {
+            size_t M = capacity();
+            if (M == size())
+                return -1 * size();
             Key k(key);
             Value v(value);
-            search_internal(k, index);
+            size_t probes_required = search_internal(k);
+            size_t index = k.hash(M, probes_required);
             insert_at_index(k, v, index);
-            return true;
+            return probes_required;
         }
+
         /*
-            if there is an item matching key, removes the key/value-pair from the
-            map, stores it's value in value, and returns true; otherwise returns false.
+            if there is an item matching key, removes the key/value-pair from the map, stores it's value in
+            value, and returns the number of probes required, P; otherwise returns -1 * P.
         */
-        bool remove(key_type const& key, value_type& value) {
-            size_t index;
+        int remove(key_type const& key, value_type& value) {
+            size_t M = capacity();
             Key k(key);
-            if ( ! search_internal(k, index))
+            size_t probes_required = search_internal(k);
+            size_t index = k.hash(M, probes_required);
+            if (slots[index].is_occupied == false || slots[index].item.key != key)
                 //key not found
-                return false;
+                return -1 * probes_required;
             Value v = remove_at_index(index);
             value = v.raw();
             size_t start_index = index;
-            size_t M = capacity();
-            //remove and reinsert items until find unoccupied slot
+            //remove and reinsert items until find unoccupied slot (guaranteed to happen since we just removed an item)
             for (int i = 1; ; ++i) {
                 index = k.hash(M, i);
-                Slot s = slots[index];
+                Slot const& s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
                     insert(s.item.key.raw(), s.item.value.raw());
@@ -174,20 +188,26 @@ namespace cop3530 {
                     break;
                 }
             }
-            return true;
+            return probes_required;
         }
+
         /*
-            if there is an item matching key, stores it's value in value, and
-            returns true (the item remains in the map); otherwise returns false.
+            if there is an item matching key, stores it's value in value, and returns the
+            number of probes required, P; otherwise returns -1 * P. Regardless, the item
+            remains in the map.
         */
-        bool search(key_type const& key, value_type& value) {
-            size_t index;
+        int search(key_type const& key, value_type& value) {
+            size_t M = capacity();
             Key k(key);
-            if ( ! search_internal(k, index))
-                return false;
+            size_t probes_required = search_internal(k);
+            size_t index = k.hash(M, probes_required);
+            if (slots[index].is_occupied == false || slots[index].item.key != key)
+                //key not found
+                return -1 * probes_required;
             value = slots[index].item.value.raw();
-            return true;
+            return probes_required;
         }
+
         /*
             removes all items from the map.
         */
@@ -286,6 +306,27 @@ namespace cop3530 {
                     cluster_pq.add_to_queue(cluster);
                 }
             return cluster_pq;
+        }
+
+        /*
+            generate a random number, R, (1,size), and starting with slot zero in the backing array,
+            find the R-th occupied slot; remove the item from that slot (adjusting subsequent items as
+            necessary), and return its key.
+        */
+        key_type remove_random() {
+            if (size() == 0) throw std::logic_error("Cant remove from an empty map");
+            size_t num_slots = capacity();
+            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
+            for (size_t i = 0; i != num_slots; ++i) {
+                Slot const& slot = slots[i];
+                if (slot.is_occupied && --ith_node_to_delete == 0) {
+                    key_type key = slot.item.key.raw();
+                    value_type val_dummy;
+                    remove(key, val_dummy);
+                    return key;
+                }
+            }
+            throw std::logic_error("Unexpected end of remove_random function");
         }
     };
 }

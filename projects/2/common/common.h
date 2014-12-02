@@ -139,7 +139,8 @@ namespace cop3530 {
 }
 
 std::ostream& operator<<(std::ostream& out, cop3530::hash_utils::ClusterInventory const& rhs) {
-    out << "Cluster{size=" << rhs.cluster_size << ", instances=" << rhs.num_instances << "}" << std::endl;
+    out << "Cluster{size=" << rhs.cluster_size << ", instances=" << rhs.num_instances << "}";
+    return out;
 }
 
 #endif

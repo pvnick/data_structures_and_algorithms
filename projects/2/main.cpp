@@ -66,15 +66,19 @@ int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
 
-    cop3530::HashMapBuckets map(1000);
-    for (int i = 0; i != 100000; i += 1)
+    cop3530::HashMapOpenAddressingGeneric<int, char> map(1000);
+    for (int i = 0; i != 1000; i += 1) {
         map.insert(cop3530::hash_utils::rand_i(1000000), 'a');
+        if (i > 100 && cop3530::hash_utils::rand_i(5) == 0)
+            map.remove_random();
+    }
 
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {
         cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();
-        std::cout << "size=" << cluster.cluster_size << ", instances=" << cluster.num_instances << std::endl;
+        std::cout << cluster << std::endl;
     }
+    map.print(std::cout) << std::endl;
     //histogram(vals, 40, 40);
     return 0;
 

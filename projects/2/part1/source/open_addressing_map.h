@@ -41,6 +41,7 @@ namespace cop3530 {
                 size_t slot_index = (hash_val + probe(probes_required)) % M;
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].key == key) {
+                        //found the key
                         break;
                     }
                 } else
@@ -118,7 +119,7 @@ namespace cop3530 {
                     break;
                 }
             }
-            return true;
+            return probes_required;
         }
         /*
             if there is an item matching key, stores it's value in value, and returns the
@@ -133,7 +134,7 @@ namespace cop3530 {
                 //key not found
                 return -1 * probes_required;
             value = slots[index].value;
-            return true;
+            return probes_required;
         }
         /*
             removes all items from the map.
@@ -241,7 +242,6 @@ namespace cop3530 {
             necessary), and return its key.
         */
         key_type remove_random() {
-            key_type empty;
             if (size() == 0) throw std::logic_error("Cant remove from an empty map");
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());

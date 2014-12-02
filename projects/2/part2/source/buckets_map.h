@@ -58,6 +58,7 @@ namespace cop3530 {
             item_ptr = bucket.head;
             while ( ! item_ptr->is_dummy) {
                 if (item_ptr->key == key) {
+                    //found the key
                     return probe_attempts;
                 }
                 item_ptr = item_ptr->next;
@@ -68,6 +69,7 @@ namespace cop3530 {
         }
         void init() {
             buckets = new Bucket[num_buckets];
+            num_items = 0;
         }
     public:
         HashMapBuckets(size_t const min_buckets)
