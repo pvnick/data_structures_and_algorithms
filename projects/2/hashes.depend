@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417462698 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
+1417481285 source:/home/pvnick/data_structures_and_algorithms/projects/2/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
@@ -19,19 +19,19 @@
 
 1416536089 /home/pvnick/data_structures_and_algorithms/projects/2/common.h
 
-1417462609 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
+1417483296 /home/pvnick/data_structures_and_algorithms/projects/2/part1/source/open_addressing_map.h
+	<iostream>
+	"../../common/common.h"
+	"../../part4/source/rbst.h"
+
+1417482207 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
 	<iostream>
 	"../../common/common.h"
 
-1417462601 /home/pvnick/data_structures_and_algorithms/projects/2/part2/source/buckets_map.h
-	<iostream>
-	"../../common/common.h"
-
-1417281811 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
+1417483065 /home/pvnick/data_structures_and_algorithms/projects/2/common/common.h
 	<string.h>
 	<limits>
-	<string.h>
-	<limits>
+	<ostream>
 
 1417211093 /home/pvnick/data_structures_and_algorithms/projects/2/common/SSLL.h
 	<iostream>
@@ -53,10 +53,8 @@
 	"../../common/common.h"
 	"../../common/priority_queue.h"
 
-1417213387 /home/pvnick/data_structures_and_algorithms/projects/2/common/priority_queue.h
-	"SSLL.h"
-	"common.h"
-	"SSLL.h"
+1417483053 /home/pvnick/data_structures_and_algorithms/projects/2/common/priority_queue.h
+	"SDAL.h"
 	"common.h"
 
 1417297956 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/part4.h
@@ -83,7 +81,7 @@
 	<cassert>
 	<math.h>
 
-1417462488 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/rbst.h
+1417466357 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/rbst.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
@@ -91,7 +89,7 @@
 	"../../common/priority_queue.h"
 	"bst.h"
 
-1417462750 /home/pvnick/data_structures_and_algorithms/projects/2/part4_bonus/source/avl.h
+1417466337 /home/pvnick/data_structures_and_algorithms/projects/2/part4_bonus/source/avl.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
@@ -99,16 +97,24 @@
 	"../../common/priority_queue.h"
 	"../../part4/source/bst.h"
 
-1417462574 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/bst.h
+1417481628 /home/pvnick/data_structures_and_algorithms/projects/2/part4/source/bst.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
 	"../../common/common.h"
 	"../../common/priority_queue.h"
 
-1417462630 /home/pvnick/data_structures_and_algorithms/projects/2/part3/source/open_addressing_generic_map.h
+1417482211 /home/pvnick/data_structures_and_algorithms/projects/2/part3/source/open_addressing_generic_map.h
 	<iostream>
 	<string>
 	"../../common/common.h"
 	"../../common/priority_queue.h"
+
+1417477171 /home/pvnick/data_structures_and_algorithms/projects/2/common/SDAL.h
+	<iostream>
+	<stdexcept>
+	<cassert>
+	<memory>
+	<string>
+	<cmath>
 

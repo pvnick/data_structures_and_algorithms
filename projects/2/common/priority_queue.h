@@ -1,23 +1,20 @@
 #ifndef _PRIORITY_QUEUE_H_
 #define _PRIORITY_QUEUE_H_
 
-#include "SSLL.h"
+#include "SDAL.h"
 #include "common.h"
 
 namespace cop3530 {
     //this class takes a simple singly linked list containing clusters and exposes
     //a method (get_next_item) which returns the clusters is order of ascending size
     template<typename T,
-             typename PriorityCompare = cop3530::hash_utils::functors::cluster_size_less_predicate<T>>
+             typename PriorityCompare = cop3530::hash_utils::ClusterInventory::cluster_size_less_predicate>
     class priority_queue {
     private:
         PriorityCompare first_arg_higher_priority;
-        T* tree;
+        //SDAL has all the benefits of std::vector while having the added benefit of being legal to use in cop3530
+        SDAL<T> tree;
         size_t num_items = 0;
-        void add_to_queue(T const& item) {
-            tree[++num_items] = item;
-            fix_up(num_items);
-        }
         void fix_up(size_t index) {
             while (index > 1
                    && first_arg_higher_priority(tree[index], tree[index / 2]))
@@ -46,26 +43,23 @@ namespace cop3530 {
         }
     public:
         //take a linked list of cluster descriptors and add each to the priority queue
-        priority_queue(SSLL<T> const& items) {
-            tree = new T[items.size() + 1]; //tree should be 1-based for easy math
-            typename SSLL<T>::const_iterator iter = items.begin();
-            typename SSLL<T>::const_iterator iter_end = items.end();
-            for (; iter != iter_end; ++iter)
-                add_to_queue(*iter);
-        }
-        ~priority_queue() {
-            delete[] tree;
+        priority_queue(size_t preallocation_size = 100): tree(preallocation_size + 1) {
+            T empty_item;
+            tree.push_back(empty_item);
         }
         priority_queue(priority_queue const& src) {
-            size_t other_pq_size = src.size();
-            tree = new T[other_pq_size + 1];
-            for (int i = 1; i <= other_pq_size; ++i)
-                tree[i] = src.tree[i];
+            tree = src.tree;
+            num_items = src.num_items;
         }
         T get_next_item() {
             std::swap(tree[1], tree[num_items]);
             fix_down();
             return tree[num_items--];
+        }
+        void add_to_queue(T const& item) {
+            tree.push_back(item);
+            num_items++;
+            fix_up(num_items);
         }
         size_t size() {
             return num_items;

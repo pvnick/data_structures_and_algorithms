@@ -38,7 +38,8 @@ namespace cop3530 {
         size_t num_items = 0;
         size_t hash(key_type const& key) {
             size_t M = capacity();
-            return std::floor(M * std::fmod(key * hash_utils::fib_hash_A, 1));
+            hash_utils::functors::primary_hashes::hash_basic hasher;
+            return hasher(key) % M;
         }
         /*
             searches the bucket corresponding to the specified key's hash for that

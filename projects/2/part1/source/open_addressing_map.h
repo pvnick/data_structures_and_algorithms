@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include "../../common/common.h"
+#include "../../part4/source/rbst.h"
 
 namespace cop3530 {
     class HashMapOpenAddressing {
     private:
         typedef int key_type;
         typedef char value_type;
+        typedef hash_utils::ClusterInventory ClusterInventory;
         struct Slot {
             key_type key;
             value_type value;
@@ -22,7 +24,10 @@ namespace cop3530 {
         }
         size_t hash(key_type const& key) {
             size_t M = capacity();
-            return std::floor(M * std::fmod(key * hash_utils::fib_hash_A, 1));
+            hash_utils::functors::primary_hashes::hash_basic hasher;
+            size_t big_hash_number = hasher(key);
+            size_t hash_val = big_hash_number % M;
+            return hash_val;
         }
         /*
             if there is an item matching key, stores it's slot index in slot_index, and
@@ -177,6 +182,52 @@ namespace cop3530 {
             }
             out << ']';
             return out;
+        }
+
+        priority_queue<ClusterInventory> cluster_distribution() {
+            //use an array to count cluster instances, then feed those to a priority queue and return it.
+            size_t M = capacity();
+            size_t cluster_counter[M + 1];
+            for (size_t i = 0; i <= M; ++i)
+                cluster_counter[i] = 0;
+            if (size() == M) {
+                //handle the special case when the map is full
+                cluster_counter[size()]++;
+            } else {
+                //have at least one unoccupied slot
+                bool first_cluster_skipped = false;
+                size_t curr_cluster_size = 0;
+                //treat the backing array as a circular buffer and make a maximum of two passes to
+                //capture everything, including the wraparound cluster if it exists
+                for (size_t i = 1; i != M * 2; ++i) {
+                    Slot const& curr_slot = slots[i % M], prev_slot = slots[(i - 1) % M];
+                    if (curr_slot.is_occupied && prev_slot.is_occupied) {
+                        //still in a cluster
+                        ++curr_cluster_size;
+                    } else if (curr_slot.is_occupied && prev_slot.is_occupied == false) {
+                        //found a new cluster
+                        curr_cluster_size = 1;
+                    } else if ( ! curr_slot.is_occupied && prev_slot.is_occupied) {
+                        //found the end of a cluster
+                        if (first_cluster_skipped) {
+                            cluster_counter[curr_cluster_size]++;
+                            if (i >= M) {
+                                //reached the end of the first cluster in the second pass, so no all clusters have been handled
+                                break;
+                            }
+                        } else {
+                            first_cluster_skipped = true;
+                        }
+                    }
+                }
+            }
+            priority_queue<ClusterInventory> cluster_pq;
+            for (size_t i = 1; i <= M; ++i)
+                if (cluster_counter[i] > 0) {
+                    ClusterInventory cluster{i, cluster_counter[i]};
+                    cluster_pq.add_to_queue(cluster);
+                }
+            return cluster_pq;
         }
     };
 }

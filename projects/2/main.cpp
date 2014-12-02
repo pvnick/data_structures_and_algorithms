@@ -46,9 +46,37 @@ void read_word_file(std::string path, std::vector<std::string>* word_bank_out) {
     }
 }
 
+void histogram(std::vector<size_t> const& vals, size_t bins = 20, size_t max_bar_size = 30) {
+    size_t max_val = 0;
+    for (auto val: vals)
+        if (val > max_val) max_val = val;
+    size_t bin_size = max_val / bins;
+    std::vector<size_t> bin_counter(bins);
+    for (auto val: vals)
+        bin_counter[val / bin_size]++;
+    size_t max_bin_counter = 0;
+    for (auto x: bin_counter)
+        if (x > max_bin_counter) max_bin_counter = x;
+    size_t bin_scale = max_bin_counter / max_bar_size;
+    for (auto x: bin_counter)
+        std::cout << std::string(x / bin_scale, '*') << std::endl;
+}
+
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
+
+    cop3530::HashMapOpenAddressing open_addr_map(10000);
+    for (int i = 0; i != 1000; ++i)
+        open_addr_map.insert(cop3530::hash_utils::rand_i(10000), 'a');
+    cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = open_addr_map.cluster_distribution();
+    while (cluster_pq.size()) {
+        cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();
+        std::cout << "size=" << cluster.cluster_size << ", instances=" << cluster.num_instances << std::endl;
+    }
+    //histogram(vals, 40, 40);
+    return 0;
+
     cop3530::RBST<int, std::string> map(10000);
     /*for (size_t i = 0; i != 1000; ++i)
         map.insert(cop3530::hash_utils::rand_i(100000), rand_word_bank_string(word_bank));
@@ -113,18 +141,8 @@ int main() {
     }
 */
     return 0;
-    cop3530::SSLL<cop3530::hash_utils::ClusterInventory> clusters;
-    for (int i = 0; i != 100; ++i) {
-        cop3530::hash_utils::ClusterInventory cluster{rand() % 100};
-        clusters.push_front(cluster);
-    }
-    cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> pq(clusters);
-    while (!pq.empty())
-        std::cout << pq.get_next_item().size << std::endl;
-    exit(0);
     size_t capacity = 10;
 	cop3530::HashMapBuckets bucket_map(10);
-	cop3530::HashMapOpenAddressing open_addr_map(10000);
 	cop3530::HashMapOpenAddressingGeneric<double, char> generic_open_addr(10000);
 	#define mymap generic_open_addr
 	srand(1337);

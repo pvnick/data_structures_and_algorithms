@@ -11,7 +11,7 @@ namespace cop3530 {
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
              typename compare_functor = hash_utils::functors::compare_functor,
-             typename primary_hash = hash_utils::functors::primary_hashes::hash_fibonacci,
+             typename primary_hash = hash_utils::functors::primary_hashes::hash_basic,
              typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
     class HashMapOpenAddressingGeneric {
     private:
@@ -19,8 +19,8 @@ namespace cop3530 {
         private:
             key_type raw_key;
             compare_functor compare;
-            primary_hash hash1;
-            secondary_hash hash2;
+            primary_hash hasher1;
+            secondary_hash hasher2;
             size_t hash1_val;
             size_t hash2_val;
             size_t old_map_capacity;
@@ -30,12 +30,11 @@ namespace cop3530 {
             }
             size_t hash(size_t map_capacity, size_t probe_attempt) const {
                 size_t local_hash2_val;
-                if (map_capacity != old_map_capacity
-                    || (probe_attempt != 0 && hash2.changes_with_probe_attempt()))
+                if (probe_attempt != 0 && hasher2.changes_with_probe_attempt())
                 {
                     //if the hashing function value is dependent on the probe attempt
                     //(eg quadratic probing), then we need to retrieve the new value
-                    local_hash2_val = hash2(raw_key, map_capacity, probe_attempt);
+                    local_hash2_val = hasher2(raw_key, probe_attempt);
                 } else {
                     //otherwise we can just use the value we have stored
                     local_hash2_val = hash2_val;
@@ -45,15 +44,14 @@ namespace cop3530 {
             key_type const& raw() const {
                 return raw_key;
             }
-            void reset(key_type const& key, size_t map_capacity) {
+            void reset(key_type const& key) {
                 raw_key = key;
-                old_map_capacity = map_capacity;
                 size_t base_probe_attempt = 0;
-                hash1_val = hash1(key, map_capacity);
-                hash2_val = hash2(key, map_capacity, base_probe_attempt);
+                hash1_val = hasher1(key);
+                hash2_val = hasher2(key, base_probe_attempt);
             }
-            explicit Key(key_type key, size_t map_capacity) {
-                reset(key, map_capacity);
+            explicit Key(key_type key) {
+                reset(key);
             }
             Key() = default;
         };
@@ -82,10 +80,6 @@ namespace cop3530 {
         capacity_plan_functor choose_capacity;
         size_t curr_capacity = 0;
         size_t num_occupied_slots = 0;
-        size_t probe(size_t i) const {
-            //linear probing
-            return 1;
-        }
         /*
             if there is an item matching key, stores it's slot index in slot_index, and
             returns the the number of probe attempts required (the item remains in the map).
@@ -148,7 +142,7 @@ namespace cop3530 {
             size_t index;
             if (capacity() == size())
                 return false;
-            Key k(key, capacity());
+            Key k(key);
             Value v(value);
             search_internal(k, index);
             insert_at_index(k, v, index);
@@ -160,7 +154,7 @@ namespace cop3530 {
         */
         bool remove(key_type const& key, value_type& value) {
             size_t index;
-            Key k(key, capacity());
+            Key k(key);
             if ( ! search_internal(k, index))
                 //key not found
                 return false;
@@ -170,7 +164,7 @@ namespace cop3530 {
             size_t M = capacity();
             //remove and reinsert items until find unoccupied slot
             for (int i = 1; ; ++i) {
-                index = (start_index + probe(i)) % M;
+                index = k.hash(M, i);
                 Slot s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
@@ -187,7 +181,7 @@ namespace cop3530 {
         */
         bool search(key_type const& key, value_type& value) {
             size_t index;
-            Key k(key, capacity());
+            Key k(key);
             if ( ! search_internal(k, index))
                 return false;
             value = slots[index].item.value.raw();

@@ -469,6 +469,7 @@ namespace cop3530 {
             returns the number of items actually stored in the tree.
         */
         virtual size_t size() const {
+            if (root_index == 0) return 0;
             Node const& root = nodes[root_index];
             return 1 + root.num_children;
         }
@@ -528,6 +529,7 @@ namespace cop3530 {
         */
         virtual key_type remove_random() {
             key_type empty;
+            if (size() == 0) return empty;
             size_t num_slots = capacity();
             size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
             for (size_t i = 1; i <= num_slots; ++i) {
