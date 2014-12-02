@@ -23,8 +23,8 @@
   \includepdf[pages={-}]{\inputincludepath/#1}
 }
 
-\newcommand{\includetext}[1] {
-  \section*{\detokenize{#1}}
+\newcommand{\includetext}[2] {
+  \section*{#2}
   \begin{center}
   \begingroup
   \verbatiminput{\inputincludepath/#1}
@@ -39,10 +39,9 @@
 }
 
 \makeatletter % changes the catcode of @ to 11
-\newcommand{\includecode}[1]{
-  \section*{\detokenize{#1}}
-  \filename@parse{#1} 
-  \lstinputlisting[title=\filename@base.\filename@ext]{\inputincludepath/#1}
+\newcommand{\includecode}[2]{
+  \section*{#2}
+  \lstinputlisting[title={#2}]{\inputincludepath/#1}
   \clearpage
 }
 \makeatother % changes the catcode of @ back to 12
