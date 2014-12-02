@@ -30,26 +30,24 @@ namespace cop3530 {
             return hash_val;
         }
         /*
-            if there is an item matching key, stores it's slot index in slot_index, and
-            returns true (the item remains in the map). otherwise, returns false and,
-            if there exists a free slot, stores the free slot's index in slot_index.
+            searches the map for an item matching key. returns the number of probe attempts needed
+            to reach either the item or an empty slot
         */
-        bool search_internal(key_type const& key, size_t& slot_index) {
-            bool found_item = false;
+        int search_internal(key_type const& key) {
             size_t M = capacity();
             size_t hash_val = hash(key);
-            for (size_t i = 0; i != M; ++i) {
-                slot_index = (hash_val + probe(i)) % M;
+            size_t probes_required;
+            for (probes_required = 0; probes_required != M; ++probes_required) {
+                size_t slot_index = (hash_val + probe(probes_required)) % M;
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].key == key) {
-                        found_item = true;
                         break;
                     }
                 } else
                     //found unoccupied slot
                     break;
             }
-            return found_item;
+            return probes_required;
         }
         //all backing array manipulations should go through the following two methods
         void insert_at_index(key_type const& key, value_type const& value, size_t index) {
@@ -82,34 +80,36 @@ namespace cop3530 {
             delete slots;
         }
         /*
-            if there is space available, adds the specified key/value-pair to the
-            hash map and returns true; otherwise returns false. If an item already
-            exists in the map with the same key, replace its value.
+            if there is space available, adds the specified key/value-pair to the hash map and returns the
+            number of probes required, P; otherwise returns -1 * P. If an item already exists in the map
+            with the same key, replace its value.
         */
-        bool insert(key_type const& key, value_type const& value) {
-            size_t index;
+        int insert(key_type const& key, value_type const& value) {
+            size_t M = capacity();
             if (capacity() == size())
-                return false;
-            search_internal(key, index);
+                return -1 * size();
+            size_t probes_required = search_internal(key);
+            size_t index = (hash(key) + probe(probes_required)) % M;
             insert_at_index(key, value, index);
-            return true;
+            return probes_required;
         }
         /*
-            if there is an item matching key, removes the key/value-pair from the
-            map, stores it's value in value, and returns true; otherwise returns false.
+            if there is an item matching key, removes the key/value-pair from the map, stores it's value in
+            value, and returns the number of probes required, P; otherwise returns -1 * P.
         */
-        bool remove(key_type const& key, value_type& value) {
-            size_t index;
-            if ( ! search_internal(key, index))
+        int remove(key_type const& key, value_type& value) {
+            size_t M = capacity();
+            size_t probes_required = search_internal(key);
+            size_t index = (hash(key) + probe(probes_required)) % M;
+            if (slots[index].key != key)
                 //key not found
-                return false;
+                return -1 * probes_required;
             value = remove_at_index(index);
             size_t start_index = index;
-            size_t M = capacity();
             //remove and reinsert items until find unoccupied slot
             for (int i = 1; ; ++i) {
                 index = (start_index + probe(i)) % M;
-                Slot s = slots[index];
+                Slot const& s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
                     insert(s.key, s.value);
@@ -120,13 +120,17 @@ namespace cop3530 {
             return true;
         }
         /*
-            if there is an item matching key, stores it's value in value, and
-            returns true (the item remains in the map); otherwise returns false.
+            if there is an item matching key, stores it's value in value, and returns the
+            number of probes required, P; otherwise returns -1 * P. Regardless, the item
+            remains in the map.
         */
-        bool search(key_type const& key, value_type& value) {
-            size_t index;
-            if ( ! search_internal(key, index))
-                return false;
+        int search(key_type const& key, value_type& value) {
+            size_t M = capacity();
+            size_t probes_required = search_internal(key);
+            size_t index = (hash(key) + probe(probes_required)) % M;
+            if (slots[index].key != key)
+                //key not found
+                return -1 * probes_required;
             value = slots[index].value;
             return true;
         }
@@ -228,6 +232,29 @@ namespace cop3530 {
                     cluster_pq.add_to_queue(cluster);
                 }
             return cluster_pq;
+        }
+
+        /*
+            generate a random number, R, (1,size), and starting with slot zero in the backing array,
+            find the R-th occupied slot; remove the item from that slot (adjusting subsequent items as
+            necessary), and return its key.
+        */
+        key_type remove_random() {
+            key_type empty;
+            if (size() == 0) return empty;
+            size_t num_slots = capacity();
+            size_t ith_node_to_delete = 1 + hash_utils::rand_i(size());
+            for (size_t i = 1; i <= num_slots; ++i) {
+                Slot const& slot = slots[i];
+                if (slot.is_occupied && --ith_node_to_delete == 0) {
+                    key_type key = slot.key;
+                    value_type val_dummy;
+                    remove(key, val_dummy);
+                    return key;
+                    break;
+                }
+            }
+            return empty;
         }
     };
 }
