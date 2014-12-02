@@ -62,6 +62,7 @@ namespace cop3530 {
                         //will adopt the root and its children and will take on the value
                         //of its num_children
                         subtree_root.num_children++;
+
                         //current subtree root may have had its height changed, so update that before
                         //promoting the new node
                         subtree_root.update_height(this->nodes);
@@ -73,6 +74,7 @@ namespace cop3530 {
                     nodes_visited = insert_at_root(nodes_visited, subtree_root.right_index, key, value, found_key);
                     if ( ! found_key) {
                         subtree_root.num_children++;
+
                         //current subtree root may have had its height changed, so update that before
                         //promoting the new node
                         subtree_root.update_height(this->nodes);
@@ -102,7 +104,10 @@ namespace cop3530 {
                 //no more space
                 return -1 * this->size();
             bool found_key = false;
-            return insert_at_leaf(0, this->root_index, key, value, found_key);
+            size_t nodes_visited = insert_at_leaf(0, this->root_index, key, value, found_key);
+            if (_DEBUG_)
+                this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
+            return nodes_visited;
         }
     };
 }

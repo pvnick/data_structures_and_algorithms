@@ -99,16 +99,19 @@ namespace cop3530 {
                                          + std::to_string(root_bal_fact));
             }
         }
-        void do_validate_integrity(size_t subtree_root_index) const {
-            if (subtree_root_index == 0) return;
-            Node const& n = this->nodes[subtree_root_index];
-            if (abs(n.balance_factor(this->nodes)) > 1)
-                throw std::domain_error("Unexpected unbalanced tree while checking balance factor of all tree nodes");
-            do_validate_integrity(n.left_index);
-            do_validate_integrity(n.right_index);
+        void do_validate_avl_balance(size_t subtree_root_index) const {
+            if (_DEBUG_) {
+                if (subtree_root_index == 0) return;
+                Node const& n = this->nodes[subtree_root_index];
+                if (abs(n.balance_factor(this->nodes)) > 1)
+                    throw std::domain_error("Unexpected unbalanced tree while checking balance factor of all tree nodes");
+                do_validate_avl_balance(n.left_index);
+                do_validate_avl_balance(n.right_index);
+            }
         }
-        void validate_integrity() {
-            do_validate_integrity(this->root_index);
+        void validate_avl_balance() {
+            if (_DEBUG_)
+                do_validate_avl_balance(this->root_index);
         }
     public:
         AVL(size_t capacity): super(capacity) {}
@@ -123,7 +126,9 @@ namespace cop3530 {
                 return -1 * this->size();
             bool found_key = false;
             size_t nodes_visited = insert_at_leaf(0, this->root_index, key, value, found_key);
-            validate_integrity();
+            validate_avl_balance();
+            if (_DEBUG_)
+                this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;
         }
         /*
@@ -133,7 +138,9 @@ namespace cop3530 {
         int remove(key_type const& key, value_type& value) {
             bool found_key = false;
             size_t nodes_visited = do_remove(0, this->root_index, key, value, found_key);
-            validate_integrity();
+            validate_avl_balance();
+            if (_DEBUG_)
+                this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
     };

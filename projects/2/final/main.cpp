@@ -1,3 +1,5 @@
+#define _DEBUG_ true
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -15,6 +17,7 @@
 #include <map>
 #include "input/common/SSLL.h"
 #include "input/common/priority_queue.h"
+
 
 double to_dbl(int i) {
     return i + (double)i / 2;
@@ -66,11 +69,11 @@ void histogram(std::vector<size_t> const& vals, size_t bins = 20, size_t max_bar
 int main() {
     std::vector<std::string> word_bank;
     read_word_file("strings.txt", &word_bank);
-    cop3530::HashMapBucketsGeneric<std::string, int> map(1000);
+    cop3530::RBST<std::string, int> map(1000);
     for (size_t i = 0; i != 100000; ++i) {
         map.insert(std::to_string(cop3530::hash_utils::rand_i(1000000)), i);
     }
-    map.print(std::cout) << std::endl;
+    //map.print(std::cout) << std::endl;
 
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {

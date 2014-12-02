@@ -25,9 +25,22 @@ namespace cop3530 {
             size_t right_index;
             size_t height; //height tracking coded in this class, but not used (for AVL, which is this class with self-balancing)
             bool is_occupied;
+            size_t validate_children_count_recursive(Node* nodes) {
+                //this function is for debugging purposes, does recursive traversal to find the correct number of children
+                size_t child_count = 0;
+                if (left_index)
+                    child_count += 1 + nodes[left_index].validate_children_count_recursive(nodes);
+                if (right_index)
+                    child_count += 1 + nodes[right_index].validate_children_count_recursive(nodes);
+                if (child_count != num_children) {
+                    std::ostringstream msg;
+                    msg << "Manually counted children, " << child_count << ", different than child count, " << num_children;
+                    throw std::logic_error(msg.str());
+                }
+                return child_count;
+            }
             size_t get_height_recursive(Node* nodes) {
                 //this function is for debugging purposes, does recursive traversal to find the correct height
-                //todo: delete this function
                 size_t left_height = 0, right_height = 0;
                 size_t calculated_height = 0;
                 if (left_index)
@@ -45,12 +58,13 @@ namespace cop3530 {
                 if (right_index)
                     right_height = nodes[right_index].height;
                 height = 1 + std::max(left_height, right_height);
-                //todo: delete the following expensive check, or move it into DEBUG condition
-                size_t calculated_height = get_height_recursive(nodes);
-                if (calculated_height != height) {
-                    std::ostringstream msg;
-                    msg << "Manually calculated height, " << calculated_height << ", different than tracked height, " << height;
-                    throw std::runtime_error(msg.str());
+                if (_DEBUG_) {
+                    size_t calculated_height = get_height_recursive(nodes);
+                    if (calculated_height != height) {
+                        std::ostringstream msg;
+                        msg << "Manually calculated height, " << calculated_height << ", different than tracked height, " << height;
+                        throw std::logic_error(msg.str());
+                    }
                 }
             }
             void disable_and_adopt_free_tree(size_t free_index) {
@@ -384,11 +398,11 @@ namespace cop3530 {
                 switch (compare(key, subtree_root.key)) {
                 case -1:
                     //key is less than subtree root key
-                    nodes_visited = do_search(nodes_visited, subtree_root.left_index, key, value);
+                    nodes_visited = do_search(nodes_visited, subtree_root.left_index, key, value, found_key);
                     break;
                 case 1:
                     //key is greater than subtree root key
-                    nodes_visited = do_search(nodes_visited, subtree_root.right_index, key, value);
+                    nodes_visited = do_search(nodes_visited, subtree_root.right_index, key, value, found_key);
                     break;
                 case 0:
                     //found key
@@ -465,6 +479,8 @@ namespace cop3530 {
                 return -1 * size();
             bool found_key = false;
             size_t nodes_visited = insert_at_leaf(0, root_index, key, value, found_key);
+            if (_DEBUG_)
+                this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;
         }
         /*
@@ -474,6 +490,8 @@ namespace cop3530 {
         virtual int remove(key_type const& key, value_type& value) {
             bool found_key = false;
             size_t nodes_visited = do_remove(0, root_index, key, value, found_key);
+            if (_DEBUG_)
+                this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*

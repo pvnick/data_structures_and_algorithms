@@ -1,6 +1,11 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
+#ifndef _DEBUG_
+    //various internal integrity checks that can be expensive, we want to disable them in production
+    #define _DEBUG_ false
+#endif
+
 #include <string.h>
 #include <limits>
 #include <ostream>
