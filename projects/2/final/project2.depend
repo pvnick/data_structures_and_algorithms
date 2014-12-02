@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417545282 source:/home/pvnick/data_structures_and_algorithms/projects/2/final/main.cpp
+1417560876 source:/home/pvnick/data_structures_and_algorithms/projects/2/final/main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
@@ -18,7 +18,7 @@
 	"input/common/SSLL.h"
 	"input/common/priority_queue.h"
 
-1417545361 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/common/common.h
+1417560481 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/common/common.h
 	<string.h>
 	<limits>
 	<ostream>
@@ -32,7 +32,7 @@
 	<iostream>
 	"../../common/common.h"
 
-1417545271 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part3/open_addressing/source/open_addressing_generic_map.h
+1417553223 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part3/open_addressing/source/open_addressing_generic_map.h
 	<iostream>
 	<string>
 	"../../../common/common.h"
@@ -50,7 +50,7 @@
 	<string>
 	<cmath>
 
-1417545268 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part3/bucket/source/buckets_map_generic.h
+1417553019 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part3/bucket/source/buckets_map_generic.h
 	<iostream>
 	"../../../common/common.h"
 	"../../../common/SSLL.h"
@@ -61,7 +61,7 @@
 	<stdexcept>
 	<cassert>
 
-1417507725 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/rbst.h
+1417561007 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/rbst.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
@@ -75,14 +75,14 @@
 	<cassert>
 	<math.h>
 
-1417545275 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/bst.h
+1417561117 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/bst.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
 	"../../common/common.h"
 	"../../common/priority_queue.h"
 
-1417507780 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4_bonus/source/avl.h
+1417560997 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4_bonus/source/avl.h
 	<cstdlib>
 	<sstream>
 	"../../common/CDAL.h"
@@ -510,10 +510,11 @@
 
 1417506544 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part1/source/catch/internal/catch_default_main.hpp
 
-1417545809 source:/home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/unit_tests.cpp
-	"catch.hpp"
+1417559847 source:/home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/unit_tests.cpp
+	"catch/catch.hpp"
+	"unit_tests.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/catch.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/catch.hpp
 	"internal/catch_notimplemented_exception.h"
 	"internal/catch_context.h"
 	"internal/catch_test_registry.hpp"
@@ -530,41 +531,41 @@
 	"internal/catch_impl.hpp"
 	"internal/catch_default_main.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_notimplemented_exception.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_notimplemented_exception.h
 	"catch_common.h"
 	<ostream>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_common.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_common.h
 	<sstream>
 	<stdexcept>
 	<algorithm>
 	"catch_compiler_capabilities.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_compiler_capabilities.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_compiler_capabilities.h
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_context.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_context.h
 	"catch_interfaces_generators.h"
 	"catch_ptr.hpp"
 	<memory>
 	<vector>
 	<stdlib.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_generators.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_generators.h
 	<string>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_ptr.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_ptr.hpp
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_registry.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_registry.hpp
 	"catch_common.h"
 	"catch_interfaces_testcase.h"
 	"catch_compiler_capabilities.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_testcase.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_testcase.h
 	"catch_ptr.hpp"
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_capture.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_capture.hpp
 	"catch_expression_decomposer.hpp"
 	"catch_expressionresult_builder.h"
 	"catch_message.h"
@@ -577,22 +578,22 @@
 	"catch_compiler_capabilities.h"
 	<ostream>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expression_decomposer.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expression_decomposer.hpp
 	"catch_expression_lhs.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expression_lhs.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expression_lhs.hpp
 	"catch_expressionresult_builder.h"
 	"catch_evaluate.hpp"
 	"catch_tostring.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expressionresult_builder.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expressionresult_builder.h
 	"catch_tostring.hpp"
 	"catch_assertionresult.h"
 	"catch_result_type.h"
 	"catch_evaluate.hpp"
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_tostring.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_tostring.hpp
 	"catch_common.h"
 	"catch_sfinae.hpp"
 	<sstream>
@@ -601,34 +602,34 @@
 	<vector>
 	"catch_objc_arc.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_sfinae.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_sfinae.hpp
 	"catch_compiler_capabilities.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_objc_arc.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_objc_arc.hpp
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_assertionresult.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_assertionresult.h
 	<string>
 	"catch_result_type.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_result_type.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_result_type.h
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_evaluate.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_evaluate.hpp
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_message.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_message.h
 	<string>
 	"catch_result_type.h"
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_capture.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_capture.h
 	<string>
 	"catch_result_type.h"
 	"catch_totals.hpp"
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_totals.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_totals.hpp
 	<cstddef>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_debugger.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_debugger.hpp
 	<iostream>
 	"catch_platform.h"
 	<assert.h>
@@ -637,14 +638,14 @@
 	<unistd.h>
 	<sys/sysctl.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_platform.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_platform.h
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_registry_hub.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_registry_hub.h
 	"catch_interfaces_reporter.h"
 	"catch_interfaces_config.h"
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_reporter.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_reporter.h
 	"catch_common.h"
 	"catch_totals.hpp"
 	"catch_ptr.hpp"
@@ -658,7 +659,7 @@
 	<map>
 	<assert.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_config.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_config.hpp
 	"catch_test_spec.h"
 	"catch_context.h"
 	"catch_interfaces_config.h"
@@ -668,82 +669,82 @@
 	<string>
 	<iostream>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_spec.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_spec.h
 	"catch_test_case_info.h"
 	"catch_tags.hpp"
 	"catch_common.h"
 	<string>
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_info.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_info.h
 	"catch_common.h"
 	"catch_ptr.hpp"
 	<string>
 	<set>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_tags.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_tags.hpp
 	"catch_common.h"
 	<string>
 	<set>
 	<map>
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_config.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_config.h
 	<iostream>
 	<string>
 	"catch_ptr.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_stream.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_stream.hpp
 	"catch_streambuf.h"
 	"catch_debugger.hpp"
 	<stdexcept>
 	<cstdio>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_streambuf.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_streambuf.h
 	<streambuf>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_option.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_option.hpp
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_section.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_section.hpp
 	"catch_capture.hpp"
 	"catch_totals.hpp"
 	"catch_compiler_capabilities.h"
 	"catch_timer.h"
 	<string>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_timer.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_timer.h
 	"catch_platform.h"
 	<stdint.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_generators.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_generators.hpp
 	"catch_context.h"
 	<iterator>
 	<vector>
 	<string>
 	<stdlib.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_exception.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_exception.h
 	<string>
 	"catch_interfaces_registry_hub.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_approx.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_approx.hpp
 	"catch_tostring.hpp"
 	<cmath>
 	<limits>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_matchers.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_matchers.hpp
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_runner.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_interfaces_runner.h
 	"catch_totals.hpp"
 	<string>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_objc.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_objc.hpp
 	"catch_objc_arc.hpp"
 	<string>
 	"internal/catch_test_case_info.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_impl.hpp
 	"../catch_runner.hpp"
 	"catch_registry_hub.hpp"
 	"catch_notimplemented_exception.hpp"
@@ -763,7 +764,7 @@
 	"../reporters/catch_reporter_junit.hpp"
 	"../reporters/catch_reporter_console.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/catch_runner.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/catch_runner.hpp
 	"internal/catch_commandline.hpp"
 	"internal/catch_list.hpp"
 	"internal/catch_runner_impl.hpp"
@@ -774,30 +775,30 @@
 	<stdlib.h>
 	<limits>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_commandline.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_commandline.hpp
 	"catch_config.hpp"
 	"catch_common.h"
 	"clara.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/clara.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/clara.h
 	"catch_text.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_text.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_text.h
 	"catch_config.hpp"
 	<string>
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_list.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_list.hpp
 	"catch_commandline.hpp"
 	"catch_text.h"
 	"catch_console_colour.hpp"
 	<limits>
 	<algorithm>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_console_colour.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_console_colour.hpp
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_runner_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_runner_impl.hpp
 	"catch_interfaces_runner.h"
 	"catch_interfaces_reporter.h"
 	"catch_interfaces_exception.h"
@@ -812,20 +813,20 @@
 	<set>
 	<string>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_tracker.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_tracker.hpp
 	<map>
 	<string>
 	<assert.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_version.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_version.h
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_registry_hub.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_registry_hub.hpp
 	"catch_interfaces_registry_hub.h"
 	"catch_test_case_registry_impl.hpp"
 	"catch_reporter_registry.hpp"
 	"catch_exception_translator_registry.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_registry_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_registry_impl.hpp
 	"catch_test_registry.hpp"
 	"catch_test_case_info.h"
 	"catch_test_spec.h"
@@ -835,100 +836,100 @@
 	<sstream>
 	<iostream>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_reporter_registry.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_reporter_registry.hpp
 	"catch_interfaces_reporter.h"
 	<map>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_exception_translator_registry.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_exception_translator_registry.hpp
 	"catch_interfaces_exception.h"
 	"catch_tostring.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_notimplemented_exception.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_notimplemented_exception.hpp
 	"catch_notimplemented_exception.h"
 	<ostream>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_context_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_context_impl.hpp
 	"catch_runner_impl.hpp"
 	"catch_context.h"
 	"catch_stream.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_console_colour_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_console_colour_impl.hpp
 	"catch_console_colour.hpp"
 	<AfxWin.h>
 	<windows.h>
 	<unistd.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_generators_impl.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_generators_impl.hpp
 	"catch_interfaces_generators.h"
 	"catch_common.h"
 	<vector>
 	<string>
 	<map>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_assertionresult.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_assertionresult.hpp
 	"catch_assertionresult.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expressionresult_builder.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_expressionresult_builder.hpp
 	"catch_expressionresult_builder.h"
 	<assert.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_info.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_test_case_info.hpp
 	"catch_tags.hpp"
 	"catch_test_case_info.h"
 	"catch_interfaces_testcase.h"
 	"catch_common.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_version.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_version.hpp
 	"catch_version.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_text.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_text.hpp
 	<string>
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_message.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_message.hpp
 	"catch_message.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_legacy_reporter_adapter.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_legacy_reporter_adapter.hpp
 	"catch_legacy_reporter_adapter.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_legacy_reporter_adapter.h
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_legacy_reporter_adapter.h
 	"catch_interfaces_reporter.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_timer.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_timer.hpp
 	"catch_timer.h"
 	"catch_platform.h"
 	<windows.h>
 	<sys/time.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_xml.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_xml.hpp
 	"../internal/catch_capture.hpp"
 	"../internal/catch_interfaces_reporter.h"
 	"../internal/catch_reporter_registrars.hpp"
 	"../internal/catch_xmlwriter.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_reporter_registrars.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_reporter_registrars.hpp
 	"catch_interfaces_registry_hub.h"
 	"catch_legacy_reporter_adapter.h"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_xmlwriter.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_xmlwriter.hpp
 	<sstream>
 	<iostream>
 	<string>
 	<vector>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_junit.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_junit.hpp
 	"../internal/catch_tostring.hpp"
 	"../internal/catch_interfaces_reporter.h"
 	"../internal/catch_reporter_registrars.hpp"
 	"../internal/catch_xmlwriter.hpp"
 	<assert.h>
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_console.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/reporters/catch_reporter_console.hpp
 	"../internal/catch_interfaces_reporter.h"
 	"../internal/catch_reporter_registrars.hpp"
 	"../internal/catch_console_colour.hpp"
 
-1417545092 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_default_main.hpp
+1417546626 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch/internal/catch_default_main.hpp
 
 1417545798 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/catch.hpp
 	"internal/catch_notimplemented_exception.h"
@@ -1346,4 +1347,21 @@
 	"../internal/catch_console_colour.hpp"
 
 1417545798 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/internal/catch_default_main.hpp
+
+1417560366 source:/home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/tree_structure.cpp
+	"unit_tests.h"
+	"catch/catch.hpp"
+	<sstream>
+	<fstream>
+	"../../common/common.h"
+	"../../common/unit_test_utils.h"
+	"bst.h"
+	"rbst.h"
+
+1417560354 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/part4/source/unit_tests.h
+
+1417560425 /home/pvnick/data_structures_and_algorithms/projects/2/final/input/common/unit_test_utils.h
+	<iostream>
+	<string>
+	<fstream>
 

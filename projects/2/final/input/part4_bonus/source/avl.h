@@ -128,7 +128,7 @@ namespace cop3530 {
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
+            int nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
             validate_avl_balance();
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
@@ -139,10 +139,12 @@ namespace cop3530 {
             it's value in value, and returns the number of probes required, V; otherwise returns -1 * V.
         */
         int remove(key_type const& key, value_type& value) {
+            if (this->is_empty())
+                return 0;
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = do_remove(0, this->root_index, k, v, found_key);
+            int nodes_visited = do_remove(0, this->root_index, k, v, found_key);
             validate_avl_balance();
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);

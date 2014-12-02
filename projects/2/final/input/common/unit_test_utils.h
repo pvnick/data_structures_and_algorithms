@@ -7,7 +7,7 @@
 
 namespace cop3530 {
     namespace unit_test_utils {
-        std::string guid() {
+        inline std::string guid() {
             std::string ret = "";
             for (size_t i = 0; i != 32; ++i) {
                 size_t rnd = cop3530::rand_i(16);
@@ -18,13 +18,13 @@ namespace cop3530 {
             }
             return ret;
         }
-        std::string get_tmp_filename() {
+        inline std::string get_tmp_filename() {
             return std::string("/tmp/") + guid() + std::string(".out");
         }
-        void delete_file(std::string file_path) {
-            //system((std::string("rm ") + file_path + std::string(" 2>&1 > /dev/null")).c_str());
+        inline void delete_file(std::string file_path) {
+            system((std::string("rm ") + file_path + std::string(" 2>&1 >> /tmp/debug")).c_str());
         }
-        std::string shell_cmd(std::string cmd) {
+        inline std::string shell_cmd(std::string cmd) {
             std::string shell_script_file = get_tmp_filename();
             std::string output_file = get_tmp_filename();
             std::ofstream shell_script_out(shell_script_file);

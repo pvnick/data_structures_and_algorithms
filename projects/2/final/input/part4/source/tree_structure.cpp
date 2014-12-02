@@ -1,5 +1,6 @@
 #include "unit_tests.h"
 #include "catch/catch.hpp"
+
 #include <sstream>
 #include <fstream>
 #include "../../common/common.h"
@@ -35,6 +36,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 std::string unsorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                 std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -rn | tr '\n' ','"));
                 REQUIRE(unsorted_keys == sorted_keys);
+                cop3530::unit_test_utils::delete_file(tree_out_file);
             }
             AND_WHEN("The tree is filled to full-capacity") {
                 for (size_t i = 500; i != 1000; ++i)
@@ -64,6 +66,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         std::string unsorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                         std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -rn | tr '\n' ','"));
                         REQUIRE(unsorted_keys == sorted_keys);
+                        cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
                 }
             }
@@ -94,6 +97,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | tr '\n' ',' "));
                 std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | sort -nr | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
+                cop3530::unit_test_utils::delete_file(tree_out_file);
             }
             AND_WHEN("The tree is filled to full-capacity") {
                 for (size_t i = 500; i != 1000; ++i)
@@ -123,6 +127,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | tr '\n' ',' "));
                         std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9\\.]+$' | sort -nr | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
+                        cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
                 }
             }
@@ -156,6 +161,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                 std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
+                cop3530::unit_test_utils::delete_file(tree_out_file);
             }
             AND_WHEN("The tree is filled to full-capacity") {
                 for (size_t i = 500; i != 1000; ++i)
@@ -185,6 +191,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                         std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
+                        cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
                 }
             }
@@ -215,6 +222,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                 std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
                 REQUIRE(tree_order_keys == sorted_keys);
+                cop3530::unit_test_utils::delete_file(tree_out_file);
             }
             AND_WHEN("The tree is filled to full-capacity") {
                 for (size_t i = 500; i != 1000; ++i)
@@ -244,6 +252,7 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                         std::string tree_order_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | tr '\n' ',' "));
                         std::string sorted_keys = cop3530::unit_test_utils::shell_cmd(std::string("cat ") + tree_out_file + std::string(" | cut -d'[' -f2 | cut -d']' -f1 | grep -E '^[0-9]+$' | sort -r | tr '\n' ','"));
                         REQUIRE(tree_order_keys == sorted_keys);
+                        cop3530::unit_test_utils::delete_file(tree_out_file);
                     }
                 }
             }

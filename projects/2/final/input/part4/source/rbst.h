@@ -102,7 +102,7 @@ namespace cop3530 {
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
+            int nodes_visited = insert_at_leaf(0, this->root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;

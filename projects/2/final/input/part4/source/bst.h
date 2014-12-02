@@ -170,10 +170,7 @@ namespace cop3530 {
                               Value& value,
                               bool& found_key)
         {
-            if (subtree_root_index == 0)
-                //key not found
-                nodes_visited *= -1;
-            else {
+            if (subtree_root_index != 0) {
                 Node& subtree_root = nodes[subtree_root_index];
                 ++nodes_visited;
                 //keep going down to the base of the tree
@@ -377,10 +374,7 @@ namespace cop3530 {
                       Value& value,
                       bool& found_key) const
         {
-            if (subtree_root_index == 0)
-                //key not found
-                nodes_visited *= -1;
-            else {
+            if (subtree_root_index != 0) {
                 Node const& subtree_root = nodes[subtree_root_index];
                 ++nodes_visited;
                 if (key < subtree_root.key) {
@@ -462,7 +456,7 @@ namespace cop3530 {
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = insert_at_leaf(0, root_index, k, v, found_key);
+            int nodes_visited = insert_at_leaf(0, root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             return nodes_visited;
@@ -472,10 +466,12 @@ namespace cop3530 {
             it's value in value, and returns the number of probes required, V; otherwise returns -1 * V.
         */
         virtual int remove(key_type const& key, value_type& value) {
+            if (is_empty())
+                return 0;
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = do_remove(0, root_index, k, v, found_key);
+            int nodes_visited = do_remove(0, root_index, k, v, found_key);
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             if (found_key)
@@ -487,10 +483,12 @@ namespace cop3530 {
             of nodes visited, V; otherwise returns -1 * V. Regardless, the item remains in the tree.
         */
         virtual int search(key_type const& key, value_type& value) {
+            if (is_empty())
+                return 0;
             bool found_key = false;
             Key k(key);
             Value v(value);
-            size_t nodes_visited = do_search(0, root_index, k, v, found_key);
+            int nodes_visited = do_search(0, root_index, k, v, found_key);
             if (found_key)
                 value = v.raw();
             return found_key ? nodes_visited : -1 * nodes_visited;
@@ -554,7 +552,7 @@ namespace cop3530 {
                +--[bobcat]
         */
         virtual std::ostream& print(std::ostream& out) const {
-            if (root_index == 0)
+            if (is_empty())
                 return out;
             size_t num_lines = size() * 2 - 1;
             //use CDAL here so we can print really super-huge trees where the write buffer doesn't fit in memory

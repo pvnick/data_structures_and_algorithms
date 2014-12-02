@@ -12,10 +12,10 @@
 #include <cmath>
 
 namespace cop3530 {
-    double lg(size_t i) {
+    inline double lg(size_t i) {
         return std::log(i) / std::log(2);
     }
-    size_t rand_i(size_t max) {
+    inline size_t rand_i(size_t max) {
         size_t bucket_size = RAND_MAX / max;
         size_t num_buckets = RAND_MAX / bucket_size;
         size_t big_rand;
@@ -37,7 +37,7 @@ namespace cop3530 {
             };
         };
 
-        size_t str_to_numeric(const char* str) {
+        inline size_t str_to_numeric(const char* str) {
             unsigned int base = 257; //prime number chosen near an 8-bit character
             size_t numeric = 0;
             for (; *str != 0; ++str)
@@ -51,7 +51,7 @@ namespace cop3530 {
                     return 1 << static_cast<size_t>(std::ceil(lg(min_capacity)));
                 }
             };
-            struct compare_functor {
+            struct compare {
                 int operator()(const char* a, const char* b) const {
                     int cmp = strcmp(a, b);
                     return (cmp < 0 ? -1 :
@@ -189,7 +189,7 @@ namespace cop3530 {
         class Key {
         private:
             GenericContainer<key_type> raw_key;
-            functors::compare_functor compare;
+            functors::compare compare;
             primary_hash hasher1;
             secondary_hash hasher2;
             size_t hash1_val;
@@ -250,6 +250,7 @@ namespace cop3530 {
         template <typename value_type>
         class Value {
         private:
+            functors::compare compare;
             GenericContainer<value_type> raw_value;
         public:
             bool operator==(Value const& rhs) const {
@@ -265,11 +266,6 @@ namespace cop3530 {
             Value() = default;
         };
     }
-}
-
-std::ostream& operator<<(std::ostream& out, cop3530::hash_utils::ClusterInventory const& rhs) {
-    out << "Cluster{size=" << rhs.cluster_size << ", instances=" << rhs.num_instances << "}";
-    return out;
 }
 
 #endif
