@@ -36,6 +36,17 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
                 REQUIRE(map.search(499, value) > 0);
                 REQUIRE(value == 500);
             }
+            AND_THEN("Printing the map produces a realistic picture of its structure") {
+                std::ostringstream oss;
+                map.print(oss);
+                std::string map_layout = oss.str();
+                size_t num_empty_slots = 0;
+                //check that the number of empty slots reported matches the calculated value
+                for (int i = 0; i != map_layout.size(); ++i)
+                    if (map_layout[i] == '-')
+                        ++num_empty_slots;
+                REQUIRE(num_empty_slots == map.capacity() - map.size());
+            }
             AND_THEN("Removing a key known to be in the map should return its expected value") {
                 int value;
                 REQUIRE(map.remove(50, value) > 0);
@@ -107,6 +118,17 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
                 REQUIRE(map.search(0, value) > 0);
                 REQUIRE(value == 1);
             }
+            AND_THEN("Printing the map produces a realistic picture of its structure") {
+                std::ostringstream oss;
+                map.print(oss);
+                std::string map_layout = oss.str();
+                size_t num_empty_slots = 0;
+                //check that the number of empty slots reported matches the calculated value
+                for (int i = 0; i != map_layout.size(); ++i)
+                    if (map_layout[i] == '-')
+                        ++num_empty_slots;
+                REQUIRE(num_empty_slots == map.capacity() - map.size());
+            }
             AND_THEN("Removing a key known to be in the map should return its expected value") {
                 int value;
                 REQUIRE(map.remove(2.5, value) > 0);
@@ -176,6 +198,17 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
 
                 REQUIRE(map.search("499", value) > 0);
                 REQUIRE(value == 500);
+            }
+            AND_THEN("Printing the map produces a realistic picture of its structure") {
+                std::ostringstream oss;
+                map.print(oss);
+                std::string map_layout = oss.str();
+                size_t num_empty_slots = 0;
+                //check that the number of empty slots reported matches the calculated value
+                for (int i = 0; i != map_layout.size(); ++i)
+                    if (map_layout[i] == '-')
+                        ++num_empty_slots;
+                REQUIRE(num_empty_slots == map.capacity() - map.size());
             }
             AND_THEN("Removing a key known to be in the map should return its expected value") {
                 int value;
@@ -253,6 +286,17 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
 
                 REQUIRE(map.search("499", value) > 0);
                 REQUIRE(value == 500);
+            }
+            AND_THEN("Printing the map produces a realistic picture of its structure") {
+                std::ostringstream oss;
+                map.print(oss);
+                std::string map_layout = oss.str();
+                size_t num_empty_slots = 0;
+                //check that the number of empty slots reported matches the calculated value
+                for (int i = 0; i != map_layout.size(); ++i)
+                    if (map_layout[i] == '-')
+                        ++num_empty_slots;
+                REQUIRE(num_empty_slots == map.capacity() - map.size());
             }
             AND_THEN("Removing a key known to be in the map should return its expected value") {
                 int value;

@@ -75,7 +75,7 @@ namespace cop3530 {
                 throw std::domain_error("min_buckets must be at least 1");
             }
             cop3530::hash_utils::functors::map_capacity_planner capacity_planner;
-            num_buckets = capacity_planner(min_buckets); //make capacity a power of 2, greater than the minimum capacity
+            num_buckets = capacity_planner(min_buckets); //make capacity prime
             init();
         }
         ~HashMapBuckets() {

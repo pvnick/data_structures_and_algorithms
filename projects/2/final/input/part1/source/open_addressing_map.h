@@ -74,7 +74,7 @@ namespace cop3530 {
                 throw std::domain_error("min_capacity must be at least 1");
             }
             cop3530::hash_utils::functors::map_capacity_planner capacity_planner;
-            curr_capacity = capacity_planner(min_capacity); //make capacity a power of 2, greater than the minimum capacity
+            curr_capacity = capacity_planner(min_capacity); //make capacity prime
             slots = new Slot[curr_capacity];
         }
         ~HashMapOpenAddressing() {
