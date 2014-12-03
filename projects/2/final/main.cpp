@@ -71,16 +71,12 @@ typedef cop3530::hash_utils::Key<int> BlahBlah;
 int main() {
 
 
-        cop3530::HashMapOpenAddressingGeneric<std::string,
-                                              int,
-                                              cop3530::hash_utils::functors::map_capacity_planner,
-                                              cop3530::hash_utils::functors::primary_hashes::hash_basic,
-                                              cop3530::hash_utils::functors::secondary_hashes::hash_double> map(1000);
-        for (size_t i = 0; i != 1024; ++i)
-            map.insert(std::to_string(i), i + 1);
+        cop3530::HashMapBucketsGeneric<std::string, int> map(1000);
+        for (size_t i = 0; i != 1000; ++i)
+            map.insert(std::to_string(cop3530::rand_i(100000)), i + 1);
         map.print(std::cout) << std::endl;
 
-        std::cout << map.insert(std::to_string(2000).c_str(), 5) << std::endl;
+        //std::cout << map.insert(std::to_string(2000).c_str(), 5) << std::endl;
 
     /*
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();

@@ -214,6 +214,7 @@ namespace cop3530 {
                 return raw;
             }
             const char* copy() const {
+                if (raw == nullptr) return nullptr;
                 size_t len = strlen(raw);
                 char* new_str = new char[len + 1];
                 strncpy(new_str, raw, len);
@@ -221,11 +222,16 @@ namespace cop3530 {
                 return new_str;
             }
             void reset(const char* val) {
-                if (raw) delete raw;
-                size_t len = strlen(val);
-                raw = new char[len + 1];
-                strncpy(raw, val, len);
-                raw[len] = 0;
+                if (raw) {
+                    delete raw;
+                    raw = nullptr;
+                }
+                if (val != nullptr) {
+                    size_t len = strlen(val);
+                    raw = new char[len + 1];
+                    strncpy(raw, val, len);
+                    raw[len] = 0;
+                }
             }
             int compare_to(GenericContainer const& other) const {
                 return compare(raw, other.raw);
@@ -280,11 +286,20 @@ namespace cop3530 {
                 //this is what is returned to the client, who is responsible for deleting it if its, eg a pointer to a character array
                 return raw_key.copy();
             }
-            void reset(key_type key) {
+            template<typename T>
+            void reset(T key) {
                 raw_key.reset(key);
                 size_t base_probe_attempt = 0;
                 hash1_val = hasher1(key);
                 hash2_val = hasher2(key, base_probe_attempt);
+            }
+            void reset(const char* key) {
+                raw_key.reset(key);
+                if (key != nullptr) {
+                    size_t base_probe_attempt = 0;
+                    hash1_val = hasher1(key);
+                    hash2_val = hasher2(key, base_probe_attempt);
+                }
             }
             explicit Key(key_type const& key): raw_key(key) {
                 reset(key);

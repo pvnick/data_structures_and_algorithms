@@ -8,7 +8,7 @@ instructions and conforms to the technique required for this map
 variety: yes
 
 My MAP implementation 100% correctly supports all three probing 
-techniques: yes
+techniques: (no - everything works except removing items with double hashing and quadratic probing)
 
 My MAP implementation 100% correctly supports the following key types:
 * signed int: yes

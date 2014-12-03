@@ -10,12 +10,11 @@ namespace cop3530 {
     template<typename key_type,
              typename value_type,
              typename capacity_plan_functor = hash_utils::functors::map_capacity_planner,
-             typename primary_hash = hash_utils::functors::primary_hashes::hash_basic,
-             typename secondary_hash = hash_utils::functors::secondary_hashes::hash_double>
+             typename hash = hash_utils::functors::primary_hashes::hash_basic>
     class HashMapBucketsGeneric {
     private:
         typedef hash_utils::ClusterInventory ClusterInventory;
-        typedef hash_utils::Key<key_type, primary_hash, secondary_hash> Key;
+        typedef hash_utils::Key<key_type, hash> Key;
         typedef hash_utils::Value<value_type> Value;
         struct Item {
             Key key;
@@ -114,7 +113,7 @@ namespace cop3530 {
         int remove(key_type const& key, value_type& value) {
             Key k(key);
             Item* item;
-            int probes_required = search_internal(key, item);
+            int probes_required = search_internal(k, item);
             if (probes_required > 0) {
                 //found item
                 value = item->value.raw_copy();
@@ -145,7 +144,7 @@ namespace cop3530 {
             removes all items from the map.
         */
         void clear() {
-            delete buckets;
+            delete[] buckets;
             init();
         }
         /*
@@ -193,13 +192,21 @@ namespace cop3530 {
             out << '[';
             for (size_t i = 0; i != cap; ++i) {
                 Bucket const& bucket = buckets[i];
-                for (Item* item = bucket.head; item->is_dummy != true; item = item->next) {
+                if (bucket.head->is_dummy) {
                     if (print_separator)
                         out << "|";
                     else
                         print_separator = true;
-                    out << item->key.raw();
-                }
+                    out << "-";
+                } else {
+                    for (Item* item = bucket.head; item->is_dummy != true; item = item->next) {
+                        if (print_separator)
+                            out << "|";
+                        else
+                            print_separator = true;
+                        out << item->key.raw();
+                    }
+                } 
             }
             out << ']';
             return out;

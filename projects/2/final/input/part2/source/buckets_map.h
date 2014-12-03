@@ -139,7 +139,7 @@ namespace cop3530 {
             removes all items from the map.
         */
         void clear() {
-            delete buckets;
+            delete[] buckets;
             init();
         }
         /*
