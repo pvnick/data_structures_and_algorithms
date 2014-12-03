@@ -149,7 +149,7 @@ namespace cop3530 {
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             if (found_key)
-                value = v.raw();
+                value = v.raw_copy();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
     };

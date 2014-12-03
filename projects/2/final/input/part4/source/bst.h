@@ -420,7 +420,7 @@ namespace cop3530 {
             if (--ith_node_to_delete == 0) {
                 //delete the current node
                 value_type dummy_val;
-                remove(subtree_root.key.raw(), dummy_val);
+                remove(subtree_root.key.raw_copy(), dummy_val);
                 key = subtree_root.key;
                 return;
             }
@@ -475,7 +475,7 @@ namespace cop3530 {
             if (_DEBUG_)
                 this->nodes[this->root_index].validate_children_count_recursive(this->nodes);
             if (found_key)
-                value = v.raw();
+                value = v.raw_copy();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
@@ -490,7 +490,7 @@ namespace cop3530 {
             Value v(value);
             int nodes_visited = do_search(0, root_index, k, v, found_key);
             if (found_key)
-                value = v.raw();
+                value = v.raw_copy();
             return found_key ? nodes_visited : -1 * nodes_visited;
         }
         /*
@@ -603,7 +603,8 @@ namespace cop3530 {
             size_t ith_node_to_delete = 1 + rand_i(size());
             Key key;
             remove_ith_node_inorder(root_index, ith_node_to_delete, key);
-            return key.raw();
+            key_type ret = key.raw_copy();
+            return ret;
         }
     };
 }

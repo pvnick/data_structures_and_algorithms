@@ -117,7 +117,7 @@ namespace cop3530 {
             int probes_required = search_internal(key, item);
             if (probes_required > 0) {
                 //found item
-                value = item->value.raw();
+                value = item->value.raw_copy();
                 //swap the current item for the next one
                 Item* to_delete = item->next;
                 *item = *to_delete;
@@ -137,7 +137,7 @@ namespace cop3530 {
             int probes_required = search_internal(k, item);
             if (probes_required > 0) {
                 //found item
-                value = item->value.raw();
+                value = item->value.raw_copy();
             }
             return probes_required;
         }
@@ -261,7 +261,7 @@ namespace cop3530 {
                 Item* item_ptr = bucket.head;
                 while ( ! item_ptr->is_dummy) {
                     if (--ith_node_to_delete == 0) {
-                        key_type key = item_ptr->key.raw();
+                        key_type key = item_ptr->key.raw_copy();
                         value_type val_dummy;
                         remove(key, val_dummy);
                         return key;

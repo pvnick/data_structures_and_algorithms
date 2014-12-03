@@ -53,8 +53,8 @@ namespace cop3530 {
         //all backing array manipulations should go through the following two methods
         void insert_at_index(Key const& key, Value const& value, size_t index) {
             Slot& s = slots[index];
-            s.item.key = key;
-            s.item.value = value;
+            s.item.key.reset(key.raw_copy());
+            s.item.value.reset(value.raw_copy());
             if ( ! s.is_occupied) {
                 s.is_occupied = true;
                 ++num_occupied_slots;
@@ -94,6 +94,9 @@ namespace cop3530 {
             Value v(value);
             int probes_required = search_internal(k);
             size_t index = k.hash(M, probes_required - 1);
+            if (slots[index].is_occupied == true && slots[index].item.key != k)
+                //map is full and we're going to hit an infinite loop if we keep going
+                return probes_required * -1;
             insert_at_index(k, v, index);
             return probes_required;
         }
@@ -107,18 +110,18 @@ namespace cop3530 {
             Key k(key);
             int probes_required = search_internal(k);
             size_t index = k.hash(M, probes_required - 1);
-            if (slots[index].is_occupied == false || slots[index].item.key != key)
+            if (slots[index].is_occupied == false || slots[index].item.key != k)
                 //key not found
                 return -1 * probes_required;
             Value v = remove_at_index(index);
-            value = v.raw();
+            value = v.raw_copy();
             //remove and reinsert items until find unoccupied slot (guaranteed to happen since we just removed an item)
             for (int i = 1; ; ++i) {
                 index = k.hash(M, i);
                 Slot const& s = slots[index];
                 if (s.is_occupied) {
                     remove_at_index(index);
-                    insert(s.item.key.raw(), s.item.value.raw());
+                    insert(s.item.key.raw_copy(), s.item.value.raw_copy());
                 } else {
                     break;
                 }
@@ -136,10 +139,10 @@ namespace cop3530 {
             Key k(key);
             size_t probes_required = search_internal(k);
             size_t index = k.hash(M, probes_required - 1);
-            if (slots[index].is_occupied == false || slots[index].item.key != key)
+            if (slots[index].is_occupied == false || slots[index].item.key != k)
                 //key not found
                 return -1 * probes_required;
-            value = slots[index].item.value.raw();
+            value = slots[index].item.value.raw_copy();
             return probes_required;
         }
 
@@ -256,7 +259,7 @@ namespace cop3530 {
             for (size_t i = 0; i != num_slots; ++i) {
                 Slot const& slot = slots[i];
                 if (slot.is_occupied && --ith_node_to_delete == 0) {
-                    key_type key = slot.item.key.raw();
+                    key_type key = slot.item.key.raw_copy();
                     value_type val_dummy;
                     remove(key, val_dummy);
                     return key;

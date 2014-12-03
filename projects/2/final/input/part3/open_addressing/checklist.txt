@@ -32,10 +32,10 @@ My MAP implementation 100% correctly supports the following revised
 and new methods as described in part III:
 
 * insert: yes
-* remove: yes
+* remove: (linear probing: yes, quadratic probing: no, double hashing: no)
 * search: yes
 * cluster_distribution(): yes
-* remove_random(): yes
+* remove_random(): (linear probing: yes, quadratic probing: no, double hashing: no)
 
 ======================================================================
 FOR ALL PARTS

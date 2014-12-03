@@ -219,15 +219,18 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         REQUIRE(map.is_empty() == true);
 
         WHEN("The map is filled halfway, cleared, then filled halfway again") {
-            for (size_t i = 0; i != 500; ++i)
-                map.insert(std::to_string(i).c_str(), i + 1);
+            for (size_t i = 0; i != 500; ++i) {
+                std::string str = std::to_string(i);
+                map.insert(str.c_str(), i + 1);
+            }
             map.clear();
             REQUIRE(map.capacity() == 1000);
             REQUIRE(map.size() == 0);
             REQUIRE(map.is_empty() == true);
-            for (size_t i = 0; i != 500; ++i)
-                map.insert(std::to_string(i).c_str(), i + 1);
-            
+            for (size_t i = 0; i != 500; ++i) {
+                std::string str = std::to_string(i);
+                map.insert(str.c_str(), i + 1);
+            }
             THEN("The map reports itself as non-empty") {
                 REQUIRE(map.size() == 500);
                 REQUIRE( ! map.is_empty());

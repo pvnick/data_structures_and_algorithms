@@ -209,9 +209,10 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
         std::ostringstream oss;
 
         WHEN("The tree is filled to half-capacity") {
-            for (size_t i = 0; i != 500; ++i)
-                map.insert(std::to_string(i).c_str(), i + 1);
-
+            for (size_t i = 0; i != 500; ++i) {
+                std::string str = std::to_string(i);
+                map.insert(str.c_str(), i + 1);
+            }
             THEN("The load() method reports 50% load factor") {
                 REQUIRE(map.load() == 0.5);
             }
@@ -227,17 +228,19 @@ SCENARIO( "Valid BST tree structure is maintained" ) {
                 cop3530::unit_test_utils::delete_file(tree_out_file);
             }
             AND_WHEN("The tree is filled to full-capacity") {
-                for (size_t i = 500; i != 1000; ++i)
-                    map.insert(std::to_string(i).c_str(), i + 1);
-
+                for (size_t i = 500; i != 1000; ++i) {
+                    std::string str = std::to_string(i);
+                    map.insert(str.c_str(), i + 1);
+                }
                 THEN("The load() method reports 100% load factor") {
                     REQUIRE(map.load() == 1);
                 }
 
                 AND_WHEN("Half the items are randomly deleted") {
                     for (size_t i = 0; i != 250; ++i) {
+                        std::string str = std::to_string(i);
                         int dummy;
-                        map.remove(std::to_string(i).c_str(), dummy);
+                        map.remove(str.c_str(), dummy);
                     }
                     for (size_t i = 0; i != 250; ++i)
                         map.remove_random();

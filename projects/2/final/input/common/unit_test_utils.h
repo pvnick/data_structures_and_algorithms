@@ -30,8 +30,10 @@ namespace cop3530 {
             std::ofstream shell_script_out(shell_script_file);
             shell_script_out << "#!/bin/sh" << std::endl << cmd << std::endl;
             shell_script_out.close();
-            system((std::string("chmod +x ") + shell_script_file).c_str());
-            system((shell_script_file + std::string(" > ") + output_file).c_str());
+            std::string chmod_cmd = std::string("chmod +x ") + shell_script_file;
+            system(chmod_cmd.c_str());
+            std::string invoke_cmd = shell_script_file + std::string(" > ") + output_file;
+            system(invoke_cmd.c_str());
             std::ifstream read_output(output_file);
             std::ostringstream oss;
             std::string tmp;

@@ -27,6 +27,32 @@ namespace cop3530 {
 
     namespace hash_utils {
         static constexpr size_t max_size_t = std::numeric_limits<size_t>::max();
+        static constexpr size_t primes[] = { //from algorithms in c++, helps us to choose a prime-number map capacity
+            251,
+            509,
+            1021,
+            2039,
+            4093,
+            8191,
+            16381,
+            32749,
+            65521,
+            131071,
+            262193,
+            524287,
+            1048573,
+            2097143,
+            4194301,
+            8388593,
+            16777213,
+            33554393,
+            67108859,
+            134217689,
+            268435399,
+            536870909,
+            1073741789,
+            2147483647
+        };
         struct ClusterInventory {
             size_t cluster_size;
             size_t num_instances;
@@ -45,10 +71,12 @@ namespace cop3530 {
             return numeric;
         }
         namespace functors {
+
             struct map_capacity_planner {
                 size_t operator()(size_t min_capacity) {
-                    //make capacity a power of 2, greater than the minimum capacity
-                    return 1 << static_cast<size_t>(std::ceil(lg(min_capacity)));
+                    for (int i = 0; i != 24; ++i)
+                        if (min_capacity < primes[i])
+                            return primes[i];
                 }
             };
             struct compare {
@@ -96,7 +124,8 @@ namespace cop3530 {
                     bool changes_with_probe_attempt() const {
                         return false;
                     }
-                    size_t operator()(const char* key, size_t probe_attempt) const {
+                    template<typename T>
+                    size_t operator()(T unused, size_t probe_attempt) const {
                         return 1;
                     }
                 };
@@ -104,7 +133,8 @@ namespace cop3530 {
                     bool changes_with_probe_attempt() const {
                         return true;
                     }
-                    size_t operator()(const char* key, size_t probe_attempt) const {
+                    template<typename T>
+                    size_t operator()(T unused, size_t probe_attempt) const {
                         return probe_attempt;
                     }
                 };
@@ -114,32 +144,27 @@ namespace cop3530 {
                         size_t hash = numeric % 97; //simple modulus using a prime number (from algorithms in c++)
                         //the second hash may not be zero (will cause an infinite loop).
                         //also, hash must be relatively prime to map_capacity so that every slot can be hit.
-                        //since map capacity is a power of two if we use the capacity planner functor,
-                        //both properties are attainable by adding one to the hash if it is even (despite what my
-                        //7th grade algebra teacher attempted to teach me, I stubbournly consider zero to be an even
-                        //integer despite no formal training in number theory)
-                        bool is_even = (hash & 1) == 0;
-                        if (is_even)
-                            ++hash;
+                        //map capacity is a prime number based chosen from the table, so any value less than
+                        //map capacity should work
                         return hash;
                     }
                 public:
                     bool changes_with_probe_attempt() const {
                         return false;
                     }
-                    size_t operator()(const char* key, size_t unused) const {
+                    size_t operator()(const char* key, size_t) const {
                         size_t numeric = str_to_numeric(key);
                         return hash_numeric(numeric);
                     }
-                    size_t operator()(double key, size_t unused) const {
+                    size_t operator()(double key, size_t) const {
                         return hash_numeric(key);
                     }
-                    size_t operator()(int key, size_t unused) const {
+                    size_t operator()(int key, size_t) const {
                         return hash_numeric(key);
                     }
-                    size_t operator()(std::string key, size_t unused) const {
+                    size_t operator()(std::string key, size_t) const {
                         const char* c_key = key.c_str();
-                        return operator()(c_key, unused);
+                        return operator()(c_key, 0);
                     }
                 };
             }
@@ -154,32 +179,56 @@ namespace cop3530 {
             */
         private:
             T raw;
+            functors::compare compare;
         public:
             GenericContainer(const T& val): raw(val) {}
             GenericContainer() = default;
+            GenericContainer& operator=(GenericContainer const& rhs) = delete;
             T operator()() const {
+                return raw;
+            }
+            T copy() const {
                 return raw;
             }
             void reset(const T& val) {
                 raw = val;
+            }
+            int compare_to(GenericContainer const& other) const {
+                return compare(raw, other.raw);
             }
         };
         template<>
         class GenericContainer<const char*> {
             /*
                 class template specialization for character arrays, stores a local copy of the character array
-                wrapped in a std::string so that it wont go out of scope and lead to memory corruption
             */
         private:
-            std::string raw;
+            char* raw = nullptr;
+            functors::compare compare;
         public:
-            GenericContainer(const char* val): raw(val) {}
+            GenericContainer(const char* val) {
+                reset(val);
+            }
             GenericContainer() = default;
             const char* operator()() const {
-                return raw.c_str();
+                return raw;
+            }
+            const char* copy() const {
+                size_t len = strlen(raw);
+                char* new_str = new char[len + 1];
+                strncpy(new_str, raw, len);
+                new_str[len] = 0;
+                return new_str;
             }
             void reset(const char* val) {
-                raw = val;
+                if (raw) delete raw;
+                size_t len = strlen(val);
+                raw = new char[len + 1];
+                strncpy(raw, val, len);
+                raw[len] = 0;
+            }
+            int compare_to(GenericContainer const& other) const {
+                return compare(raw, other.raw);
             }
         };
 
@@ -189,34 +238,26 @@ namespace cop3530 {
         class Key {
         private:
             GenericContainer<key_type> raw_key;
-            functors::compare compare;
             primary_hash hasher1;
             secondary_hash hasher2;
             size_t hash1_val;
             size_t hash2_val;
         public:
-            bool operator==(Key const& rhs) const {
-                return compare(raw_key(), rhs.raw_key()) == 0;
+            Key& operator=(Key const& rhs) {
+                if (&rhs == this)
+                    return *this;
+                reset(rhs.raw_key());
             }
-            bool operator==(key_type const& rhs) const {
-                return compare(raw_key(), rhs) == 0;
+            bool operator==(Key const& rhs) const {
+                return raw_key.compare_to(rhs.raw_key) == 0;
             }
             bool operator<(Key const& rhs) const {
-                return compare(raw_key(), rhs.raw_key()) == -1;
-            }
-            bool operator<(key_type const& rhs) const {
-                return compare(raw_key(), rhs) == -1;
+                return raw_key.compare_to(rhs.raw_key) == -1;
             }
             bool operator>(Key const& rhs) const {
-                return compare(raw_key(), rhs.raw_key()) == 1;
-            }
-            bool operator>(key_type const& rhs) const {
-                return compare(raw_key(), rhs) == 1;
+                return raw_key.compare_to(rhs.raw_key) == 1;
             }
             bool operator!=(Key const& rhs) const {
-                return ! operator==(rhs);
-            }
-            bool operator!=(key_type const& rhs) const {
                 return ! operator==(rhs);
             }
             size_t hash(size_t map_capacity, size_t probe_attempt) const {
@@ -224,7 +265,7 @@ namespace cop3530 {
                 if (probe_attempt != 0 && hasher2.changes_with_probe_attempt())
                 {
                     //if the hashing function value is dependent on the probe attempt
-                    //(eg quadratic probing), then we need to retrieve the new value
+                    //(eg quadratic probing), then we need to retrieve the new value*/
                     local_hash2_val = hasher2(raw_key(), probe_attempt);
                 } else {
                     //otherwise we can just use the value we have stored
@@ -235,7 +276,11 @@ namespace cop3530 {
             key_type raw() const {
                 return raw_key();
             }
-            void reset(key_type const& key) {
+            key_type raw_copy() const {
+                //this is what is returned to the client, who is responsible for deleting it if its, eg a pointer to a character array
+                return raw_key.copy();
+            }
+            void reset(key_type key) {
                 raw_key.reset(key);
                 size_t base_probe_attempt = 0;
                 hash1_val = hasher1(key);
@@ -252,6 +297,11 @@ namespace cop3530 {
             functors::compare compare;
             GenericContainer<value_type> raw_value;
         public:
+            Value& operator=(Value const& rhs) {
+                if (&rhs == this)
+                    return *this;
+                reset(rhs.raw_value());
+            }
             bool operator==(Value const& rhs) const {
                 return compare(raw_value(), rhs.raw_value());
             }
@@ -260,6 +310,13 @@ namespace cop3530 {
             }
             value_type raw() const {
                 return raw_value();
+            }
+            value_type raw_copy() const {
+                //this is what is returned to the client, who is responsible for deleting it if its, eg a pointer to a character array
+                return raw_value.copy();
+            }
+            void reset(value_type value) {
+                raw_value.reset(value);
             }
             explicit Value(value_type const& value): raw_value(value) {}
             Value() = default;

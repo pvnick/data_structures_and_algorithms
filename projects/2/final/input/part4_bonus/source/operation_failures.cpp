@@ -53,9 +53,10 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.search(std::to_string(5), value) == 0);
 
         WHEN("The map is filled to capacity") {
-            for (size_t i = 0; i != 1000; ++i)
-                map.insert(std::to_string(i), i + 1);
-            
+            for (size_t i = 0; i != 1000; ++i) {
+                std::string str = std::to_string(i);
+                map.insert(str.c_str(), i + 1);
+            }
             THEN("Attempting to insert returns a negative value") {
                 REQUIRE(map.insert(std::to_string(1001), 5) < 0);
             }
@@ -67,7 +68,7 @@ SCENARIO( "Various operations fail and indicate as such with their return values
             }
         }
     }
-    
+
     GIVEN( "An AVL map with const char* keys" ) {
         cop3530::AVL<std::string, int> map(1000);
         int value;
@@ -75,9 +76,10 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.search(std::to_string(5).c_str(), value) == 0);
 
         WHEN("The map is filled to capacity") {
-            for (size_t i = 0; i != 1000; ++i)
-                map.insert(std::to_string(i).c_str(), i + 1);
-            
+            for (size_t i = 0; i != 1000; ++i) {
+                std::string str = std::to_string(i);
+                map.insert(str.c_str(), i + 1);
+            }
             THEN("Attempting to insert returns a negative value") {
                 REQUIRE(map.insert(std::to_string(1001).c_str(), 5) < 0);
             }
