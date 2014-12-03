@@ -1,13 +1,6 @@
 #include "unit_tests.h"
 #include "catch/catch.hpp"
 
-#include <sstream>
-#include <fstream>
-#include "../../common/common.h"
-#include "../../common/unit_test_utils.h"
-#include "bst.h"
-#include "rbst.h"
-
 SCENARIO( "Various operations fail and indicate as such with their return values" ) {
     GIVEN( "An RBST map with integer keys" ) {
         cop3530::RBST<int, int> map(1000);
@@ -15,7 +8,7 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.remove(5, value) == 0);
         REQUIRE(map.search(5, value) == 0);
 
-        WHEN("The tree is filled to capacity") {
+        WHEN("The map is filled to capacity") {
             for (size_t i = 0; i != 1000; ++i)
                 map.insert(i, i + 1);
             
@@ -37,7 +30,7 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.remove(5, value) == 0);
         REQUIRE(map.search(5, value) == 0);
 
-        WHEN("The tree is filled to capacity") {
+        WHEN("The map is filled to capacity") {
             for (size_t i = 0; i != 1000; ++i)
                 map.insert(i, i + 1);
             
@@ -59,7 +52,7 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.remove(std::to_string(5), value) == 0);
         REQUIRE(map.search(std::to_string(5), value) == 0);
 
-        WHEN("The tree is filled to capacity") {
+        WHEN("The map is filled to capacity") {
             for (size_t i = 0; i != 1000; ++i)
                 map.insert(std::to_string(i), i + 1);
             
@@ -81,7 +74,7 @@ SCENARIO( "Various operations fail and indicate as such with their return values
         REQUIRE(map.remove(std::to_string(5).c_str(), value) == 0);
         REQUIRE(map.search(std::to_string(5).c_str(), value) == 0);
 
-        WHEN("The tree is filled to capacity") {
+        WHEN("The map is filled to capacity") {
             for (size_t i = 0; i != 1000; ++i)
                 map.insert(std::to_string(i).c_str(), i + 1);
             

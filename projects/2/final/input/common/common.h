@@ -167,7 +167,7 @@ namespace cop3530 {
         template<>
         class GenericContainer<const char*> {
             /*
-                class template specialization for character arrays, stores a local copy of the character array 
+                class template specialization for character arrays, stores a local copy of the character array
                 wrapped in a std::string so that it wont go out of scope and lead to memory corruption
             */
         private:
@@ -194,7 +194,6 @@ namespace cop3530 {
             secondary_hash hasher2;
             size_t hash1_val;
             size_t hash2_val;
-            size_t old_map_capacity;
         public:
             bool operator==(Key const& rhs) const {
                 return compare(raw_key(), rhs.raw_key()) == 0;

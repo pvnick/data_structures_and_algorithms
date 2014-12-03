@@ -1,13 +1,6 @@
 #include "unit_tests.h"
 #include "catch/catch.hpp"
 
-#include <sstream>
-#include <fstream>
-#include "../../common/common.h"
-#include "../../common/unit_test_utils.h"
-#include "bst.h"
-#include "rbst.h"
-
 SCENARIO( "Certain basic operations should always succeed" ) {
     GIVEN( "An RBST map with integer keys" ) {
         typedef int key_type;
@@ -16,7 +9,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
-        WHEN("The tree is filled halfway, cleared, then filled halfway again") {
+        WHEN("The map is filled halfway, cleared, then filled halfway again") {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(i, i + 1);
             map.clear();
@@ -26,7 +19,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(i, i + 1);
             
-            THEN("The tree reports itself as non-empty") {
+            THEN("The map reports itself as non-empty") {
                 REQUIRE(map.size() == 500);
                 REQUIRE( ! map.is_empty());
             }
@@ -88,7 +81,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
-        WHEN("The tree is filled halfway, cleared, then filled halfway again") {
+        WHEN("The map is filled halfway, cleared, then filled halfway again") {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(static_cast<double>(i) / 2.0, i + 1);
             map.clear();
@@ -98,7 +91,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(static_cast<double>(i) / 2.0, i + 1);
             
-            THEN("The tree reports itself as non-empty") {
+            THEN("The map reports itself as non-empty") {
                 REQUIRE(map.size() == 500);
                 REQUIRE( ! map.is_empty());
             }
@@ -153,7 +146,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
-        WHEN("The tree is filled halfway, cleared, then filled halfway again") {
+        WHEN("The map is filled halfway, cleared, then filled halfway again") {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i), i + 1);
             map.clear();
@@ -163,7 +156,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i), i + 1);
             
-            THEN("The tree reports itself as non-empty") {
+            THEN("The map reports itself as non-empty") {
                 REQUIRE(map.size() == 500);
                 REQUIRE( ! map.is_empty());
             }
@@ -225,7 +218,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
-        WHEN("The tree is filled halfway, cleared, then filled halfway again") {
+        WHEN("The map is filled halfway, cleared, then filled halfway again") {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i).c_str(), i + 1);
             map.clear();
@@ -235,7 +228,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i).c_str(), i + 1);
             
-            THEN("The tree reports itself as non-empty") {
+            THEN("The map reports itself as non-empty") {
                 REQUIRE(map.size() == 500);
                 REQUIRE( ! map.is_empty());
             }

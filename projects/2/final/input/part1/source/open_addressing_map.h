@@ -35,9 +35,9 @@ namespace cop3530 {
         int search_internal(key_type const& key) {
             size_t M = capacity();
             size_t hash_val = hash(key);
-            size_t probes_required;
-            for (probes_required = 0; probes_required != M; ++probes_required) {
-                size_t slot_index = (hash_val + probe(probes_required)) % M;
+            size_t probe_index;
+            for (probe_index = 0; probe_index != M; ++probe_index) {
+                size_t slot_index = (hash_val + probe(probe_index)) % M;
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].key == key) {
                         //found the key
@@ -47,7 +47,7 @@ namespace cop3530 {
                     //found unoccupied slot
                     break;
             }
-            return probes_required;
+            return 1 + probe_index; //start with a single probe when probe_index==0
         }
         //all backing array manipulations should go through the following two methods
         void insert_at_index(key_type const& key, value_type const& value, size_t index) {
@@ -89,7 +89,7 @@ namespace cop3530 {
             if (M == size())
                 return false;
             size_t probes_required = search_internal(key);
-            size_t index = (hash(key) + probe(probes_required)) % M;
+            size_t index = (hash(key) + probe(probes_required - 1)) % M;
             insert_at_index(key, value, index);
             return true;
         }
@@ -100,7 +100,7 @@ namespace cop3530 {
         bool remove(key_type const& key, value_type& value) {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
-            size_t index = (hash(key) + probe(probes_required)) % M;
+            size_t index = (hash(key) + probe(probes_required - 1)) % M;
             if (slots[index].key != key)
                 //key not found
                 return false;
@@ -126,7 +126,7 @@ namespace cop3530 {
         bool search(key_type const& key, value_type& value) {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
-            size_t index = (hash(key) + probe(probes_required)) % M;
+            size_t index = (hash(key) + probe(probes_required - 1)) % M;
             if (slots[index].key != key)
                 //key not found
                 return false;

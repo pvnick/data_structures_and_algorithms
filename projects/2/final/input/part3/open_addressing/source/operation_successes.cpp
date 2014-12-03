@@ -2,10 +2,10 @@
 #include "catch/catch.hpp"
 
 SCENARIO( "Certain basic operations should always succeed" ) {
-    GIVEN( "An AVL map with integer keys" ) {
+    GIVEN( "A HashMapOpenAddressingGeneric map with integer keys" ) {
         typedef int key_type;
-        cop3530::AVL<key_type, int> map(1000);
-        REQUIRE(map.capacity() == 1000);
+        cop3530::HashMapOpenAddressingGeneric<key_type, int> map(1000);
+        REQUIRE(map.capacity() == 1024); //we expect capacity to be a power of 2
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
@@ -13,7 +13,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(i, i + 1);
             map.clear();
-            REQUIRE(map.capacity() == 1000);
+            REQUIRE(map.capacity() == 1024);
             REQUIRE(map.size() == 0);
             REQUIRE(map.is_empty() == true);
             for (size_t i = 0; i != 500; ++i)
@@ -74,10 +74,10 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         }
     }
 
-    GIVEN( "An AVL map with double keys" ) {
+    GIVEN( "A HashMapOpenAddressingGeneric map with double keys" ) {
         typedef double key_type;
-        cop3530::AVL<key_type, int> map(1000);
-        REQUIRE(map.capacity() == 1000);
+        cop3530::HashMapOpenAddressingGeneric<key_type, int> map(1000);
+        REQUIRE(map.capacity() == 1024);
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
@@ -85,7 +85,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(static_cast<double>(i) / 2.0, i + 1);
             map.clear();
-            REQUIRE(map.capacity() == 1000);
+            REQUIRE(map.capacity() == 1024);
             REQUIRE(map.size() == 0);
             REQUIRE(map.is_empty() == true);
             for (size_t i = 0; i != 500; ++i)
@@ -139,10 +139,10 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         }
     }
 
-    GIVEN( "An AVL map with string keys" ) {
+    GIVEN( "A HashMapOpenAddressingGeneric map with string keys" ) {
         typedef std::string key_type;
-        cop3530::AVL<key_type, int> map(1000);
-        REQUIRE(map.capacity() == 1000);
+        cop3530::HashMapOpenAddressingGeneric<key_type, int> map(1000);
+        REQUIRE(map.capacity() == 1024);
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
@@ -150,7 +150,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i), i + 1);
             map.clear();
-            REQUIRE(map.capacity() == 1000);
+            REQUIRE(map.capacity() == 1024);
             REQUIRE(map.size() == 0);
             REQUIRE(map.is_empty() == true);
             for (size_t i = 0; i != 500; ++i)
@@ -211,10 +211,10 @@ SCENARIO( "Certain basic operations should always succeed" ) {
         }
     }
 
-    GIVEN( "An AVL map with const char* keys" ) {
+    GIVEN( "A HashMapOpenAddressingGeneric map with const char* keys" ) {
         typedef const char* key_type;
-        cop3530::AVL<key_type, int> map(1000);
-        REQUIRE(map.capacity() == 1000);
+        cop3530::HashMapOpenAddressingGeneric<key_type, int> map(1000);
+        REQUIRE(map.capacity() == 1024);
         REQUIRE(map.size() == 0);
         REQUIRE(map.is_empty() == true);
 
@@ -222,7 +222,7 @@ SCENARIO( "Certain basic operations should always succeed" ) {
             for (size_t i = 0; i != 500; ++i)
                 map.insert(std::to_string(i).c_str(), i + 1);
             map.clear();
-            REQUIRE(map.capacity() == 1000);
+            REQUIRE(map.capacity() == 1024);
             REQUIRE(map.size() == 0);
             REQUIRE(map.is_empty() == true);
             for (size_t i = 0; i != 500; ++i)

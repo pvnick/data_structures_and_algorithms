@@ -1,13 +1,6 @@
 #include "unit_tests.h"
 #include "catch/catch.hpp"
 
-#include <sstream>
-#include <fstream>
-#include "../../common/common.h"
-#include "../../common/unit_test_utils.h"
-#include "bst.h"
-#include "rbst.h"
-
 /*
     Note about the following method:
     We pretty-print the tree to a file and filter out everything but the keys.

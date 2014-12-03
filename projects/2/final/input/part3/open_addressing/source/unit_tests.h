@@ -6,9 +6,8 @@
 
 #include <sstream>
 #include <fstream>
-#include "../../common/common.h"
-#include "../../common/unit_test_utils.h"
-#include "bst.h"
-#include "avl.h"
+#include "../../../common/common.h"
+#include "../../../common/unit_test_utils.h"
+#include "open_addressing_generic_map.h"
 
 #endif

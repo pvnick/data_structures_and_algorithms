@@ -69,28 +69,26 @@ void histogram(std::vector<size_t> const& vals, size_t bins = 20, size_t max_bar
 typedef cop3530::hash_utils::Key<int> BlahBlah;
 
 int main() {
-    typedef int key_type;
-    cop3530::RBST<key_type, int> map(1000);
-    for (size_t i = 0; i != 1000; ++i)
+    cop3530::HashMapOpenAddressingGeneric<int, int> map(1000);
+    size_t size = map.size();
+    for (size_t i = 0; i != 500; ++i) {
+        size = map.size();
         map.insert(i, i + 1);
-
-    int value;
-    int ret = map.search(1001, value);
-    std::cout << ret << std::endl;
-    return 0;
-
-    std::vector<std::string> word_bank;
-    read_word_file("strings.txt", &word_bank);
-    for (size_t i = 0; i != 20; ++i) {
-        map.insert(i, i);
+        if (map.size() == size)
+            throw std::exception();
     }
-    map.print(std::cout) << std::endl;
+    map.clear();
+    size = map.size();
+    for (size_t i = 0; i != 500; ++i)
+        map.insert(i, i + 1);
+    size = map.size();
 
     return 0;
+    /*
     cop3530::priority_queue<cop3530::hash_utils::ClusterInventory> cluster_pq = map.cluster_distribution();
     while (cluster_pq.size()) {
         cop3530::hash_utils::ClusterInventory cluster = cluster_pq.get_next_item();
-    }
+    }*/
     //histogram(vals, 40, 40);
     return 0;
 

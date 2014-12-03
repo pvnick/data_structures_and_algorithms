@@ -35,9 +35,9 @@ namespace cop3530 {
         */
         int search_internal(Key const& key) {
             size_t M = capacity();
-            size_t probes_required;
-            for (probes_required = 0; probes_required != M; ++probes_required) {
-                size_t slot_index = key.hash(M, probes_required);
+            size_t probe_index;
+            for (probe_index = 0; probe_index != M; ++probe_index) {
+                size_t slot_index = key.hash(M, probe_index);
                 if (slots[slot_index].is_occupied) {
                     if (slots[slot_index].item.key == key) {
                         //found the key
@@ -47,7 +47,7 @@ namespace cop3530 {
                     //found unoccupied slot
                     break;
             }
-            return probes_required;
+            return 1 + probe_index; //start with a single probe
         }
 
         //all backing array manipulations should go through the following two methods
@@ -92,8 +92,8 @@ namespace cop3530 {
                 return -1 * size();
             Key k(key);
             Value v(value);
-            size_t probes_required = search_internal(k);
-            size_t index = k.hash(M, probes_required);
+            int probes_required = search_internal(k);
+            size_t index = k.hash(M, probes_required - 1);
             insert_at_index(k, v, index);
             return probes_required;
         }
@@ -105,8 +105,8 @@ namespace cop3530 {
         int remove(key_type const& key, value_type& value) {
             size_t M = capacity();
             Key k(key);
-            size_t probes_required = search_internal(k);
-            size_t index = k.hash(M, probes_required);
+            int probes_required = search_internal(k);
+            size_t index = k.hash(M, probes_required - 1);
             if (slots[index].is_occupied == false || slots[index].item.key != key)
                 //key not found
                 return -1 * probes_required;
@@ -135,7 +135,7 @@ namespace cop3530 {
             size_t M = capacity();
             Key k(key);
             size_t probes_required = search_internal(k);
-            size_t index = k.hash(M, probes_required);
+            size_t index = k.hash(M, probes_required - 1);
             if (slots[index].is_occupied == false || slots[index].item.key != key)
                 //key not found
                 return -1 * probes_required;
