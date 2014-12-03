@@ -8,6 +8,7 @@
 
 #include <string.h>
 #include <limits>
+#include <stdexcept>
 #include <ostream>
 #include <cmath>
 
@@ -77,6 +78,7 @@ namespace cop3530 {
                     for (int i = 0; i != 24; ++i)
                         if (min_capacity < primes[i])
                             return primes[i];
+                    throw std::domain_error("Provided min capacity too large. Consider extending the list of prime numbers");
                 }
             };
             struct compare {

@@ -2,6 +2,7 @@
 #define _BUCKETS_MAP_H_
 
 #include <iostream>
+#include <stdexcept>
 #include "../../common/common.h"
 
 namespace cop3530 {
@@ -187,18 +188,25 @@ namespace cop3530 {
             out << '[';
             for (size_t i = 0; i != cap; ++i) {
                 Bucket const& bucket = buckets[i];
-                for (Item* item = bucket.head; item->is_dummy != true; item = item->next) {
+                if (bucket.head->is_dummy) {
                     if (print_separator)
                         out << "|";
                     else
                         print_separator = true;
-                    out << item->key;
-                }
+                    out << "-";
+                } else {
+                    for (Item* item = bucket.head; item->is_dummy != true; item = item->next) {
+                        if (print_separator)
+                            out << "|";
+                        else
+                            print_separator = true;
+                        out << item->key;
+                    }
+                } 
             }
             out << ']';
             return out;
         }
-
     };
 }
 

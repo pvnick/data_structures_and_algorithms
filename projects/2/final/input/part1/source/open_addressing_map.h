@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "../../common/common.h"
+#include <stdexcept>
 
 namespace cop3530 {
     class HashMapOpenAddressing {
@@ -101,7 +102,7 @@ namespace cop3530 {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required - 1)) % M;
-            if (slots[index].key != key)
+            if ( ! (slots[index].is_occupied && slots[index].key == key))
                 //key not found
                 return false;
             value = remove_at_index(index);
@@ -127,7 +128,7 @@ namespace cop3530 {
             size_t M = capacity();
             size_t probes_required = search_internal(key);
             size_t index = (hash(key) + probe(probes_required - 1)) % M;
-            if (slots[index].key != key)
+            if ( ! (slots[index].is_occupied && slots[index].key == key))
                 //key not found
                 return false;
             value = slots[index].value;
