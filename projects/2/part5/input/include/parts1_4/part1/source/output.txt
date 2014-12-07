@@ -1,0 +1,805 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+run_tests is a Catch v1.0 b11 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == false )
+with expansion:
+  false == false
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == false )
+with expansion:
+  false == false
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == false )
+with expansion:
+  false == false
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+      When: The map is filled to capacity
+      Then: Attempting to insert returns false
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:16: 
+PASSED:
+  REQUIRE( map.insert(5000, 5) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == false )
+with expansion:
+  false == false
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+      When: The map is filled to capacity
+       And: Attempting to remove a key that's not in the map returns false
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:19: 
+PASSED:
+  REQUIRE( map.remove(5000, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == false )
+with expansion:
+  false == false
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapOpenAddressing map
+      When: The map is filled to capacity
+       And: Attempting to search for a key that's not in the map returns false
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:22: 
+PASSED:
+  REQUIRE( map.search(5000, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:20: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:21: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:25: 
+PASSED:
+  REQUIRE( map.search(50, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:26: 
+PASSED:
+  REQUIRE( value == 'a' + (50 % 26) )
+with expansion:
+  y == 121
+
+operation_successes.cpp:28: 
+PASSED:
+  REQUIRE( map.search(0, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:29: 
+PASSED:
+  REQUIRE( value == 'a' )
+with expansion:
+  a == a
+
+operation_successes.cpp:31: 
+PASSED:
+  REQUIRE( map.search(499, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:32: 
+PASSED:
+  REQUIRE( value == 'a' + (499 % 26) )
+with expansion:
+  f == 102
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Printing the map produces a realistic picture of its structure
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:43: 
+PASSED:
+  REQUIRE( num_empty_slots == map.capacity() - map.size() )
+with expansion:
+  521 == 521
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:47: 
+PASSED:
+  REQUIRE( map.remove(50, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:48: 
+PASSED:
+  REQUIRE( value == (char)('a' + (50 % 26)) )
+with expansion:
+  y == y
+
+operation_successes.cpp:50: 
+PASSED:
+  REQUIRE( map.remove(0, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:51: 
+PASSED:
+  REQUIRE( value == 'a' )
+with expansion:
+  a == a
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( map.remove(499, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:54: 
+PASSED:
+  REQUIRE( value == (char)('a' + (499 % 26)) )
+with expansion:
+  f == f
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:47: 
+PASSED:
+  REQUIRE( map.remove(50, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:48: 
+PASSED:
+  REQUIRE( value == (char)('a' + (50 % 26)) )
+with expansion:
+  y == y
+
+operation_successes.cpp:50: 
+PASSED:
+  REQUIRE( map.remove(0, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:51: 
+PASSED:
+  REQUIRE( value == 'a' )
+with expansion:
+  a == a
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( map.remove(499, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:54: 
+PASSED:
+  REQUIRE( value == (char)('a' + (499 % 26)) )
+with expansion:
+  f == f
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:47: 
+PASSED:
+  REQUIRE( map.remove(50, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:48: 
+PASSED:
+  REQUIRE( value == (char)('a' + (50 % 26)) )
+with expansion:
+  y == y
+
+operation_successes.cpp:50: 
+PASSED:
+  REQUIRE( map.remove(0, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:51: 
+PASSED:
+  REQUIRE( value == 'a' )
+with expansion:
+  a == a
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( map.remove(499, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:54: 
+PASSED:
+  REQUIRE( value == (char)('a' + (499 % 26)) )
+with expansion:
+  f == f
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.search(50, value) == false )
+with expansion:
+  false == false
+
+operation_successes.cpp:59: 
+PASSED:
+  REQUIRE( map.search(0, value) == false )
+with expansion:
+  false == false
+
+operation_successes.cpp:60: 
+PASSED:
+  REQUIRE( map.search(499, value) == false )
+with expansion:
+  false == false
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:47: 
+PASSED:
+  REQUIRE( map.remove(50, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:48: 
+PASSED:
+  REQUIRE( value == (char)('a' + (50 % 26)) )
+with expansion:
+  y == y
+
+operation_successes.cpp:50: 
+PASSED:
+  REQUIRE( map.remove(0, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:51: 
+PASSED:
+  REQUIRE( value == 'a' )
+with expansion:
+  a == a
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( map.remove(499, value) == true )
+with expansion:
+  true == true
+
+operation_successes.cpp:54: 
+PASSED:
+  REQUIRE( value == (char)('a' + (499 % 26)) )
+with expansion:
+  f == f
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapOpenAddressing map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:64: 
+PASSED:
+  REQUIRE( map.remove(50, value) == false )
+with expansion:
+  false == false
+
+operation_successes.cpp:65: 
+PASSED:
+  REQUIRE( map.remove(0, value) == false )
+with expansion:
+  false == false
+
+operation_successes.cpp:66: 
+PASSED:
+  REQUIRE( map.remove(499, value) == false )
+with expansion:
+  false == false
+
+===============================================================================
+All tests passed (86 assertions in 2 test cases)
+

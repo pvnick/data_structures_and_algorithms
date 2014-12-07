@@ -1,0 +1,5690 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+run_tests is a Catch v1.0 b11 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+      When: The map is filled to capacity
+      Then: Attempting to insert returns a negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:16: 
+PASSED:
+  REQUIRE( map.insert(1001, 5) < 0 )
+with expansion:
+  -1000 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+      When: The map is filled to capacity
+       And: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:19: 
+PASSED:
+  REQUIRE( map.remove(1001, value) < 0 )
+with expansion:
+  -10 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with integer keys
+      When: The map is filled to capacity
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:22: 
+PASSED:
+  REQUIRE( map.search(1001, value) < 0 )
+with expansion:
+  -10 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+      When: The map is filled to capacity
+      Then: Attempting to insert returns a negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:38: 
+PASSED:
+  REQUIRE( map.insert(1001, 5) < 0 )
+with expansion:
+  -1000 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+      When: The map is filled to capacity
+       And: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:41: 
+PASSED:
+  REQUIRE( map.remove(1001, value) < 0 )
+with expansion:
+  -10 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with double keys
+      When: The map is filled to capacity
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:44: 
+PASSED:
+  REQUIRE( map.search(1001, value) < 0 )
+with expansion:
+  -10 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+      When: The map is filled to capacity
+      Then: Attempting to insert returns a negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:61: 
+PASSED:
+  REQUIRE( map.insert(std::to_string(1001), 5) < 0 )
+with expansion:
+  -1000 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+      When: The map is filled to capacity
+       And: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:64: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(1001), value) < 0 )
+with expansion:
+  -11 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with string keys
+      When: The map is filled to capacity
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:67: 
+PASSED:
+  REQUIRE( map.search(std::to_string(1001), value) < 0 )
+with expansion:
+  -11 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:75: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:76: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:75: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:76: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:75: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:76: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+      When: The map is filled to capacity
+      Then: Attempting to insert returns a negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:84: 
+PASSED:
+  REQUIRE( map.insert(std::to_string(1001).c_str(), 5) < 0 )
+with expansion:
+  -1000 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:75: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:76: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+      When: The map is filled to capacity
+       And: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:87: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(1001).c_str(), value) < 0 )
+with expansion:
+  -11 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:75: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+operation_failures.cpp:76: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An AVL map with const char* keys
+      When: The map is filled to capacity
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:90: 
+PASSED:
+  REQUIRE( map.search(std::to_string(1001).c_str(), value) < 0 )
+with expansion:
+  -11 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:23: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:24: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:28: 
+PASSED:
+  REQUIRE( map.search(50, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:29: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:31: 
+PASSED:
+  REQUIRE( map.search(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:32: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:34: 
+PASSED:
+  REQUIRE( map.search(499, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:35: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:39: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:40: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:42: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:43: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:45: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:46: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:39: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:40: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:42: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:43: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:45: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:46: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:39: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:40: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:42: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:43: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:45: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:46: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:50: 
+PASSED:
+  REQUIRE( map.search(50, value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:51: 
+PASSED:
+  REQUIRE( map.search(0, value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:52: 
+PASSED:
+  REQUIRE( map.search(499, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:39: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:40: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:42: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:43: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:45: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:46: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:56: 
+PASSED:
+  REQUIRE( map.remove(50, value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:57: 
+PASSED:
+  REQUIRE( map.remove(0, value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.remove(499, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:67: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:9: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:10: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:16: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:17: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:18: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:71: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:95: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:96: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.search(2.5, value) > 0 )
+with expansion:
+  8 > 0
+
+operation_successes.cpp:101: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:103: 
+PASSED:
+  REQUIRE( map.search(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:104: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:108: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  8 > 0
+
+operation_successes.cpp:109: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:111: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:112: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:108: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  8 > 0
+
+operation_successes.cpp:109: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:111: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:112: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:108: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  8 > 0
+
+operation_successes.cpp:109: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:111: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:112: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:117: 
+PASSED:
+  REQUIRE( map.search(2.5, value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:118: 
+PASSED:
+  REQUIRE( map.search(0, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:108: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  8 > 0
+
+operation_successes.cpp:109: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:111: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:112: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:122: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:123: 
+PASSED:
+  REQUIRE( map.remove(0, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:132: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:81: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:82: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:88: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:89: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:90: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:136: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:160: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:161: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:165: 
+PASSED:
+  REQUIRE( map.search("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:166: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:168: 
+PASSED:
+  REQUIRE( map.search("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:169: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.search("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:172: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:176: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:179: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:180: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:182: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:183: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:176: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:179: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:180: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:182: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:183: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:176: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:179: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:180: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:182: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:183: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:187: 
+PASSED:
+  REQUIRE( map.search("50", value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:188: 
+PASSED:
+  REQUIRE( map.search("0", value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:189: 
+PASSED:
+  REQUIRE( map.search("499", value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:176: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:179: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:180: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:182: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:183: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:193: 
+PASSED:
+  REQUIRE( map.remove("50", value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:194: 
+PASSED:
+  REQUIRE( map.remove("0", value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:195: 
+PASSED:
+  REQUIRE( map.remove("499", value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:204: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:145: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:147: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:153: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:154: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:155: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:208: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:235: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:236: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:240: 
+PASSED:
+  REQUIRE( map.search("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:241: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:243: 
+PASSED:
+  REQUIRE( map.search("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:244: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:246: 
+PASSED:
+  REQUIRE( map.search("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:247: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:251: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:252: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:254: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:257: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:258: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:251: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:252: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:254: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:257: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:258: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:251: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:252: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:254: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:257: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:258: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:262: 
+PASSED:
+  REQUIRE( map.search("50", value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:263: 
+PASSED:
+  REQUIRE( map.search("0", value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.search("499", value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:251: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  9 > 0
+
+operation_successes.cpp:252: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:254: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:257: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  10 > 0
+
+operation_successes.cpp:258: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:268: 
+PASSED:
+  REQUIRE( map.remove("50", value) < 0 )
+with expansion:
+  -8 < 0
+
+operation_successes.cpp:269: 
+PASSED:
+  REQUIRE( map.remove("0", value) < 0 )
+with expansion:
+  -9 < 0
+
+operation_successes.cpp:270: 
+PASSED:
+  REQUIRE( map.remove("499", value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:279: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -9 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:217: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.capacity() == 1000 )
+with expansion:
+  1000 == 1000
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:229: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed
+     Given: An AVL map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:283: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -8 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+      When: The tree is filled to half-capacity
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:30: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+      When: The tree is filled to half-capacity
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:40: 
+PASSED:
+  REQUIRE( unsorted_keys == sorted_keys )
+with expansion:
+  "499,498,497,496,495,494,493,492,491,490,489,488,487,486,485,484,483,482,481
+  ,480,479,478,477,476,475,474,473,472,471,470,469,468,467,466,465,464,463,462
+  ,461,460,459,458,457,456,455,454,453,452,451,450,449,448,447,446,445,444,443
+  ,442,441,440,439,438,437,436,435,434,433,432,431,430,429,428,427,426,425,424
+  ,423,422,421,420,419,418,417,416,415,414,413,412,411,410,409,408,407,406,405
+  ,404,403,402,401,400,399,398,397,396,395,394,393,392,391,390,389,388,387,386
+  ,385,384,383,382,381,380,379,378,377,376,375,374,373,372,371,370,369,368,367
+  ,366,365,364,363,362,361,360,359,358,357,356,355,354,353,352,351,350,349,348
+  ,347,346,345,344,343,342,341,340,339,338,337,336,335,334,333,332,331,330,329
+  ,328,327,326,325,324,323,322,321,320,319,318,317,316,315,314,313,312,311,310
+  ,309,308,307,306,305,304,303,302,301,300,299,298,297,296,295,294,293,292,291
+  ,290,289,288,287,286,285,284,283,282,281,280,279,278,277,276,275,274,273,272
+  ,271,270,269,268,267,266,265,264,263,262,261,260,259,258,257,256,255,254,253
+  ,252,251,250,249,248,247,246,245,244,243,242,241,240,239,238,237,236,235,234
+  ,233,232,231,230,229,228,227,226,225,224,223,222,221,220,219,218,217,216,215
+  ,214,213,212,211,210,209,208,207,206,205,204,203,202,201,200,199,198,197,196
+  ,195,194,193,192,191,190,189,188,187,186,185,184,183,182,181,180,179,178,177
+  ,176,175,174,173,172,171,170,169,168,167,166,165,164,163,162,161,160,159,158
+  ,157,156,155,154,153,152,151,150,149,148,147,146,145,144,143,142,141,140,139
+  ,138,137,136,135,134,133,132,131,130,129,128,127,126,125,124,123,122,121,120
+  ,119,118,117,116,115,114,113,112,111,110,109,108,107,106,105,104,103,102,101
+  ,100,99,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76
+  ,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51
+  ,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26
+  ,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,"
+  ==
+  "499,498,497,496,495,494,493,492,491,490,489,488,487,486,485,484,483,482,481
+  ,480,479,478,477,476,475,474,473,472,471,470,469,468,467,466,465,464,463,462
+  ,461,460,459,458,457,456,455,454,453,452,451,450,449,448,447,446,445,444,443
+  ,442,441,440,439,438,437,436,435,434,433,432,431,430,429,428,427,426,425,424
+  ,423,422,421,420,419,418,417,416,415,414,413,412,411,410,409,408,407,406,405
+  ,404,403,402,401,400,399,398,397,396,395,394,393,392,391,390,389,388,387,386
+  ,385,384,383,382,381,380,379,378,377,376,375,374,373,372,371,370,369,368,367
+  ,366,365,364,363,362,361,360,359,358,357,356,355,354,353,352,351,350,349,348
+  ,347,346,345,344,343,342,341,340,339,338,337,336,335,334,333,332,331,330,329
+  ,328,327,326,325,324,323,322,321,320,319,318,317,316,315,314,313,312,311,310
+  ,309,308,307,306,305,304,303,302,301,300,299,298,297,296,295,294,293,292,291
+  ,290,289,288,287,286,285,284,283,282,281,280,279,278,277,276,275,274,273,272
+  ,271,270,269,268,267,266,265,264,263,262,261,260,259,258,257,256,255,254,253
+  ,252,251,250,249,248,247,246,245,244,243,242,241,240,239,238,237,236,235,234
+  ,233,232,231,230,229,228,227,226,225,224,223,222,221,220,219,218,217,216,215
+  ,214,213,212,211,210,209,208,207,206,205,204,203,202,201,200,199,198,197,196
+  ,195,194,193,192,191,190,189,188,187,186,185,184,183,182,181,180,179,178,177
+  ,176,175,174,173,172,171,170,169,168,167,166,165,164,163,162,161,160,159,158
+  ,157,156,155,154,153,152,151,150,149,148,147,146,145,144,143,142,141,140,139
+  ,138,137,136,135,134,133,132,131,130,129,128,127,126,125,124,123,122,121,120
+  ,119,118,117,116,115,114,113,112,111,110,109,108,107,106,105,104,103,102,101
+  ,100,99,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76
+  ,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51
+  ,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26
+  ,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+      Then: The load() method reports 100% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:48: 
+PASSED:
+  REQUIRE( map.load() == 1 )
+with expansion:
+  1.0 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:60: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:20: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:21: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:22: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with integer keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:70: 
+PASSED:
+  REQUIRE( unsorted_keys == sorted_keys )
+with expansion:
+  "999,997,996,995,994,993,992,991,990,989,988,986,985,984,983,982,981,980,979
+  ,978,977,976,975,973,971,970,969,967,966,965,964,962,958,955,954,953,952,949
+  ,948,947,941,940,939,938,937,935,933,932,931,930,929,927,926,925,924,923,921
+  ,919,916,915,914,913,911,909,908,907,906,905,902,901,900,899,898,897,896,895
+  ,894,890,889,886,884,883,882,881,880,879,877,876,875,873,872,871,870,867,866
+  ,865,862,860,857,856,855,854,852,851,850,849,847,845,843,841,839,836,835,834
+  ,833,832,830,829,828,827,825,821,819,818,817,816,812,809,808,807,805,803,802
+  ,800,799,798,796,795,794,793,792,791,790,788,787,784,783,782,779,778,777,775
+  ,774,772,771,770,769,767,764,763,760,759,758,756,755,753,750,749,746,745,742
+  ,741,739,737,734,733,732,729,728,727,726,724,722,721,720,718,716,715,714,712
+  ,711,709,708,707,706,705,704,701,699,697,696,695,694,691,689,687,686,681,680
+  ,678,677,675,674,673,672,671,670,669,667,666,665,664,663,662,661,660,658,657
+  ,656,655,654,651,650,647,646,642,640,639,638,637,634,632,631,630,627,626,625
+  ,623,621,620,619,618,617,616,614,612,611,610,609,605,604,602,601,598,597,596
+  ,595,594,593,592,589,588,587,586,585,584,582,581,580,578,576,575,572,571,570
+  ,569,568,567,566,565,564,563,562,561,560,558,557,556,555,553,551,550,549,547
+  ,544,543,542,540,539,537,536,534,533,532,531,530,529,528,527,526,525,524,522
+  ,521,520,519,518,516,515,514,511,510,508,507,506,504,503,502,500,499,498,496
+  ,494,493,491,490,486,485,484,483,480,479,477,476,475,473,472,468,467,466,465
+  ,464,463,461,460,457,456,455,454,453,451,450,448,447,446,445,443,441,439,438
+  ,437,435,434,429,427,426,425,424,421,420,418,417,416,415,414,413,409,408,406
+  ,404,403,401,399,398,397,396,395,393,392,387,386,385,384,383,382,380,379,378
+  ,376,375,374,371,370,369,368,366,365,363,361,359,358,357,355,354,353,352,348
+  ,347,346,344,343,342,341,338,337,336,334,332,329,324,322,321,320,319,318,315
+  ,314,311,310,309,308,307,305,304,303,302,301,299,298,297,296,294,292,290,289
+  ,286,285,283,281,280,278,276,274,273,272,270,269,268,266,265,264,263,262,259
+  ,258,257,256,252,251,250,"
+  ==
+  "999,997,996,995,994,993,992,991,990,989,988,986,985,984,983,982,981,980,979
+  ,978,977,976,975,973,971,970,969,967,966,965,964,962,958,955,954,953,952,949
+  ,948,947,941,940,939,938,937,935,933,932,931,930,929,927,926,925,924,923,921
+  ,919,916,915,914,913,911,909,908,907,906,905,902,901,900,899,898,897,896,895
+  ,894,890,889,886,884,883,882,881,880,879,877,876,875,873,872,871,870,867,866
+  ,865,862,860,857,856,855,854,852,851,850,849,847,845,843,841,839,836,835,834
+  ,833,832,830,829,828,827,825,821,819,818,817,816,812,809,808,807,805,803,802
+  ,800,799,798,796,795,794,793,792,791,790,788,787,784,783,782,779,778,777,775
+  ,774,772,771,770,769,767,764,763,760,759,758,756,755,753,750,749,746,745,742
+  ,741,739,737,734,733,732,729,728,727,726,724,722,721,720,718,716,715,714,712
+  ,711,709,708,707,706,705,704,701,699,697,696,695,694,691,689,687,686,681,680
+  ,678,677,675,674,673,672,671,670,669,667,666,665,664,663,662,661,660,658,657
+  ,656,655,654,651,650,647,646,642,640,639,638,637,634,632,631,630,627,626,625
+  ,623,621,620,619,618,617,616,614,612,611,610,609,605,604,602,601,598,597,596
+  ,595,594,593,592,589,588,587,586,585,584,582,581,580,578,576,575,572,571,570
+  ,569,568,567,566,565,564,563,562,561,560,558,557,556,555,553,551,550,549,547
+  ,544,543,542,540,539,537,536,534,533,532,531,530,529,528,527,526,525,524,522
+  ,521,520,519,518,516,515,514,511,510,508,507,506,504,503,502,500,499,498,496
+  ,494,493,491,490,486,485,484,483,480,479,477,476,475,473,472,468,467,466,465
+  ,464,463,461,460,457,456,455,454,453,451,450,448,447,446,445,443,441,439,438
+  ,437,435,434,429,427,426,425,424,421,420,418,417,416,415,414,413,409,408,406
+  ,404,403,401,399,398,397,396,395,393,392,387,386,385,384,383,382,380,379,378
+  ,376,375,374,371,370,369,368,366,365,363,361,359,358,357,355,354,353,352,348
+  ,347,346,344,343,342,341,338,337,336,334,332,329,324,322,321,320,319,318,315
+  ,314,311,310,309,308,307,305,304,303,302,301,299,298,297,296,294,292,290,289
+  ,286,285,283,281,280,278,276,274,273,272,270,269,268,266,265,264,263,262,259
+  ,258,257,256,252,251,250,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+      When: The tree is filled to half-capacity
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:91: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+      When: The tree is filled to half-capacity
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:101: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "249.5,249,248.5,248,247.5,247,246.5,246,245.5,245,244.5,244,243.5,243,242.5
+  ,242,241.5,241,240.5,240,239.5,239,238.5,238,237.5,237,236.5,236,235.5,235
+  ,234.5,234,233.5,233,232.5,232,231.5,231,230.5,230,229.5,229,228.5,228,227.5
+  ,227,226.5,226,225.5,225,224.5,224,223.5,223,222.5,222,221.5,221,220.5,220
+  ,219.5,219,218.5,218,217.5,217,216.5,216,215.5,215,214.5,214,213.5,213,212.5
+  ,212,211.5,211,210.5,210,209.5,209,208.5,208,207.5,207,206.5,206,205.5,205
+  ,204.5,204,203.5,203,202.5,202,201.5,201,200.5,200,199.5,199,198.5,198,197.5
+  ,197,196.5,196,195.5,195,194.5,194,193.5,193,192.5,192,191.5,191,190.5,190
+  ,189.5,189,188.5,188,187.5,187,186.5,186,185.5,185,184.5,184,183.5,183,182.5
+  ,182,181.5,181,180.5,180,179.5,179,178.5,178,177.5,177,176.5,176,175.5,175
+  ,174.5,174,173.5,173,172.5,172,171.5,171,170.5,170,169.5,169,168.5,168,167.5
+  ,167,166.5,166,165.5,165,164.5,164,163.5,163,162.5,162,161.5,161,160.5,160
+  ,159.5,159,158.5,158,157.5,157,156.5,156,155.5,155,154.5,154,153.5,153,152.5
+  ,152,151.5,151,150.5,150,149.5,149,148.5,148,147.5,147,146.5,146,145.5,145
+  ,144.5,144,143.5,143,142.5,142,141.5,141,140.5,140,139.5,139,138.5,138,137.5
+  ,137,136.5,136,135.5,135,134.5,134,133.5,133,132.5,132,131.5,131,130.5,130
+  ,129.5,129,128.5,128,127.5,127,126.5,126,125.5,125,124.5,124,123.5,123,122.5
+  ,122,121.5,121,120.5,120,119.5,119,118.5,118,117.5,117,116.5,116,115.5,115
+  ,114.5,114,113.5,113,112.5,112,111.5,111,110.5,110,109.5,109,108.5,108,107.5
+  ,107,106.5,106,105.5,105,104.5,104,103.5,103,102.5,102,101.5,101,100.5,100,99
+  .5,99,98.5,98,97.5,97,96.5,96,95.5,95,94.5,94,93.5,93,92.5,92,91.5,91,90.5,90
+  ,89.5,89,88.5,88,87.5,87,86.5,86,85.5,85,84.5,84,83.5,83,82.5,82,81.5,81,80.5
+  ,80,79.5,79,78.5,78,77.5,77,76.5,76,75.5,75,74.5,74,73.5,73,72.5,72,71.5,71
+  ,70.5,70,69.5,69,68.5,68,67.5,67,66.5,66,65.5,65,64.5,64,63.5,63,62.5,62,61.5
+  ,61,60.5,60,59.5,59,58.5,58,57.5,57,56.5,56,55.5,55,54.5,54,53.5,53,52.5,52
+  ,51.5,51,50.5,50,49.5,49,48.5,48,47.5,47,46.5,46,45.5,45,44.5,44,43.5,43,42.5
+  ,42,41.5,41,40.5,40,39.5,39,38.5,38,37.5,37,36.5,36,35.5,35,34.5,34,33.5,33
+  ,32.5,32,31.5,31,30.5,30,29.5,29,28.5,28,27.5,27,26.5,26,25.5,25,24.5,24,23.5
+  ,23,22.5,22,21.5,21,20.5,20,19.5,19,18.5,18,17.5,17,16.5,16,15.5,15,14.5,14
+  ,13.5,13,12.5,12,11.5,11,10.5,10,9.5,9,8.5,8,7.5,7,6.5,6,5.5,5,4.5,4,3.5,3,2
+  .5,2,1.5,1,0.5,0,"
+  ==
+  "249.5,249,248.5,248,247.5,247,246.5,246,245.5,245,244.5,244,243.5,243,242.5
+  ,242,241.5,241,240.5,240,239.5,239,238.5,238,237.5,237,236.5,236,235.5,235
+  ,234.5,234,233.5,233,232.5,232,231.5,231,230.5,230,229.5,229,228.5,228,227.5
+  ,227,226.5,226,225.5,225,224.5,224,223.5,223,222.5,222,221.5,221,220.5,220
+  ,219.5,219,218.5,218,217.5,217,216.5,216,215.5,215,214.5,214,213.5,213,212.5
+  ,212,211.5,211,210.5,210,209.5,209,208.5,208,207.5,207,206.5,206,205.5,205
+  ,204.5,204,203.5,203,202.5,202,201.5,201,200.5,200,199.5,199,198.5,198,197.5
+  ,197,196.5,196,195.5,195,194.5,194,193.5,193,192.5,192,191.5,191,190.5,190
+  ,189.5,189,188.5,188,187.5,187,186.5,186,185.5,185,184.5,184,183.5,183,182.5
+  ,182,181.5,181,180.5,180,179.5,179,178.5,178,177.5,177,176.5,176,175.5,175
+  ,174.5,174,173.5,173,172.5,172,171.5,171,170.5,170,169.5,169,168.5,168,167.5
+  ,167,166.5,166,165.5,165,164.5,164,163.5,163,162.5,162,161.5,161,160.5,160
+  ,159.5,159,158.5,158,157.5,157,156.5,156,155.5,155,154.5,154,153.5,153,152.5
+  ,152,151.5,151,150.5,150,149.5,149,148.5,148,147.5,147,146.5,146,145.5,145
+  ,144.5,144,143.5,143,142.5,142,141.5,141,140.5,140,139.5,139,138.5,138,137.5
+  ,137,136.5,136,135.5,135,134.5,134,133.5,133,132.5,132,131.5,131,130.5,130
+  ,129.5,129,128.5,128,127.5,127,126.5,126,125.5,125,124.5,124,123.5,123,122.5
+  ,122,121.5,121,120.5,120,119.5,119,118.5,118,117.5,117,116.5,116,115.5,115
+  ,114.5,114,113.5,113,112.5,112,111.5,111,110.5,110,109.5,109,108.5,108,107.5
+  ,107,106.5,106,105.5,105,104.5,104,103.5,103,102.5,102,101.5,101,100.5,100,99
+  .5,99,98.5,98,97.5,97,96.5,96,95.5,95,94.5,94,93.5,93,92.5,92,91.5,91,90.5,90
+  ,89.5,89,88.5,88,87.5,87,86.5,86,85.5,85,84.5,84,83.5,83,82.5,82,81.5,81,80.5
+  ,80,79.5,79,78.5,78,77.5,77,76.5,76,75.5,75,74.5,74,73.5,73,72.5,72,71.5,71
+  ,70.5,70,69.5,69,68.5,68,67.5,67,66.5,66,65.5,65,64.5,64,63.5,63,62.5,62,61.5
+  ,61,60.5,60,59.5,59,58.5,58,57.5,57,56.5,56,55.5,55,54.5,54,53.5,53,52.5,52
+  ,51.5,51,50.5,50,49.5,49,48.5,48,47.5,47,46.5,46,45.5,45,44.5,44,43.5,43,42.5
+  ,42,41.5,41,40.5,40,39.5,39,38.5,38,37.5,37,36.5,36,35.5,35,34.5,34,33.5,33
+  ,32.5,32,31.5,31,30.5,30,29.5,29,28.5,28,27.5,27,26.5,26,25.5,25,24.5,24,23.5
+  ,23,22.5,22,21.5,21,20.5,20,19.5,19,18.5,18,17.5,17,16.5,16,15.5,15,14.5,14
+  ,13.5,13,12.5,12,11.5,11,10.5,10,9.5,9,8.5,8,7.5,7,6.5,6,5.5,5,4.5,4,3.5,3,2
+  .5,2,1.5,1,0.5,0,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+      Then: The load() method reports 100% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:109: 
+PASSED:
+  REQUIRE( map.load() == 1 )
+with expansion:
+  1.0 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:121: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:81: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:82: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:83: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with double keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:131: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "499.5,498.5,498,497,496.5,494.5,494,493.5,493,492.5,492,491.5,491,490.5,489
+  .5,489,488.5,487,485,484,483.5,482.5,482,481.5,481,480.5,478.5,478,477.5,477
+  ,476,475,474.5,474,473.5,472.5,472,471.5,470.5,469.5,468.5,467.5,467,466.5
+  ,466,465.5,464.5,464,463.5,463,462.5,460,459,458.5,458,457.5,456.5,455,454.5
+  ,454,453.5,453,452.5,452,451.5,451,450.5,449.5,449,448.5,448,447.5,447,444.5
+  ,444,443.5,443,442,439,438.5,437.5,437,436.5,435.5,435,434.5,433.5,433,431.5
+  ,430.5,430,428,427.5,427,426.5,426,425.5,425,424,423.5,423,422,421,420.5,420
+  ,419.5,419,417.5,416.5,416,415.5,415,412.5,412,411.5,411,410,409.5,409,406.5
+  ,406,405.5,405,404,403,402.5,401,400.5,400,399.5,397.5,395.5,394.5,393,392
+  ,391.5,390.5,390,389.5,389,388.5,387.5,387,386.5,386,385.5,385,384.5,383.5
+  ,383,382.5,381.5,380.5,379.5,379,378.5,376.5,376,375,373.5,373,372.5,371.5
+  ,371,370.5,370,369.5,369,368.5,367.5,366.5,365.5,365,364,363.5,363,362.5,361
+  .5,361,360.5,360,359.5,358.5,358,357.5,357,356.5,354.5,354,353.5,352.5,352
+  ,351,350.5,349.5,349,348.5,348,347.5,346.5,345.5,344,343.5,343,342.5,342,341
+  .5,341,340.5,340,339.5,338.5,337.5,337,336,335,333.5,333,332.5,332,331,330.5
+  ,330,329,328,325.5,325,324.5,323.5,323,322.5,321.5,321,320.5,320,318.5,317.5
+  ,317,316.5,316,315,314,313,312.5,312,311.5,311,310,309.5,309,308.5,308,307.5
+  ,306,305,304.5,304,303,302.5,302,301.5,301,300,299.5,299,298.5,298,297.5,297
+  ,296.5,295.5,294,293.5,293,291.5,291,290,289,287.5,287,286.5,286,285.5,285
+  ,284.5,284,283,282.5,281.5,281,280.5,280,278.5,278,277.5,277,276.5,276,275.5
+  ,271.5,270.5,269.5,269,268.5,268,267.5,267,266.5,265.5,265,264,263.5,263,262
+  .5,262,261.5,261,260,259.5,259,258.5,258,257.5,257,256.5,256,255,254.5,254
+  ,253.5,253,252.5,251.5,251,250.5,250,249.5,249,247,246.5,246,245.5,244.5,243
+  .5,242.5,242,241.5,241,240.5,240,239.5,239,238.5,238,237.5,236.5,236,235,234
+  .5,234,233.5,233,232,231.5,230,228.5,228,227.5,227,226.5,226,225,224.5,224
+  ,223.5,223,221.5,221,220.5,220,217,216.5,215.5,215,214.5,214,213,212,211,210
+  .5,210,209.5,209,208.5,208,207.5,206.5,206,205.5,205,204.5,204,203,202.5,201
+  ,200,199,198.5,198,197,196.5,196,194.5,194,193.5,192,191,190.5,189.5,189,187
+  ,186.5,185,184.5,183.5,183,182.5,181.5,180.5,180,179.5,178.5,178,177.5,177
+  ,176.5,174,173.5,173,172,171.5,171,170.5,168.5,167,166.5,164.5,164,163.5,163
+  ,162.5,162,160.5,159.5,158.5,158,157.5,157,156,155.5,155,154,153.5,152.5,151
+  .5,151,149.5,149,148.5,147,146,145.5,145,144.5,144,142,141.5,141,140.5,139
+  ,138.5,138,137.5,137,136.5,136,135.5,134.5,134,133.5,132.5,132,130.5,129.5
+  ,129,128,127.5,127,126,125,"
+  ==
+  "499.5,498.5,498,497,496.5,494.5,494,493.5,493,492.5,492,491.5,491,490.5,489
+  .5,489,488.5,487,485,484,483.5,482.5,482,481.5,481,480.5,478.5,478,477.5,477
+  ,476,475,474.5,474,473.5,472.5,472,471.5,470.5,469.5,468.5,467.5,467,466.5
+  ,466,465.5,464.5,464,463.5,463,462.5,460,459,458.5,458,457.5,456.5,455,454.5
+  ,454,453.5,453,452.5,452,451.5,451,450.5,449.5,449,448.5,448,447.5,447,444.5
+  ,444,443.5,443,442,439,438.5,437.5,437,436.5,435.5,435,434.5,433.5,433,431.5
+  ,430.5,430,428,427.5,427,426.5,426,425.5,425,424,423.5,423,422,421,420.5,420
+  ,419.5,419,417.5,416.5,416,415.5,415,412.5,412,411.5,411,410,409.5,409,406.5
+  ,406,405.5,405,404,403,402.5,401,400.5,400,399.5,397.5,395.5,394.5,393,392
+  ,391.5,390.5,390,389.5,389,388.5,387.5,387,386.5,386,385.5,385,384.5,383.5
+  ,383,382.5,381.5,380.5,379.5,379,378.5,376.5,376,375,373.5,373,372.5,371.5
+  ,371,370.5,370,369.5,369,368.5,367.5,366.5,365.5,365,364,363.5,363,362.5,361
+  .5,361,360.5,360,359.5,358.5,358,357.5,357,356.5,354.5,354,353.5,352.5,352
+  ,351,350.5,349.5,349,348.5,348,347.5,346.5,345.5,344,343.5,343,342.5,342,341
+  .5,341,340.5,340,339.5,338.5,337.5,337,336,335,333.5,333,332.5,332,331,330.5
+  ,330,329,328,325.5,325,324.5,323.5,323,322.5,321.5,321,320.5,320,318.5,317.5
+  ,317,316.5,316,315,314,313,312.5,312,311.5,311,310,309.5,309,308.5,308,307.5
+  ,306,305,304.5,304,303,302.5,302,301.5,301,300,299.5,299,298.5,298,297.5,297
+  ,296.5,295.5,294,293.5,293,291.5,291,290,289,287.5,287,286.5,286,285.5,285
+  ,284.5,284,283,282.5,281.5,281,280.5,280,278.5,278,277.5,277,276.5,276,275.5
+  ,271.5,270.5,269.5,269,268.5,268,267.5,267,266.5,265.5,265,264,263.5,263,262
+  .5,262,261.5,261,260,259.5,259,258.5,258,257.5,257,256.5,256,255,254.5,254
+  ,253.5,253,252.5,251.5,251,250.5,250,249.5,249,247,246.5,246,245.5,244.5,243
+  .5,242.5,242,241.5,241,240.5,240,239.5,239,238.5,238,237.5,236.5,236,235,234
+  .5,234,233.5,233,232,231.5,230,228.5,228,227.5,227,226.5,226,225,224.5,224
+  ,223.5,223,221.5,221,220.5,220,217,216.5,215.5,215,214.5,214,213,212,211,210
+  .5,210,209.5,209,208.5,208,207.5,206.5,206,205.5,205,204.5,204,203,202.5,201
+  ,200,199,198.5,198,197,196.5,196,194.5,194,193.5,192,191,190.5,189.5,189,187
+  ,186.5,185,184.5,183.5,183,182.5,181.5,180.5,180,179.5,178.5,178,177.5,177
+  ,176.5,174,173.5,173,172,171.5,171,170.5,168.5,167,166.5,164.5,164,163.5,163
+  ,162.5,162,160.5,159.5,158.5,158,157.5,157,156,155.5,155,154,153.5,152.5,151
+  .5,151,149.5,149,148.5,147,146,145.5,145,144.5,144,142,141.5,141,140.5,139
+  ,138.5,138,137.5,137,136.5,136,135.5,134.5,134,133.5,132.5,132,130.5,129.5
+  ,129,128,127.5,127,126,125,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+      When: The tree is filled to half-capacity
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:155: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+      When: The tree is filled to half-capacity
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:165: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "99,98,97,96,95,94,93,92,91,90,9,89,88,87,86,85,84,83,82,81,80,8,79,78,77,76
+  ,75,74,73,72,71,70,7,69,68,67,66,65,64,63,62,61,60,6,59,58,57,56,55,54,53,52
+  ,51,50,5,499,498,497,496,495,494,493,492,491,490,49,489,488,487,486,485,484
+  ,483,482,481,480,48,479,478,477,476,475,474,473,472,471,470,47,469,468,467
+  ,466,465,464,463,462,461,460,46,459,458,457,456,455,454,453,452,451,450,45
+  ,449,448,447,446,445,444,443,442,441,440,44,439,438,437,436,435,434,433,432
+  ,431,430,43,429,428,427,426,425,424,423,422,421,420,42,419,418,417,416,415
+  ,414,413,412,411,410,41,409,408,407,406,405,404,403,402,401,400,40,4,399,398
+  ,397,396,395,394,393,392,391,390,39,389,388,387,386,385,384,383,382,381,380
+  ,38,379,378,377,376,375,374,373,372,371,370,37,369,368,367,366,365,364,363
+  ,362,361,360,36,359,358,357,356,355,354,353,352,351,350,35,349,348,347,346
+  ,345,344,343,342,341,340,34,339,338,337,336,335,334,333,332,331,330,33,329
+  ,328,327,326,325,324,323,322,321,320,32,319,318,317,316,315,314,313,312,311
+  ,310,31,309,308,307,306,305,304,303,302,301,300,30,3,299,298,297,296,295,294
+  ,293,292,291,290,29,289,288,287,286,285,284,283,282,281,280,28,279,278,277
+  ,276,275,274,273,272,271,270,27,269,268,267,266,265,264,263,262,261,260,26
+  ,259,258,257,256,255,254,253,252,251,250,25,249,248,247,246,245,244,243,242
+  ,241,240,24,239,238,237,236,235,234,233,232,231,230,23,229,228,227,226,225
+  ,224,223,222,221,220,22,219,218,217,216,215,214,213,212,211,210,21,209,208
+  ,207,206,205,204,203,202,201,200,20,2,199,198,197,196,195,194,193,192,191,190
+  ,19,189,188,187,186,185,184,183,182,181,180,18,179,178,177,176,175,174,173
+  ,172,171,170,17,169,168,167,166,165,164,163,162,161,160,16,159,158,157,156
+  ,155,154,153,152,151,150,15,149,148,147,146,145,144,143,142,141,140,14,139
+  ,138,137,136,135,134,133,132,131,130,13,129,128,127,126,125,124,123,122,121
+  ,120,12,119,118,117,116,115,114,113,112,111,110,11,109,108,107,106,105,104
+  ,103,102,101,100,10,1,0,"
+  ==
+  "99,98,97,96,95,94,93,92,91,90,9,89,88,87,86,85,84,83,82,81,80,8,79,78,77,76
+  ,75,74,73,72,71,70,7,69,68,67,66,65,64,63,62,61,60,6,59,58,57,56,55,54,53,52
+  ,51,50,5,499,498,497,496,495,494,493,492,491,490,49,489,488,487,486,485,484
+  ,483,482,481,480,48,479,478,477,476,475,474,473,472,471,470,47,469,468,467
+  ,466,465,464,463,462,461,460,46,459,458,457,456,455,454,453,452,451,450,45
+  ,449,448,447,446,445,444,443,442,441,440,44,439,438,437,436,435,434,433,432
+  ,431,430,43,429,428,427,426,425,424,423,422,421,420,42,419,418,417,416,415
+  ,414,413,412,411,410,41,409,408,407,406,405,404,403,402,401,400,40,4,399,398
+  ,397,396,395,394,393,392,391,390,39,389,388,387,386,385,384,383,382,381,380
+  ,38,379,378,377,376,375,374,373,372,371,370,37,369,368,367,366,365,364,363
+  ,362,361,360,36,359,358,357,356,355,354,353,352,351,350,35,349,348,347,346
+  ,345,344,343,342,341,340,34,339,338,337,336,335,334,333,332,331,330,33,329
+  ,328,327,326,325,324,323,322,321,320,32,319,318,317,316,315,314,313,312,311
+  ,310,31,309,308,307,306,305,304,303,302,301,300,30,3,299,298,297,296,295,294
+  ,293,292,291,290,29,289,288,287,286,285,284,283,282,281,280,28,279,278,277
+  ,276,275,274,273,272,271,270,27,269,268,267,266,265,264,263,262,261,260,26
+  ,259,258,257,256,255,254,253,252,251,250,25,249,248,247,246,245,244,243,242
+  ,241,240,24,239,238,237,236,235,234,233,232,231,230,23,229,228,227,226,225
+  ,224,223,222,221,220,22,219,218,217,216,215,214,213,212,211,210,21,209,208
+  ,207,206,205,204,203,202,201,200,20,2,199,198,197,196,195,194,193,192,191,190
+  ,19,189,188,187,186,185,184,183,182,181,180,18,179,178,177,176,175,174,173
+  ,172,171,170,17,169,168,167,166,165,164,163,162,161,160,16,159,158,157,156
+  ,155,154,153,152,151,150,15,149,148,147,146,145,144,143,142,141,140,14,139
+  ,138,137,136,135,134,133,132,131,130,13,129,128,127,126,125,124,123,122,121
+  ,120,12,119,118,117,116,115,114,113,112,111,110,11,109,108,107,106,105,104
+  ,103,102,101,100,10,1,0,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+      Then: The load() method reports 100% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:173: 
+PASSED:
+  REQUIRE( map.load() == 1 )
+with expansion:
+  1.0 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:185: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:145: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:146: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:147: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with string keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:195: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "999,998,997,995,993,990,988,986,984,983,981,980,978,976,974,972,970,969,968
+  ,967,966,965,964,963,962,961,960,959,956,954,953,952,951,950,949,948,947,946
+  ,943,941,940,939,937,936,934,933,931,930,929,927,922,920,919,918,917,916,914
+  ,913,911,910,909,908,906,905,904,903,902,901,900,897,896,895,894,893,892,891
+  ,890,889,888,887,886,885,884,882,881,880,876,875,872,871,870,869,867,866,864
+  ,863,862,859,858,857,856,855,854,853,851,850,849,848,845,844,843,841,839,838
+  ,836,835,834,833,829,828,826,825,824,822,821,820,819,818,816,815,812,810,809
+  ,805,804,801,800,799,798,797,795,793,789,788,787,786,785,784,783,782,781,780
+  ,777,775,774,773,772,770,768,767,766,765,764,763,762,761,760,758,756,754,753
+  ,750,748,747,746,745,744,743,738,737,736,734,732,730,729,728,727,726,725,724
+  ,721,720,719,717,715,714,713,711,710,708,707,703,702,700,698,697,696,695,694
+  ,687,685,684,683,680,678,675,674,671,670,669,667,666,665,662,660,659,658,655
+  ,654,650,648,647,643,642,641,640,638,637,635,634,633,632,631,628,627,625,623
+  ,622,619,617,616,615,614,612,611,609,608,607,603,602,600,598,597,596,595,594
+  ,593,591,589,588,587,586,585,583,582,581,580,577,576,575,574,573,572,571,570
+  ,569,568,567,564,563,562,561,559,557,556,552,551,550,549,548,546,544,543,542
+  ,540,539,538,537,536,533,532,530,529,528,527,526,525,524,523,521,520,519,518
+  ,516,515,514,513,511,510,509,507,505,504,502,497,494,493,492,491,488,487,486
+  ,485,484,482,481,480,479,477,476,475,474,472,471,470,469,467,466,465,464,463
+  ,461,459,458,457,454,453,452,449,447,446,445,444,443,442,441,440,439,438,436
+  ,434,433,432,430,427,426,425,420,418,416,415,413,412,410,409,407,405,404,403
+  ,402,401,400,399,397,395,394,393,391,389,388,387,386,384,380,378,377,376,375
+  ,374,373,372,370,369,368,367,366,365,364,362,361,358,357,355,354,353,352,351
+  ,350,349,347,346,344,343,342,341,340,339,338,336,335,333,332,329,328,327,326
+  ,324,322,321,318,316,315,312,311,310,309,308,307,306,305,304,301,299,297,294
+  ,293,290,289,288,287,285,284,282,280,279,278,274,272,271,269,268,266,265,264
+  ,260,259,257,255,253,251,"
+  ==
+  "999,998,997,995,993,990,988,986,984,983,981,980,978,976,974,972,970,969,968
+  ,967,966,965,964,963,962,961,960,959,956,954,953,952,951,950,949,948,947,946
+  ,943,941,940,939,937,936,934,933,931,930,929,927,922,920,919,918,917,916,914
+  ,913,911,910,909,908,906,905,904,903,902,901,900,897,896,895,894,893,892,891
+  ,890,889,888,887,886,885,884,882,881,880,876,875,872,871,870,869,867,866,864
+  ,863,862,859,858,857,856,855,854,853,851,850,849,848,845,844,843,841,839,838
+  ,836,835,834,833,829,828,826,825,824,822,821,820,819,818,816,815,812,810,809
+  ,805,804,801,800,799,798,797,795,793,789,788,787,786,785,784,783,782,781,780
+  ,777,775,774,773,772,770,768,767,766,765,764,763,762,761,760,758,756,754,753
+  ,750,748,747,746,745,744,743,738,737,736,734,732,730,729,728,727,726,725,724
+  ,721,720,719,717,715,714,713,711,710,708,707,703,702,700,698,697,696,695,694
+  ,687,685,684,683,680,678,675,674,671,670,669,667,666,665,662,660,659,658,655
+  ,654,650,648,647,643,642,641,640,638,637,635,634,633,632,631,628,627,625,623
+  ,622,619,617,616,615,614,612,611,609,608,607,603,602,600,598,597,596,595,594
+  ,593,591,589,588,587,586,585,583,582,581,580,577,576,575,574,573,572,571,570
+  ,569,568,567,564,563,562,561,559,557,556,552,551,550,549,548,546,544,543,542
+  ,540,539,538,537,536,533,532,530,529,528,527,526,525,524,523,521,520,519,518
+  ,516,515,514,513,511,510,509,507,505,504,502,497,494,493,492,491,488,487,486
+  ,485,484,482,481,480,479,477,476,475,474,472,471,470,469,467,466,465,464,463
+  ,461,459,458,457,454,453,452,449,447,446,445,444,443,442,441,440,439,438,436
+  ,434,433,432,430,427,426,425,420,418,416,415,413,412,410,409,407,405,404,403
+  ,402,401,400,399,397,395,394,393,391,389,388,387,386,384,380,378,377,376,375
+  ,374,373,372,370,369,368,367,366,365,364,362,361,358,357,355,354,353,352,351
+  ,350,349,347,346,344,343,342,341,340,339,338,336,335,333,332,329,328,327,326
+  ,324,322,321,318,316,315,312,311,310,309,308,307,306,305,304,301,299,297,294
+  ,293,290,289,288,287,285,284,282,280,279,278,274,272,271,269,268,266,265,264
+  ,260,259,257,255,253,251,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+      When: The tree is filled to half-capacity
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:217: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+      When: The tree is filled to half-capacity
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:227: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "99,98,97,96,95,94,93,92,91,90,9,89,88,87,86,85,84,83,82,81,80,8,79,78,77,76
+  ,75,74,73,72,71,70,7,69,68,67,66,65,64,63,62,61,60,6,59,58,57,56,55,54,53,52
+  ,51,50,5,499,498,497,496,495,494,493,492,491,490,49,489,488,487,486,485,484
+  ,483,482,481,480,48,479,478,477,476,475,474,473,472,471,470,47,469,468,467
+  ,466,465,464,463,462,461,460,46,459,458,457,456,455,454,453,452,451,450,45
+  ,449,448,447,446,445,444,443,442,441,440,44,439,438,437,436,435,434,433,432
+  ,431,430,43,429,428,427,426,425,424,423,422,421,420,42,419,418,417,416,415
+  ,414,413,412,411,410,41,409,408,407,406,405,404,403,402,401,400,40,4,399,398
+  ,397,396,395,394,393,392,391,390,39,389,388,387,386,385,384,383,382,381,380
+  ,38,379,378,377,376,375,374,373,372,371,370,37,369,368,367,366,365,364,363
+  ,362,361,360,36,359,358,357,356,355,354,353,352,351,350,35,349,348,347,346
+  ,345,344,343,342,341,340,34,339,338,337,336,335,334,333,332,331,330,33,329
+  ,328,327,326,325,324,323,322,321,320,32,319,318,317,316,315,314,313,312,311
+  ,310,31,309,308,307,306,305,304,303,302,301,300,30,3,299,298,297,296,295,294
+  ,293,292,291,290,29,289,288,287,286,285,284,283,282,281,280,28,279,278,277
+  ,276,275,274,273,272,271,270,27,269,268,267,266,265,264,263,262,261,260,26
+  ,259,258,257,256,255,254,253,252,251,250,25,249,248,247,246,245,244,243,242
+  ,241,240,24,239,238,237,236,235,234,233,232,231,230,23,229,228,227,226,225
+  ,224,223,222,221,220,22,219,218,217,216,215,214,213,212,211,210,21,209,208
+  ,207,206,205,204,203,202,201,200,20,2,199,198,197,196,195,194,193,192,191,190
+  ,19,189,188,187,186,185,184,183,182,181,180,18,179,178,177,176,175,174,173
+  ,172,171,170,17,169,168,167,166,165,164,163,162,161,160,16,159,158,157,156
+  ,155,154,153,152,151,150,15,149,148,147,146,145,144,143,142,141,140,14,139
+  ,138,137,136,135,134,133,132,131,130,13,129,128,127,126,125,124,123,122,121
+  ,120,12,119,118,117,116,115,114,113,112,111,110,11,109,108,107,106,105,104
+  ,103,102,101,100,10,1,0,"
+  ==
+  "99,98,97,96,95,94,93,92,91,90,9,89,88,87,86,85,84,83,82,81,80,8,79,78,77,76
+  ,75,74,73,72,71,70,7,69,68,67,66,65,64,63,62,61,60,6,59,58,57,56,55,54,53,52
+  ,51,50,5,499,498,497,496,495,494,493,492,491,490,49,489,488,487,486,485,484
+  ,483,482,481,480,48,479,478,477,476,475,474,473,472,471,470,47,469,468,467
+  ,466,465,464,463,462,461,460,46,459,458,457,456,455,454,453,452,451,450,45
+  ,449,448,447,446,445,444,443,442,441,440,44,439,438,437,436,435,434,433,432
+  ,431,430,43,429,428,427,426,425,424,423,422,421,420,42,419,418,417,416,415
+  ,414,413,412,411,410,41,409,408,407,406,405,404,403,402,401,400,40,4,399,398
+  ,397,396,395,394,393,392,391,390,39,389,388,387,386,385,384,383,382,381,380
+  ,38,379,378,377,376,375,374,373,372,371,370,37,369,368,367,366,365,364,363
+  ,362,361,360,36,359,358,357,356,355,354,353,352,351,350,35,349,348,347,346
+  ,345,344,343,342,341,340,34,339,338,337,336,335,334,333,332,331,330,33,329
+  ,328,327,326,325,324,323,322,321,320,32,319,318,317,316,315,314,313,312,311
+  ,310,31,309,308,307,306,305,304,303,302,301,300,30,3,299,298,297,296,295,294
+  ,293,292,291,290,29,289,288,287,286,285,284,283,282,281,280,28,279,278,277
+  ,276,275,274,273,272,271,270,27,269,268,267,266,265,264,263,262,261,260,26
+  ,259,258,257,256,255,254,253,252,251,250,25,249,248,247,246,245,244,243,242
+  ,241,240,24,239,238,237,236,235,234,233,232,231,230,23,229,228,227,226,225
+  ,224,223,222,221,220,22,219,218,217,216,215,214,213,212,211,210,21,209,208
+  ,207,206,205,204,203,202,201,200,20,2,199,198,197,196,195,194,193,192,191,190
+  ,19,189,188,187,186,185,184,183,182,181,180,18,179,178,177,176,175,174,173
+  ,172,171,170,17,169,168,167,166,165,164,163,162,161,160,16,159,158,157,156
+  ,155,154,153,152,151,150,15,149,148,147,146,145,144,143,142,141,140,14,139
+  ,138,137,136,135,134,133,132,131,130,13,129,128,127,126,125,124,123,122,121
+  ,120,12,119,118,117,116,115,114,113,112,111,110,11,109,108,107,106,105,104
+  ,103,102,101,100,10,1,0,"
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+      Then: The load() method reports 100% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:236: 
+PASSED:
+  REQUIRE( map.load() == 1 )
+with expansion:
+  1.0 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+      Then: The load() method reports 50% load factor
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:249: 
+PASSED:
+  REQUIRE( map.load() == 0.5 )
+with expansion:
+  0.5 == 0.5
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:206: 
+PASSED:
+  REQUIRE( map.is_empty() )
+with expansion:
+  true
+
+tree_structure.cpp:207: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+tree_structure.cpp:208: 
+PASSED:
+  REQUIRE( map.load() == 0.0 )
+with expansion:
+  0.0 == 0.0
+
+-------------------------------------------------------------------------------
+Scenario: Valid BST tree structure is maintained
+     Given: An AVL map with const char* keys
+      When: The tree is filled to half-capacity
+  And when: The tree is filled to full-capacity
+  And when: Half the items are randomly deleted
+       And: The BST tree structure is maintained
+-------------------------------------------------------------------------------
+tree_structure.cpp:13
+...............................................................................
+
+tree_structure.cpp:259: 
+PASSED:
+  REQUIRE( tree_order_keys == sorted_keys )
+with expansion:
+  "999,997,993,990,987,986,985,984,983,981,980,979,978,977,974,972,970,969,968
+  ,966,965,964,961,960,959,958,957,956,955,954,952,951,949,948,947,946,945,944
+  ,943,942,941,940,939,938,937,936,935,934,933,932,931,930,928,927,925,924,923
+  ,922,917,916,915,914,913,912,908,907,906,905,904,902,901,900,899,898,897,896
+  ,894,893,887,885,883,881,879,878,877,876,874,873,872,871,868,867,866,865,864
+  ,863,862,861,858,857,856,855,854,853,852,851,850,847,846,843,842,841,839,838
+  ,837,836,835,834,832,831,826,825,824,822,820,818,817,816,814,812,811,810,808
+  ,805,803,802,801,800,797,796,795,793,791,790,789,788,787,786,785,783,781,779
+  ,778,777,776,775,774,773,772,771,769,768,767,765,762,761,757,756,755,753,751
+  ,750,749,747,745,744,743,742,739,736,735,734,733,730,729,728,727,726,725,724
+  ,723,722,720,719,718,717,716,715,714,713,712,711,710,709,707,705,704,703,702
+  ,701,697,696,695,694,690,689,688,684,682,681,680,679,675,674,673,672,671,664
+  ,663,661,660,659,658,656,655,654,653,651,650,648,647,646,645,644,643,642,641
+  ,638,636,635,634,633,631,630,628,627,624,623,622,620,619,618,615,614,613,612
+  ,610,607,606,605,604,603,602,601,600,598,597,596,593,589,588,587,585,584,582
+  ,581,580,577,576,575,572,571,568,566,565,563,560,559,558,557,555,551,550,549
+  ,548,543,542,537,536,535,534,532,531,530,529,528,527,525,524,523,522,520,517
+  ,515,514,513,512,511,510,509,508,506,505,504,501,500,499,497,496,495,493,492
+  ,491,490,487,485,482,481,480,478,477,476,475,474,471,470,469,468,465,462,461
+  ,459,458,456,455,453,452,450,447,446,445,444,442,441,438,437,436,434,429,428
+  ,427,426,425,421,420,419,417,416,415,413,412,410,408,404,403,402,401,400,397
+  ,396,395,392,391,390,388,387,385,384,383,382,381,379,378,377,376,375,371,369
+  ,368,367,364,363,362,360,359,358,356,355,354,352,350,349,348,343,341,340,339
+  ,338,337,336,335,334,332,331,330,329,328,327,326,324,323,321,320,318,315,313
+  ,312,311,310,309,308,306,305,304,302,301,298,296,295,294,293,292,290,288,286
+  ,285,284,283,282,281,280,279,278,277,275,273,271,270,269,268,266,265,264,261
+  ,260,257,256,255,254,250,"
+  ==
+  "999,997,993,990,987,986,985,984,983,981,980,979,978,977,974,972,970,969,968
+  ,966,965,964,961,960,959,958,957,956,955,954,952,951,949,948,947,946,945,944
+  ,943,942,941,940,939,938,937,936,935,934,933,932,931,930,928,927,925,924,923
+  ,922,917,916,915,914,913,912,908,907,906,905,904,902,901,900,899,898,897,896
+  ,894,893,887,885,883,881,879,878,877,876,874,873,872,871,868,867,866,865,864
+  ,863,862,861,858,857,856,855,854,853,852,851,850,847,846,843,842,841,839,838
+  ,837,836,835,834,832,831,826,825,824,822,820,818,817,816,814,812,811,810,808
+  ,805,803,802,801,800,797,796,795,793,791,790,789,788,787,786,785,783,781,779
+  ,778,777,776,775,774,773,772,771,769,768,767,765,762,761,757,756,755,753,751
+  ,750,749,747,745,744,743,742,739,736,735,734,733,730,729,728,727,726,725,724
+  ,723,722,720,719,718,717,716,715,714,713,712,711,710,709,707,705,704,703,702
+  ,701,697,696,695,694,690,689,688,684,682,681,680,679,675,674,673,672,671,664
+  ,663,661,660,659,658,656,655,654,653,651,650,648,647,646,645,644,643,642,641
+  ,638,636,635,634,633,631,630,628,627,624,623,622,620,619,618,615,614,613,612
+  ,610,607,606,605,604,603,602,601,600,598,597,596,593,589,588,587,585,584,582
+  ,581,580,577,576,575,572,571,568,566,565,563,560,559,558,557,555,551,550,549
+  ,548,543,542,537,536,535,534,532,531,530,529,528,527,525,524,523,522,520,517
+  ,515,514,513,512,511,510,509,508,506,505,504,501,500,499,497,496,495,493,492
+  ,491,490,487,485,482,481,480,478,477,476,475,474,471,470,469,468,465,462,461
+  ,459,458,456,455,453,452,450,447,446,445,444,442,441,438,437,436,434,429,428
+  ,427,426,425,421,420,419,417,416,415,413,412,410,408,404,403,402,401,400,397
+  ,396,395,392,391,390,388,387,385,384,383,382,381,379,378,377,376,375,371,369
+  ,368,367,364,363,362,360,359,358,356,355,354,352,350,349,348,343,341,340,339
+  ,338,337,336,335,334,332,331,330,329,328,327,326,324,323,321,320,318,315,313
+  ,312,311,310,309,308,306,305,304,302,301,298,296,295,294,293,292,290,288,286
+  ,285,284,283,282,281,280,279,278,277,275,273,271,270,269,268,266,265,264,261
+  ,260,257,256,255,254,250,"
+
+===============================================================================
+All tests passed (580 assertions in 3 test cases)
+

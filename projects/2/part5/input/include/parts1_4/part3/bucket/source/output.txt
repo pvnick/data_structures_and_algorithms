@@ -1,0 +1,3664 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+run_tests is a Catch v1.0 b11 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Scenario: Verifying the output of cluster_distribution, linear probring
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The cluster_distribution reports a list of clusters which reflects
+            the actual number of items in the map
+-------------------------------------------------------------------------------
+cluster_distribution.cpp:6
+...............................................................................
+
+cluster_distribution.cpp:22: 
+PASSED:
+  REQUIRE( cluster_item_count == map.size() )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Verifying the output of cluster_distribution, linear probring
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The cluster_distribution reports a list of clusters which reflects
+            the actual number of items in the map
+-------------------------------------------------------------------------------
+cluster_distribution.cpp:6
+...............................................................................
+
+cluster_distribution.cpp:42: 
+PASSED:
+  REQUIRE( cluster_item_count == map.size() )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Verifying the output of cluster_distribution, linear probring
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The cluster_distribution reports a list of clusters which reflects
+            the actual number of items in the map
+-------------------------------------------------------------------------------
+cluster_distribution.cpp:6
+...............................................................................
+
+cluster_distribution.cpp:62: 
+PASSED:
+  REQUIRE( cluster_item_count == map.size() )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Verifying the output of cluster_distribution, linear probring
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The cluster_distribution reports a list of clusters which reflects
+            the actual number of items in the map
+-------------------------------------------------------------------------------
+cluster_distribution.cpp:6
+...............................................................................
+
+cluster_distribution.cpp:82: 
+PASSED:
+  REQUIRE( cluster_item_count == map.size() )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+      Then: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:19: 
+PASSED:
+  REQUIRE( map.remove(5000, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:8: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:9: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with integer keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:22: 
+PASSED:
+  REQUIRE( map.search(5000, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+      Then: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:41: 
+PASSED:
+  REQUIRE( map.remove(5000, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:30: 
+PASSED:
+  REQUIRE( map.remove(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:31: 
+PASSED:
+  REQUIRE( map.search(5, value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with double keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:44: 
+PASSED:
+  REQUIRE( map.search(5000, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+      Then: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:62: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5000), value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:53: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with string keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:65: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5000), value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:73: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:74: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:73: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:74: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:73: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:74: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+      Then: Attempting to remove a key that's not in the map returns a negative
+            value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:83: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5000).c_str(), value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:73: 
+PASSED:
+  REQUIRE( map.remove(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+operation_failures.cpp:74: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5).c_str(), value) == -1 )
+with expansion:
+  -1 == -1
+
+-------------------------------------------------------------------------------
+Scenario: Various operations fail and indicate as such with their return values
+     Given: An HashMapBucketsGeneric map with const char* keys
+      When: The map is filled with a bunch of items, cleared, then filled again
+       And: Attempting to search for a key that's not in the map returns a
+            negative value
+-------------------------------------------------------------------------------
+operation_failures.cpp:4
+...............................................................................
+
+operation_failures.cpp:86: 
+PASSED:
+  REQUIRE( map.search(std::to_string(5000).c_str(), value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:20: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:21: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:25: 
+PASSED:
+  REQUIRE( map.search(50, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:26: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:28: 
+PASSED:
+  REQUIRE( map.search(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:29: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:31: 
+PASSED:
+  REQUIRE( map.search(499, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:32: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Printing the map produces a realistic picture of its structure
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:48: 
+PASSED:
+  REQUIRE( num_empty_slots == unoccupied_buckets )
+with expansion:
+  521 == 521
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:55: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:56: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:59: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:55: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:56: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:59: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:55: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:56: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:59: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:63: 
+PASSED:
+  REQUIRE( map.search(50, value) < 0 )
+with expansion:
+  -1 < 0
+
+operation_successes.cpp:64: 
+PASSED:
+  REQUIRE( map.search(0, value) < 0 )
+with expansion:
+  -1 < 0
+
+operation_successes.cpp:65: 
+PASSED:
+  REQUIRE( map.search(499, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:52: 
+PASSED:
+  REQUIRE( map.remove(50, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:53: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:55: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:56: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:58: 
+PASSED:
+  REQUIRE( map.remove(499, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:59: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:69: 
+PASSED:
+  REQUIRE( map.remove(50, value) < 0 )
+with expansion:
+  -1 < 0
+
+operation_successes.cpp:70: 
+PASSED:
+  REQUIRE( map.remove(0, value) < 0 )
+with expansion:
+  -1 < 0
+
+operation_successes.cpp:71: 
+PASSED:
+  REQUIRE( map.remove(499, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:80: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:7: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:8: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:14: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:15: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with integer keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:84: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:105: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:106: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:110: 
+PASSED:
+  REQUIRE( map.search(2.5, value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:111: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:113: 
+PASSED:
+  REQUIRE( map.search(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:114: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Printing the map produces a realistic picture of its structure
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:130: 
+PASSED:
+  REQUIRE( num_empty_slots == unoccupied_buckets )
+with expansion:
+  771 == 771
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:134: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:135: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:137: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:138: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:134: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:135: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:137: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:138: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:134: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:135: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:137: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:138: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:143: 
+PASSED:
+  REQUIRE( map.search(2.5, value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:144: 
+PASSED:
+  REQUIRE( map.search(0, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:134: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:135: 
+PASSED:
+  REQUIRE( value == 6 )
+with expansion:
+  6 == 6
+
+operation_successes.cpp:137: 
+PASSED:
+  REQUIRE( map.remove(0, value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:138: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:148: 
+PASSED:
+  REQUIRE( map.remove(2.5, value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:149: 
+PASSED:
+  REQUIRE( map.remove(0, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:158: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:92: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:93: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:99: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:100: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with double keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:162: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:183: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:184: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:188: 
+PASSED:
+  REQUIRE( map.search("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:189: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:191: 
+PASSED:
+  REQUIRE( map.search("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:192: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:194: 
+PASSED:
+  REQUIRE( map.search("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:195: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Printing the map produces a realistic picture of its structure
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:211: 
+PASSED:
+  REQUIRE( num_empty_slots == unoccupied_buckets )
+with expansion:
+  618 == 618
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:215: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:216: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:221: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:222: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:215: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:216: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:221: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:222: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:215: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:216: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:221: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:222: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:226: 
+PASSED:
+  REQUIRE( map.search("50", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:227: 
+PASSED:
+  REQUIRE( map.search("0", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:228: 
+PASSED:
+  REQUIRE( map.search("499", value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:215: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:216: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:218: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:219: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:221: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:222: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:232: 
+PASSED:
+  REQUIRE( map.remove("50", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:233: 
+PASSED:
+  REQUIRE( map.remove("0", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:234: 
+PASSED:
+  REQUIRE( map.remove("499", value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:243: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:170: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:171: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:177: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:178: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with string keys
+      When: The map is filled halfway, cleared, then filled halfway again
+  And when: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:247: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -2 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      Then: The map reports itself as non-empty
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:272: 
+PASSED:
+  REQUIRE( map.size() == 500 )
+with expansion:
+  500 == 500
+
+operation_successes.cpp:273: 
+PASSED:
+  REQUIRE( ! map.is_empty() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Searching for a key known to be in the map should return its
+            expected value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:277: 
+PASSED:
+  REQUIRE( map.search("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:278: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:279: 
+PASSED:
+  REQUIRE( map.search("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:280: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:282: 
+PASSED:
+  REQUIRE( map.search("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:283: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Printing the map produces a realistic picture of its structure
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:299: 
+PASSED:
+  REQUIRE( num_empty_slots == unoccupied_buckets )
+with expansion:
+  618 == 618
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:303: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:304: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:306: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:307: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:309: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:310: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:303: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:304: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:306: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:307: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:309: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:310: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:303: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:304: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:306: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:307: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:309: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:310: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+      Then: ...via the search method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:314: 
+PASSED:
+  REQUIRE( map.search("50", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:315: 
+PASSED:
+  REQUIRE( map.search("0", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:316: 
+PASSED:
+  REQUIRE( map.search("499", value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:303: 
+PASSED:
+  REQUIRE( map.remove("50", value) > 0 )
+with expansion:
+  2 > 0
+
+operation_successes.cpp:304: 
+PASSED:
+  REQUIRE( value == 51 )
+with expansion:
+  51 == 51
+
+operation_successes.cpp:306: 
+PASSED:
+  REQUIRE( map.remove("0", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:307: 
+PASSED:
+  REQUIRE( value == 1 )
+with expansion:
+  1 == 1
+
+operation_successes.cpp:309: 
+PASSED:
+  REQUIRE( map.remove("499", value) > 0 )
+with expansion:
+  1 > 0
+
+operation_successes.cpp:310: 
+PASSED:
+  REQUIRE( value == 500 )
+with expansion:
+  500 == 500
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+       And: Removing a key known to be in the map should return its expected
+            value
+      When: The removed keys are searched for...
+       And: ...via the remove method, they are no longer found
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:320: 
+PASSED:
+  REQUIRE( map.remove("50", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:321: 
+PASSED:
+  REQUIRE( map.remove("0", value) < 0 )
+with expansion:
+  -2 < 0
+
+operation_successes.cpp:322: 
+PASSED:
+  REQUIRE( map.remove("499", value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      When: A random item is removed from the map
+      Then: The removed key should no longer be found in the map with via the
+            search() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:330: 
+PASSED:
+  REQUIRE( map.search(removed_key, value) < 0 )
+with expansion:
+  -1 < 0
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:255: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:256: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:264: 
+PASSED:
+  REQUIRE( map.size() == 0 )
+with expansion:
+  0 == 0
+
+operation_successes.cpp:265: 
+PASSED:
+  REQUIRE( map.is_empty() == true )
+with expansion:
+  true == true
+
+-------------------------------------------------------------------------------
+Scenario: Certain basic operations should always succeed, with linear probing
+     Given: A HashMapBucketsGeneric map with const char* keys
+      When: The map is filled halfway, cleared, then filled halfway again
+      When: A random item is removed from the map
+       And: The removed key should no longer be found in the map with via the
+            remove() function
+-------------------------------------------------------------------------------
+operation_successes.cpp:4
+...............................................................................
+
+operation_successes.cpp:334: 
+PASSED:
+  REQUIRE( map.remove(removed_key, value) < 0 )
+with expansion:
+  -1 < 0
+
+===============================================================================
+All tests passed (380 assertions in 3 test cases)
+

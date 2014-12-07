@@ -65,14 +65,14 @@ compile_and_run_tests() {
 	echo "Compiling and running tests at $SOURCE_DIR"
 	local MY_DIR=$(pwd)
 	cd "$SOURCE_DIR"
-	#./compile.sh
-	#./run_tests -s > output.txt
+	./compile.sh
+	./run_tests -s > output.txt
 	cd "$MY_DIR"
 }
 
 echo "Compiling project"
 CURR_DIR=$(pwd)
-DIST_DIR=$CURR_DIR"/dist/project_1"
+DIST_DIR=$CURR_DIR"/dist/project_2"
 rm -r $DIST_DIR 2> /dev/null
 mkdir -p $DIST_DIR
 cd input
@@ -81,7 +81,7 @@ compile_and_run_tests "part2/source"
 compile_and_run_tests "part3/bucket/source" 
 compile_and_run_tests "part3/open_addressing/source" 
 compile_and_run_tests "part4/source" 
-compile_and_run_tests "part4_bonus/source" 
+compile_and_run_tests "part4bonus/source" 
 FILES="$(find . -name '*.?*')"
 IFS=$'\n'
 for FILE in $FILES; do

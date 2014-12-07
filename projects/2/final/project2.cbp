@@ -41,7 +41,6 @@
 		<Unit filename="input/common/unit_test_utils.h" />
 		<Unit filename="input/part1/checklist.txt" />
 		<Unit filename="input/part1/source/open_addressing_map.h" />
-		<Unit filename="input/part1/source/unit_tests.cpp" />
 		<Unit filename="input/part2/checklist.txt" />
 		<Unit filename="input/part2/source/buckets_map.h" />
 		<Unit filename="input/part3/bucket/checklist.txt" />
@@ -51,8 +50,6 @@
 		<Unit filename="input/part4/checklist.txt" />
 		<Unit filename="input/part4/source/bst.h" />
 		<Unit filename="input/part4/source/rbst.h" />
-		<Unit filename="input/part4/source/tree_structure.cpp" />
-		<Unit filename="input/part4/source/unit_tests.cpp" />
 		<Unit filename="input/part4_bonus/checklist.txt" />
 		<Unit filename="input/part4_bonus/source/avl.h" />
 		<Unit filename="main.cpp" />
