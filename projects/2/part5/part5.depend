@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1417920979 source:/home/pvnick/data_structures_and_algorithms/projects/2/part5/input/src/main.cpp
+	"parts1_4/part1/source/open_addressing_map.h"
+	"parts1_4/part2/source/buckets_map.h"
+	"parts1_4/part3/bucket/source/buckets_map_generic.h"
+	"parts1_4/part3/open_addressing/source/open_addressing_generic_map.h"
+	"parts1_4/part4/source/rbst.h"
+	"parts1_4/part4bonus/source/avl.h"
+	"common/program_options.h"
+
+1417871770 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part1/source/open_addressing_map.h
+	<iostream>
+	"../../common/common.h"
+	<stdexcept>
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/common/common.h
+	<string.h>
+	<limits>
+	<stdexcept>
+	<ostream>
+	<cmath>
+
+1417870422 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part2/source/buckets_map.h
+	<iostream>
+	<stdexcept>
+	"../../common/common.h"
+
+1417870453 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part3/bucket/source/buckets_map_generic.h
+	<iostream>
+	"../../../common/common.h"
+	"../../../common/SSLL.h"
+	"../../../common/priority_queue.h"
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/common/SSLL.h
+	<iostream>
+	<stdexcept>
+	<cassert>
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/common/priority_queue.h
+	"SDAL.h"
+	"common.h"
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/common/SDAL.h
+	<iostream>
+	<stdexcept>
+	<cassert>
+	<memory>
+	<string>
+	<cmath>
+
+1417870547 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part3/open_addressing/source/open_addressing_generic_map.h
+	<iostream>
+	<string>
+	"../../../common/common.h"
+	"../../../common/priority_queue.h"
+
+1417870033 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part4/source/rbst.h
+	<cstdlib>
+	<sstream>
+	"../../common/CDAL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
+	"bst.h"
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/common/CDAL.h
+	<iostream>
+	<stdexcept>
+	<cassert>
+	<math.h>
+
+1417870033 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part4/source/bst.h
+	<cstdlib>
+	<sstream>
+	"../../common/CDAL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
+
+1417870032 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/parts1_4/part4bonus/source/avl.h
+	<cstdlib>
+	<sstream>
+	"../../common/CDAL.h"
+	"../../common/common.h"
+	"../../common/priority_queue.h"
+	"../../part4/source/bst.h"
+
+1417920904 /home/pvnick/data_structures_and_algorithms/projects/2/part5/input/include/common/program_options.h
+	<iostream>
+	<string>
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<getopt.h>
+	<stdexcept>
+

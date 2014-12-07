@@ -21,7 +21,6 @@ endif
 
 default:
 	echo foobar $(DEPFILEPATHS)
-	-include $(DEPFILEPATHS)
 
 #%.o:%.d
 #	$(Gpp) -c $*.cpp
