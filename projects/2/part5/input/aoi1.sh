@@ -77,15 +77,46 @@ get_input_file_capacities() {
     get_all_capacities $KEY_COUNT
 }
 
-testcase() {
+test_capacity() {
     local INPUT_FILE="$1"
     local FIELD_ID="$2"
-    echo "Running testcase on $INPUT_FILE"
+    local CAPACITY="$3"
 
 }
 
-get_input_file_capacities data/localities-original.txt
-echo $RET
+testcase() {
+    local INPUT_FILE="$1"
+    local FIELD_ID="$2" #field = 0 means use the whole line
+    echo "Running testcase on $INPUT_FILE"
+    count_keys "$INPUT_FILE"
+    echo "Number of keys=$RET"
+    get_input_file_capacities "$INPUT_FILE"
+    CAPACITIES="$RET"
+    echo "Capacities=[$CAPACITIES]"
+    for CAPACITY in $CAPACITIES; do
+        echo "Testing capacity $CAPACITY"
+        if [ "$FIELD_ID" -eq "0" ]; then 
+            cat "$INPUT_FILE" | head
+        else 
+            cat "$INPUT_FILE" | sed 's/:/ /g' | sed 's/  / . /g' | ./bin/extract_field --field-to-extract $FIELD_ID | head
+        fi
+    done
+}
+
+testcase "data/aeneid_vergil-unique.txt" "0"
+testcase "data/confucian-analects-unique.txt" "0"
+testcase "data/divine-comedy_dante-unique.txt" "0"
+testcase "data/origin-of-the-species_darwin-unique.txt" "0"
+#the uid field (interpreted as a string) from the geographic data,
+testcase "data/localities-original.txt" 1
+#the location field (interpreted as a string) from the geographic data,
+testcase "data/localities-original.txt" 2
+#the population field (interpreted as a string) from the geographic data,
+testcase "data/localities-original.txt" 4
+#the coords field (interpreted as a string) from the geographic data, &
+testcase "data/localities-original.txt" 5
+#each entire line (interpreted as a string) from the geographic data. 
+testcase "data/localities-original.txt" 0
 
 #Timing trial overview
 #
