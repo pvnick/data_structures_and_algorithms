@@ -39,10 +39,22 @@ namespace program_options {
                 throw std::invalid_argument(val + " is not a valid integer");
             *out = ret;
         }
-        void operator()(std::string const& val, size_t* out) {
-            size_t ret = std::stol(val);
+        void operator()(std::string const& val, unsigned int* out) {
+            unsigned int ret = std::stoi(val);
             if (std::to_string(ret) != val)
-                throw std::invalid_argument(val + " is not a valid long");
+                throw std::invalid_argument(val + " is not a valid integer");
+            *out = ret;
+        }
+        void operator()(std::string const& val, unsigned long long* out) {
+            size_t ret = std::stoull(val);
+            if (std::to_string(ret) != val)
+                throw std::invalid_argument(val + " is not a valid unsigned long long");
+            *out = ret;
+        }
+        void operator()(std::string const& val, unsigned long* out) {
+            size_t ret = std::stoul(val);
+            if (std::to_string(ret) != val)
+                throw std::invalid_argument(val + " is not a valid unsigned long");
             *out = ret;
         }
         void operator()(std::string const& val, double* out) {
@@ -128,7 +140,7 @@ namespace program_options {
                             std::cout << opt_desc.default_value;
                         else
                             std::cout << '"' << opt_desc.default_value << '"';
-                        ")";
+                        std::cout << ")";
                     }
                     if ( ! opt_desc.mandatory_opt)
                         std::cout << "]";
@@ -145,7 +157,7 @@ namespace program_options {
                     if ( ! opt_desc.value_name.empty())
                         std::cout << " " << opt_desc.value_name;
                     if ( ! opt_desc.default_value.empty())
-                        std::cout << " (=" << opt_desc.default_value << ")";
+                        std::cout << " (default=" << opt_desc.default_value << ")";
                     std::cout << ": " << opt_desc.info << std::endl;
                 }
             }
@@ -154,7 +166,7 @@ namespace program_options {
         }
     };
 
-    void get_option_bag(int argc, char **argv, option_desc opt_descs[], size_t num_opts, std::string const& getopt_optstring, option_bag* bag_ptr) {
+    void get_option_bag(int argc, char **argv, option_desc opt_descs[], size_t num_opts, option_bag* bag_ptr) {
         int c;
         *bag_ptr = {
             opt_descs,
@@ -188,7 +200,7 @@ namespace program_options {
 
             c = getopt_long(argc,
                             argv,
-                            getopt_optstring.c_str(),
+                            "",
                             gnu_long_opts,
                             &option_index);
             // Detect the end of the options.

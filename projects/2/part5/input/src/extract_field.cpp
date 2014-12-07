@@ -8,12 +8,12 @@
 int main (int argc, char **argv)
 {
     program_options::option_desc opt_descs[] = {
-        {{"field-to-extract", required_argument, 0, 'f'}, false, "INT", "1", "Which field to extract per line (first field in line = 1)"},
+        {{"field-to-extract", required_argument}, false, "INT", "1", "Which field to extract per line (first field in line = 1)"},
         {{0, 0, 0, 0}}
     };
     size_t num_opts = sizeof(opt_descs) / sizeof(program_options::option_desc);
     program_options::option_bag opts;
-    program_options::get_option_bag(argc, argv, opt_descs, num_opts, "f:d:",  &opts);
+    program_options::get_option_bag(argc, argv, opt_descs, num_opts,  &opts);
     size_t field_to_extract;
     opts.get_opt_val("field-to-extract", &field_to_extract);
     std::string field_str;
