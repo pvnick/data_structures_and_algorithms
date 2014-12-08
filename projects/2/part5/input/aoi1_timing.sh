@@ -91,14 +91,14 @@ testcase "data/divine-comedy_dante-unique.txt" "0" "100000"
 testcase "data/origin-of-the-species_darwin-unique.txt" "0" "100000"
 #the location files are much slower, so decrease repetitions by an order of magnitude
 #the uid field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" "1" "10000"
+testcase "data/localities-uid.txt" "0" "10000"
 #the location field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" "2" "10000"
+testcase "data/localities-location.txt" "0" "10000"
 #the population field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" "4" "10000"
+testcase "data/localities-population.txt" "0" "10000"
 #the coords field (interpreted as a string) from the geographic data, &
-testcase "data/localities-original.txt" "5" "10000"
-#each entire line (interpreted as a string) from the geographic data. (*really* slow on hash function 1, so use a smaller number of repetitions)
+testcase "data/localities-coords.txt" "0" "10000"
+#each entire line (interpreted as a string) from the geographic data.
 testcase "data/localities-original.txt" "0" "10000"
 
 #Timing trial overview

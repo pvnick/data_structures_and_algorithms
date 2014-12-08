@@ -136,18 +136,18 @@ function testcase {
 rm -r "$RESULTS_DIR/aoi1/collision/"
 mkdir -p "$RESULTS_DIR/aoi1/collision/"
 
-
-testcase "aeneid_vergil-unique.txt" "0"
-testcase "confucian-analects-unique.txt" "0"
-testcase "divine-comedy_dante-unique.txt" "0"
-testcase "origin-of-the-species_darwin-unique.txt" "0"
+testcase "aeneid_vergil-unique.txt" "0" "100000"
+testcase "confucian-analects-unique.txt" "0" "100000"
+testcase "divine-comedy_dante-unique.txt" "0" "100000"
+testcase "origin-of-the-species_darwin-unique.txt" "0" "100000"
+#the location files are much slower, so decrease repetitions by an order of magnitude
 #the uid field (interpreted as a string) from the geographic data,
-testcase "localities-original.txt" "1"
+testcase "localities-uid.txt" "0" "10000"
 #the location field (interpreted as a string) from the geographic data,
-testcase "localities-original.txt" "2"
+testcase "localities-location.txt" "0" "10000"
 #the population field (interpreted as a string) from the geographic data,
-testcase "localities-original.txt" "4"
+testcase "localities-population.txt" "0" "10000"
 #the coords field (interpreted as a string) from the geographic data, &
-testcase "localities-original.txt" "5"
-#each entire line (interpreted as a string) from the geographic data. 
-testcase "localities-original.txt" "0"
+testcase "localities-coords.txt" "0" "10000"
+#each entire line (interpreted as a string) from the geographic data.
+testcase "localities-original.txt" "0" "10000"
