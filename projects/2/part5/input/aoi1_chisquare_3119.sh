@@ -6,6 +6,7 @@ rm -r "$RESULTS_DIR/aoi1/collision_chisquare_3119/"
 mkdir -p "$RESULTS_DIR/aoi1/collision_chisquare_3119/"
 
 CHISQUARE_DATA_OUTPUT_FILE="$RESULTS_DIR/aoi1/collision_chisquare_3119/results"
+RANDOMNESS_CHISQUARE_SUMS_OUTPUT_FILE="$RESULTS_DIR/aoi1/collision_chisquare_3119/randomness_chisquare_sums"
 RANDOMNESS_RANK_SUMS_OUTPUT_FILE="$RESULTS_DIR/aoi1/collision_chisquare_3119/randomness_rank_sums"
 
 FILEPATHS=$(find results/aoi1/collision_3119/* -type f)
@@ -65,6 +66,43 @@ cat $CHISQUARE_DATA_OUTPUT_FILE \
                 rank=0; 
             print(hash_function, rank); 
             rank += chi_square; 
+            prev_cap = curr_cap; 
+            prev_key_count = curr_key_count
+        }' \
+    | sort -n \
+    | awk '
+        BEGIN{
+            prev_hash_function = 0
+            rank_sum = 0
+        }{
+            curr_hash_function = $1
+            rank_sum += $2
+            if (curr_hash_function != prev_hash_function) { 
+                printf("%d %.5f\n", prev_hash_function, rank_sum)
+                rank_sum = 0
+            } 
+            prev_hash_function = curr_hash_function
+        } END{
+            printf("%d %.5f", prev_hash_function, rank_sum)
+        }' > $RANDOMNESS_CHISQUARE_SUMS_OUTPUT_FILE
+
+
+#sum up the chi square ranks per hash function. the one with the rank sum is the best
+cat $CHISQUARE_DATA_OUTPUT_FILE \
+    | sort -n -k1,1 -k2,2 -k3,3 \
+    | awk '
+        BEGIN{
+            prev_cap = 0
+            prev_key_count = 0
+        }{
+            curr_cap = $1
+            curr_key_count = $2
+            chi_square = $3
+            hash_function=$4
+            if (curr_cap != prev_cap || curr_key_count != prev_key_count) 
+                rank=0; 
+            print(hash_function, rank); 
+            rank += 1; 
             prev_cap = curr_cap; 
             prev_key_count = curr_key_count
         }' \
