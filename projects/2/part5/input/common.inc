@@ -11,3 +11,7 @@ function count_keys {
     typeset INPUT_FILE="$1"
     RET=$(cat "$INPUT_FILE" | wc -l)
 }
+
+function separator {
+    echo "-------------------------------------"
+}

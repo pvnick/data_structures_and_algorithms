@@ -1,8 +1,6 @@
 #!/bin/ksh
 
-function separator {
-    echo "-------------------------------------"
-}
+. common.inc
 
 separator
 echo "Compiling utilities"

@@ -99,7 +99,7 @@ testcase "data/localities-original.txt" "4" "10000"
 #the coords field (interpreted as a string) from the geographic data, &
 testcase "data/localities-original.txt" "5" "10000"
 #each entire line (interpreted as a string) from the geographic data. (*really* slow on hash function 1, so use a smaller number of repetitions)
-testcase "data/localities-original.txt" "0" "1000"
+testcase "data/localities-original.txt" "0" "10000"
 
 #Timing trial overview
 #

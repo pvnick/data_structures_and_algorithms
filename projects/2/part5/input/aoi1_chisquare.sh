@@ -49,10 +49,7 @@ for FILEPATH in $FILEPATHS; do
     echo "$C $K $chi_square $HASH_FUNCTION" >> $CHISQUARE_DATA_OUTPUT_FILE
 done
 
-#sort the chi square data by the capacity, then the key count, then the chi-square value, all in ascending order.
-#then apply a rank, 0-3, to each of the hash function per capacity-keycount pair. lower rank means lower chi square
-#value, and thus better randomness. then sum the ranks for each hash function. the one with the lowest rank sum is
-#the best at random assignment.
+#sum up the chi square values per hash function. the one with the lowest sum is the best
 cat $CHISQUARE_DATA_OUTPUT_FILE \
     | sort -n -k1,1 -k2,2 -k3,3 \
     | awk '
@@ -62,11 +59,12 @@ cat $CHISQUARE_DATA_OUTPUT_FILE \
         }{
             curr_cap = $1
             curr_key_count = $2
+            chi_square = $3
             hash_function=$4
             if (curr_cap != prev_cap || curr_key_count != prev_key_count) 
                 rank=0; 
             print(hash_function, rank); 
-            rank++; 
+            rank += chi_square; 
             prev_cap = curr_cap; 
             prev_key_count = curr_key_count
         }' \
@@ -79,10 +77,10 @@ cat $CHISQUARE_DATA_OUTPUT_FILE \
             curr_hash_function = $1
             rank_sum += $2
             if (curr_hash_function != prev_hash_function) { 
-                print(prev_hash_function, rank_sum) 
+                printf("%d %.5f\n", prev_hash_function, rank_sum)
                 rank_sum = 0
             } 
             prev_hash_function = curr_hash_function
         } END{
-            print(prev_hash_function, rank_sum)
+            printf("%d %.5f", prev_hash_function, rank_sum)
         }' > $RANDOMNESS_RANK_SUMS_OUTPUT_FILE
