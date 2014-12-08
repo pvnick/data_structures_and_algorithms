@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
+
+. ./common.inc
 
 #Area of investigation #1
 #Hash function performance
@@ -30,93 +32,74 @@
 #    each entire line (interpreted as a string) from the geographic data. 
 #
 
-count_keys() {
-    local INPUT_FILE="$1"
-    RET=$(cat "$INPUT_FILE" | wc -l)
-}
 
-get_capacities_four_methods() {
-    local NUM=$1
-    #nearest larger prime 
-    METHOD1=$(echo $NUM | ./bin/math/next_highest_prime.sh)
-    #nearest larger power of two
-    METHOD2=$(echo $NUM | ./bin/math/next_highest_pow_2.sh)
-    #prime nearest larger power of two
-    METHOD3=$(echo $NUM | ./bin/math/next_highest_pg591_prime.sh)
-    #prime in middle of nearest powers of two
-    METHOD4=$(echo $NUM | ./bin/math/next_highest_pow2_mid_prime.sh)
-    RET="$METHOD1 $METHOD2 $METHOD3 $METHOD4"
-}
-
-get_all_capacities() {
-    #Table capacities to consider
-    #
-    #For each test-case, 13 table capacities will be considered; let X be the number of of keys in the test case (159,237 for the geographic data, 
-    #the number of unique lexemes for the classic texts); the first table size will be X
-    local KEY_COUNT="$1"
-    local CAPACITIES="$KEY_COUNT"
-
-    #the rest are described by this table:
-    #X/23
-    get_capacities_four_methods $(echo $KEY_COUNT | awk '{print $KEY_COUNT / 23}')
-    CAPACITIES="$CAPACITIES $RET"
-    #X/7
-    get_capacities_four_methods $(echo $KEY_COUNT | awk '{print $KEY_COUNT / 7}')
-    CAPACITIES="$CAPACITIES $RET"
-    #X
-    get_capacities_four_methods $KEY_COUNT
-    CAPACITIES="$CAPACITIES $RET"
-
-    RET=$CAPACITIES
-}
-
-get_input_file_capacities() {
-    local INPUT_FILE="$1"
+function timing_testcase {
+    typeset INPUT_FILE="$1"
+    typeset FIELD_ID="$2" #field = 0 means use the whole line
+    typeset HASH_REPITITIONS="$3"
+    echo "Running timing testcase on $INPUT_FILE, field $FIELD_ID"
     count_keys "$INPUT_FILE"
-    local KEY_COUNT=$RET
-    get_all_capacities $KEY_COUNT
-}
-
-test_capacity() {
-    local INPUT_FILE="$1"
-    local FIELD_ID="$2"
-    local CAPACITY="$3"
-
-}
-
-testcase() {
-    local INPUT_FILE="$1"
-    local FIELD_ID="$2" #field = 0 means use the whole line
-    echo "Running testcase on $INPUT_FILE"
-    count_keys "$INPUT_FILE"
-    echo "Number of keys=$RET"
-    get_input_file_capacities "$INPUT_FILE"
-    CAPACITIES="$RET"
-    echo "Capacities=[$CAPACITIES]"
-    for CAPACITY in $CAPACITIES; do
-        echo "Testing capacity $CAPACITY"
+    KEY_COUNT="$RET"
+    typeset HASH_FUNCTIONS="0 1 2 3"
+    echo "Calculating non-hashing overhead"
+    if [ "$FIELD_ID" -eq "0" ]; then 
+        typeset OVERHEAD_BASELINE_OUTPUT="$(cat $INPUT_FILE | ./bin/aoi1/timing --hash-func -1 --hash-repititions $HASH_REPITITIONS)"
+    else 
+        typeset OVERHEAD_BASELINE_OUTPUT="$(cat $INPUT_FILE \
+            | sed 's/:/ /g' \
+            | sed 's/  / . /g' \
+            | ./bin/extract_field --field-to-extract $FIELD_ID \
+            | ./bin/aoi1/timing --hash-func -1 --hash-repititions $HASH_REPITITIONS)"
+    fi
+    OVERHEAD_BASELINE="$(echo $OVERHEAD_BASELINE_OUTPUT | awk '{printf("%.20f", $1 + $2)}')"
+    echo $OVERHEAD_BASELINE
+    for HASH_FUNCTION in $HASH_FUNCTIONS; do
+        typeset OUTPUT_FILENAME="$RESULTS_DIR/aoi1/timing/$HASH_FUNCTION.out"
+        echo $OUTPUT_FILENAME
+        echo "Testing hash function $HASH_FUNCTION"
         if [ "$FIELD_ID" -eq "0" ]; then 
-            cat "$INPUT_FILE" | head
+            typeset HASH_TIME_OUTPUT="$(cat $INPUT_FILE | ./bin/aoi1/timing --hash-func $HASH_FUNCTION --hash-repititions $HASH_REPITITIONS)"
         else 
-            cat "$INPUT_FILE" | sed 's/:/ /g' | sed 's/  / . /g' | ./bin/extract_field --field-to-extract $FIELD_ID | head
+            typeset HASH_TIME_OUTPUT="$(cat $INPUT_FILE \
+                | sed 's/:/ /g' \
+                | sed 's/  / . /g' \
+                | ./bin/extract_field --field-to-extract $FIELD_ID \
+                | ./bin/aoi1/timing --hash-func $HASH_FUNCTION --hash-repititions $HASH_REPITITIONS)"
         fi
+        HASH_TIME="$(echo $HASH_TIME_OUTPUT | awk '{printf("%.20f", $1 + $2)}')"
+        CORRECTED_HASH_TIME="$(echo $HASH_TIME $OVERHEAD_BASELINE | awk '{printf("%.20f", $1 - $2)}')"
+        TIME_PER_HASH="$(echo $CORRECTED_HASH_TIME $KEY_COUNT | awk '{printf("%.20f", $1 / $2)}')"
+        echo "$TIME_PER_HASH" >> $OUTPUT_FILENAME
     done
 }
 
-testcase "data/aeneid_vergil-unique.txt" "0"
-testcase "data/confucian-analects-unique.txt" "0"
-testcase "data/divine-comedy_dante-unique.txt" "0"
-testcase "data/origin-of-the-species_darwin-unique.txt" "0"
+function testcase {
+    typeset INPUT_FILE="$1"
+    typeset FIELD_ID="$2" #field = 0 means use the whole line
+    typeset HASH_REPITITIONS="$3"
+    echo "Running testcases on $INPUT_FILE"
+    timing_testcase "$INPUT_FILE" "$FIELD_ID" "$HASH_REPITITIONS"
+}
+
+
+rm -r "$RESULTS_DIR/aoi1/timing/"
+mkdir -p "$RESULTS_DIR/aoi1/timing/"
+
+testcase "data/aeneid_vergil-unique.txt" "0" "100000"
+testcase "data/confucian-analects-unique.txt" "0" "100000"
+testcase "data/divine-comedy_dante-unique.txt" "0" "100000"
+testcase "data/origin-of-the-species_darwin-unique.txt" "0" "100000"
+#the location files are much slower, so decrease repetitions by an order of magnitude
 #the uid field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" 1
+testcase "data/localities-original.txt" "1" "10000"
 #the location field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" 2
+testcase "data/localities-original.txt" "2" "10000"
 #the population field (interpreted as a string) from the geographic data,
-testcase "data/localities-original.txt" 4
+testcase "data/localities-original.txt" "4" "10000"
 #the coords field (interpreted as a string) from the geographic data, &
-testcase "data/localities-original.txt" 5
-#each entire line (interpreted as a string) from the geographic data. 
-testcase "data/localities-original.txt" 0
+testcase "data/localities-original.txt" "5" "10000"
+#each entire line (interpreted as a string) from the geographic data. (*really* slow on hash function 1, so use a smaller number of repetitions)
+testcase "data/localities-original.txt" "0" "1000"
 
 #Timing trial overview
 #

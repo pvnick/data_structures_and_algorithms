@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/ksh
 
-cat | awk '{print (log($1) / log(2))}'
+cat | awk '{printf("%.20f", log($1) / log(2))}'

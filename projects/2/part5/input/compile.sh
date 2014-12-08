@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 
-separator() {
+function separator {
     echo "-------------------------------------"
 }
 

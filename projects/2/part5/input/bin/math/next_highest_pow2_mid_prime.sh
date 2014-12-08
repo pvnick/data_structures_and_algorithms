@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ksh
 
 MY_DIR=`dirname $0`
 cd "$MY_DIR"
