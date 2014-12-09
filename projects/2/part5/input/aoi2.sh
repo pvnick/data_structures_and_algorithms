@@ -23,19 +23,23 @@ function run_testcase {
     typeset CAPACITY="$4"
     typeset CAPACITY_FUNC="$5"
     typeset LOAD_FACTOR="$6"
-    OUTPUT_DIR="$RESULTS_DIR/aoi2/$a/$LOAD_FACTOR/$CAPACITY_FUNC/$INPUT_FILE/$INPUT_FILE_UNIQ"
-    echo "Running testcase:"
-    echo "    input file: $INPUT_FILE"
-    echo "    corresponding unique input file: $INPUT_FILE_UNIQ"
-    echo "    a: $a"
-    echo "    load factor: $LOAD_FACTOR"
-    echo "    capacity planning function: $CAPACITY_FUNC"
-    echo "    capacity: $CAPACITY"
-    echo "    output directory: $OUTPUT_DIR"
-    echo -n "..."
+    OUTPUT_DIR=$(echo "$RESULTS_DIR/aoi2/data/$a/$LOAD_FACTOR/$CAPACITY_FUNC/$INPUT_FILE/$INPUT_FILE_UNIQ" | sed 's/permutations\//permutations_/g')
+    CMD='./bin/aoi2/individual_trial --capacity '$CAPACITY' --target-load '$LOAD_FACTOR' --input-file "data/'$INPUT_FILE'" --input-file-unique "data/'$INPUT_FILE_UNIQ'" --output-dir "'$OUTPUT_DIR'"'
+
+    echo "    Running testcase:"
+    echo "      input file: $INPUT_FILE"
+    echo "      corresponding unique input file: $INPUT_FILE_UNIQ"
+    echo "      a: $a"
+    echo "      load factor: $LOAD_FACTOR"
+    echo "      capacity planning function: $CAPACITY_FUNC"
+    echo "      capacity: $CAPACITY"
+    echo "      output directory: $OUTPUT_DIR"
+    echo "      running command:" 
+    echo "        $CMD" | fmt
+    echo -n "      ..."
 
     mkdir -p "$OUTPUT_DIR"
-    ./bin/aoi2/individual_trial --capacity $CAPACITY --target-load $LOAD_FACTOR --input-file "$INPUT_FILE" --input-file-unique "$INPUT_FILE_UNIQ" --output-dir "$OUTPUT_DIR"
+    eval "$CMD"
     echo "done"
 }
 
@@ -43,11 +47,18 @@ function fixed_size_testcase {
     typeset INPUT_FILE="$1"
     typeset INPUT_FILE_UNIQ="$2"
     typeset a="$3"
-    count_keys "$INPUT_FILE"
-    KEY_COUNT=$RET
+    count_keys "data/$INPUT_FILE"
+    KEY_COUNT="$RET"
     M=$(echo $KEY_COUNT | awk '{printf("%.5f", $1 * 0.95)}' | ./bin/math/ceil.sh)
+    echo "  Fixed size testcase:"
+    echo "    input file: $INPUT_FILE"
+    echo "    corresponding unique input file: $INPUT_FILE_UNIQ"
+    echo "    a: $a"
+    echo "    key count: $KEY_COUNT"
+    echo "    M: $M"
     for LOAD_FACTOR_ID in {1..33}; do
         LOAD_FACTOR=$(echo $LOAD_FACTOR_ID | awk '{printf("%.2f", $1 * 0.03)}')
+        echo "    load factor: $LOAD_FACTOR"
         #Usage: ./bin/aoi2/individual_trial --capacity ULONG --target-load DOUBLE --input-file FILE --input-file-unique FILE --output-dir DIR
         #Alternatively you may print this message with the following command:
         #./bin/aoi2/individual_trial help
@@ -67,15 +78,39 @@ function fixed_size_testcase {
         #5 - N, where N is a prime that is ≥ M and “closest” to being half-way between the nearest powers of two bounding M above and below.
 
         #1
-        CAPACITY=$(echo "$M $a" | awk '{printf("%.5", $1 + $2 * $1)}' | ./bin/math/ceil.sh)
+        CAPACITY_FUNC=1
+        CAPACITY=$(echo "$M $a" | awk '{printf("%.5f", $1 + $2 * $1)}' | ./bin/math/ceil.sh)
+        echo "    capacity planning function: $CAPACITY_FUNC"
+        echo "    capacity: $CAPACITY"
+        run_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a" "$CAPACITY" "1" "$LOAD_FACTOR"
+
         #2
-        CAPACITY=$(echo "$M $a" | awk '{printf("%.5", $1 + $2 * $1)}' | ./bin/math/ceil.sh | ./bin/math/next_highest_prime.sh)
+        CAPACITY_FUNC=2
+        CAPACITY=$(echo "$M $a" | awk '{printf("%.5f", $1 + $2 * $1)}' | ./bin/math/ceil.sh | ./bin/math/next_highest_prime.sh)
+        echo "    capacity planning function: $CAPACITY_FUNC"
+        echo "    capacity: $CAPACITY"
+        run_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a" "$CAPACITY" "2" "$LOAD_FACTOR"
+        
         #3
+        CAPACITY_FUNC=3
         CAPACITY=$(echo "$M" | ./bin/math/next_highest_pow_2.sh)
+        echo "    capacity planning function: $CAPACITY_FUNC"
+        echo "    capacity: $CAPACITY"
+        run_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a" "$CAPACITY" "3" "$LOAD_FACTOR"
+        
         #4
+        CAPACITY_FUNC=4
         CAPACITY=$(echo "$M" | ./bin/math/next_highest_pg591_prime.sh)
+        echo "    capacity planning function: $CAPACITY_FUNC"
+        echo "    capacity: $CAPACITY"
+        run_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a" "$CAPACITY" "4" "$LOAD_FACTOR"
+        
         #5
+        CAPACITY_FUNC=5
         CAPACITY=$(echo "$M" | ./bin/math/next_highest_pow2_mid_prime.sh)
+        echo "    capacity planning function: $CAPACITY_FUNC"
+        echo "    capacity: $CAPACITY"
+        run_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a" "$CAPACITY" "5" "$LOAD_FACTOR"
     done
 }
 
@@ -83,14 +118,19 @@ function variable_size_testcase {
     typeset INPUT_FILE="$1"
     typeset INPUT_FILE_UNIQ="$2"
     A_IDs={0..20}
+    echo "Variable size testcase:"
+    echo "  input file: $INPUT_FILE"
+    echo "  corresponding unique input file: $INPUT_FILE_UNIQ"
     for A_ID in $A_IDs; do
-        a=$(cat $A_ID | awk '{printf("%.2f", 0.05 * $1)}')
+        a=$(echo $A_ID | awk '{printf("%.2f", 0.05 * $1)}')
+        echo "  a: $a"
+        fixed_size_testcase "$INPUT_FILE" "$INPUT_FILE_UNIQ" "$a"
     done
+    separator
 }
 
-
-rm -r "$RESULTS_DIR/aoi2"
-mkdir -p "$RESULTS_DIR/aoi2"
+rm -r "$RESULTS_DIR/aoi2/data"
+mkdir -p "$RESULTS_DIR/aoi2/data"
 
 #    The Aeneid set of data sets
 #        this set of data sets consists of:
@@ -99,22 +139,22 @@ mkdir -p "$RESULTS_DIR/aoi2"
 #            five (5) permutations of the file aeneid_vergil-unique.txt (see “Creating permutations from a data set” for instructions
 #            aeneid_vergil.txt
 ./bin/create_permutations.sh data/aeneid_vergil-unique.txt 5
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt"
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt-1"
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt-2"
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt-3"
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt-4"
-variable_size_testcase "data/aeneid_vergil.txt" "data/aeneid_vergil-unique.txt-5"
+variable_size_testcase "aeneid_vergil.txt" "aeneid_vergil-unique.txt"
+variable_size_testcase "aeneid_vergil.txt" "permutations/aeneid_vergil-unique.txt-1"
+variable_size_testcase "aeneid_vergil.txt" "permutations/aeneid_vergil-unique.txt-2"
+variable_size_testcase "aeneid_vergil.txt" "permutations/aeneid_vergil-unique.txt-3"
+variable_size_testcase "aeneid_vergil.txt" "permutations/aeneid_vergil-unique.txt-4"
+variable_size_testcase "aeneid_vergil.txt" "permutations/aeneid_vergil-unique.txt-5"
 
 #    War and Peace set of data sets
 #        as per the The Aeneid, but using the War and Peace files. 
 ./bin/create_permutations.sh data/war-and-peace_tolstoi-unique.txt 5
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/war-and-peace_tolstoi-unique.txt"
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-and-peace_tolstoi-unique.txt-1"
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-and-peace_tolstoi-unique.txt-1"
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-and-peace_tolstoi-unique.txt-1"
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-and-peace_tolstoi-unique.txt-1"
-variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-and-peace_tolstoi-unique.txt-1"
+variable_size_testcase "war-and-peace_tolstoi.txt" "war-and-peace_tolstoi-unique.txt"
+variable_size_testcase "war-and-peace_tolstoi.txt" "permutations/war-and-peace_tolstoi-unique.txt-1"
+variable_size_testcase "war-and-peace_tolstoi.txt" "permutations/war-and-peace_tolstoi-unique.txt-1"
+variable_size_testcase "war-and-peace_tolstoi.txt" "permutations/war-and-peace_tolstoi-unique.txt-1"
+variable_size_testcase "war-and-peace_tolstoi.txt" "permutations/war-and-peace_tolstoi-unique.txt-1"
+variable_size_testcase "war-and-peace_tolstoi.txt" "permutations/war-and-peace_tolstoi-unique.txt-1"
 
 #    Geographical UID set of data sets
 #        this set of data sets consists of:
@@ -124,11 +164,11 @@ variable_size_testcase "data/war-and-peace_tolstoi.txt" "data/permutations/war-a
 #
 #        Note: the keys in this set will be treated as std::strings 
 ./bin/create_permutations.sh data/uid-unique.txt 5
-variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-1"
-variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-2"
-variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-3"
-variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-4"
-variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-5"
+variable_size_testcase "uid-unique.txt" "permutations/uid-unique.txt-1"
+variable_size_testcase "uid-unique.txt" "permutations/uid-unique.txt-2"
+variable_size_testcase "uid-unique.txt" "permutations/uid-unique.txt-3"
+variable_size_testcase "uid-unique.txt" "permutations/uid-unique.txt-4"
+variable_size_testcase "uid-unique.txt" "permutations/uid-unique.txt-5"
 
 #    Geographical coords set of data sets
 #        this set of data sets consists of:
@@ -140,11 +180,11 @@ variable_size_testcase "data/uid-unique.txt" "data/permutations/uid-unique.txt-5
 #            to remove the duplicates; doing this is highly recommended!]
 #            five (5) permutations of the file coords-unique.txt
 ./bin/create_permutations.sh data/coords-unique.txt 5
-variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique.txt-1"
-variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique.txt-2"
-variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique.txt-3"
-variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique.txt-4"
-variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique.txt-5"
+variable_size_testcase "coords-unique.txt" "permutations/coords-unique.txt-1"
+variable_size_testcase "coords-unique.txt" "permutations/coords-unique.txt-2"
+variable_size_testcase "coords-unique.txt" "permutations/coords-unique.txt-3"
+variable_size_testcase "coords-unique.txt" "permutations/coords-unique.txt-4"
+variable_size_testcase "coords-unique.txt" "permutations/coords-unique.txt-5"
 
 #    Geographical entries set of data sets
 #        this set of data sets consists of:
@@ -159,11 +199,11 @@ variable_size_testcase "data/coords-unique.txt" "data/permutations/coords-unique
 #
 #        Where the protocol calls for the “corresponding unique data set”, use localities-original.txt 
 ./bin/create_permutations.sh data/localities-original.txt 2
-variable_size_testcase "data/localities-original.txt" "data/localities-original.txt"
-variable_size_testcase "data/localities-original-sorted-by-uid.txt" "data/localities-original.txt"
-variable_size_testcase "data/localities-original-sorted-by-location.txt" "data/localities-original.txt"
-variable_size_testcase "data/localities-original-sorted-by-country.txt" "data/localities-original.txt"
-variable_size_testcase "data/localities-original-sorted-by-population.txt" "data/localities-original.txt"
-variable_size_testcase "data/localities-original-sorted-by-coords.txt" "data/localities-original.txt"
-variable_size_testcase "data/permutations/localities-original.txt-1" "data/localities-original.txt"
-variable_size_testcase "data/permutations/localities-original.txt-2" "data/localities-original.txt"
+variable_size_testcase "localities-original.txt" "localities-original.txt"
+variable_size_testcase "localities-original-sorted-by-uid.txt" "localities-original.txt"
+variable_size_testcase "localities-original-sorted-by-location.txt" "localities-original.txt"
+variable_size_testcase "localities-original-sorted-by-country.txt" "localities-original.txt"
+variable_size_testcase "localities-original-sorted-by-population.txt" "localities-original.txt"
+variable_size_testcase "localities-original-sorted-by-coords.txt" "localities-original.txt"
+variable_size_testcase "permutations/localities-original.txt-1" "localities-original.txt"
+variable_size_testcase "permutations/localities-original.txt-2" "localities-original.txt"
