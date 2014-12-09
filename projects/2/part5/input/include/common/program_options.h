@@ -58,9 +58,7 @@ namespace program_options {
             *out = ret;
         }
         void operator()(std::string const& val, double* out) {
-            size_t ret = std::stod(val);
-            if (std::to_string(ret) != val)
-                throw std::invalid_argument(val + " is not a valid double");
+            double ret = std::stod(val);
             *out = ret;
         }
         void operator()(std::string const& val, std::string* out) {

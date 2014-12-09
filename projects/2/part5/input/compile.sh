@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-. common.inc
+. ./common.inc
 
 separator
 echo "Compiling utilities"
@@ -19,3 +19,6 @@ separator
 echo "Compiling AOI1"
 g++ -g --std=c++11 -Iinclude -o bin/aoi1/timing src/aoi1/timing.cpp 
 g++ -g --std=c++11 -Iinclude -o bin/aoi1/collision src/aoi1/collision.cpp 
+
+echo "Compiling AOI2"
+g++ -g --std=c++11 -Iinclude -o bin/aoi2/individual_trial src/aoi2/individual_trial.cpp 
