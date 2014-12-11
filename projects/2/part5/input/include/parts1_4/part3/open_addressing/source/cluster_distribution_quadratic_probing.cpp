@@ -7,7 +7,6 @@ SCENARIO( "Verifying the output of cluster_distribution, quadratic probing" ) {
     GIVEN( "A HashMapOpenAddressingGeneric map with integer keys" ) {
         cop3530::HashMapOpenAddressingGeneric<int, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::quadratic_probe> map(1000);
         WHEN("The map is filled halfway, cleared, then filled halfway again") {
@@ -31,7 +30,6 @@ SCENARIO( "Verifying the output of cluster_distribution, quadratic probing" ) {
     GIVEN( "A HashMapOpenAddressingGeneric map with double keys" ) {
         cop3530::HashMapOpenAddressingGeneric<double, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::quadratic_probe> map(1000);
         WHEN("The map is filled halfway, cleared, then filled halfway again") {
@@ -56,7 +54,6 @@ SCENARIO( "Verifying the output of cluster_distribution, quadratic probing" ) {
         typedef int key_type;
         cop3530::HashMapOpenAddressingGeneric<std::string, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::quadratic_probe> map(1000);
         WHEN("The map is filled halfway, cleared, then filled halfway again") {
@@ -81,7 +78,6 @@ SCENARIO( "Verifying the output of cluster_distribution, quadratic probing" ) {
         typedef int key_type;
         cop3530::HashMapOpenAddressingGeneric<const char*, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::quadratic_probe> map(1000);
         WHEN("The map is filled halfway, cleared, then filled halfway again") {

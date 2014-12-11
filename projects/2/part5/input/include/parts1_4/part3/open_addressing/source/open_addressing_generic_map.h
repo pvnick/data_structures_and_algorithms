@@ -23,6 +23,7 @@ namespace cop3530 {
         struct Slot {
             Item item;
             bool is_occupied = false;
+            bool was_previously_occupied = false;
         };
         Slot* slots;
         size_t curr_capacity = 0;
@@ -31,12 +32,12 @@ namespace cop3530 {
             searches the map for an item matching key. returns the number of probe attempts needed
             to reach either the item or an empty slot
         */
-        int search_internal(Key const& key) {
+        int search_internal(Key const& key, bool skip_previously_occupied) {
             size_t M = capacity();
             size_t probe_index;
             for (probe_index = 0; probe_index != M; ++probe_index) {
                 size_t slot_index = key.hash(M, probe_index);
-                if (slots[slot_index].is_occupied) {
+                if (slots[slot_index].is_occupied || (skip_previously_occupied && slots[slot_index].was_previously_occupied)) {
                     if (slots[slot_index].item.key == key) {
                         //found the key
                         break;
@@ -57,6 +58,7 @@ namespace cop3530 {
                 s.is_occupied = true;
                 ++num_occupied_slots;
             }
+            s.was_previously_occupied = true;
         }
         Value const& remove_at_index(size_t index) {
             Slot& s = slots[index];
@@ -64,6 +66,7 @@ namespace cop3530 {
                 s.is_occupied = false;
                 --num_occupied_slots;
             }
+            s.was_previously_occupied = true;
             return s.item.value;
         }
     public:
@@ -89,7 +92,7 @@ namespace cop3530 {
                 return -1 * size();
             Key k(key);
             Value v(value);
-            int probes_required = search_internal(k);
+            int probes_required = search_internal(k, false);
             size_t index = k.hash(M, probes_required - 1);
             if (slots[index].is_occupied == true && slots[index].item.key != k)
                 //map is full and we're going to hit an infinite loop if we keep going
@@ -105,24 +108,14 @@ namespace cop3530 {
         int remove(key_type const& key, value_type& value) {
             size_t M = capacity();
             Key k(key);
-            int probes_required = search_internal(k);
+            int probes_required = search_internal(k, true);
             size_t index = k.hash(M, probes_required - 1);
             if (slots[index].is_occupied == false || slots[index].item.key != k)
                 //key not found
                 return -1 * probes_required;
             Value v = remove_at_index(index);
             value = v.raw_copy();
-            //remove and reinsert items until find unoccupied slot (guaranteed to happen since we just removed an item)
-            for (int i = 1; ; ++i) {
-                index = k.hash(M, i);
-                Slot const& s = slots[index];
-                if (s.is_occupied) {
-                    remove_at_index(index);
-                    insert(s.item.key.raw_copy(), s.item.value.raw_copy());
-                } else {
-                    break;
-                }
-            }
+            //no need to remove and reinsert items since we set was_previously_occupied to true
             return probes_required;
         }
 
@@ -134,7 +127,7 @@ namespace cop3530 {
         int search(key_type const& key, value_type& value) {
             size_t M = capacity();
             Key k(key);
-            size_t probes_required = search_internal(k);
+            size_t probes_required = search_internal(k, true);
             size_t index = k.hash(M, probes_required - 1);
             if (slots[index].is_occupied == false || slots[index].item.key != k)
                 //key not found
@@ -226,6 +219,7 @@ namespace cop3530 {
                         //found the end of a cluster
                         if (first_cluster_skipped) {
                             cluster_counter[curr_cluster_size]++;
+                            curr_cluster_size = 0;
                             if (i >= M) {
                                 //reached the end of the first cluster in the second pass, so no all clusters have been handled
                                 break;
@@ -235,6 +229,9 @@ namespace cop3530 {
                         }
                     }
                 }
+                if (curr_cluster_size) 
+                    //have a left-over cluster 
+                    cluster_counter[curr_cluster_size]++;
             }
             for (size_t i = 1; i <= M; ++i)
                 if (cluster_counter[i] > 0) {

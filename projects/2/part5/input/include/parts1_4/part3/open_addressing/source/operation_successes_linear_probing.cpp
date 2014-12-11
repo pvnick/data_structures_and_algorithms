@@ -6,7 +6,6 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
         typedef int key_type;
         cop3530::HashMapOpenAddressingGeneric<key_type, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         REQUIRE(map.size() == 0);
@@ -91,7 +90,6 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
         typedef double key_type;
         cop3530::HashMapOpenAddressingGeneric<key_type, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         REQUIRE(map.size() == 0);
@@ -169,7 +167,6 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
         typedef std::string key_type;
         cop3530::HashMapOpenAddressingGeneric<key_type, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         REQUIRE(map.size() == 0);
@@ -254,7 +251,6 @@ SCENARIO( "Certain basic operations should always succeed, with linear probing" 
         typedef const char* key_type;
         cop3530::HashMapOpenAddressingGeneric<key_type, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         REQUIRE(map.size() == 0);

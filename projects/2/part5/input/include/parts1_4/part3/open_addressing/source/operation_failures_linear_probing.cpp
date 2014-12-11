@@ -1,11 +1,10 @@
 #include "unit_tests.h"
 #include "catch/catch.hpp"
 
-SCENARIO( "Various operations fail and indicate as such with their return values" ) {
+SCENARIO( "Various operations fail and indicate as such with their return values, linear probing" ) {
     GIVEN( "An HashMapOpenAddressingGeneric map with integer keys" ) {
         cop3530::HashMapOpenAddressingGeneric<int, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         int value;
@@ -31,7 +30,6 @@ SCENARIO( "Various operations fail and indicate as such with their return values
     GIVEN( "An HashMapOpenAddressingGeneric map with double keys" ) {
         cop3530::HashMapOpenAddressingGeneric<double, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         int value;
@@ -57,7 +55,6 @@ SCENARIO( "Various operations fail and indicate as such with their return values
     GIVEN( "An HashMapOpenAddressingGeneric map with string keys" ) {
         cop3530::HashMapOpenAddressingGeneric<std::string, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         int value;
@@ -84,7 +81,6 @@ SCENARIO( "Various operations fail and indicate as such with their return values
     GIVEN( "An HashMapOpenAddressingGeneric map with const char* keys" ) {
         cop3530::HashMapOpenAddressingGeneric<const char*, 
                                               int, 
-                                              cop3530::hash_utils::functors::map_capacity_planner,
                                               cop3530::hash_utils::functors::primary_hashes::hash_basic,
                                               cop3530::hash_utils::functors::secondary_hashes::linear_probe> map(1000);
         int value;
